@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/padding_10x"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/more_help"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_top_corners_selector"
+                android:padding="@dimen/padding_15x"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/image_help"
+                    android:layout_width="@dimen/padding_25x"
+                    android:layout_height="@dimen/padding_25x"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/main_menu_help" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image_help"
+                    android:paddingLeft="@dimen/padding_15x"
+                    android:text="@string/more_help" />
+
+                <ImageView
+                    android:layout_width="@dimen/padding_40x"
+                    android:layout_height="@dimen/padding_40x"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/list_enter_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_01x"
+                android:background="#ffcccccc" />
+
+            <RelativeLayout
+                android:id="@+id/more_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_center_corners_selector"
+                android:padding="@dimen/padding_15x"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/image_opinion"
+                    android:layout_width="@dimen/padding_25x"
+                    android:layout_height="@dimen/padding_25x"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/main_menu_feedback" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image_opinion"
+                    android:paddingLeft="@dimen/padding_15x"
+                    android:text="@string/more_opinion" />
+
+                <ImageView
+                    android:layout_width="@dimen/padding_40x"
+                    android:layout_height="@dimen/padding_40x"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/list_enter_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_01x"
+                android:background="#ffcccccc" />
+
+            <RelativeLayout
+                android:id="@+id/more_about"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_center_corners_selector"
+                android:padding="@dimen/padding_15x">
+
+                <ImageView
+                    android:id="@+id/image_about"
+                    android:layout_width="@dimen/padding_25x"
+                    android:layout_height="@dimen/padding_25x"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/main_menu_about" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image_about"
+                    android:paddingLeft="@dimen/padding_15x"
+                    android:text="@string/more_aboutus" />
+
+                <ImageView
+                    android:layout_width="@dimen/padding_40x"
+                    android:layout_height="@dimen/padding_40x"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/list_enter_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_01x"
+                android:background="#ffcccccc" />
+
+            <RelativeLayout
+                android:id="@+id/more_update"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_bottom_corners_selector"
+                android:padding="@dimen/padding_15x">
+
+                <ImageView
+                    android:id="@+id/image_update"
+                    android:layout_width="@dimen/padding_25x"
+                    android:layout_height="@dimen/padding_25x"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/main_menu_check_version" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image_update"
+                    android:paddingLeft="@dimen/padding_15x"
+                    android:text="@string/more_update" />
+
+                <ImageView
+                    android:layout_width="@dimen/padding_40x"
+                    android:layout_height="@dimen/padding_40x"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/list_enter_black" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

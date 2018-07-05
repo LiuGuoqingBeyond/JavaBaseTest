@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <View
+        android:layout_width="@dimen/padding_150x"
+        android:layout_height="@dimen/padding_150x"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="@dimen/padding_50x"
+            android:layout_height="@dimen/padding_50x"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/loading_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/padding_10x"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/padding_03x"
+            android:textSize="@dimen/medium_text_size" />
+
+        <Button
+            android:id="@+id/loading_button"
+            android:layout_width="@dimen/padding_150x"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_blue_selector"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/padding_03x"
+            android:text="@string/activity_clear" />
+    </LinearLayout>
+
+</RelativeLayout>

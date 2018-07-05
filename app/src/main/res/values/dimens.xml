@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="micro_text_size">12sp</dimen>
+    <dimen name="small_text_size">18sp</dimen>
+    <dimen name="smaller_medium_text_size">15sp</dimen>
+    <dimen name="smaller_text_size">16sp</dimen>
+    <dimen name="smallermedium_text_size">17sp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
+    <dimen name="big_text_size">20sp</dimen>
+    <dimen name="large_text_size">22sp</dimen>
+    <dimen name="huge_twenty_four_size">24sp</dimen>
+    <dimen name="huge_text_size">25sp</dimen>
+    <dimen name="huge_twenty_eight_size">28sp</dimen>
+
+    <!-- 全局定义（谨慎修改） -->
+    <dimen name="padding_00x">0.0dp</dimen>
+    <dimen name="padding_03x">3.0dp</dimen>
+    <dimen name="padding_04x">4.0dp</dimen>
+    <dimen name="padding_05x">5.0dp</dimen>
+    <dimen name="padding_07x">7.0dp</dimen>
+    <dimen name="padding_08x">8.0dp</dimen>
+    <dimen name="padding_10x">10.0dp</dimen>
+    <dimen name="padding_15x">15.0dp</dimen>
+    <dimen name="padding_20x">20.0dp</dimen>
+    <dimen name="padding_25x">25.0dp</dimen>
+    <dimen name="padding_30x">30.0dp</dimen>
+    <dimen name="padding_35x">35.0dp</dimen>
+    <dimen name="padding_40x">40.0dp</dimen>
+    <dimen name="padding_45x">45.0dp</dimen>
+    <dimen name="padding_50x">50.0dp</dimen>
+    <dimen name="padding_60x">60.0dp</dimen>
+    <dimen name="padding_70x">70.0dp</dimen>
+    <dimen name="padding_80x">80.0dp</dimen>
+    <dimen name="padding_100x">100.0dp</dimen>
+    <dimen name="padding_110x">110.0dp</dimen>
+    <dimen name="padding_120x">120.0dp</dimen>
+    <dimen name="padding_125x">125.0dp</dimen>
+    <dimen name="padding_130x">130.0dp</dimen>
+    <dimen name="padding_150x">150.0dp</dimen>
+    <dimen name="padding_160x">160.0dp</dimen>
+    <dimen name="padding_170x">170.0dp</dimen>
+    <dimen name="padding_180x">180.0dp</dimen>
+    <dimen name="padding_185x">185.0dp</dimen>
+    <dimen name="padding_190x">190.0dp</dimen>
+    <dimen name="padding_200x">200.0dp</dimen>
+    <dimen name="padding_210x">210.0dp</dimen>
+    <dimen name="padding_225x">225.0dp</dimen>
+    <dimen name="padding_240x">240.0dp</dimen>
+    <dimen name="padding_300x">300.0dp</dimen>
+    <dimen name="padding_335x">335.0dp</dimen>
+    <dimen name="padding_400x">400.0dp</dimen>
+    <dimen name="padding_415x">415.0dp</dimen>
+
+    <dimen name="padding_01x">1.0dp</dimen>
+    <dimen name="padding_02x">2.0dp</dimen>
+    <dimen name="padding_06x">6.0dp</dimen>
+    <dimen name="padding_8x">8.0dp</dimen>
+    <dimen name="padding_12x">12.0dp</dimen>
+    <dimen name="padding_13x">13.0dp</dimen>
+    <dimen name="padding_14x">14.0dp</dimen>
+    <dimen name="padding_16x">16.0dp</dimen>
+    <dimen name="padding_18x">18.0dp</dimen>
+    <dimen name="padding_24x">24.0dp</dimen>
+    <dimen name="padding_32x">32.0dp</dimen>
+    <dimen name="padding_36x">36.0dp</dimen>
+    <dimen name="padding_38x">38.0dp</dimen>
+    <dimen name="padding_44x">44.0dp</dimen>
+    <dimen name="padding_48x">48.0dp</dimen>
+    <dimen name="padding_56x">56.0dp</dimen>
+    <dimen name="padding_57x">57.0dp</dimen>
+    <dimen name="padding_65x">65.0dp</dimen>
+    <dimen name="padding_72x">72.0dp</dimen>
+    <dimen name="padding_75x">75.0dp</dimen>
+    <dimen name="padding_113x">113.0dp</dimen>
+    <dimen name="padding_162x">162.0dp</dimen>
+    <dimen name="padding_252x">252.0dp</dimen>
+
+
+    <!--大标题-->
+    <dimen name="textSizeBigTitle">34sp</dimen>
+    <!--标题-->
+    <dimen name="textSizeTitle">20sp</dimen>
+    <!--副标题-->
+    <dimen name="textSizeSubtitle">16sp</dimen>
+    <!--正文-->
+    <dimen name="textSizeBody">14sp</dimen>
+    <!--辅助信息-->
+    <dimen name="textSizeCaption">12sp</dimen>
+    <!--提示数字-->
+    <dimen name="textSizeRedPoint">7sp</dimen>
+
+    <!--按钮文字-->
+    <dimen name="btnTextSize">14sp</dimen>
+
+    <!--默认间隔-->
+    <dimen name="defaultPadding">16dp</dimen>
+
+    <!--默认View高度-->
+    <dimen name="defaultItemHeight">48dp</dimen>
+
+    <!--默认View高度-->
+    <dimen name="defaultItemHeight_96dp">96dp</dimen>
+    <!--加大间隔-->
+    <dimen name="defaultItemHeight_36dp">36dp</dimen>
+    <!--加大间隔-->
+    <dimen name="halfDefaultItemHeight">24dp</dimen>
+
+    <!--区域分割线-->
+    <dimen name="halfDefaultPadding">8dp</dimen>
+
+    <!--列表分割线-->
+    <dimen name="dividingLineHeight">0.5dp</dimen>
+
+    <dimen name="toolbar_padding_top">0dp</dimen>
+</resources>

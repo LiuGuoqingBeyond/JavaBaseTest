@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editText_http"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入http"
+        android:text="www.baidu.com"/>
+
+    <Button
+        android:layout_below="@+id/editText_http"
+        android:id="@+id/mian_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Onclick"
+        android:text="确定"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/baifenbi"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/mian_button"
+        android:background="@color/white"/>
+
+
+    <WebView
+        android:layout_below="@+id/baifenbi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
+</RelativeLayout>

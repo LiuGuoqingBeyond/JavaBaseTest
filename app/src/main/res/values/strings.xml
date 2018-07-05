@@ -1,0 +1,1129 @@
+<resources>
+    <string name="app_name">JavaBaseTest</string>
+    <string name="settle_money_set">结算金额%1$s进入此账户</string>
+
+    <string name="settle_money_small">交易金额小于等于%1$s进入此账户</string>
+    <string name="settle_money_big">交易金额大于%1$s进入此账户</string>
+    <string name="message">消息</string>
+    <string name="translucent_statusbar">4.4及以上透明状态栏，兼容及5.0以上</string>
+
+    <string name="app_name_develop">银联扫码枪开发版</string>
+    <string name="app_company">中付支付科技有限公司</string>
+    <string name="app_first">Copyright  2017年 中付支付. All rights reserved.</string>
+
+    <!-- 菜单 -->
+    <string name="menu_setting">设置</string>
+    <string name="menu_update">检查更新</string>
+    <string name="menu_feedback">意见反馈</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_exit">退出</string>
+
+    <string name="logout_app">您将要退出登录？</string>
+
+    <!-- 注册 -->
+    <string name="register_title">注册</string>
+    <string name="register_ing">注册中</string>
+    <string name="register_loging">注册成功,自动登陆中...</string>
+    <string name="register_mobile">手机注册</string>
+    <string name="register_email">邮箱注册</string>
+    <string name="register_hint_mobile">填写手机号码</string>
+    <string name="register_hint_email">填写电子邮箱</string>
+    <string name="register_hint_merchantno">填写商户号</string>
+    <string name="register_hint_terminalno">填写终端号</string>
+    <string name="register_hint_password">修改登录密码</string>
+    <string name="register_hint_confirm_password">确认登录密码</string>
+    <string name="register_hint_pay_password">设置支付密码</string>
+    <string name="register_hint_pay_confirm_password">确认支付密码</string>
+    <string name="register_hint_validate_code">短信校验码</string>
+    <string name="register_get_validate_code">获取短信校验码</string>
+    <string name="register_hint_email_validate_code">邮箱校验码</string>
+    <string name="register_get_email_validate_code">获取短信校验码</string>
+    <string name="register_password_is_visible">密码可见</string>
+    <string name="register_agree">注册即代表您同意</string>
+    <string name="register_protocol">《服务协议》</string>
+    <string name="register_commit">注册,并自动登录</string>
+    <string name="register_message_send_phone">验证码已经发到手机,请查收</string>
+    <string name="register_hint_number">请输入6-20位登录密码</string>
+    <string name="register_hint_numbers">请输入原密码</string>
+
+    <string name="set_login_pwd">设置登录密码</string>
+
+    <!-- 登录 -->
+    <string name="login_title">登录</string>
+    <string name="login_hint_account">手机号</string>
+    <string name="login_hint_phone">手机号</string>
+    <string name="login_hint_password">登录密码</string>
+    <string name="login_remember_password">记住密码</string>
+    <string name="login_find_password">忘记密码</string>
+    <string name="login_phone_018">4001687018</string>
+
+    <!-- 主页 -->
+    <string name="main_home">首页</string>
+    <string name="main_plan">优计划</string>
+    <string name="main_mine">我的</string>
+    <string name="main_scan">扫一扫付款</string>
+    <string name="main_qr">付款码付款</string>
+    <string name="main_order_amount">订单金额：</string>
+    <string name="main_order_amount_type">HKT </string>
+    <string name="main_order_pay_amount">支付金额：</string>
+    <string name="main_more">查看详情</string>
+    <string name="main_no_more">暂无订单</string>
+    <string name="main_my_jifen">我的积分</string>
+    <string name="trade_data_year">年</string>
+    <string name="trade_data_month">月</string>
+    <string name="trade_data_day">日</string>
+    <string name="trade_jiaoyi">交易：</string>
+    <string name="trade_bi">笔</string>
+    <string name="trade_products_amount">产品金额 </string>
+    <string name="trade_products_pay_amount">扣款金额 </string>
+    <string name="main_integral">使用记录 </string>
+
+
+    <string name="service_exception">服务器异常,请稍后重试.</string>
+
+    <!--退出-->
+    <string name="press_twice_quit">再按一次退出程序</string>
+
+    <string name="query_pay_result">正在查询交易结果...请稍候</string>
+
+
+    <!-- 协议 -->
+    <string name="protocol_title">服务协议</string>
+    <string name="protocol_introduce">用户须知</string>
+    <string name="protocol_sksk">刷卡收款</string>
+    <string name="protocol_skzz">刷卡转账</string>
+    <string name="protocol_xykhk">信用卡还款</string>
+    <string name="protocol_zzhk">转账汇款</string>
+    <string name="protocol_zhtx">账户提现</string>
+    <string name="protocol_sjcz">手机充值</string>
+    <string name="protocol_zfbsk">支付宝收款</string>
+    <string name="protocol_ggsyf">公用事业费缴费</string>
+
+    <!--优计划-->
+    <string name="plan_button">已抢光</string>
+    <string name="plan_button_get">免费领取</string>
+    <string name="plan_button_used">已领取，免费使用</string>
+    <string name="plan_button_succeed">领取成功</string>
+    <string name="plan_button_message">券已放至 我的优惠券 限62开头银行卡使用</string>
+    <string name="plan_button_open">查看优惠券</string>
+    <string name="plan_button_use">立即使用</string>
+
+    <!-- 应用中心 -->
+    <string name="function_title">应用中心</string>
+    <string name="function_bound_card_null">您还没有绑定银行卡，请绑定银行卡后继续</string>
+    <string name="function_set_pwd">您还没有设置支付密码，请先设置支付密码后继续操作</string>
+    <string name="function_add_bank_card">您还没有设置绑定银行卡，请先绑定银行卡后继续操作</string>
+    <string name="function_open_location">无法定位，请打开定位服务</string>
+
+    <!-- 我的账户 -->
+    <string name="account_title">我的账户</string>
+    <string name="account_balance">账户余额</string>
+    <string name="account_bank_card">我的银联卡</string>
+    <string name="account_sino_card">SINO银联卡</string>
+    <string name="account_transaction_record_query">交易记录</string>
+    <string name="account_transaction_my_ticket">我的优惠券</string>
+    <string name="account_trade_history">交易记录查询</string>
+    <string name="account_logout">退出登录</string>
+    <string name="account_language">多语言</string>
+    <string name="account_head_img">头像</string>
+    <string name="account_hello">下午好，</string>
+
+    <string name="my_personal_info">我的</string>
+    <string name="comment_app">评分</string>
+    <string name="comment_tips">"大爷，给个好评吧~~"</string>
+    <string name="comment_accept">"准奏"</string>
+    <string name="comment_reject">"残忍拒绝"</string>
+    <string name="multi_language_chinese">中文</string>
+    <string name="multi_language_english">English</string>
+    <string name="multi_language_zh">繁體中文</string>
+    <string name="set_multi_language">设置语言</string>
+    <string name="set_multi_language_success">设置语言成功</string>
+
+    <string name="account_setting">帐号设置</string>
+
+    <string name="app_re_login_error">账户在其它设备上登录,请重新登录</string>
+
+
+    <!-- 账户信息 -->
+    <string name="userinfo_title">账户信息</string>
+    <string name="account_user_info">用户信息</string>
+    <string name="account_real_name_auth">实名认证</string>
+    <string name="account_modify_password">修改登录密码</string>
+    <string name="account_setting_pay_password">设置支付密码</string>
+    <string name="account_modify_pay_password">修改支付密码</string>
+    <string name="account_find_pay_password">找回支付密码</string>
+    <string name="account_mobile_password">设置手机密码</string>
+
+    <!-- 我的银行卡 -->
+    <string name="bankcard_title">银行卡</string>
+    <string name="bankcard_add">添加银行卡</string>
+    <string name="bankcard_hong_kong_currency">中国香港/澳门-港币</string>
+    <string name="bankcard_singapore_currency">新加坡-新币</string>
+    <string name="bankcard_malaysia_currency">马来西亚-马币</string>
+    <string name="bankcard_other_currency">其它地区/国家-美元</string>
+    <string name="bankcard_fastpay_change">此卡已经开通快捷支付,请换卡</string>
+    <string name="bankcard_not_null">银行卡号不能为空</string>
+    <string name="bankcard_name_null">持卡人姓名不能为空</string>
+    <string name="bankcard_idcard_null">身份证/护照号不能为空</string>
+    <string name="bankcard_idnb_five">证件号需大于5位</string>
+    <string name="bankcard_area_null">开通区域不能为空</string>
+    <string name="bankcard_cvn_null">cvn2或者卡有效期不能为空</string>
+    <string name="bankcard_bound_successful">绑卡成功</string>
+    <string name="bankcard_now_code_pay">是否立即扫码消费？</string>
+    <string name="bankcard_code_pay">扫码消费</string>
+    <string name="bankcard_later_speak">以后再说</string>
+    <string name="bankcard_get_code">获取验证码</string>
+    <string name="bankcard_send_code">验证码已经发到手机,请查收！</string>
+    <string name="bankcard_country">国家</string>
+    <string name="bankcard_number">卡号</string>
+    <string name="bankcard_not_support">暂不支持该银行卡，请更换其他银行卡</string>
+    <string name="bankcard_name">姓名</string>
+    <string name="bankcard_id_number">证件号码</string>
+    <string name="bankcard_valid_number">请输入本人有效证件号码</string>
+    <string name="bankcard_true_name">请输入本人真实姓名</string>
+    <string name="bankcard_own_number">请输入本人银行卡号</string>
+    <string name="bankcard_choose_country">请选择消费所在国家</string>
+    <string name="bankcard_import_phone">请输入</string>
+    <string name="bankcard_import_six_pwd">请输入6位支付密码</string>
+    <string name="bankcard_credit">CVN</string>
+    <string name="bankcard_cvn_number">卡背后三位数字</string>
+    <string name="bankcard_year_month">卡正面有效期，如1608</string>
+    <string name="bankcard_cvn_error">CVN或有效期有误，请重试</string>
+    <string name="bankcard_name_dead">获取的名字写死</string>
+    <string name="bankcard_ic_number">获取的证件号写死</string>
+    <string name="bankcard_phone_number">获取的手机号写死</string>
+    <string name="bankcard_Invalid_again">卡号无效，请重试</string>
+    <string name="bankcard_card_tips">暂无银行卡，点击右上角“添加银行卡”进行绑定</string>
+    <string name="bankcard_zhongdu_card">扫码枪 银行卡</string>
+    <string name="bankcard_international_card">银联国际 银行卡</string>
+    <string name="bankcard_addcard_type">添加类型</string>
+    <string name="bankcard_singapore">新加坡</string>
+    <string name="bankcard_phone_verification">手机号验证</string>
+    <string name="bankcard_import">请输入</string>
+    <string name="bankcard_get_message">收到的短信验证码</string>
+    <string name="bankcard_real_information">填写实名信息</string>
+    <string name="bankcard_Three_Number">CVN输入不能为空</string>
+    <string name="bankcard_period_validity">有效期输入不能为空</string>
+    <string name="bankcard_card_null">输入卡号不能为空</string>
+    <string name="bankcard_id_null">证件号不能为空</string>
+    <string name="bankcard_phone_null">银行卡预留手机号不能为空</string>
+    <string name="bankcard_id_type">证件类型</string>
+    <string name="bankcard_pwd_pay">银行卡预留手机支付密码</string>
+    <string name="bankcard_idtype_null">证件类型不能为空</string>
+    <string name="bankcard_pwd_null">银行卡预留手机支付密码不能为空</string>
+    <string name="bankcard_point_text">点击了</string>
+    <string name="bankcard_unbundling_success">解绑成功</string>
+    <string name="bankcard_safe_card">卡背面三位数字</string>
+
+    <!--  sino银联卡-->
+    <string name="sinocard_title">SINO银联卡</string>
+    <string name="sinocard_hint">Sino卡号</string>
+    <string name="sinocard_keeper">持卡人</string>
+    <string name="sinocard_password">密码</string>
+    <string name="sinocard_bind">绑定</string>
+
+    <!--  sino 详情-->
+    <string name="sinocard_detail_trade_query">交易查询</string>
+    <string name="sinocard_detail_banlance_query">余额查询</string>
+    <string name="sinocard_detail_change_password">修改密码</string>
+    <string name="sinocard_detail_unbound">解除绑定</string>
+
+    <string name="sinocard_query">查询</string>
+    <!-- 添加银行卡 -->
+    <string name="bankcard_edit_title">添加银行卡</string>
+    <string name="bankcard_receive_name">持卡人</string>
+    <string name="bankcard_hint_bank_receive_name">输入持卡人</string>
+    <string name="bankcard_hint_bank_card">输入银行卡号</string>
+    <string name="bankcard_hint_bank_name">开户银行名称</string>
+    <string name="bankcard_hint_bank_province">开户银行省份</string>
+    <string name="bankcard_hint_bank_city">开户银行城市</string>
+    <string name="bankcard_hint_bank_distribute">xx支行/xx储蓄所/xx分理处</string>
+    <string name="bankcard_qr_card">扫码枪银行卡</string>
+    <string name="bankcard_unionpay_card">银联国际银行卡</string>
+    <string name="bankcard_hint_bank_phone">请输入银行预留手机号码</string>
+    <string name="bankcard_hint_id_number">请输入证件号码</string>
+    <string name="bankcard_choose_bound_card_country">选择绑卡国家</string>
+
+    <!-- 提现/转账/信用卡还款 -->
+    <string name="pay_cash_title">账户提现</string>
+    <string name="pay_cash_putong">普通提现</string>
+    <string name="pay_cash_putong_notice">注意: 提现到账需要T＋1个工作日</string>
+    <string name="pay_cash_shishi">实时提现</string>
+    <string name="pay_cash_shishi_notice">注意: 提现到账需要T＋0个工作日</string>
+    <string name="pay_transfer_title">转账汇款</string>
+    <string name="pay_transfer_putong">普通转账</string>
+    <string name="pay_transfer_shishi">实时转账</string>
+    <string name="pay_payment_title">信用卡还款</string>
+    <string name="pay_payment_putong">普通还款</string>
+    <string name="pay_payment_shishi">实时还款</string>
+    <string name="pay_recv_info">收款方信息</string>
+    <string name="pay_phone_number">手机号码</string>
+    <string name="pay_hint_bank_account">选择收款银行卡号</string>
+    <string name="pay_bank_name">银行名称</string>
+    <string name="pay_real_name">持卡用户</string>
+    <string name="pay_pay_info">付款信息</string>
+    <string name="pay_payment_money">付款金额</string>
+    <string name="pay_all_balance">全部</string>
+    <string name="pay_hint_payment_money">输入付款金额</string>
+    <string name="pay_hint_password">输入支付密码</string>
+    <string name="pay_money">可转出金额</string>
+    <string name="pay_default_money">0.00</string>
+    <string name="pay_yuan">元</string>
+    <string name="pay_priolv">银行处理优先</string>
+    <string name="pay_cuspriolv">客户处理优先</string>
+    <string name="pay_percentage">实时交易最大百分比</string>
+    <string name="pay_perent">%</string>
+
+    <!-- 信用卡还款（实时） -->
+    <string name="pay_credit_card_putong_title">信用卡普通还款</string>
+    <string name="pay_credit_card_shishi_title">信用卡实时还款</string>
+    <string name="pay_credit_card_huankuan">还款账号</string>
+    <string name="pay_credit_card_hint_bank_card">选择还款银行卡</string>
+    <string name="pay_credit_card_bank_name">银行名称</string>
+    <string name="pay_credit_card_real_name">持卡用户</string>
+    <string name="pay_credit_card_pay_info">付款信息</string>
+    <string name="pay_credit_card_payment_money">还款金额</string>
+    <string name="pay_credit_card_hint_payment_money">输入还款金额</string>
+    <string name="pay_credit_card_hint_bank_account">付款银行卡号</string>
+    <string name="pay_credit_card_password">输入付款银行卡密码</string>
+    <string name="pay_credit_card_no_password">信用卡无密码支付</string>
+
+    <!-- 刷卡收款 -->
+    <string name="pay_bank_received_title">刷卡收款</string>
+    <string name="pay_bank_received_money">收款金额</string>
+    <string name="pay_bank_received_hint_money">输入收款金额</string>
+    <string name="pay_bank_received_hint_bank_account">付款银行卡号</string>
+    <string name="pay_bank_received_hint_password">输入付款银行卡密码</string>
+    <string name="pay_bank_received_no_password">信用卡无密码支付</string>
+
+    <!-- 刷卡转账 -->
+    <string name="pay_bank_transfer_title">刷卡转账</string>
+    <string name="pay_bank_transfer_recv_info">收款方信息</string>
+    <string name="pay_bank_transfer_hint_bank_card">选择收款银行卡</string>
+    <string name="pay_bank_transfer_bank_name">银行名称</string>
+    <string name="pay_bank_transfer_real_name">持卡用户</string>
+    <string name="pay_bank_transfer_pay_info">付款方信息</string>
+    <string name="pay_bank_transfer_payment_money">转账金额</string>
+    <string name="pay_bank_transfer_hint_payment_money">输入转账金额</string>
+    <string name="pay_bank_transfer_hint_bank_account">付款银行卡号</string>
+    <string name="pay_bank_transfer_hint_password">输入付款银行卡密码</string>
+    <string name="pay_bank_transfer_no_password">信用卡无密码支付</string>
+
+    <!-- 卡卡转账 -->
+    <string name="pay_kaka_transfer_title">卡卡转账</string>
+
+    <!-- 银行卡余额查询 -->
+    <string name="bank_search_title">余额查询</string>
+    <string name="bank_search_hint_info">查询银行卡及密码</string>
+    <string name="bank_search_hint_bank_account">查询银行卡号</string>
+    <string name="bank_search_hint_password">输入银行卡密码</string>
+    <string name="bank_search_no_password">信用卡无密码查询</string>
+
+    <!-- 银行卡余额查询详情 -->
+    <string name="bank_search_detail_title">余额查询</string>
+    <string name="bank_search_detail_card">查询卡号</string>
+    <string name="bank_search_detail_money">卡内余额</string>
+    <string name="bank_search_detail_default_money">0.00</string>
+    <string name="bank_search_detail_yuan">元</string>
+    <string name="bank_search_detail_success">查询成功</string>
+
+    <!-- 银行列表 -->
+    <string name="banklist_title">选择银行</string>
+
+    <!-- 银行信息选择查找 -->
+    <string name="bankbranch_title">信息查找</string>
+    <string name="bankbranch_query_conditions">请输入查询条件</string>
+
+    <!-- 手机权鉴 -->
+    <string name="mobile_quanjian_title">手机权鉴</string>
+    <string name="mobile_quanjian_hint_recharge_phone_number">充值手机号码</string>
+    <string name="mobile_quanjian_hint_confirm_phone_number">确认充值手机号码</string>
+
+    <!-- 手机充值 -->
+    <string name="mobile_recharge_title">手机充值</string>
+    <string name="mobile_recharge_hint_recharge_phone_number">充值手机号码</string>
+    <string name="mobile_recharge_hint_confirm_phone_number">确认充值手机号码</string>
+    <string name="mobile_recharge_text_choose_rechage_amount">请选择充值金额</string>
+    <string name="mobile_recharge_hint_info">支持全国移动、联通、电信。</string>
+    <string name="mobile_recharge_please_choose">选择充值金额</string>
+    <string name="mobile_recharge_commit">立即充值</string>
+    <string name="mobile_recharge_hint_password">输入支付密码</string>
+
+    <!-- 用户信息 -->
+    <string name="user_info_title">用户信息</string>
+    <string name="user_info_mobile">账户：</string>
+    <string name="user_info_sex">性别：</string>
+    <string name="user_info_nickname">昵称</string>
+    <string name="user_info_merchant">商户号</string>
+    <string name="user_info_terminal">终端号</string>
+    <string name="user_info_company">公司</string>
+    <string name="user_info_job">职业</string>
+    <string name="user_info_school">毕业院校</string>
+    <string name="user_info_area">地区</string>
+    <string name="user_info_address">地址</string>
+    <string name="user_info_memo">备注</string>
+    <string name="user_info_hint_nickname">请输入昵称</string>
+    <string name="user_info_hint_merchant">请输入商户号</string>
+    <string name="user_info_hint_terminal">请输入终端号</string>
+    <string name="user_info_hint_company">请输入公司</string>
+    <string name="user_info_hint_job">请输入职业</string>
+    <string name="user_info_hint_school">请输入毕业院校</string>
+    <string name="user_info_hint_area">请输入地区</string>
+    <string name="user_info_hint_address">请输入地址</string>
+    <string name="user_info_hint_memo">请输入备注</string>
+    <string name="user_info_agree">我已阅读并同意</string>
+    <string name="user_info_protocol">《用户须知协议》</string>
+
+    <!-- 实名认证 -->
+    <string name="author_title">实名认证</string>
+    <string name="author_hint_real_name">真实姓名</string>
+    <string name="author_user_type">用户性质</string>
+    <string name="author_hint_company_name">企业名称</string>
+    <string name="author_hint_company_code">企业组织机构代码</string>
+    <string name="author_hint_company_address">企业地址</string>
+    <string name="author_hint_company_email">企业邮箱</string>
+    <string name="author_hint_agent_name">法人姓名</string>
+    <string name="author_hint_agent_identity">法人证件号</string>
+    <string name="author_hint_company_contact_name">企业联系人姓名</string>
+    <string name="author_hint_company_contact_phone">企业联系人电话</string>
+    <string name="author_identity">身份证</string>
+    <string name="author_hint_identity">身份证号码</string>
+    <string name="author_hint_immediateName">直系亲属称呼（如：父亲，母亲等）</string>
+    <string name="author_hint_immediatePhone">直系亲属联系方式</string>
+    <string name="author_hint_imgfront">身份证正面照片</string>
+    <string name="author_hint_imgback">身份证反面照片</string>
+    <string name="author_agree">我已阅读并同意</string>
+    <string name="author_protocol">《用户须知协议》</string>
+    <string name="author_notice"> 注意：实名认证需要T+3个工作日，请您耐心等待。</string>
+
+    <!-- 修改密码 -->
+    <string name="modify_password_title">修改登录密码</string>
+    <string name="modify_pay_password_title">修改支付密码</string>
+    <string name="modify_password_hint_old_password">原密码</string>
+    <string name="modify_password_hint_new_password">新密码</string>
+    <string name="modify_password_hint_confirm_password">确认新密码</string>
+
+    <!-- 找回密码 -->
+    <string name="find_password_title">找回登录密码</string>
+    <string name="find_pay_password_title">找回支付密码</string>
+    <string name="find_password_mobile">手机找回</string>
+    <string name="find_password_email">邮箱找回</string>
+    <string name="find_password_hint_phone_number">手机号</string>
+    <string name="find_password_hint_user_info">用户信息</string>
+    <string name="find_password_identity">身份证</string>
+    <string name="find_password_hint_identity">用户身份证号码</string>
+    <string name="find_password_hint_email">电子邮箱</string>
+    <string name="find_password_hint_new_password">新密码</string>
+    <string name="find_password_hint_confirm_password">确认新密码</string>
+    <string name="find_password_hint_validate_code">短信校验码</string>
+    <string name="find_password_get_validate_code">获取短信校验码</string>
+    <string name="find_password_hint_email_validate_code">邮箱校验码</string>
+    <string name="find_password_get_email_validate_code">获取邮箱校验码</string>
+
+    <string name="find_password_moible_not_exist">手机号不存在,请重试</string>
+    <string name="find_password_get_info_fail">获取后台信息失败,请重试</string>
+    <string name="get_mobile_validate_code">正在获取短信验证码...</string>
+    <string name="get_code_again_after_sixty_second">后重新获取</string>
+    <string name="get_code_again">重新获取</string>
+    <string name="get_code_error_again">获取失败，请重新获取</string>
+
+    <!-- 二维码 -->
+    <string name="code_pay_title">二维码付款</string>
+    <string name="capture_scan_title">扫一扫</string>
+    <string name="capture_scan_text">请将条形码或二维码放入扫描框内</string>
+    <string name="capture_result_title">扫描结果</string>
+    <string name="capture_qrcode_title">生成结果</string>
+
+    <string name="not_support_qrcode">暂不支持该二维码,请重试</string>
+    <string name="qrcode_outof_expiry">二维码已过期,请重试</string>
+
+    <!-- 九宫格解锁 -->
+    <string name="lockscreen_access_pattern_start">"开始绘制图案"</string>
+    <string name="lockscreen_access_pattern_cleared">"图案已清除"</string>
+    <string name="lockscreen_access_pattern_cell_added">"已添加单元格"</string>
+    <string name="lockscreen_access_pattern_detected">"图案绘制完成"</string>
+    <string name="lockpattern_retry_button_text">"重试"</string>
+    <string name="lockpattern_continue_button_text">"继续"</string>
+    <string name="lockpattern_confirm_button_text">"确认"</string>
+    <string name="lockpattern_recording_intro_header">"绘制解锁图案"</string>
+    <string name="lockpattern_settings_help_how_to_record">"如何绘制解锁图案"</string>
+    <string name="lockpattern_recording_incorrect_too_short">"至少连接4个点，请重试"</string>
+    <string name="lockpattern_pattern_entered_header">"图案已记录"</string>
+    <string name="lockpattern_need_to_confirm">"请再次绘制解锁图案"</string>
+    <string name="lockpattern_need_to_unlock_wrong">"与上次输入不一致，请重试"</string>
+    <string name="lockpattern_pattern_confirmed_header">"确认保存新解锁图案"</string>
+    <string name="lockpattern_recording_inprogress">"完成后松开手指"</string>
+    <string name="gesture_unlock_text">请绘制手势密码</string>
+    <string name="gesture_unlock_failtip">5次失败后，需要重新登录。</string>
+    <string name="gesture_unlock_forget">忘记手势密码</string>
+    <string name="gesture_unlock_other">其它方式登录</string>
+    <string name="gesture_guide_text">你可以创建一个解锁图案，这样他人在借用你的手机时，将无法打开应用。</string>
+    <string name="gesture_guide_creat_btn">创建手势密码</string>
+    <string name="gesture_create_text">绘制解锁图案</string>
+    <string name="gesture_create_reset">重绘</string>
+    <string name="gesture_create_right">保存</string>
+    <string name="gesture_guide_title">创建手势密码</string>
+
+    <!-- 图片裁剪 -->
+    <string name="choose_title">请选择图片</string>
+    <string name="choose_photo">本地相册</string>
+    <string name="choose_phone">相机拍照</string>
+
+    <!-- 支付宝 -->
+    <string name="remote_call_failed">Failure calling remote service</string>
+    <string name="confirm_install_hint">"安装提示"</string>
+    <string name="confirm_install">"为保证您的交易安全，需要您安装移动快捷支付，才能进行付款。\n\n点击确定，立即安装。"</string>
+    <string name="check_sign_failed">您的订单信息已被非法篡改。</string>
+
+    <!-- 支付宝收银 -->
+    <string name="alipay_cashier_title">输入金额</string>
+    <string name="alipay_cashier_order_title">支付宝收款</string>
+    <string name="alipay_cashier_remark">收款备注（选填）</string>
+    <string name="alipay_cashier_qrcode">点击扫码</string>
+    <string name="alipay_cashier_order_no">商户订单</string>
+    <string name="alipay_cashier_pay_money">收款金额</string>
+    <string name="alipay_cashier_yuan">元</string>
+    <string name="alipay_cashier_scan_result">输入扫码结果</string>
+
+    <!-- 支付宝收款详情 -->
+    <string name="alipay_cashier_detail">收款详情</string>
+    <string name="alipay_cashier_detail_money">交易金额</string>
+    <string name="alipay_cashier_detail_order">订单信息</string>
+    <string name="alipay_cashier_detail_createtime">创建时间：</string>
+    <string name="alipay_cashier_detail_trade">交易号：</string>
+    <string name="alipay_cashier_detail_note">交易备注：</string>
+
+    <!-- 支付宝撤销 -->
+    <string name="alipay_cashier_drawback_title">撤销</string>
+    <string name="alipay_cashier_drawback_pay_no">支付订单</string>
+    <string name="alipay_cashier_drawback_hint_pay_no">退款支付订单</string>
+    <string name="alipay_cashier_drawback_order_no">商户订单</string>
+    <string name="alipay_cashier_drawback_hint_order_no">退款商户订单</string>
+    <string name="alipay_cashier_drawback_account">退款给</string>
+    <string name="alipay_cashier_drawback_hint_account">退款账户</string>
+    <string name="alipay_cashier_drawback_money">退款金额</string>
+    <string name="alipay_cashier_drawback_hint_money">退款金额</string>
+    <string name="alipay_cashier_drawback_commit">确认退款</string>
+
+    <!-- 收款记录 -->
+    <string name="cashier_title">交易记录查询</string>
+    <string name="cashier_now">当前交易查询</string>
+    <string name="cashier_history">历史交易查询</string>
+    <string name="cashier_history_notice">仅支持查询当前自然月交易</string>
+
+    <!-- 公共事业费 -->
+    <string name="ggsyf_title">公共事业费</string>
+    <string name="ggsyf_dianfei">电费</string>
+    <string name="ggsyf_shuifei">水费</string>
+    <string name="ggsyf_ranqifei">燃气费</string>
+    <string name="ggsyf_guhuakuandai">固话/宽带</string>
+    <string name="ggsyf_youxiandianshi">有线电视</string>
+
+    <!-- 公共事业费缴费 -->
+    <string name="ggsyf_name">用户名称</string>
+    <string name="ggsyf_city">缴费城市</string>
+    <string name="ggsyf_unit">缴费单位</string>
+    <string name="ggsyf_code">缴费户号</string>
+    <string name="ggsyf_scan">缴费条码</string>
+    <string name="ggsyf_number">缴费号码</string>
+    <string name="ggsyf_history">历史欠费</string>
+    <string name="ggsyf_money">缴费金额</string>
+    <string name="ggsyf_mobile">通知手机</string>
+
+    <string name="ggsyf_hint_city">选择缴费城市</string>
+    <string name="ggsyf_hint_unit">选择缴费单位</string>
+    <string name="ggsyf_hint_code">输入缴费户号</string>
+    <string name="ggsyf_hint_scan">输入缴费条码</string>
+    <string name="ggsyf_hint_number">输入缴费号码</string>
+    <string name="ggsyf_hint_money">输入缴费金额</string>
+    <string name="ggsyf_hint_mobile">输入通知手机</string>
+
+    <!-- 更多 -->
+    <string name="more_title">更多</string>
+    <string name="more_help">帮助介绍</string>
+    <string name="more_opinion">意见反馈</string>
+    <string name="more_aboutus">关于我们</string>
+    <string name="more_version">版本信息</string>
+    <string name="more_update">检测更新</string>
+
+    <!-- 帮助 -->
+    <string name="help_title">帮助</string>
+
+    <!-- 用户反馈 -->
+    <string name="feedback_title">用户反馈</string>
+    <string name="feedback_info">欢迎您提出宝贵的意见和建议，您的建议对我们改善服务非常有帮助。</string>
+    <string name="feedback_content_hint">请输入您的反馈意见（字数500以内）</string>
+    <string name="feedback_submit">提交反馈</string>
+    <string-array name="feedback_type">
+        <item>无法登录</item>
+        <item>无法退出</item>
+        <item>其它问题</item>
+    </string-array>
+
+    <!-- 关于我们 -->
+    <string name="about_title">关于我们</string>
+    <string name="about_version_title">当前版本</string>
+    <string name="about_version_info">V{0}</string>
+    <string name="about_phone">联系电话</string>
+    <string name="about_phone_4000">4000181891</string>
+    <string name="about_phone_0755">0755-22957022-8132</string>
+    <string name="get_mobile_failed">暂未获取到热线电话</string>
+
+    <string name="personal_img_move">移动和缩放</string>
+    <string name="select_img_cancel">取消</string>
+    <string name="select_img_sure">选取</string>
+    <string name="personal_camera">拍照</string>
+    <string name="personal_sd_select">从相册选择</string>
+    <string name="personal_select_img">请选择图片</string>
+    <string name="personal_img_upload_failed">图片上传失败</string>
+    <string name="personal_img_upload_success">图片上传成功</string>
+
+    <!-- 提示信息 -->
+    <string name="text_tips">提示</string>
+    <string name="text_china">中国</string>
+    <string name="text_please_choose">请选择</string>
+    <string name="text_find_new_version">发现新版本，请升级</string>
+    <string name="hint_confirm_logout">是否注销当前账户？</string>
+    <string name="hint_confirm_exit">确定退出当前应用？</string>
+    <string name="hint_confirm_delete">是否确认删除？</string>
+    <string name="text_wait">请稍等...</string>
+    <string name="text_changeing">修改中</string>
+    <string name="text_setting">设置中</string>
+    <string name="text_verificationing">验证中...</string>
+    <string name="text_getting">获取中</string>
+    <string name="text_querying">查询中</string>
+    <string name="text_dredgeing">开通中</string>
+    <string name="text_place_order">下单中</string>
+    <string name="text_loadering">加载中...</string>
+    <string name="text_getting_message">获取信息中</string>
+    <string name="text_ok">修改</string>
+    <string name="text_set">设置</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_back">返回</string>
+    <string name="text_retry">重试</string>
+    <string name="text_confirm_btc">确认</string>
+    <string name="text_confirm_msg">确定</string>
+    <string name="text_successful">成功</string>
+    <string name="text_add">新增</string>
+    <string name="text_save">保存</string>
+    <string name="text_close">关闭</string>
+    <string name="text_delete">删除</string>
+    <string name="text_prev">上一步</string>
+    <string name="text_next">下一步</string>
+    <string name="text_second">秒</string>
+    <string name="text_pwd_error">手机号或密码错误，请重试</string>
+    <string name="text_code_error">验证码输入错误，请重试</string>
+    <string name="text_import_again">请再次输入</string>
+    <string name="test_card_number">6217007200057282678</string>
+    <string name="test_id_number">522601199305185418</string>
+    <string name="test_phone_number">17665232288</string>
+    <string name="text_import_agains">请输入新密码</string>
+    <string name="text_import_againss">请再次输入新密码</string>
+
+    <string name="telephone_number_null">手机号码不能为空</string>
+    <string name="phone_number_null">账号不能为空</string>
+    <string name="number_seven_eleven">请输入7-11位帐号</string>
+    <string name="pwd_number_null">密码不能为空</string>
+    <string name="pwd_more_six">请输入至少6位的密码</string>
+    <string name="text_safe_card">为保证资金安全，暂只能绑定商户本人名下的银行卡</string>
+    <string name="text_know">知道了</string>
+
+    <string name="text_officer">军官证</string>
+    <string name="text_protection">护照</string>
+    <string name="text_hometowns">回乡证</string>
+    <string name="text_taiwan">台胞证</string>
+    <string name="text_police">警官证</string>
+    <string name="text_soldier">士兵证</string>
+    <string name="text_other">其它</string>
+
+    <!-- 网络连接 -->
+    <string name="net_tips">网络提示信息</string>
+    <string name="net_set">网络未连接，如果继续，请先设置网络！</string>
+    <string name="net_not_avaible">网络开小差中...,请稍后重试!</string>
+    <string name="set_pay_pwd_notice">您还未设置支付密码,请先到密码管理中设置支付密码.</string>
+
+    <string name="query_pay_result_failed">支付结果查询失败,请稍候到交易记录中查询支付结果</string>
+
+    <!-- 全码付 -->
+    <string name="all_code_pay">全码付</string>
+    <string name="all_pay_code">全码付扫码</string>
+
+    <!--扫码付-->
+    <string name="code_text_title">付款</string>
+    <string name="code_text_pay_amount">付款金额</string>
+    <string name="code_next">下一步</string>
+    <string name="code_pay_for">向“%s”付款</string>
+    <string name="code_pay_user_integral">是否使用积分优惠(%1$s)</string>
+    <string name="chose_pay_way">选择优先付款方式</string>
+    <string name="chose_county_code">选择国家代码</string>
+    <string name="chose_card_tips">优先使用所选付款方式，如付款失败将尝试使用其他方式完成付款</string>
+    <string name="chose_card_pay">更换支付卡</string>
+    <string name="transaction_record">交易记录</string>
+    <string name="transaction_item_header_order_num">交易: %1$s笔</string>
+    <string name="order_amount">订单金额 %1$s %2$s</string>
+    <string name="pay_amount">支付金额 %1$s %2$s</string>
+    <string name="code_scan_please">请扫描二维码！</string>
+    <string name="code_amount_null">金额不能为空</string>
+    <string name="code_amount_mix">金额不能小于0.01</string>
+    <string name="code_query_result">请稍后查询交易结果</string>
+    <string name="code_bound_null">您还没有绑定消费卡，请前去绑卡</string>
+    <string name="my_integral">我的积分</string>
+    <string name="my_cards">我的快捷支付卡</string>
+    <string name="safety_verification_title">安全验证</string>
+    <string name="code_click_light">轻点照亮</string>
+    <string name="code_qrpay_international">银联国际</string>
+    <string name="code_qrpay_zhongfu">扫码枪</string>
+
+    <string name="active_scan_fail">扫描二维码失败,请重试</string>
+
+    <string name="scan_code_text_title">扫一扫付款</string>
+
+    <string name="notice_to_bind_card">暂未绑定银行卡，点击右上角"添加银行卡"后重试！</string>
+    <string name="notice_to_bind_local_card">暂未绑定当前地区银行卡，点击右上角"添加银行卡"后重试！</string>
+
+    <string name="scan_pay_failed">支付失败</string>
+
+    <!--Sino卡-->
+    <string name="sino_card_set">Sino卡设置</string>
+    <string name="sino_pwd_null">卡密码不能为空</string>
+
+    <!-- 设置交易密码-->
+    <string name="pay_set_pwd">设置交易密码</string>
+    <string name="pay_pwd_null">支付密码不能为空</string>
+    <string name="pay_twice_inconformity">两次密码输入不一致</string>
+    <string name="pay_unset_pwd">未设置支付密码</string>
+    <string name="pay_set_pwded">设置支付密码</string>
+    <string name="pay_pwd_reset">重置支付密码</string>
+    <string name="pay_pwd_reset_null">重置支付密码不能为空</string>
+
+    <!--我的优惠券-->
+    <string name="set_item_nouesd">立即使用</string>
+    <string name="set_item_uesd">已使用</string>
+    <string name="set_item_out">已过期</string>
+
+    <!--修改密码-->
+    <string name="modify_pwd_old_null">旧密码不能为空</string>
+    <string name="modify_pwd_new_null">新密码不能为空</string>
+
+    <!--各修改之前-->
+    <string name="matchemail_get_verification">获取验证码(%1$s)</string>
+    <string name="matchemail_send_verification">发送验证码</string>
+    <string name="matchemail_idcard_number_null">证件号码不能为空</string>
+    <string name="matchemail_idcard_six">证件号不少于6位</string>
+
+    <!--輸入金額-->
+    <string name="inputamount_true_code">请扫描正确的二维码</string>
+
+    <!--主頁-->
+    <string name="function_telephone_type">联系方式</string>
+    <string name="function_telephone_number">400-700-6889</string>
+    <string name="function_phone_number">4007006889</string>
+
+    <string name="oversea_mobile">待定</string>
+    <string name="singport_mobile">65523820</string>
+
+    <!--忘记密码-->
+    <string name="forgot_pwd_title">重置密码</string>
+    <string name="forgot_getmessage_null">您还没有获取验证码</string>
+    <string name="forgot_reset_pwd_null">重置密码不能为空</string>
+    <string name="forgot_message_null">验证码不能为空</string>
+
+    <string name="forgot_pwd_input_tip">请输入</string>
+    <string name="forgot_pwd_input_code_tip">收到的短信验证码</string>
+
+    <!--时间格式-->
+    <string name="time_type">yyyy-MM-dd</string>
+
+    <!--消费记录查询-->
+    <string name="cashier_start_end">起始日期不能大于截止日期</string>
+    <string name="cashier_start_and_end">截止日期不能小于起始日期或大于当前日期</string>
+    <string name="cashier_choose_start">选择开始日期</string>
+    <string name="cashier_choose_end">选择结束日期</string>
+
+    <!--消费记录详情-->
+    <string name="cashier_pay_detail">付款详情</string>
+    <string name="cashier_no_special">暂无优惠</string>
+    <string name="cashier_integral_deduction">积分抵扣</string>
+    <string name="cashier_integral_cut">积分抵扣</string>
+    <string name="cashier_use_integral">使用积分</string>
+    <string name="cashier_debit_card">借记卡</string>
+    <string name="cashier_credit_card">信用卡</string>
+
+    <!--生成二維碼-->
+    <string name="amount_chinese_mainland">[中国大陆]</string>
+    <string name="amount_chinese_hongkong">[中国香港]</string>
+    <string name="amount_singapore">[新加坡]</string>
+    <string name="amount_malaysia">[马来西亚]</string>
+    <string name="amount_paycard_change">支付卡变更</string>
+    <string name="amount_card_null">银行卡号不能为空！</string>
+    <string name="amount_paypwd_null">交易密码不能为空！</string>
+
+    <!--银行卡列表-->
+    <string name="account_delete_card">银行卡删除成功</string>
+    <string name="account_relieve_card">是否解除绑定银行卡？</string>
+    <string name="account_relieve_text">解绑</string>
+    <string name="account_number_message">账号信息</string>
+    <string name="account_group1_text">在新加坡消费银行卡</string>
+    <string name="account_group2_text">在马来西亚消费银行卡</string>
+    <string name="account_group3_text">在港澳消费银行卡</string>
+    <string name="account_group4_text">在其他国家消费银行卡</string>
+
+
+    <!--版本号-->
+    <string name="version_number">版本号:</string>
+
+    <!--验证码登录-->
+    <string name="verification_login">验证码登录</string>
+    <string name="verification_code">验证码</string>
+
+    <!--安全验证-->
+    <string name="safety_verification_tips">请输入原支付密码，以验证身份</string>
+    <string name="safety_verification_toast">两次密码不一致，请从新输入</string>
+
+    <!--个人中心-->
+    <string name="personal_time_day">下午好，</string>
+    <string name="personal_name">刘国卿</string>
+    <string name="personal_pwd_manager">密码管理</string>
+    <string name="personal_pay_set">支付设置</string>
+    <string name="personal_other">其它</string>
+    <string name="personal_sonipay">关于SINOPAY</string>
+    <string name="my_list_coupon">我的优惠券</string>
+    <string name="multi_language">多语言</string>
+
+    <string name="call_service_mobile">拨打</string>
+
+    <!--设置登录密码-->
+    <string name="set_login_pwd_again">两次密码不一致，请重新输入</string>
+    <!--修改支付密码-->
+    <string name="modify_pwd_success">密码设置成功</string>
+    <string name="modify_pwd_tips">您可以使用新密码进行相关操作</string>
+
+    <!--设置支付密码-->
+    <string name="set_pwd_six">请输入6位支付密码</string>
+
+    <!--扣款顺序-->
+    <string name="withhold_order">扣款顺序</string>
+    <string name="withhold_auto_choose">系统自动选择</string>
+    <string name="withhold_own_set">个人设置付款方式的优先顺序</string>
+    <string name="withhold_mine_set">个人设置</string>
+    <string name="withhold_press_drag">按住右侧，拖动调整扣款顺序</string>
+
+    <!--其它-->
+    <string name="other_help_center">帮助中心</string>
+    <string name="other_suggestion_feedback">意见反馈</string>
+    <string name="other_push_settings">推送设置</string>
+    <string name="other_invite_friends">邀请好友</string>
+
+    <!--帮助中心-->
+    <string name="help_monday_friday">周一至周五 8:30 - 18:00</string>
+    <string name="help_consume_pay">针对国际消费者国际卡支付</string>
+
+    <!--反馈意见-->
+    <string name="feedback_write">请写下您的宝贵意见或建议，经我司采纳将获得精美礼品一份</string>
+    <string name="feedback_phone_email">QQ／手机／邮箱</string>
+    <string name="feedback_commit">提交</string>
+
+    <!--中付银联扫码枪-->
+    <string name="app_name_">中付银联扫码枪</string>
+
+    <!--关于我们-->
+    <string name="about_us">关于我们</string>
+    <string name="about_give_grade">给我们评分</string>
+    <string name="about_business_cooperation">商务合作</string>
+    <string name="about_service_tel">客服电话</string>
+    <string name="about_own_text">中付支付科技有限公司成立于2007年，注册资本10100万人民币，是国内领先的独立第三方支付企业，根据《中国人民银行信息安全管理规定》，中付支付系统符合《支付卡行业数据安全标准》V1.2及V2.0的相关要求，获得中国信息安全认证中心颁发的《支付系统安全认证证书》。公司的宗旨是为各类企业及个人提供安全、便捷和保密的综合电子支付服务。公司拥有由互联网行业资深创业者、优秀金融界人士和顶尖技术人员所组成的国际化管理团队，在产品开发、技术创新、市场开拓、企业管理和资本运作等方面都具有丰富的经验。公司的业务范围涵盖网上支付、预付卡积分支付、银行卡X收单、支付清算、小额代发工资业务以及商户推广等，为客户提供各种专业的支付结算解决方案。凭借稳健的作风、先进的技术、敏锐的市场洞察力以及极大的社会责任感，我们赢得了银联以及银行等金融机构认同与支持。成为众多金融机构在电子支付领域信任可靠的合作伙伴。\n邮箱：12345@mall.com</string>
+    <string name="business_partner_text">品牌合作/大企业合作\n诚邀各行业企业进行项目合作，充分结合双方资源优势，为客户带来增值服务。\n电话：+86 0755-1234 1234\n邮箱：12345@mall.com\n\n代理合作\n我们已经建立了遍布全国800多个城市的盖网络，真诚相邀全国各地企业、个人代理商与我们共同合作，实现共赢，UPOP将在产品供应、品牌支持、售后服务给予保障，让你后顾无忧、坐享收成。\n电话：+86 0755-1234 1234</string>
+
+    <string name="china_service_tel">中国客服热线</string>
+    <string name="singport_service_tel">新加坡客服热线</string>
+    <string name="hk_service_tel">香港客服热线</string>
+    <string name="aomen_service_tel">澳门客服热线</string>
+    <string name="service_mobile_number">客服电话</string>
+
+
+    <!--交易记录-->
+    <string name="transaction_text">暂无交易记录</string>
+    <!--布局-->
+    <string name="activity_all_code_bound_card">暂未绑定当前地区银行卡\n请绑定银行卡后重试</string>
+    <string name="activity_go_bound">去绑卡</string>
+    <string name="activity_to_own_pay">向个人用户付款</string>
+    <string name="activity_bound_card">请先绑定对应的银行卡</string>
+    <string name="activity_change">更改</string>
+    <string name="activity_pay_detail">付款信息</string>
+    <string name="activity_band_name">银行</string>
+    <string name="activity_phone_number">手机号码:</string>
+    <string name="activity_comment_choose">输入交易备注(可选)</string>
+    <string name="activity_comment">备注:</string>
+    <string name="activity_band_number">卡号:</string>
+    <string name="activity_user_integral">是否使用积分优惠</string>
+    <string name="activity_integral_kuohao">积分)</string>
+    <string name="activity_pay_pwd">输入支付密码</string>
+    <string name="activity_creat_code">生成付款码</string>
+    <string name="activity_consume_country">消费所在地区/国家</string>
+    <string name="activity_bank_number">银行卡号</string>
+    <string name="activity_intobank_number">输入银行卡号</string>
+    <string name="activity_bank_name">持卡人姓名</string>
+    <string name="activity_certificate_number">证件号</string>
+    <string name="activity_id_passport_traffica">身份证/护照/通行证</string>
+    <string name="activity_card_safety_code">卡安全码</string>
+    <string name="activity_safety_three">卡安全码(后3位)</string>
+    <string name="activity_valid">有效期</string>
+    <string name="activity_valid_years">有效期(年在前月在后,例如2609)</string>
+    <string name="activity_bank_telephone">银行预留手机号</string>
+    <string name="activity_telephone">手机号:</string>
+    <string name="activity_telephone_number">手机号</string>
+    <string name="activity_verification_code">短信验证码</string>
+    <string name="activity_open_online_pay">开通在线支付</string>
+    <string name="activity_test_title">测试标题</string>
+    <string name="activity_test_text">测试</string>
+    <string name="activity_commodity_name">商户名称</string>
+    <string name="activity_commercial_order">商户订单号</string>
+    <string name="activity_deal_time">交易时间</string>
+    <string name="activity_bank_type">银行卡类型</string>
+    <string name="activity_import_verification_code">请输入短信验证码</string>
+    <string name="activity_set_new_pwd">设置新密码</string>
+    <string name="activity_import_new_pwd">输入新的登录密码</string>
+    <string name="activity_import_new_pwd_again">请再次输入新的登录密码</string>
+    <string name="activity_import_old_pwd">请输入旧的支付密码</string>
+    <string name="activity_import_new_pay_pwd">请输入新的支付密码</string>
+    <string name="activity_import_new_pay_pwd_again">请再次输入新的支付密码</string>
+    <string name="activity_id_passport">身份证号/护照号</string>
+    <string name="activity_send_verification_code">发送验证码</string>
+    <string name="activity_reset_login_pwd">重置登录密码</string>
+    <string name="activity_please_import_new_pwd">请输入新的登录密码</string>
+    <string name="activity_reset">重置</string>
+    <string name="activity_auto_login">自动登录</string>
+    <string name="activity_import_oldpwd">输入旧密码</string>
+    <string name="activity_import_newpwd">输入新密码</string>
+    <string name="activity_true_new_pwd">确认新密码</string>
+    <string name="activity_coming_soon">敬请期待</string>
+    <string name="activity_integral">积分</string>
+    <string name="activity_use_record">使用记录</string>
+    <string name="activity_order_amount">订单金额</string>
+    <string name="activity_privilege_message">优惠信息</string>
+    <string name="activity_integral_deduction_">积分抵扣HKD-100</string>
+    <string name="activity_use_integral_kuohao">(使用积分1000)</string>
+    <string name="activity_pay_amount">支付金额</string>
+    <string name="activity_deduct_bank">扣款银行</string>
+    <string name="activity_pay_time">交易时间</string>
+    <string name="activity_pay_state">交易状态</string>
+    <string name="activity_merchant_message">商家信息</string>
+    <string name="activity_merchant_number">商户号</string>
+    <string name="activity_merchant_number_maohao">商户号:</string>
+    <string name="activity_terminal_number">终端号</string>
+    <string name="activity_pay_reference_number">交易参考号</string>
+    <string name="activity_order_number">订单号</string>
+    <string name="activity_pay_fail">付款失败</string>
+    <string name="activity_fail_cause">失败原因</string>
+    <string name="activity_import_pay_pwd">请输入6位支付密码</string>
+    <string name="activity_import_pay_pwd_again">请再次输入支付密码</string>
+    <string name="activity_offer_code">请向商家提供此付款码付款</string>
+    <string name="activity_bound_area_card">暂未绑定当前地区银行卡\n请绑定银行卡后重试</string>
+    <string name="activity_card_test">中国民生银行信用卡中国民生银行信用卡（3475）</string>
+    <string name="activity_bound_corresponding_card">请先绑定对应的银行卡</string>
+    <string name="activity_change_card">更换</string>
+    <string name="activity_import_name">请输入姓名</string>
+    <string name="activity_user_message">用户信息</string>
+    <string name="activity_write_phone">请填写手机号</string>
+    <string name="activity_write_bank_phone">请填写银行卡预留手机号</string>
+    <string name="activity_import_email">请输入邮箱</string>
+    <string name="activity_id_protection">请输入身份证号/护照号</string>
+    <string name="activity_set_login_pwd">登录密码设置</string>
+    <string name="activity_login_pwd_set">设置登陆密码</string>
+    <string name="activity_verify_login_pwd">确认登陆密码</string>
+    <string name="activity_six_pwd">请输入6位支付密码，以验证身份</string>
+    <string name="activity_import_paypwd">请输入支付密码</string>
+    <string name="activity_card_pwd">卡密码</string>
+    <string name="activity_merchant_name">商户名称:</string>
+    <string name="activity_order_number_maohao">订单号:</string>
+    <string name="activity_amount">金额:</string>
+    <string name="activity_card_number">卡号:</string>
+    <string name="activity_change_bank_card">更换银行卡</string>
+    <string name="activity_add_new_card">添加新的银行卡</string>
+    <string name="activity_support_type">支持的证件类型</string>
+    <string name="activity_china_id">1.中国大陆居民身份证。</string>
+    <string name="activity_china_hongkong">2.中国香港居民来往内地通行证。</string>
+    <string name="activity_china_Aomen">3.中国澳门居民来往内地通行证。</string>
+    <string name="activity_Singapore">4.新加坡居民身份证。</string>
+    <string name="activity_Malaysia">5.马来西亚居民身份证。</string>
+    <string name="activity_protection">6.护照。</string>
+    <string name="activity_minsheng_banking">民生银行</string>
+    <string name="activity_china_hongkong_aomen">中国香港/澳门</string>
+    <string name="activity_clear">取 消</string>
+    <string name="activity_eliminate">清除</string>
+    <string name="activity_finish">完成</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="activity_fail_err_msg">原因:</string>
+
+
+    <string name="personal_welcome_before_moring">早上好</string>
+    <string name="personal_welcome_moring">上午好</string>
+    <string name="personal_welcome_noon">中午好</string>
+    <string name="personal_welcome_afternoon">下午好</string>
+    <string name="personal_welcome_evening">晚上好</string>
+
+    <string name="scan_pay_success">付款成功</string>
+
+    <string name="query_pay_detail">查看详情</string>
+
+    <string name="pay_success_amount">CNY  18832.00</string>
+    <string name="pay_success_merchant_name">商户名称商户名称</string>
+    <string name="pay_success_order_info">订单金额  </string>
+    <string name="pay_success_credit_info">优惠信息 积分抵扣</string>
+
+    <string name="cashier_pay_result">付款结果</string>
+    <string name="pay_success_mer_name">商户名称</string>
+    <string name="app_pwd_manager_title">密码管理</string>
+
+    <string name="app_modify_login_pwd">修改登录密码</string>
+    <string name="modify_login_pwd_success">设置成功</string>
+
+    <string name="old_pwd_not_null">原密码不能为空</string>
+    <string name="please_input_right_length_old_pwd">请输入6-20位的原登录密码</string>
+    <string name="new_pwd_not_null">新密码不能为空</string>
+    <string name="please_input_right_length_new_pwd">请输入6-20位的新登录密码</string>
+    <string name="please_input_right_pwd">两次密码不一致，请重新输入</string>
+
+    <string name="set_pay_pwd_title">设置支付密码</string>
+
+    <string name="safety_valid">安全验证</string>
+    <string name="pay_pwd_invalid">支付密码不正确</string>
+
+    <string name="confirm_pay_pwd">确认支付密码</string>
+
+    <string name="find_pay_pwd_title">找回支付密码</string>
+
+    <string name="uplan_item_hk">香港</string>
+    <string name="uplan_item_sg">新加坡</string>
+    <string name="uplan_item_my">马来西亚</string>
+    <string name="uplan_item_aomen">澳门</string>
+
+
+    <!-- new add-->
+    <string name="please_input_tips">请输入</string>
+    <string name="receive_mobile_code">收到的短信验证码</string>
+
+    <string name="please_input_six_length_code">请输入6位验证码</string>
+    <string name="text_hk_macao">香港/澳门</string>
+    <string name="text_amount_hk_macao">[香港/澳门]</string>
+    <string name="text_amount_china">[中国]</string>
+    <string name="text_amount_inter">[国际]</string>
+    <string name="uplan_no_message">暂无优惠活动</string>
+    <string name="add_sao_card">添加扫码枪银行卡</string>
+    <string name="add_inter_card">添加银联国际银行卡</string>
+    <string name="text_tips_six">请输入6-20位的新登录密码</string>
+    <string name="have_no_integral">暂无积分</string>
+
+    <string name="transaction_select">筛选</string>
+    <string name="notifcation_check">正在下载中，请查看通知栏！</string>
+
+    <string name="notifcation_updata">立即更新</string>
+    <string name="notifcation_nouodata">暂不更新</string>
+    <string name="Uplan_detail">优计划详情</string>
+
+    <string name="nouse">未使用</string>
+    <string name="used">已使用</string>
+    <string name="outdate">已过期</string>
+
+    <!--11.20新增-->
+    <string name="tv_light_close">轻点关闭</string>
+
+    <string name="pay_success">付款成功</string>
+    <string name="you_plan_detail">优计划详情</string>
+
+    <string name="bank_card_list">银行卡列表</string>
+    <string name="coupons_detail">优惠券详情</string>
+
+    <!--11.22LGQ新增-->
+    <string name="text_go_setting">去设置</string>
+
+    <!--12.19新增-->
+    <string name="login_area_hint">/地区</string>
+    <string name="set_new_six_pwd">请输入新6位支付密码</string>
+    <string name="import_bankcard_name">请输入绑卡所填姓名</string>
+    <string name="import_bankcard_number">请输入绑卡所填银联卡号</string>
+    <string name="reset_phone_code">重置短信验证码将发送至手机</string>
+    <string name="set_pay_pwd">请先设置支付密码后重试</string>
+    <string name="pay_successful">交易成功</string>
+    <string name="choose_country_code">请选择国家/地区</string>
+    <string name="choose_card_type">请选择证件类型</string>
+
+    <string name="pay_user_integral_text">是否使用当前积分(%1$s)</string>
+    <string name="pay_user_discount_integral_text">积分最高抵扣(%1$s)</string>
+    <string name="reset_pwd_code">收到的重置密码验证码</string>
+    <string name="unionpay_purse">银联钱包</string>
+    <string name="card_balance_lack">余额不足</string>
+    <string name="merchant_info_text">商家优惠信息</string>
+    <string name="query_more_text">查看更多</string>
+    <string name="select_coupons_text">选择优惠</string>
+    <string name="coupons_discount_text">优惠(%1$s)</string>
+    <string name="cefication_success">认证成功</string>
+
+    <!-- 绑定银行卡 -->
+    <string name="card_type_text">证件类型</string>
+    <string name="id_card_text">身份证</string>
+    <string name="huzhao_card_text">护照</string>
+    <string name="cvn_text">CVN</string>
+    <string name="input_cvn_hint_text">请输入CVN</string>
+    <string name="expired_text">有效期</string>
+    <string name="input_expired_hint_text">请输入有效期</string>
+    <string name="pay_pwd_text">取款密码</string>
+    <string name="input_pay_pwd_hint_text">请输入银行卡取款密码</string>
+    <string name="click_name_hint_text">中国境内银联卡请填写银行开户预留证件姓名，中国境外银联卡请填写银行开户预留英文姓名或者银行卡正面姓名</string>
+    <string name="bind_card_hint_text">为了保证资金安全，暂只能绑定当前持卡人的银行卡，如需绑定其他持卡人的银行卡，请更换实名信息</string>
+    <string name="change_name_text">更换实名</string>
+    <string name="cvn_null_text">CVN不能为空</string>
+    <string name="expired_null_text">有效期不能为空</string>
+    <string name="pay_pwd_null_text">取款密码不能为空</string>
+
+    <string name="logout_real_name_title_text">注销实名信息</string>
+    <string name="logout_card_hint_text">注销成功后账户信息将产生以下变更</string>
+    <string name="logout_all_card_text">解绑所有银行卡</string>
+    <string name="clear_bind_card_hint_text">系统将为您清空当前账户的绑卡信息</string>
+    <string name="sure_logout_text">确认注销</string>
+
+    <string name="logout_real_name_success">注销成功</string>
+
+    <string name="choose_pay_style">请选择付款方式</string>
+    <string name="uplay_pay">"\"优计划\""优惠支付</string>
+    <string name="discounts_message">扫码享94折优惠，最高折扣300，仅限银联卡号62开头</string>
+    <string name="integral_specific_merchant_used">*积分仅限在特定商户使用</string>
+
+    <string name="back_card_cvn_hint_text">卡背面三位数字</string>
+    <string name="expired_hint_text">有效期</string>
+    <string name="expired_input_hint_text">月份/年份(如 0816)</string>
+
+    <string name="safe_auth_title_text">安全认证</string>
+    <string name="cnv_length_error_text">CVN长度有误</string>
+    <string name="expired_length_error_text">有效期长度有误</string>
+
+    <string name="goto_auth_text">去认证</string>
+    <string name="already_auth_text">已认证</string>
+    <string name="bank_card_detail_text">银行卡详情</string>
+    <string name="unbind_card_text">解绑</string>
+    <string name="cancle_bind_card_text">解除绑定</string>
+    <string name="sure_unbind_bank_card_text">确认解绑银行卡</string>
+    <string name="open_go_authentication">点击开通认证，提升消费安全性</string>
+    <string name="bank_card_pay_pwd_text">银行卡支付密码</string>
+
+    <string name="open_card_tips_text">温馨提示：开通认证，提升消费安全性</string>
+    <string name="open_up_text">银联钱包</string>
+    <string name="open_sg_text">新加坡</string>
+    <string name="open_ml_text">马来西亚</string>
+    <string name="open_hk_mo_text">香港/澳门</string>
+
+    <string name="select_pay_bank_card">请选择支付银行卡</string>
+
+    <string name="modify_login_pwd_success_text">修改登录密码成功</string>
+    <string name="activity_bound_area_card_text">暂未绑定银行卡\n请绑定银行卡后重试</string>
+    <string name="valid_data_tips_text">月份/年份(如08/16)</string>
+    <string name="cvn_data_tips_text">8482 939 (卡背面三位数字)</string>
+
+    <!--2018/05/29新增-->
+    <string name="apply_upopay_btn">申请中付银联预付卡</string>
+
+</resources>

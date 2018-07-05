@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UnionPay</string>
+
+    <string name="common_loading_message">Loading...</string>
+    <string name="common_empty_msg">Sorry,receive data error!\n please try it again~</string>
+    <string name="common_error_msg">Sorry,System error!\n please try it again~</string>
+    <string name="common_no_network_msg">network error!\n please try it again~</string>
+    <string name="ok">confirm</string>
+    <string name="cancel">cancel</string>
+    <string name="text_loadering">Loading...</string>
+
+    <string name="text_no_network">Network unavailable</string>
+    <string name="text_net_error">Request failed,please try again later...</string>
+    <string name="text_user_no">The user does not exist</string>
+    <string name="text_pwd_error">Wrong password</string>
+    <string name="text_no_error">Unknown error</string>
+</resources>
