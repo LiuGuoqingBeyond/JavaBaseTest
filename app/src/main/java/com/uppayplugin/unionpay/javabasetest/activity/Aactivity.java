@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.uppayplugin.unionpay.javabasetest.R;
 
 public class Aactivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
