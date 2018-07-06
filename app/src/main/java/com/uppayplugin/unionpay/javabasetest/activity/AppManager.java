@@ -46,6 +46,7 @@ public class AppManager {
      */
     public void killTopActivity() {
         Activity activity = mActivityStack.lastElement();
+
         killActivity(activity);
     }
 
