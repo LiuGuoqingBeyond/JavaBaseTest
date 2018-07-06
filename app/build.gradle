@@ -78,7 +78,7 @@ android {
             /*manifestPlaceholders = [file_provider_prefix: "com.zhongfu.upop.develop", str: "develop", package_name: "@string/app_name_develop", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://utest.sinopayonline.com:8444/\""    https://u.sinopayonline.com*/
             // http://192.168.1.240:8080/UGateWay/appService
-            manifestPlaceholders = [file_provider_prefix: "com.zhongfu.upop", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
         }
 
@@ -87,7 +87,7 @@ android {
             versionCode rootProject.ext.versionCode
             versionName rootProject.ext.versionName
             dimension "release"   // https://u.sinopayonline.com/
-            manifestPlaceholders = [file_provider_prefix: "com.zhongfu.upop", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
         }
     }
@@ -172,18 +172,21 @@ dependencies {
     //recyclerview侧滑
     compile 'com.yanzhenjie:recyclerview-swipe:1.1.3'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'cn.jiguang.sdk:jpush:3.0.9'// 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
 
-    compile 'cn.jiguang.sdk:jcore:1.1.7'// 此处以JCore 1.1.7 版本为例。
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
 
+    // 此处以JCore 1.1.7 版本为例。
     compile "com.tencent.bugly:crashreport:$rootProject.ext.buglyVersion"
     implementation project(':libcommon')
     implementation files('libs/pinyin4j-2.5.0.jar')
-
     repositories {
         mavenCentral()
         flatDir {
             dirs 'libs'
         }
     }
+//    implementation project(':testdemolib')
+    implementation files('libs/testDemoLib.jar')
 }

@@ -1125,5 +1125,7 @@
 
     <!--2018/05/29新增-->
     <string name="apply_upopay_btn">申请中付银联预付卡</string>
+    <string name="dialogutils_relogin">此账号已在其他设备登陆，若非本人操作请及时联系客服</string>
+    <string name="xzf_open_notice_text">打开系统通知，获取交易通知、活动信息</string>
 
 </resources>

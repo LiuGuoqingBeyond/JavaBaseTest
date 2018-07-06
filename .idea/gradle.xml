@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/AFrameLib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libcommon" />
+            <option value="$PROJECT_DIR$/testdemolib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

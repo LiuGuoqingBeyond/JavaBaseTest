@@ -351,4 +351,5 @@
     <color name="actionsheet_gray">#8F8F8F</color>
     <color name="alertdialog_line">#c6c6c6</color>
     <color name="color_orange">#FF6633</color>
+    <color name="half_transparent">#0000</color>
 </resources>

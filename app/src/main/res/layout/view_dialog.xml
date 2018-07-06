@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_10x">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_bombbox"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_40x"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/medium_text_size" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:fadingEdge="none"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/message_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_10x"
+                    android:layout_marginTop="@dimen/padding_10x"
+                    android:gravity="left|center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:paddingLeft="@dimen/padding_20x"
+                    android:paddingRight="@dimen/padding_20x"
+                    android:text="@string/app_company"
+                    android:textColor="#FF666666"
+                    android:textSize="@dimen/medium_text_size" />
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_01x" />
+
+        <LinearLayout
+            android:id="@+id/btn_panel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_40x"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/positiveButton"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_one_selector"
+                android:text="@string/text_confirm_msg"
+                android:textColor="#FF666666"
+                android:textSize="18.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="match_parent"
+                android:background="#ffd8d8d8" />
+
+            <Button
+                android:id="@+id/negativeButton"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_one_selector"
+                android:text="@string/text_cancel"
+                android:textColor="#FF666666"
+                android:textSize="18.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

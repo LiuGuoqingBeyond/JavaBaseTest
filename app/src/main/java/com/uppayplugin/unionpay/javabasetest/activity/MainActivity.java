@@ -8,11 +8,16 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -32,7 +37,10 @@ import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.testdemolib.Impl.TestDemoImpl;
+import com.example.testdemolib.Interface.TestDemoInterface;
 import com.orhanobut.logger.Logger;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.uppayplugin.unionpay.javabasetest.Interface.GetInter;
 import com.uppayplugin.unionpay.javabasetest.Interface.TestEightListener;
@@ -43,10 +51,15 @@ import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
 import com.uppayplugin.unionpay.javabasetest.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.PayUtils;
+import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
+import com.uppayplugin.unionpay.javabasetest.utils.PublicMethodUtils;
+import com.uppayplugin.unionpay.javabasetest.utils.dialog.OneOrTwoBtnDialogUtil;
+import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetest.utils.net.HTTPSRequestUtils;
 import com.uppayplugin.unionpay.javabasetest.utils.net.NetUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.personal.CircleImageView;
 import com.uppayplugin.unionpay.javabasetest.utils.personal.FileUtil;
+import com.uppayplugin.unionpay.javabasetest.utils.qrcode.QRCodeUtils;
 import com.uppayplugin.unionpay.libcommon.rsa.RSACoder;
 
 import org.json.JSONObject;
@@ -58,6 +71,8 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.TreeMap;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -93,6 +108,16 @@ public class MainActivity extends BaseActivity {
     private PopupWindow popupWindow;
     private TextView toolbarTitle;
     private TimePickerView pvTime;
+    private WindowManager wm;
+    private int displayWidth = 0;
+    @BindView(R.id.image_qr)
+    ImageView imageQr;
+    private Bitmap bitmap;
+    private RxPermissions rxPermissions;
+    private LocationManager locationManager;
+    private String provider;
+    private PreferencesUtil prefs;
+    private TestDemoInterface testDemoInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +129,10 @@ public class MainActivity extends BaseActivity {
         ivHeadImg = findViewById(R.id.iv_head_img);
         tvText = findViewById(R.id.tvText);
         btnText = findViewById(R.id.btn_text);
+        ButterKnife.bind(MainActivity.this);
+        wm = (WindowManager) MainActivity.this.getSystemService(Context.WINDOW_SERVICE);
+        displayWidth = wm.getDefaultDisplay().getWidth();
+        prefs = new PreferencesUtil(this);
 //        toolbarTitle = findViewById(R.id.toolbar_title);
 //        toolbarTitle.setText("标题");
 //        LinearLayout toolbarLayout = findViewById(R.id.toolbarLayout);
@@ -694,7 +723,22 @@ public class MainActivity extends BaseActivity {
         //扫码
 //        openActivity(CaptureActivity.class);
 
-        //
+        //creatCode
+//        showQrCodeImg("www.baidu.com");
+
+        //判断权限
+//        queryPermissions();
+
+        //判断通知
+        /*if(!(prefs.readPrefs(Constant.NOTICE_ENABLE+prefs.readPrefs(Constant.PREFES_MOBILE)).contentEquals("false")) && !PublicMethodUtils.isNotificationEnable(this) ) {
+            showOpenNoticeDialog();
+        }*/
+
+        //打jar作sdk调用
+        testDemoInterface = new TestDemoImpl();
+        testDemoInterface.getMessage(MainActivity.this,"接收到信息了吗？");
+
+
 
 
 
@@ -715,6 +759,89 @@ public class MainActivity extends BaseActivity {
 
 
     }
+    private void showOpenNoticeDialog() {
+        OneOrTwoBtnDialogUtil.getDialogInstance().dialogToShow(mContext, "", getString(R.string.xzf_open_notice_text), getString(R.string.text_cancel), getString(R.string.text_confirm_msg), true, (dialogInterface, i) -> {
+            if (i == 1){
+                dialogInterface.dismiss();
+                prefs.writePrefs(Constant.NOTICE_ENABLE+prefs.readPrefs(Constant.PREFES_MOBILE),"false");
+            }else {
+                dialogInterface.dismiss();
+                PublicMethodUtils.gotoSystemSettting(mContext);
+            }
+        });
+    }
+
+    private void queryPermissions() {
+        rxPermissions = new RxPermissions(this);
+        rxPermissions
+                .requestEach(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                .subscribe(permission -> {
+                    switch (permission.name) {
+                        case Manifest.permission.CAMERA:
+                            Toast.makeText(mContext, "请打开摄像头", Toast.LENGTH_SHORT).show();
+                            break;
+                        case Manifest.permission.READ_PHONE_STATE:
+                            ToastUtils.showLong("请打开存储权限");
+                            break;
+                        case Manifest.permission.ACCESS_COARSE_LOCATION:
+                            new Thread(() -> {
+                                //获取地理位置
+                                getLocation();
+                            }).start();
+                            break;
+                    }
+                }, error -> {
+                });
+    }
+
+    private void getLocation() {
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager.getProvider(LocationManager.NETWORK_PROVIDER) != null
+                || locationManager.getProvider(LocationManager.GPS_PROVIDER) != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            if (locationManager.getProvider(LocationManager.GPS_PROVIDER) != null) {
+                //是否为GPS位置控制器
+                provider = LocationManager.GPS_PROVIDER;
+            } else if (locationManager.getProvider(LocationManager.NETWORK_PROVIDER) != null) {
+                //是否为网络位置控制器
+                provider = LocationManager.NETWORK_PROVIDER;
+            }
+            Location location = locationManager.getLastKnownLocation(provider);
+            if(null != location) {
+                double latitude = location.getLatitude();//维度
+                double longitude = location.getLongitude();//经度
+                String latLongInfo = "维度：" + latitude + "精度:" + longitude;
+                Logger.e("latLongInfo:=" + latLongInfo);
+                prefs.writePrefs(Constant.PREFES_LATITUDE, latitude + "");
+                prefs.writePrefs(Constant.PREFES_LONGITUDE, longitude + "");
+            } else {
+                // TODO: 2018/4/10 新增部分机型获取不到定位信息解决方案
+                Logger.e("null--location");
+
+                locationManager.requestLocationUpdates(provider, 2000, 1, locationListener);
+
+            }
+
+        } else {
+            //无法定位：1、提示用户打开定位服务；2、跳转到设置界面
+            Toast.makeText(this, getString(R.string.function_open_location), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent();
+            i.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivity(i);
+        }
+    }
+
+    private void showQrCodeImg(String qrCode) {
+        bitmap = QRCodeUtils.createQRCodeWithLogo(qrCode, (int) (displayWidth * 0.75),
+                BitmapFactory.decodeResource(getResources(), R.drawable.logo_unionpay));
+        imageQr.setImageBitmap(bitmap);
+    }
+
     @Override
     protected void initData() {
         if (NetUtil.checkNet(this)) {
@@ -1189,4 +1316,34 @@ public class MainActivity extends BaseActivity {
         }
         return  installed;
     }
+
+    LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            Logger.e("null--login_location");
+            if(null != location) {
+                double latitude = location.getLatitude();//维度
+                double longitude = location.getLongitude();//经度
+                String latLongInfo = "维度：" + latitude + "精度:" + longitude;
+                Logger.e("latLongInfo:=" + latLongInfo);
+                prefs.writePrefs(Constant.PREFES_LATITUDE, latitude + "");
+                prefs.writePrefs(Constant.PREFES_LONGITUDE, longitude + "");
+            }
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    };
 }

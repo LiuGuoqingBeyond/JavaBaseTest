@@ -1,1 +1,1 @@
-include ':app', ':AFrameLib', ':libcommon'
+include ':app', ':AFrameLib', ':libcommon', ':testdemolib'

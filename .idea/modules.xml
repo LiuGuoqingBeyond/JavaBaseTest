@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/JavaBaseTest.iml" filepath="$PROJECT_DIR$/JavaBaseTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libcommon/libcommon.iml" filepath="$PROJECT_DIR$/libcommon/libcommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testdemolib/testdemolib.iml" filepath="$PROJECT_DIR$/testdemolib/testdemolib.iml" />
     </modules>
   </component>
 </project>
