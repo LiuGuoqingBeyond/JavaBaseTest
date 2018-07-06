@@ -97,6 +97,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);//禁止截屏
         setContentView(R.layout.activity_main);
         webView = findViewById(R.id.webView);
         imgView = findViewById(R.id.imgView);
