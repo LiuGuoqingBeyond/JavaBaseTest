@@ -741,7 +741,15 @@ public class MainActivity extends BaseActivity {
         //弹出软件盘为英文键盘
 //        openActivity(AutoKeyActivity.class);
 
-        //
+        //字符按Askii码排序
+//        openActivity(AsciiSortActivity.class);
+
+        //pinying4排序
+//        openActivity(PingyinSortActivity.class);
+
+        //字符串chat
+//        ToastUtils.showLong("123".charAt(0)+"");
+
 
 
 
