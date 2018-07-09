@@ -800,10 +800,10 @@ public class MainActivity extends BaseActivity {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
-            if (locationManager.getProvider(LocationManager.GPS_PROVIDER) != null) {
+            if (locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER) != null) {
                 //是否为GPS位置控制器
                 provider = LocationManager.GPS_PROVIDER;
-            } else if (locationManager.getProvider(LocationManager.NETWORK_PROVIDER) != null) {
+            } else if (locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) != null) {
                 //是否为网络位置控制器
                 provider = LocationManager.NETWORK_PROVIDER;
             }
