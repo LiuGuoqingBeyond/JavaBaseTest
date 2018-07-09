@@ -55,7 +55,8 @@ public class MApplication extends BaseApplication {
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(this);
         strategy.setAppVersion(BuildConfig.VERSION_NAME);
 
-        CrashReport.initCrashReport(getApplicationContext(), "2d025c7888", false, strategy);
+        //初始化bugly
+//        CrashReport.initCrashReport(getApplicationContext(), "2d025c7888", false, strategy);
 
     }
 

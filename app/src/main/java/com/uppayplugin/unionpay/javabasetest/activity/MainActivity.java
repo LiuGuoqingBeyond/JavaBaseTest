@@ -735,18 +735,13 @@ public class MainActivity extends BaseActivity {
         }*/
 
         //打jar作sdk调用
-        testDemoInterface = new TestDemoImpl();
-        testDemoInterface.getMessage(MainActivity.this,"接收到信息了吗？");
+        /*testDemoInterface = new TestDemoImpl();
+        testDemoInterface.getMessage(MainActivity.this,"接收到信息了吗？");*/
 
+        //弹出软件盘为英文键盘
+//        openActivity(AutoKeyActivity.class);
 
-
-
-
-
-
-
-
-
+        //
 
 
 
@@ -759,12 +754,13 @@ public class MainActivity extends BaseActivity {
 
 
     }
+
     private void showOpenNoticeDialog() {
         OneOrTwoBtnDialogUtil.getDialogInstance().dialogToShow(mContext, "", getString(R.string.xzf_open_notice_text), getString(R.string.text_cancel), getString(R.string.text_confirm_msg), true, (dialogInterface, i) -> {
-            if (i == 1){
+            if (i == 1) {
                 dialogInterface.dismiss();
-                prefs.writePrefs(Constant.NOTICE_ENABLE+prefs.readPrefs(Constant.PREFES_MOBILE),"false");
-            }else {
+                prefs.writePrefs(Constant.NOTICE_ENABLE + prefs.readPrefs(Constant.PREFES_MOBILE), "false");
+            } else {
                 dialogInterface.dismiss();
                 PublicMethodUtils.gotoSystemSettting(mContext);
             }
@@ -812,7 +808,7 @@ public class MainActivity extends BaseActivity {
                 provider = LocationManager.NETWORK_PROVIDER;
             }
             Location location = locationManager.getLastKnownLocation(provider);
-            if(null != location) {
+            if (null != location) {
                 double latitude = location.getLatitude();//维度
                 double longitude = location.getLongitude();//经度
                 String latLongInfo = "维度：" + latitude + "精度:" + longitude;
@@ -928,7 +924,7 @@ public class MainActivity extends BaseActivity {
     TextSevenListener textSevenListener = new TextSevenListener() {
         @Override
         public void getSevenMessage(Context context, String message) {
-            Toast.makeText(context,message,Toast.LENGTH_LONG).show();
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
         }
     };
     /*TestSixListener testSixListener = new TestSixListener() {
@@ -1297,14 +1293,16 @@ public class MainActivity extends BaseActivity {
             System.out.print(num + " ");
         }
     }
+
     /**
      * 判断手机是否安装某个应用
+     *
      * @param context
-     * @param packageName  应用包名
-     * @return   true：安装，false：未安装
+     * @param packageName 应用包名
+     * @return true：安装，false：未安装
      * 该方法容易报错：java.lang.RuntimeException: Package manager has died
      */
-    public static boolean isAppInstallen(Context context ,String packageName){
+    public static boolean isAppInstallen(Context context, String packageName) {
         PackageManager pm = context.getPackageManager();
         boolean installed = false;
         try {
@@ -1314,14 +1312,14 @@ public class MainActivity extends BaseActivity {
             e.printStackTrace();
             installed = false;
         }
-        return  installed;
+        return installed;
     }
 
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
             Logger.e("null--login_location");
-            if(null != location) {
+            if (null != location) {
                 double latitude = location.getLatitude();//维度
                 double longitude = location.getLongitude();//经度
                 String latLongInfo = "维度：" + latitude + "精度:" + longitude;
