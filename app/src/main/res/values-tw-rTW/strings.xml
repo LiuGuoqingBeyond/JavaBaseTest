@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="xzf_app_name">小微开店Pro</string>
+    <string name="query_device">正在查詢設備信息</string>
+    <string name="disconnet_fail">斷開失敗，請手動斷開</string>
+    <string name="query_device_MD5_err">MD5驗證不正確</string>
+    <string name="query_no_device">未找到該設備</string>
+    <string name="query_device_login">設備已激活,\n請登錄</string>
+    <string name="exit_hint">確認退出？</string>
+    <string name="exit_cancel">取消</string>
+    <string name="exit_confirm">確認</string>
+    <string name="confirm">是</string>
+    <string name="cancel">否</string>
+    <string name="news">消息通知</string>
+    <string name="app_name_zhf">中和付</string>
+    <string name="app_name_zhb">中和寶</string>
+    <string name="app_name_zhzf">中和支付</string>
+    <string name="app_name_mf">貓付</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="netException">網絡連接失敗，請檢查網絡是否正常</string>
+    <string name="forget_pwd">忘記密碼</string>
+    <string name="new_dogotpwd_title">忘記密碼</string>
+    <string name="get_new_phoneNB">請輸入手機號碼</string>
+    <string name="get_old_pwd">請輸入舊密碼</string>
+    <string name="get_new_pwd">請輸入新密碼</string>
+    <string name="new_messagetrue">確認</string>
+    <string name="get_new_message_text">請輸入驗證碼</string>
+    <string name="get_new_message">獲取驗證碼</string>
+    <string name="ChooseMerNo">選擇商戶</string>
+    <string name="Login_netIsNull">網絡請求失敗</string>
+    <string name="click_skip">返回新版登陸</string>
+    <string name="back">返回</string>
+    <string name="fail">查詢信用卡信息失敗！</string>
+    <string name="query_Credit_Card_Info">正在查詢卡信息,請稍後...</string>
+    <string name="exit_tip">再按壹次退出程序</string>
+    <string name="pls_connect_device">請先連接設備</string>
+    <string name="sign_send_success">簽名上送成功</string>
+    <string name="sign_up_exception">簽到程序類異常</string>
+    <string name="program_exception">程序類異常</string>
+    <string name="server_send_exception">服務器返回數據異常</string>
+    <string name="please_bond_credit_card_info1">秒到卡認證</string>
+    <string name="please_bond_credit_card_info2">信用卡與本手刷歸屬同壹人?</string>
+    <string name="credit_card_auth_over_time">信用卡認證已過期,請重新認證！</string>
+    <string name="no_bond_people">未綁定默認收款人。</string>
+    <string name="pls_bond_people">請綁定收款人之後再消費！</string>
+    <string name="default_people">默認收款人</string>
+    <string name="auth_people">認證收款人</string>
+    <string name="TradeCancel">交易取消</string>
+    <string name="isQuery">正在查詢交易信\n息，請稍後...</string>
+    <string name="fragment_consumption_info">秒到時間：星期壹 至 星期日 9:00~22:00\n非秒到時間T+1結算</string>
+    <string name="fragment_consumption_info1">非秒到時間T+1結算</string>
+    <string name="TradeFail">交易失敗</string>
+    <string name="TradeFail_pls_swipe_IC">請插入芯片銀行卡</string>
+    <string name="TradeFail_pls_pwd_err">密碼錯誤</string>
+    <string name="TradeFail_money_not_enough">金額不足</string>
+    <string name="md5Wrong">驗證碼錯誤</string>
+    <string name="exception">異常</string>
+    <string name="unknowFail">未知錯誤</string>
+    <string name="notfoundPic"> 系統目錄下找不到裁剪後的圖片"</string>
+
+    <!-- for test -->
+    <string name="testText">測試Label</string>
+    <string name="testConn">連接設備</string>
+    <string name="testPreTrade">交易預處理</string>
+    <string name="testDoTrade">交易</string>
+    <string name="testResult">交易結果處理</string>
+
+    <!-- ManageTask -->
+    <string name="manage_connct_fair">請求失敗，請重試</string>
+    <string name="manage_connect">交易準備中</string>
+    <string name="manage_task_comm">正在與設備通訊</string>
+    <string name="manage_task_comm_fail">與設備通訊失敗</string>
+    <string name="manage_task_noconnection_detected">請重新連接設備"</string>
+    <string name="manage_task_disconnecting">正在斷開連接</string>
+    <string name="manage_task_fecthdata_from_server">正在接收數據</string>
+    <string name="manage_task_updating_rsa_pubkey">正在更新設備的RSA公鑰</string>
+    <string name="manage_task_update_rsa_pubkey_fail">更新設備的RSA公鑰失敗</string>
+    <string name="manage_task_update_rsa_pubkey_redo">主密鑰已下載過</string>
+    <string name="manage_task_update_main_key">請先下載主密鑰</string>
+    <string name="manage_task_update_rsa_pubkey_succ">更新設備的RSA公鑰成功</string>
+    <string name="manage_task_update_tmk_fail">更新設備的TMK失敗</string>
+    <string name="manage_task_update_tmk_succ">更新設備的TMK成功</string>
+    <string name="manage_task_reconnect_device">連接中...</string>
+    <string name="manage_task_alreadyconnected_device">已連接</string>
+    <string name="manage_task_reconnect_device_succ">連接成功</string>
+    <string name="manage_task_reconnect_device_fail">連接失敗，請確認已開啟設備</string>
+    <string name="manage_task_query_default_payee">正在查詢默認收款人...</string>
+    <string name="auth">未認證收款人，請認證收款人!</string>
+    <!-- TradeTask -->
+    <string name="trade_task_confirming_payee_info">正在審核收款人信息，請稍後!</string>
+    <string name="trade_task_current_device_payee_info_query_result">可通過【我的->結算信息】查詢審核結果</string>
+    <string name="trade_task_rsa_pubkey_download">正在下載RSA公鑰</string>
+    <string name="trade_task_rsa_pubkey_download_fail">RSA公鑰下載失敗</string>
+    <string name="trade_task_rsa_pubkey_download_succ">RSA公鑰下載成功</string>
+    <string name="trade_task_tmk_download">正在下載TMK</string>
+    <string name="trade_task_tmk_download_fail">TMK下載失敗</string>
+    <string name="trade_task_tmk_download_succ">TMK下載成功</string>
+    <string name="trade_task_tmk_activation">正在激活主密鑰</string>
+    <string name="trade_task_tmk_activation_fail">主密鑰激活失敗</string>
+    <string name="trade_task_tmk_activation_succ">主密鑰成功</string>
+    <string name="trade_task_iccard_pubkey_download">正在下載IC卡公鑰</string>
+    <string name="trade_task_iccard_pubkey_download_fail">IC卡公鑰下載失敗</string>
+    <string name="trade_task_iccard_pubkey_download_succ">IC卡公鑰下載成功</string>
+    <string name="trade_task_iccard_params_download">正在下載IC卡參數</string>
+    <string name="trade_task_iccard_params_download_fail">IC卡參數下載失敗</string>
+    <string name="trade_task_iccard_params_download_succ">IC卡參數下載成功</string>
+    <string name="trade_task_iccard_tms_params_download">正在下載IC卡TMS參數</string>
+    <string name="trade_task_iccard_tms_params_download_fail">IC卡TMS參數下載失敗</string>
+    <string name="trade_task_iccard_tms_params_download_succ">IC卡TMS參數下載成功</string>
+    <string name="trade_task_get_netresponse_fail">獲取服務器響應失敗</string>
+    <string name="trade_task_is_signing">正在簽到，請稍後...</string>
+    <string name="trade_task_sign_fail">簽到失敗！</string>
+    <string name="trade_task_main_key_fail">發卡方狀態不正確，請稍後重試</string>
+    <string name="trade_task_sign_succ">簽到成功</string>
+    <string name="trade_task_exception">交易程序類異常！</string>
+    <string name="trade_task_upload_ticket">正在上傳小票</string>
+    <string name="trade_task_upload_ticket_succ">小票上傳成功</string>
+    <string name="trade_task_upload_ticket_fail">小票上傳失敗</string>
+    <string name="trade_task_sign_sixty_area_error">服務器下發62域數據長度不對！</string>
+    <string name="trade_task_sign_no_keydata_fromserver">服務器未下發簽到數據</string>
+    <string name="trade_task_update_work_key_failed">更新設備密鑰失敗！</string>
+    <string name="trade_task_server_send_pnum_failed">服務器下發批次號、流水號失敗！</string>
+    <string name="trade_task_device_updagte_pnum_failed">設備更新批次號、流水號失敗！</string>
+    <!-- 簽名 -->
+    <string name="signTitleUseBlock">請用正楷簽名</string>
+    <string name="signClear">清 除</string>
+    <string name="signSave">完 成</string>
+    <string name="is_loading">正在加載頁面，請稍候...</string>
+    <!-- 照相機 -->
+    <string name="cameraTips">請將證件放入到方框中</string>
+    <string name="cameraTips2">本人同意將消費金額結算給刷卡頭擁有人</string>
+    <string name="tips">  請勾選“本人同意將消費金額結算給刷卡頭擁有人”選擇框</string>
+    <string name="cameraTip">請拍照剛才消費的銀行卡正面</string>
+    <string name="upload_picture">上傳成功</string>
+    <string name="merNoIsNull">商戶號為空</string>
+    <string name="RetrivlRefNumIsNull">交易參考號為空</string>
+    <string name="pictureIsNull">圖片數據為空</string>
+    <string name="pictureIsBig">圖片數據過大</string>
+    <string name="isUploadPhoto">正在上傳圖片...</string>
+    <string name="md5Err">MD5加密錯誤</string>
+    <string name="upload_fail">上傳失敗</string>
+    <string name="upload_exception">上傳異常</string>
+    <string name="downloadFail">下載失敗</string>
+    <string name="get_55_data_fail">獲取55域數據失敗，請返回重新獲取！</string>
+    <string name="trade_money">交易金額不能低於3元！</string>
+
+
+    <!--         管理 升級-->
+    <string name="update_device_is_new">當前已經是最新版本</string>
+    <string name="update_device_pn_is_not_rigth">pn不匹配</string>
+
+    <string name="contact">收款人數據有誤，\n請聯系客服！</string>
+    <string name="cancel_swip_fail">取消失敗,請刷卡！</string>
+    <string name="cancel_swip">正在取消刷卡</string>
+    <string name="company">中付支付科技有限公司全程提供軟件和硬件服務</string>
+    <!-- 認證ka -->
+    <string name="auth_default">認證收款人</string>
+    <string name="Lack_of_data">資料缺失</string>
+    <string name="recent_on_line">近期上線</string>
+
+    <!-- 微信支付相關 -->
+    <string name="save_qrcode">固定收款碼</string>
+    <string name="qrcode_title_text">二維碼收款</string>
+
+    <string name="capture_scan_text">請將條形碼或二維碼放入掃描框內</string>
+    <string name="lockscreen_access_pattern_start">"開始繪制圖案"</string>
+    <string name="lockscreen_access_pattern_cleared">"圖案已清除"</string>
+    <string name="lockscreen_access_pattern_cell_added">"已添加單元格"</string>
+    <string name="lockscreen_access_pattern_detected">"圖案繪制完成"</string>
+
+    <!-- zhanghuan-新增-->
+    <string name="deivce_never_connected">設備未連接過,請先連接設備</string>
+
+    <string name="ok">確認</string>
+    <string name="next">下壹步</string>
+    <string name="aggregation_code_amount">金額</string>
+    <string name="aggregation_code_input_hint">請輸入收款金額</string>
+    <string name="aggregation_code_pay_way">收款方式</string>
+    <string name="aggregation_code_title">二維碼收款</string>
+    <string name="aggregation_qr_title">掃碼支付</string>
+    <string name="aggregation_code_fixed_receipt_code">固定收款碼</string>
+    <string name="quick_payment_title">無卡快捷</string>
+    <string name="unionpay_qr_title">銀聯掃碼</string>
+    <string name="aggregation_hint">溫馨提示：請使用%1$s掃壹掃POS屏幕上方二維碼完成付款</string>
+    <string name="aggregation_alipay_hint">點擊保存圖片，打開%1$s掃壹掃，從相冊中選取二維碼識別，即可完成交易</string>
+    <string name="aggregation_wxpay_hint">因騰訊風控，暫不支持微信相冊掃碼，請用另壹臺手機進行掃壹掃支付</string>
+    <string name="aggregation_union_hint">溫馨提示：此二維碼僅可使用壹次，不得用於重復收款</string>
+    <string name="aggregation_plz_scan_qr_code">請掃描二維碼！</string>
+    <string name="aggregation_other_app">相關應用</string>
+    <string name="aggregation_save_qr_code">保存圖片</string>
+    <string name="aggregation_show_qr_code">顯示二維碼</string>
+    <string name="aggregation_show_on_pos">在POS屏幕顯示</string>
+    <string name="verification_account">賬戶驗證</string>
+    <string name="support_app">支持應用</string>
+    <array name="aggregation_pay_type">
+        <item>支付寶</item>
+        <item>微信</item>
+        <item>QQ錢包</item>
+        <item>銀聯支付</item>
+    </array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="bottom_nav_home">首頁</string>
+    <string name="bottom_nav_credit">申請信用卡</string>
+    <string name="bottom_nav_generalize">推薦有獎</string>
+    <string name="bottom_nav_me">我的</string>
+    <string name="transaction_record">交易記錄</string>
+    <string name="transaction_record_detail">交易詳情</string>
+    <string name="transaction_right">篩選</string>
+    <string name="orderId">訂單號：%1$s</string>
+
+    <!--設置界面-->
+    <string name="setting">設置</string>
+    <string name="setting_modify_pwd">修改密碼</string>
+    <string name="setting_suggest">意見反饋</string>
+    <string name="setting_about_me">關於新中付</string>
+    <string name="setting_logout">退出登錄</string>
+
+    <string name="setting_validation">安全驗證</string>
+    <string name="setting_pwd_tips">請輸入原登錄密碼，以驗證身份</string>
+    <string name="setting_next_one">下壹步</string>
+    <string name="setting_old_pwd">原密碼</string>
+    <string name="setting_hint_old_pwd">請輸入原密碼</string>
+
+    <string name="setting_input_pwd">輸入密碼</string>
+    <string name="setting_input_agin">再次確認</string>
+    <string name="setting_input_hint">請輸入6-20位新登錄密碼</string>
+    <string name="setting_input_hine_agin">請再次輸入密碼</string>
+    <string name="setting_ok">完成</string>
+    <string name="setting_title_pwd">修改登錄密碼</string>
+    <string name="setting_pwd_success">密碼修改成功</string>
+
+
+    <string name="setting_suggest_hint">我們非常重視您給我們提出的寶貴的建議，幫助我們不斷的完善產品，謝謝！</string>
+    <string name="setting_suggest_add">上傳圖片</string>
+    <string name="setting_suggest_contant">填寫您的QQ，手機或者郵箱</string>
+    <string name="setting_suggest_submit">提交</string>
+
+    <string name="setting_pwd_null">密碼不能為空</string>
+    <string name="setting_pwd_ok">請輸入正確的密碼</string>
+    <string name="setting_pwd_nosame">兩次輸入密碼不壹致</string>
+
+
+    <!--關於我們-->
+    <string name="about_me">關於我們</string>
+    <string name="about_function_introduction">功能介紹</string>
+    <string name="about_grade_support">給我們評分，贊壹下</string>
+    <string name="about_official_WeChat">官方微信</string>
+    <string name="about_WeChat_number">微信號:xinzfzf</string>
+    <string name="about_service_tel">客服電話</string>
+    <string name="about_service_number">400-7700-070</string>
+    <string name="about_me_text">Copyright© 2010-2017\n中付支付科技有限公司提供技術支持\n《支付業務許可證》Z2015044000015</string>
+    <string name="about_version">V%1$s</string>
+    <string name="comment_app">評分</string>
+    <string name="comment_tips">"大爺，給個好評吧~~"</string>
+    <string name="comment_accept">"準奏"</string>
+    <string name="comment_reject">"殘忍拒絕"</string>
+    <string name="function_telephone_type">聯系方式</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_call_phone">撥打</string>
+
+    <!--我的設備-->
+    <string name="my_equipment">我的設備</string>
+    <string name="bluetooth_equipment">藍牙設備</string>
+    <string name="equipment_tips">僅顯示已綁定設備，若設備不在列表內，試試“添加設備”</string>
+    <string name="equipment_no_tips">暫無綁定設備，試試添加設備吧</string>
+    <string name="equipment_is_binding">已綁定</string>
+    <string name="equipment_add">添加設備</string>
+
+
+    <!-- 設備連接 -->
+    <string name="device_connect">設備連接</string>
+    <string name="mobile_bt_enable_false">藍牙未開啟</string>
+    <string name="bt_open_tips">點擊下面按鈕進行開啟</string>
+    <string name="open_mobile_bt">打開“藍牙”設置</string>
+    <string name="searching_bt_device">正在搜索刷卡器</string>
+    <string name="confirm_bt_device_opened">請確保刷卡器電源已打開</string>
+    <string name="search_bt_device">search...</string>
+    <string name="can_not_discover_device">未能搜索到設備</string>
+    <string name="click_retry">點擊重試</string>
+
+    <!--密碼登錄界面-->
+    <string name="newclick_skip">設備登錄</string>
+    <string name="login_welcome_use">歡迎使用小微開店Pro</string>
+    <string name="login_phone_number">手機號</string>
+    <string name="login_pwd">密碼</string>
+    <string name="login_register">註冊</string>
+    <string name="login_forget_pwd">忘記密碼？</string>
+    <string name="app_name">新中付</string>
+
+    <!--設備登錄界面-->
+    <string name="device_login">賬號密碼登錄</string>
+
+    <!--添加秒到卡-->
+    <string name="card_add">添加秒到卡</string>
+    <string name="card_myself">秒到卡認證(本人)</string>
+    <string name="card_myself_title">本人秒到卡認證</string>
+    <string name="card_other_title">他人秒到卡認證</string>
+    <string name="card_other">秒到卡認證(他人)</string>
+    <string name="card_tips">溫馨提示：添加秒到卡只針對磁條卡，芯片卡無需秒到認證</string>
+    <string name="card_info">收款人信息</string>
+    <string name="card_shoukuanren">收款人</string>
+    <string name="card_phone">收款人手機號</string>
+    <string name="card_id">收款人身份證號</string>
+    <string name="card_cardinfo">本人信用卡信息</string>
+    <string name="card_preson">持卡人</string>
+    <string name="card_cardinfo_et">請輸入持卡人姓名</string>
+    <string name="card_card_account">銀行賬號</string>
+    <string name="card_card_et">請輸入本人銀行卡賬號</string>
+    <string name="card_please_photo">請拍攝本人銀行卡正面照片</string>
+    <string name="card_photo_bei">請拍攝本人身份證正面照片</string>
+    <string name="card_photo_beis">請拍攝身份證，銀行卡的正面照片</string>
+    <string name="card_tips_success">認證成功</string>
+    <string name="card_success">本人秒到卡認證成功</string>
+    <string name="card_give_account">同意將消費金額結算給此賬戶</string>
+    <string name="card_myself_bei">請拍攝本人身份證背面照片</string>
+    <string name="card_photo_all">請拍攝本人手持身份證正面，銀行卡正面照片</string>
+
+    <!--消息中心-->
+    <string name="message_centre">消息中心</string>
+    <string name="message_sign_read">標記已讀</string>
+    <string name="message_detail">消息詳情</string>
+
+
+    <!-- 自選商圈 -->
+    <string name="zixuanshangquan_title">VIP秒到</string>
+    <string name="fukuanmiaodao">付款秒到</string>
+
+    <string name="oliveapp_step_hint_focus">請正對屏幕</string>
+    <string name="oliveapp_step_hint_mouthopen">請張嘴</string>
+    <string name="oliveapp_step_hint_eyeclose">請眨眼</string>
+    <string name="oliveapp_step_hint_headup">請擡頭</string>
+
+    <string name="fun_loan">流水貸款</string>
+
+
+    <!-- 2018/1/15 歡迎使用銀聯開店Pro -->
+    <string name="text_true_pwd">確認密碼</string>
+    <string name="text_new_pwd">新密碼</string>
+    <string name="text_verification_code">驗證碼</string>
+    <string name="text_choose_device">選擇設備</string>
+    <string name="text_device">設備</string>
+    <string name="text_import_pwd">請輸入密碼</string>
+    <string name="text_import_cellphone">請輸入手機號</string>
+    <string name="text_device_register">設備註冊</string>
+    <string name="text_import_again">請再次輸入新密碼</string>
+    <string name="text_twice_same">兩次密碼不壹致，請重新輸入</string>
+
+    <string name="home_qrcode_pay_text">二維碼收款</string>
+    <string name="home_swipcard_text">刷卡收款</string>
+    <string name="home_nav_pay_title">我要收款</string>
+    <string name="home_nav_record_title">交易明細</string>
+    <string name="home_nav_personal_title">個人中心</string>
+
+
+    <!--海外版新增-->
+    <string name="home_year">年</string>
+    <string name="home_month">月</string>
+    <string name="home_day">日</string>
+    <string name="month_day">%1$s月%2$s日</string>
+    <string name="home_all_collection">今日總收款</string>
+    <string name="qr_collection">二維碼收款(%1$s)</string>
+    <string name="swip_collection">刷卡收款(%1$s)</string>
+    <string name="qr_pay"><font color='#FF999999'>支付</font><font color='#b0000000'>%1$s</font><font color='#FF999999'>筆</font></string>
+    <string name="home_pay">支付</string>
+    <string name="home_bi">筆</string>
+    <string name="pay_count">支付%1$s筆</string>
+
+
+    <string name="mine_information">我的資料</string>
+    <string name="mine_voice">到賬語音播報</string>
+    <string name="mine_modification_pwd">密碼修改</string>
+    <string name="mine_peru_manager">密鑰管理</string>
+    <string name="mine_more_language">多語言</string>
+    <string name="mine_another">其他</string>
+    <string name="mine_base_information">基本資料</string>
+    <string name="mine_merchant_number">商戶號</string>
+    <string name="mine_merchant_name">商戶名稱</string>
+    <string name="mine_currency_information">結算信息</string>
+    <string name="mine_bank_name">銀行名稱</string>
+    <string name="mine_account_name">賬戶名稱</string>
+    <string name="mine_rate_information">費率信息</string>
+    <string name="mine_swiping_card">刷卡</string>
+    <string name="mine_code_scan">二維碼-銀聯掃碼槍</string>
+    <string name="mine_code_purse">二維碼-銀聯錢包</string>
+    <string name="mine_six_login_pwd">請輸入6位數字登錄密碼</string>
+    <string name="mine_again_login_pwd">請再次輸入</string>
+    <string name="mine_download_main_peru">下載主密鑰</string>
+    <string name="mine_sign_in">簽到</string>
+    <string name="mine_app_name">小微開店Pro</string>
+    <string name="mine_merchant_phone">商家熱線</string>
+    <string name="mine_true">確定</string>
+
+    <!--語言-->
+    <string name="multi_easy_chinese">简体中文</string>
+    <string name="multi_unsimplified">繁體中文</string>
+    <string name="multi_language_english">English</string>
+    <string name="multi_language">多語言</string>
+    <string name="multi_setting">設置語言</string>
+
+    <!--二維碼收款-->
+    <string name="request_fail_try_again">請求失敗,請重試</string>
+    <string name="request_code_again">重新加載</string>
+    <string name="save_pay_code">保存收款碼</string>
+    <string name="main_me_pay">掃碼向我付款</string>
+    <string name="union_pay_scan_and_support_weixin_pay">銀聯掃碼槍\n(支持微信掃碼支付)</string>
+    <string name="union_pay_packet_and_support_union_pay">銀聯錢包\n(支持銀聯錢包支付)</string>
+    <string name="accept_permission_hint">權限拒絕可能會影響部分功能使用,建議允許該權限</string>
+
+    <!-- 網絡連接 -->
+    <string name="net_tips">網絡提示信息</string>
+    <string name="net_set">網絡未連接，如果繼續，請先設置網絡!</string>
+    <string name="net_not_avaible">網絡開小差中...,請稍後重試!</string>
+
+    <!--保存圖片-->
+    <string name="main_img_success">保存圖片成功</string>
+    <string name="main_img_fail">保存圖片失敗</string>
+
+    <string name="chose_county_code">選擇國家代碼</string>
+    <string name="text_china">中國</string>
+    <string name="no_data">暫無交易記錄</string>
+    <string name="home_shaixuan">篩選</string>
+
+    <string name="find_pwd">找回密碼</string>
+    <string name="text_know">知道了</string>
+    <string name="text_second">S</string>
+    <string name="get_code_again">重新獲取</string>
+
+    <string name="text_tips">提示</string>
+    <string name="dialogutils_relogin">此賬號已在其他設備登陸，若非本人操作請及時聯系客服</string>
+    <string name="matchemail_send_verification">發送短信驗證碼</string>
+
+    <string name="text_loadering">加載中...</string>
+    <string name="telephone_number_null">手機號碼不能為空</string>
+    <string name="number_seven_eleven">請輸入7-11位手機號</string>
+    <string name="forgot_getmessage_null">您還沒有獲取驗證碼</string>
+    <string name="pwd_number_null">密碼不能為空</string>
+    <string name="login_six_pwd">請輸入6位數字密碼</string>
+    <string name="forgot_reset_pwd_null">重置密碼不能為空</string>
+    <string name="please_six_again_pwd">請輸入6位重置密碼</string>
+    <string name="please_six_login_pwd">請輸入6位登錄密碼</string>
+    <string name="pay_twice_inconformity">兩次密碼不壹致，請重新輸入</string>
+    <string name="forgot_message_null">驗證碼不能為空</string>
+    <string name="please_input_six_length_code">請輸入6位驗證碼</string>
+
+    <string name="filing_info_commit_notice">為保障收款功能正常使用,請完善商戶資料後使用</string>
+    <string name="btn_filing_info_commit">資料提交</string>
+
+    <string name="old_pwd_not_null">原密碼不能為空</string>
+    <string name="please_six_old_pwd">請輸入6位原密碼</string>
+    <string name="new_pwd_not_null">新密碼不能為空</string>
+    <string name="please_six_new_pwd">請輸入6位新密碼</string>
+    <string name="service_exception">服務器異常,請稍後重試.</string>
+
+    <string name="phone_show_code">手機顯示二維碼</string>
+    <string name="phone_show_code_to_mpos">MPOS屏幕投放</string>
+
+    <!--登錄-->
+    <string name="please_link_device">請先鏈接設備</string>
+    <string name="have_no_authorization">部分權限未授權。可能會影響您的使用。</string>
+    <string name="new_login_fail">登錄失敗</string>
+
+    <string name="tv_tradeing_title">交易中</string>
+    <string name="current_no_device_connect_text">當前無連接設備，是否連接?</string>
+    <string name="tv_settlement"> 結算金額:</string>
+
+    <string name="tv_collection">收款：</string>
+    <string name="tv_number">筆數：</string>
+    <string name="tv_tips_undo">確認撤銷此交易？</string>
+    <string name="tv_undo">撤銷</string>
+    <string name="tv_revoke_amount">撤銷金額</string>
+    <string name="tv_revoke_time">撤銷時間</string>
+    <string name="tv_trade_info">交易信息</string>
+
+
+    <string name="tv_trade_type">交易類型</string>
+    <string name="tv_trade_cardnum">卡號</string>
+    <string name="tv_trade_amount">交易金額</string>
+    <string name="tv_trade_time">交易時間</string>
+    <string name="tv_trade_num">參考號</string>
+    <string name="tv_trade_ticket">交易小票</string>
+    <string name="tv_trade_open">點擊查看</string>
+    <string name="tv_trade_old_num">原參考號</string>
+    <string name="tv_trade_chukuan_info">出款信息</string>
+    <string name="tv_trade_rate">手續費率</string>
+    <string name="tv_trade_handrate">手續費</string>
+    <string name="tv_trade_jiesuan_amount">結算金額</string>
+    <string name="tv_trade_stuta">結算狀態</string>
+    <string name="tv_jiesuan_time">結算時間</string>
+    <string name="key_manager_content">連接</string>
+    <string name="has_find_pos">已搜索到POS</string>
+    <string name="please_wait_amount">請稍等</string>
+    <string name="part_permission_fail">部分權限請求失敗，可能會影響程序使用。請到設置界面賦予權限。</string>
+    <string name="no_signature">您有未簽名的小票。是否簽名？</string>
+    <string name="have_no_message">暫無消息</string>
+    <string name="merchant_info_error_tips">商戶信息有誤，請聯系客服後重試!</string>
+
+    <!--國際化-->
+    <string name="has_cell_phone">手機號已存在</string>
+    <string name="no_bound_tid">終端未綁定</string>
+    <string name="no_bound_mid">商戶號未登記</string>
+    <string name="no_bound_phone">手機號綁定失敗</string>
+    <string name="login_exceptions">異常</string>
+    <string name="login_error">登錄失敗</string>
+    <string name="phone_number_wrong">手機號碼不正確</string>
+    <string name="device_connect_fail">設備連接失敗,請重試</string>
+    <string name="device_connect_wrong">連接設備異常，請重啟應用後再試</string>
+    <string name="device_not_connect">設備未連接</string>
+    <string name="must_connect_device">確定要連接嗎？</string>
+    <string name="get_message_cancel">獲取刷卡信息時取消交易</string>
+    <string name="get_message_fail">獲取刷卡信息失敗</string>
+    <string name="credit_card_successfully">刷卡成功\n</string>
+    <string name="card_type_magnetic">卡片類型:磁條卡</string>
+    <string name="card_type_ic">卡片類型:IC卡</string>
+    <string name="fifty_five_region">\n55域:</string>
+    <string name="second_track_information">\n二磁道等效數據:</string>
+    <string name="period_of_validity">\n有效期</string>
+    <string name="sign_append_information">\n簽名附加數據:</string>
+    <string name="get_pwd_cancel">獲取密碼取消</string>
+    <string name="get_pwd_timeout">獲取密碼超時</string>
+    <string name="get_pwd_information_timeout">獲取密碼信息時超時</string>
+    <string name="get_pwd_fail">獲取密碼失敗</string>
+    <string name="get_pwd_success">獲取密碼成功\n</string>
+    <string name="credit_cannot_authentication">信用卡尚未認證</string>
+    <string name="t_and_one_account">T+1到賬</string>
+    <string name="real_time_account">實時到賬</string>
+    <string name="my_card">本人卡</string>
+    <string name="others_card">他人卡</string>
+    <string name="has_open_voice">已開通語音播報</string>
+    <string name="has_close_voice">已關閉語音播報</string>
+    <string name="consumer_trade">消費</string>
+    <string name="change_picture_error">轉換照片異常</string>
+    <string name="no_uploading_picture">您的磁條卡尚未上傳圖片，為保證資金正常結算,請拍磁條卡正面圖片</string>
+    <string name="verify_import_six_pwd">為保障賬戶安全,請輸入6位登錄密碼</string>
+    <string name="revoke_result">撤銷結果</string>
+    <string name="revoke_success">撤銷成功</string>
+    <string name="revoke_fail">撤銷失敗</string>
+    <string name="revoke_error_why">原因：%1$s</string>
+    <string name="mine_result">結算</string>
+    <string name="currency_information_eml">結算信息發送至郵箱</string>
+    <string name="login_pwd_error">密碼錯誤,請重新輸入</string>
+
+    <string name="pos_param_download">POS參數下載</string>
+
+
+    <string name="revoke_trade_ing_text">撤銷中,請稍候...</string>
+    <string name="revoke_down_param_success">終端參數更新成功</string>
+    <string name="send_ticket_text">發送</string>
+    <string name="send_ticket_title_text">發送小票</string>
+    <string name="ticket_send_to_email">小票發送至郵箱</string>
+    <string name="get_ticket_failed_tips">小票獲取失敗,請退出重試</string>
+
+    <string name="email_not_null_tips">郵箱不能為空</string>
+    <string name="input_right_email_tips">請輸入合法的郵箱</string>
+
+    <string name="qr_pay_success">收款成功</string>
+    <string name="end_mobile_text">手機尾號:</string>
+
+    <!--整理不確認的是否用到的   文字國際化-->
+    <string name="text_not_net">網絡不可用</string>
+    <string name="please_error_again">請求失敗，請稍後再試...</string>
+    <string name="have_no_hot_line">暫未支持撥打熱線</string>
+    <string name="have_no_small_ticket">暫無小票信息</string>
+
+
+    <!--可能用不上的翻譯-->
+    <string name="id_card">身份證</string>
+    <string name="credit_id_card_head">請認證身份證頭像面</string>
+    <string name="credit_id_card_no_head">請認證身份證國徽面</string>
+    <string name="id_card_no_head">國徽面</string>
+    <string name="id_card_head">頭像面</string>
+    <string name="id_card_name">姓名</string>
+    <string name="bank_card">銀行卡</string>
+    <string name="bank_card_no_number">銀行卡號不能為空</string>
+    <string name="choose_bank_city">選擇開戶銀行城市</string>
+    <string name="choose_bank_bank">請選擇開戶銀行</string>
+    <string name="face_discern">人臉識別</string>
+    <string name="please_just_screen">請正對屏幕</string>
+    <string name="upload_info">上傳資料</string>
+    <string name="face_discern_success">人臉識別成功</string>
+    <string name="gather_face_discern">采集人臉</string>
+    <string name="error_tips_again">未知異常，請稍後再試</string>
+    <string name="system_error">系統錯誤</string>
+    <string name="authentication_success_again_login">認證成功，請重新登錄</string>
+    <string name="id_card_head_face">身份證頭像面</string>
+    <string name="id_card_national_emblem">身份證國徽面</string>
+    <string name="get_picture_error">獲取圖像失敗，請重試</string>
+    <string name="merchant_authentication">商戶認證</string>
+    <string name="has_copy_wechat">已復制微信號到剪貼板</string>
+    <string name="oneself_second_authentication">本人秒到卡認證</string>
+    <string name="others_second_authentication">他人秒到卡認證</string>
+    <string name="card_authentication_query">秒到卡認證查詢</string>
+    <string name="tips_add_card">溫馨提示：添加秒到卡只針對磁條卡，芯片卡無需秒到認證</string>
+    <string name="card_id_bank">請拍攝身份證，銀行卡的正面照片</string>
+    <string name="submit_success_wait">提交成功，請等待認證結果！</string>
+    <string name="please_import_card_number">請輸入卡號</string>
+    <string name="other_card_success">他人秒到卡認證成功</string>
+    <string name="modify_change_information">修改結算信息</string>
+    <string name="submit_information_success">提交資料成功,請耐心等待審核</string>
+    <string name="upload_error_again">上傳失敗,請稍後重試!</string>
+    <string name="bank_card_null">銀行卡號不能為空</string>
+    <string name="please_change_bank">請選擇銀行卡銀行</string>
+    <string name="please_picture_yourself">請拍攝本人銀行卡及身份證照片</string>
+    <string name="please_card_id_yourself">請拍攝本人身份證國徽面照片</string>
+    <string name="please_card_id_head_yourself">請拍攝本人手持身份證頭像面、銀行卡正面照片</string>
+    <string name="picture_compress_error">圖片壓縮失敗</string>
+    <string name="please_import_yourself_bank_card">請輸入本人銀行卡號</string>
+    <string name="open_city">開戶城市</string>
+    <string name="belong_bank">所屬銀行</string>
+    <string name="find_login_pwd">找回登錄密碼</string>
+    <string name="set_login_pwd">設置登錄密碼</string>
+    <string name="text_login">登錄</string>
+    <string name="audit_no_pass">審核未通過</string>
+    <string name="audit_doing_pass">正在審核</string>
+    <string name="audit_pass">審核通過</string>
+    <string name="modify_settle_information">修改結算信息</string>
+    <string name="retroactively_information">補交收款人認證資料</string>
+    <string name="unknown">未知</string>
+    <string name="unknown_unknown">未知,未知</string>
+    <string name="id_card_number">身份證號</string>
+    <string name="payee_information">收款信息</string>
+    <string name="bank_card_number">銀行賬號</string>
+    <string name="payee_number">收款人號</string>
+    <string name="approve_information">審批信息</string>
+    <string name="approve_status">審批狀態</string>
+    <string name="approve_time">審批時間</string>
+    <string name="remarks">備註</string>
+    <string name="user_new_pwd">您可以使用新密碼進行相關操作</string>
+    <string name="account_register">賬號註冊</string>
+    <string name="referrer">推薦人</string>
+    <string name="have_no_open">功能暫未開放，盡情期待</string>
+    <string name="start_time">起始時間不能小於結束時間</string>
+    <string name="transcation_query">交易記錄查詢中\n請稍等</string>
+    <string name="verification_success">驗證成功</string>
+    <string name="please_login_pwd">請輸入登錄密碼</string>
+    <string name="text_login_pwd">登錄密碼</string>
+    <string name="account_suface">為保證賬戶安全.請輸入登錄密碼</string>
+    <string name="doing_get_message">正在獲取</string>
+    <string name="surpport_bank">支持銀行</string>
+    <string name="change_device">切換設備</string>
+    <string name="song_typeface">宋體</string>
+    <string name="choose_device">請選擇設備</string>
+    <string name="information_upload_success">資料上傳成功</string>
+    <string name="signature_upload_success">簽名上傳成功</string>
+    <string name="pay_success">支付成功</string>
+    <string name="pay_money">交易金額:</string>
+    <string name="pay_time">交易時間:</string>
+    <string name="order_number">訂單號:</string>
+    <string name="save_fail">保存失敗</string>
+    <string name="get_merchant_fail">獲取商戶號失敗</string>
+    <string name="please_set_picture">請在"設置"-"應用管理"-"權限管理"中打開相機權限</string>
+    <string name="picture_error">相機錯誤！</string>
+    <string name="photo_picture">拍照</string>
+    <string name="doing_get_code">正在獲取二維碼</string>
+    <string name="upload_over">加載完畢！</string>
+    <string name="china_pay_copyright">中付支付 版權所有 ©2017️</string>
+    <string name="switch_yourself_name">刷卡頭擁有人姓名:</string>
+    <string name="switch_yourself_phone_number">刷卡頭擁有人手機號:</string>
+    <string name="switch_yourself_id_number">刷卡頭擁有人身份證號:</string>
+    <string name="debit_card">借記卡</string>
+    <string name="credit_card">信用卡</string>
+    <string name="payment_received">已到賬</string>
+    <string name="paragraph_error">出款失敗</string>
+    <string name="paragraph_has_send">出款 已發送</string>
+    <string name="t_and_one_settle">T+1結算</string>
+    <string name="unionpay">銀聯支付</string>
+    <string name="audit_not_pass">審核不通過</string>
+    <string name="wait_audit">待審核</string>
+    <string name="merchant_no_credit_card">當前商戶無認證信用卡</string>
+    <string name="doing_query">正在查詢...</string>
+    <string name="query_success">查詢成功</string>
+    <string name="merchant_isnull">商戶終端號為空，暫不能進入</string>
+    <string name="commit_success">提交成功，請等待認證結果！</string>
+    <string name="request_http_error">請求地址錯誤</string>
+    <string name="downloading_install_package">正在下載最新安裝包,您可以在通知欄查看進度</string>
+    <string name="manager_success">成功</string>
+
+    <string name="btn_save_to_gallery">保存至相冊</string>
+
+
+    <string name="checked_update_tips">檢測到更新</string>
+    <string name="press_twice_quit">再按壹次退出程序</string>
+    <string name="notifcation_check">正在下載中，請查看通知欄！</string>
+    <string name="notifcation_updata">立即更新</string>
+    <string name="notifcation_nouodata">暫不更新</string>
+
+    <string name="pos_paramer_setting_text">參數設置</string>
+    <string name="ic_paramter_download_text">IC卡參數</string>
+    <string name="ic_paramter_download_aid">添加AID</string>
+    <string name="ic_paramter_download_rid">添加RID</string>
+    <string name="ic_paramter_aid_download_fail">添加AID失敗</string>
+    <string name="ic_paramter_aid_download_success">添加AID成功</string>
+    <string name="ic_paramter_rid_download_fail">添加RID失敗</string>
+    <string name="ic_paramter_rid_download_success">添加RID成功</string>
+    <string name="request_service_timeout_text">請求超時，請查詢是否已扣款，避免重復操作</string>
+    <string name="revoke_service_timeout_text">撤銷請求超時,請刷新交易記錄,查詢撤銷結果</string>
+    <!--2018/03/02后补国际化-->
+    <string name="register_info_downloading_mainkey">正在下載主密鑰</string>
+
+    <!--2018/04/25新增-->
+    <string name="union_pay_scan_and_support_weixin_pay_extend">支持微信掃壹掃</string>
+    <string name="union_pay_packet_and_support_union_pay_extend">雲閃付</string>
+    <string name="please_pressed_text">請按</string>
+    <string name="merchant_simple_name">店鋪名稱</string>
+
+    <string name="xzf_open_notice_text">打開系統通知，獲取交易通知、活動信息</string>
+
+    <!--2018/05/08新增-->
+    <string name="union_pay_scan">銀聯掃碼槍</string>
+    <string name="home_pay_text">公眾號支付</string>
+    <string name="home_pay_tips">支持銀聯掃碼槍，雲閃付，微信公眾號掃壹掃支付</string>
+</resources>

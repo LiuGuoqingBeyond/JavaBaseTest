@@ -750,6 +750,12 @@ public class MainActivity extends BaseActivity {
         //字符串chat
 //        ToastUtils.showLong("123".charAt(0)+"");
 
+        //添加多语言
+//        openActivity(MultiLanguageActivity.class);
+
+        //图片按比例缩放
+        //其实<ImagView 标签添加这个属性即可android:adjustViewBounds="true"
+
 
 
 

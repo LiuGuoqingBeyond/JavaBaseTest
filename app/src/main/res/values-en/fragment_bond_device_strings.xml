@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- login页字符串 -->
+    <string name="fragment_bond_device_name">mPos1448515153</string>
+    <string name="fragment_bond_device_mac">EF:ED:DE:FE:ED:23</string>
+    <string name="fragment_bond_device_bt_title">Add device</string>
+    <string name="fragment_bond_device_read_sn">Connection successful, obtaining SN, Please wait&#8230;</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="trade_result">Transaction result</string>
+<string name="trade_result_card">Card number：</string>
+<string name="trade_result_card_no">5666453********4546</string>
+<string name="trade_result_money">Amount：</string>
+<string name="trade_result_moneys">Transaction amount：</string>
+<string name="trade_result_money_no">0.01元</string>
+<string name="trade_result_time">Transaction time：</string>
+<string name="trade_result_time_no">2015-10-30 19:15:52</string>
+<string name="trade_result_query">Query of receipts：</string>
+<string name="trade_result_send_photo">Image uploading：</string>
+<string name="trade_result_upload_photo">Upload the image</string>
+
+<string name="trade_result_query_btn">Check the receipt</string>
+<string name="trade_result_whether_withdrawals">Withdraw immediately？</string>
+<string name="trade_result_withdrawalsing">Processing, please wait</string>
+<string name="trade_result_withdrawals_succ">Transaction successful, is expected to arrive within 30 seconds!</string>
+<string name="trade_result_withdrawals_fail">Withdraw fail</string>
+<string name="trade_result_withdrawals_cancel">Cancel</string>
+<string name="trade_result_withdrawals_confirm">Confirm</string>
+<!-- 提现报文服务器响应 -->
+    <string name="trade_result_withdrawals_get_amount_fail">Failed to get the transaction amount</string>
+    <string name="trade_result_withdrawals_input_amount_wrong">Incoming amount error</string>
+    <string name="trade_result_withdrawals_beyond_valide_date">Not within the payment time frame</string>
+    <string name="trade_result_withdrawals_no_bond_payee_found">Credit card holder is not binding with default payee</string>
+    <string name="trade_result_withdrawals_default_payee_null">The default payee is empty</string>
+    <string name="trade_result_withdrawals_verifying">Already paid. Is under verification or payment processing</string>
+    <string name="trade_result_withdrawals_device_unknown">Swipe information is empty</string>
+    <string name="trade_result_withdrawals_amount_beyond_limit">Payee has reached the transaction limit this month</string>
+    <string name="trade_result_withdrawals_amount_input_largger_than_total">Incoming transaction amount exceeds total transaction amount</string>
+    <string name="trade_result_withdrawals_amount_wrong">Settlement amount error</string>
+    <string name="trade_result_withdrawals_string_back_exception">Return exceptional</string>
+    <string name="trade_result_withdrawals_md5_verify_error">Md5Str Error</string>
+    <string name="trade_result_withdrawals_no_trade_record_detected">Unable to find transaction record</string>
+    <string name="trade_result_withdrawals_amount_not_satisfied">The withdrawal amount is not satisfied</string>
+    <string name="trade_result_withdrawals_unkonw_error">Unknown error</string>
+</resources>

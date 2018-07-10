@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="conn_device_task_is_connecting">Connecting to device, please eait&#8230;</string>
+    <string name="conn_device_task_connect_fail">Connection failed, please try again!</string>
+    <string name="conn_device_task_connect_right">Connection successful!</string>
+    <string name="conn_device_task_init_fail">Device failed to initialize. Please try again!</string>
+
+</resources>

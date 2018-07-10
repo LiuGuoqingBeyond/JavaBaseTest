@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- login页字符串 -->
+<string name="pay_money_info">Waiting for user to input amount</string>
+<string name="pay_money_hint">Amount:0.01</string>
+
+<string name="wait_user_swip_card">Please swipe or insert/tap the card</string>
+<string name="wait_user_swip_card1">Please swipe or insert the card</string>
+<string name="obtain_swip_card_info_fail">Failed to get card info, please try again</string>
+<string name="obtain_swip_card_info_timeout">Time out</string>
+<string name="obtain_swip_card_info_communication_timeout">Communication time out</string>
+<string name="pls_input_pwd">Please input password on POS</string>
+<string name="obtain_pwd_fail">Failed to get password</string>
+<string name="obtain_mac_fail">Fail to get MAC</string>
+<string name="pls_input_money">Please input amount</string>
+<string name="trade_success">Transaction successful</string>
+<string name="server_response_err">Server response error</string>
+<string name="init_device">Obtaining device info \n please wait...</string>
+</resources>

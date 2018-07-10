@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="conn_device_task_is_connecting">正在連接設備\n請稍後&#8230;</string>
+    <string name="conn_device_task_connect_fail">連接失敗，請重試！</string>
+    <string name="conn_device_task_connect_right">連接成功！</string>
+    <string name="conn_device_task_init_fail">設備初始化失敗，請重試！</string>
+
+</resources>

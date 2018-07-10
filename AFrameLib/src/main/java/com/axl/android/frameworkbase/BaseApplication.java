@@ -16,6 +16,9 @@ public class BaseApplication extends MultiDexApplication {
 
     // 当前系统是否设置为英文系统
     private static boolean englishSystem = false;
+    // FIXME: 2017/12/8 Lgq当选择一语言时，其它两个语言为false
+    private static boolean chineseSystem = false;
+    private static boolean chineseTwSystem = false;
 
     // 是否开通支付地区
     private static boolean openPayCardCountry = false;
@@ -62,6 +65,20 @@ public class BaseApplication extends MultiDexApplication {
 
     public static boolean isEnglishSystem() {
         return englishSystem;
+    }
+
+    public static void setChineseSystem(boolean chineseSystem) {
+        BaseApplication.chineseSystem = chineseSystem;
+    }
+    public static boolean isChineseSystem() {
+        return chineseSystem;
+    }
+
+    public static void setChineseTwSystem(boolean chineseTwSystem) {
+        BaseApplication.chineseTwSystem = chineseTwSystem;
+    }
+    public static boolean isChineseTwSystem() {
+        return chineseTwSystem;
     }
 
     public static void setOpenPayCardCountry(boolean openPayCardCountry) {

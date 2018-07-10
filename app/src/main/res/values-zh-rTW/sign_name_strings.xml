@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_name_title_text">交易簽名</string>
+    <string name="sign_name_card">交易卡號：%1$s</string>
+    <string name="sign_name_card_no">365553********4546</string>
+    <string name="sign_name_money">金額：</string>
+    <string name="sign_name_money_no">交易金額：%1$s</string>
+    <string name="sign_name_info">請持卡本人簽名，姓名需清晰可辨</string>
+    <string name="sign_name_again">重簽</string>
+    <string name="sign_name_send">確認</string>
+    <string name="sign_name_no">05518414</string>
+    <string name="sign_name">簽名</string>
+    <string name="pls_sign_name">請先簽名</string>
+    <string name="not_valid_sign_name">簽名太簡單請重簽</string>
+    <string name="sign_name_send_fail">簽名上送失敗</string>
+    <string name="sign_name_send_success">簽名上送成功</string>
+</resources>

@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="xzf_app_name">UnionPay Store Pro</string>
+    <string name="query_device">Inquiring of device information</string>
+    <string name="disconnet_fail">Disconnect failed, please manual disconnect</string>
+    <string name="query_device_MD5_err">MD5 verification is incorrect</string>
+    <string name="query_no_device">Device not found</string>
+    <string name="query_device_login">Device ctivated, \n please log in</string>
+    <string name="exit_hint">Confirm exit?</string>
+    <string name="exit_cancel">Cancel</string>
+    <string name="exit_confirm">Confirm</string>
+    <string name="confirm">Yes</string>
+    <string name="cancel">No</string>
+    <string name="news">Notification</string>
+    <string name="app_name_zhf">中和付</string>
+    <string name="app_name_zhb">中和宝</string>
+    <string name="app_name_zhzf">中和支付</string>
+    <string name="app_name_mf">猫付</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="netException">Network connection failed, please check the if network is normal</string>
+    <string name="forget_pwd">Forgot password</string>
+    <string name="new_dogotpwd_title">Forgot password</string>
+    <string name="get_new_phoneNB">Enter phone number</string>
+    <string name="get_old_pwd">Please key in old password</string>
+    <string name="get_new_pwd">Please key in new password</string>
+    <string name="new_messagetrue">Confirm</string>
+    <string name="get_new_message_text">Please key in verification code</string>
+    <string name="get_new_message">Get SMS</string>
+    <string name="ChooseMerNo">Select merchant</string>
+    <string name="Login_netIsNull">Network request failed</string>
+    <string name="click_skip">Back to new log in version</string>
+    <string name="back">Go back</string>
+    <string name="fail">Inquire of credit card information failed!</string>
+    <string name="query_Credit_Card_Info">Checking card information, please wait...</string>
+    <string name="exit_tip">Press again to exit program</string>
+    <string name="pls_connect_device">Please connect device</string>
+    <string name="sign_send_success">Signature send successful</string>
+    <string name="sign_up_exception">Log on program exception</string>
+    <string name="program_exception">Program exception</string>
+    <string name="server_send_exception">Server send data exception</string>
+    <string name="please_bond_credit_card_info1">Seconds to card verification</string>
+    <string name="please_bond_credit_card_info2">Credit card and cardholder is the same person?</string>
+    <string name="credit_card_auth_over_time">Credit card certification has expired, please re-certify </string>
+    <string name="no_bond_people">Default payee not bound</string>
+    <string name="pls_bond_people">Please consume after bound the payee</string>
+    <string name="default_people">Default payee</string>
+    <string name="auth_people">Certified payee</string>
+    <string name="TradeCancel">Transaction cancelled</string>
+    <string name="isQuery">Checking transaction information, please wait...</string>
+    <string name="fragment_consumption_info">Receiving time 9:00~22:00 Monday-Sunday.Settlement date Transaction +1</string>
+    <string name="fragment_consumption_info1">Settlement date Transaction +1</string>
+    <string name="TradeFail">Transaction failed</string>
+    <string name="TradeFail_pls_swipe_IC">Please insert band card</string>
+    <string name="TradeFail_pls_pwd_err">Password incorrect</string>
+    <string name="TradeFail_money_not_enough">Insufficient amount</string>
+    <string name="md5Wrong">Verification code incorrect</string>
+    <string name="exception">Exception</string>
+    <string name="unknowFail">Unknown mistake</string>
+    <string name="notfoundPic">Cropped picture unable to find under system catalog</string>
+
+    <!-- for test -->
+    <string name="testText">LabelTesting label</string>
+    <string name="testConn">Connecting device</string>
+    <string name="testPreTrade">Transaction pre-processing</string>
+    <string name="testDoTrade">Transaction</string>
+    <string name="testResult">Transaction result processing</string>
+
+    <!-- ManageTask -->
+    <string name="manage_connct_fair">Request failed, please try again</string>
+    <string name="manage_connect">Preparation of transaction</string>
+    <string name="manage_task_comm">Communicating with the device</string>
+    <string name="manage_task_comm_fail">Failed to connect to device</string>
+    <string name="manage_task_noconnection_detected">Please reconnect the device</string>
+    <string name="manage_task_disconnecting">Disconnecting</string>
+    <string name="manage_task_fecthdata_from_server">Receiving data</string>
+    <string name="manage_task_updating_rsa_pubkey">Updating RSA public key of the device</string>
+    <string name="manage_task_update_rsa_pubkey_fail">The RSA public key of the device updating failed</string>
+    <string name="manage_task_update_rsa_pubkey_redo">Master key has been downloaded</string>
+    <string name="manage_task_update_main_key">Please download the master key first</string>
+    <string name="manage_task_update_rsa_pubkey_succ">Update the RSA public key of the device successfully</string>
+    <string name="manage_task_update_tmk_fail">TMK of updating device failed</string>
+    <string name="manage_task_update_tmk_succ">TMK of updating device successful</string>
+    <string name="manage_task_reconnect_device">Connecting...</string>
+    <string name="manage_task_alreadyconnected_device">Connected</string>
+    <string name="manage_task_reconnect_device_succ">Connection succeeded</string>
+    <string name="manage_task_reconnect_device_fail">Connection failed, please confirm the device is turned on</string>
+    <string name="manage_task_query_default_payee">Checking the default payee...</string>
+    <string name="auth">Unverified payee, please authenticate payee!</string>
+    <!-- TradeTask -->
+    <string name="trade_task_confirming_payee_info">Verifying payee\'s information, please wait</string>
+    <string name="trade_task_current_device_payee_info_query_result">You can check the verification result through 【My -> Settlement Information】</string>
+    <string name="trade_task_rsa_pubkey_download">Downloading RSA public key</string>
+    <string name="trade_task_rsa_pubkey_download_fail">RSA public key download failed</string>
+    <string name="trade_task_rsa_pubkey_download_succ">RSA public key download successful</string>
+    <string name="trade_task_tmk_download">Downloading TMK</string>
+    <string name="trade_task_tmk_download_fail">TMK download failed</string>
+    <string name="trade_task_tmk_download_succ">TMK download successful</string>
+    <string name="trade_task_tmk_activation">Activating master key</string>
+    <string name="trade_task_tmk_activation_fail">Master key activation failed</string>
+    <string name="trade_task_tmk_activation_succ">The master key is successful</string>
+    <string name="trade_task_iccard_pubkey_download">Downloading public key of IC card</string>
+    <string name="trade_task_iccard_pubkey_download_fail">Public key of IC card download failed</string>
+    <string name="trade_task_iccard_pubkey_download_succ">Public key of IC card download successful</string>
+    <string name="trade_task_iccard_params_download">Downloading IC card parameters</string>
+    <string name="trade_task_iccard_params_download_fail">IC card parameter download failed</string>
+    <string name="trade_task_iccard_params_download_succ">IC card parameters download successful</string>
+    <string name="trade_task_iccard_tms_params_download">Downloading IC card TMS parameters</string>
+    <string name="trade_task_iccard_tms_params_download_fail">IC card TMS parameter download failed</string>
+    <string name="trade_task_iccard_tms_params_download_succ">IC card TMS parameters download successful</string>
+    <string name="trade_task_get_netresponse_fail">Failed to get server response</string>
+    <string name="trade_task_is_signing">Logging on, please wait ..</string>
+    <string name="trade_task_sign_fail">Log on failed!</string>
+    <string name="trade_task_main_key_fail">Issuer status is incorrect, please try again later</string>
+    <string name="trade_task_sign_succ">Log on successful</string>
+    <string name="trade_task_exception">Transaction program exception!</string>
+    <string name="trade_task_upload_ticket">Uploading receipt</string>
+    <string name="trade_task_upload_ticket_succ">Receipt upload successful</string>
+    <string name="trade_task_upload_ticket_fail">Receipt upload failed</string>
+    <string name="trade_task_sign_sixty_area_error">The length of domain 62 under the server is incorrect</string>
+    <string name="trade_task_sign_no_keydata_fromserver">The server did not send the log on data</string>
+    <string name="trade_task_update_work_key_failed">Failed to update the device key!</string>
+    <string name="trade_task_server_send_pnum_failed">The batch number and the serial number of the server is failed</string>
+    <string name="trade_task_device_updagte_pnum_failed">Updating of the batch number and serial number is ailed</string>
+    <!-- 签名 -->
+    <string name="signTitleUseBlock">Please use regular script to sign</string>
+    <string name="signClear">Clear</string>
+    <string name="signSave">Complete</string>
+    <string name="is_loading">Loading page, please wait...</string>
+    <!-- 照相机 -->
+    <string name="cameraTips">Please put the document into the box</string>
+    <string name="cameraTips2">I agree to settle the payment amount to the owner of the card holder</string>
+    <string name="tips">Please tick the "I agree to the consumption amount settlement to the owner of the credit card" check box</string>
+    <string name="cameraTip">Please take a photo of the card just consumed</string>
+    <string name="upload_picture">Upload successfully</string>
+    <string name="merNoIsNull">Merchant ID is empty</string>
+    <string name="RetrivlRefNumIsNull">Transaction reference number is blank</string>
+    <string name="pictureIsNull">Image data is blank</string>
+    <string name="pictureIsBig">Image data is too large</string>
+    <string name="isUploadPhoto">Uploading image ...</string>
+    <string name="md5Err">MD5 encryption error</string>
+    <string name="upload_fail">Upload failed</string>
+    <string name="upload_exception">Upload exceptional</string>
+    <string name="downloadFail">Download failed</string>
+    <string name="get_55_data_fail">Get 55 domain data failed, please return to retrieve!</string>
+    <string name="trade_money">Transaction amount can not be less than 3 yuan!</string>
+
+
+    <!--管理 升级-->
+    <string name="update_device_is_new">Currently is the latest version</string>
+    <string name="update_device_pn_is_not_rigth">PN is not match</string>
+
+    <string name="contact">Payee data is incorrect, please contact the customer service!</string>
+    <string name="cancel_swip_fail">Cancel failed, please swipethe card!</string>
+    <string name="cancel_swip">Process terminating</string>
+    <string name="company">Sinopay Private Limited will provide software and hardware service</string>
+    <!-- 认证ka -->
+    <string name="auth_default">Certified Payee</string>
+    <string name="Lack_of_data">Missing data</string>
+    <string name="recent_on_line">Recently online</string>
+
+    <!-- 微信支付相关 -->
+    <string name="save_qrcode">Static code</string>
+    <string name="qrcode_title_text">Dynamic code </string>
+
+    <string name="capture_scan_text">Please put the barcode or QR code in the scan box</string>
+    <string name="lockscreen_access_pattern_start">Start drawing</string>
+    <string name="lockscreen_access_pattern_cleared">Pattern has been cleared</string>
+    <string name="lockscreen_access_pattern_cell_added">Added cell</string>
+    <string name="lockscreen_access_pattern_detected">Drawing completed</string>
+
+    <!-- zhanghuan-新增-->
+    <string name="deivce_never_connected">The device is not connected, please connect the device first</string>
+
+    <string name="ok">Confirm</string>
+    <string name="next">Next</string>
+    <string name="aggregation_code_amount">Amount</string>
+    <string name="aggregation_code_input_hint">Please enter the amount</string>
+    <string name="aggregation_code_pay_way">Payment method</string>
+    <string name="aggregation_code_title">QR pay</string>
+    <string name="aggregation_qr_title">Scan to pay</string>
+    <string name="aggregation_code_fixed_receipt_code">Static code</string>
+    <string name="quick_payment_title">Quick payment</string>
+    <string name="unionpay_qr_title">unionpay QR</string>
+    <string name="aggregation_hint">Tips: Please scan the QR code above the POS screen to complete the payment</string>
+    <string name="aggregation_alipay_hint">Click to save the image, open scanner, select QR code from the album to complete the transaction</string>
+    <string name="aggregation_wxpay_hint">Due to the risk control of Tencent, Wechat photo scan is not supported. Please scan with another mobile</string>
+    <string name="aggregation_union_hint">Tips: This QR code can be used only once, shall not be used for duplicate receipts</string>
+    <string name="aggregation_plz_scan_qr_code">Please scan the QR code</string>
+    <string name="aggregation_other_app">Related applications</string>
+    <string name="aggregation_save_qr_code">Save image</string>
+    <string name="aggregation_show_qr_code">Display QR</string>
+    <string name="aggregation_show_on_pos">Display on POS</string>
+    <string name="verification_account">Account verification</string>
+    <string name="support_app">Support application</string>
+    <array name="aggregation_pay_type">
+        <item>Alipay</item>
+        <item>Wechat</item>
+        <item>QQ wallet</item>
+        <item>Unionpay payment</item>
+    </array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="bottom_nav_home">Main page</string>
+    <string name="bottom_nav_credit">Apply credit card</string>
+    <string name="bottom_nav_generalize">Recommended award</string>
+    <string name="bottom_nav_me">Mine</string>
+    <string name="transaction_record">Transaction record</string>
+    <string name="transaction_record_detail">Transaction details</string>
+    <string name="transaction_right">Filter</string>
+    <string name="orderId">Order number：%1$s</string>
+
+    <!--设置界面-->
+    <string name="setting">Setting</string>
+    <string name="setting_modify_pwd">Change Password</string>
+    <string name="setting_suggest">Feedback</string>
+    <string name="setting_about_me">About Sinopay</string>
+    <string name="setting_logout">Log Out</string>
+
+    <string name="setting_validation">Safety verification</string>
+    <string name="setting_pwd_tips">Please enter the original login password to verify the identity</string>
+    <string name="setting_next_one">Next</string>
+    <string name="setting_old_pwd">Original password</string>
+    <string name="setting_hint_old_pwd">Enter the original password</string>
+
+    <string name="setting_input_pwd">Enter password</string>
+    <string name="setting_input_agin">Double confirm</string>
+    <string name="setting_input_hint">Please enter 6-20 new login password</string>
+    <string name="setting_input_hine_agin">Please enter the password again</string>
+    <string name="setting_ok">Complete</string>
+    <string name="setting_title_pwd">Change login password</string>
+    <string name="setting_pwd_success">Password reset complete</string>
+
+
+    <string name="setting_suggest_hint">Your valuable suggestions is very important to us, it helps us constantly improve the product, thank you!</string>
+    <string name="setting_suggest_add">Upload image</string>
+    <string name="setting_suggest_contant">Fill in your QQ, mobile phone or e-mail</string>
+    <string name="setting_suggest_submit">Submit</string>
+
+    <string name="setting_pwd_null">Password can not be blank</string>
+    <string name="setting_pwd_ok">Please enter the correct password</string>
+    <string name="setting_pwd_nosame">The password entered does not match</string>
+
+
+    <!--关于我们-->
+    <string name="about_me">About us</string>
+    <string name="about_function_introduction">Features</string>
+    <string name="about_grade_support">Please rate us, and like us</string>
+    <string name="about_official_WeChat">Official Wechat</string>
+    <string name="about_WeChat_number">Wechat ID:xinzfzf</string>
+    <string name="about_service_tel">Customer service number</string>
+    <string name="about_service_number">400-7700-070</string>
+    <string name="about_me_text">Copyright© 2010-2017\n中付支付科技有限公司提供技术支持\n《支付业务许可证》Z2015044000015</string>
+    <string name="about_version">V%1$s</string>
+    <string name="comment_app">Rating</string>
+    <string name="comment_tips">"大爷，给个好评吧~~"</string>
+    <string name="comment_accept">"准奏"</string>
+    <string name="comment_reject">"残忍拒绝"</string>
+    <string name="function_telephone_type">Contact information</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_call_phone">Dialing</string>
+
+    <!--我的设备-->
+    <string name="my_equipment">My device</string>
+    <string name="bluetooth_equipment">Bluetooth device</string>
+    <string name="equipment_tips">Only shows the bound device, if the device is not in the list, try "Add device"</string>
+    <string name="equipment_no_tips">No binding device,try to add device</string>
+    <string name="equipment_is_binding">Bound</string>
+    <string name="equipment_add">Add device</string>
+
+
+    <!-- 设备连接 -->
+    <string name="device_connect">Device connection</string>
+    <string name="mobile_bt_enable_false">Bluetooth is not on</string>
+    <string name="bt_open_tips">Click the button below to turn on</string>
+    <string name="open_mobile_bt">Open the "Bluetooth" setting</string>
+    <string name="searching_bt_device">Searching for POS</string>
+    <string name="confirm_bt_device_opened">Please make sure POS is power on </string>
+    <string name="search_bt_device">search...</string>
+    <string name="can_not_discover_device">Device not found</string>
+    <string name="click_retry">Click to re-try</string>
+
+    <!--密码登录界面-->
+    <string name="newclick_skip">Device login</string>
+    <string name="login_welcome_use">UPI Merchant -Pro</string>
+    <string name="login_phone_number">Phone No.</string>
+    <string name="login_pwd">Password</string>
+    <string name="login_register">Registration</string>
+    <string name="login_forget_pwd">Forget password?</string>
+    <string name="app_name">Sinopay</string>
+
+    <!--设备登录界面-->
+    <string name="device_login">Account and password login</string>
+
+    <!--添加秒到卡-->
+    <string name="card_add">添加秒到卡</string>
+    <string name="card_myself">秒到卡认证(本人)</string>
+    <string name="card_myself_title">本人秒到卡认证</string>
+    <string name="card_other_title">他人秒到卡认证</string>
+    <string name="card_other">秒到卡认证(他人)</string>
+    <string name="card_tips">温馨提示：添加秒到卡只针对磁条卡，芯片卡无需秒到认证</string>
+    <string name="card_info">收款人信息</string>
+    <string name="card_shoukuanren">收款人</string>
+    <string name="card_phone">收款人手机号</string>
+    <string name="card_id">收款人身份证号</string>
+    <string name="card_cardinfo">本人信用卡信息</string>
+    <string name="card_preson">持卡人</string>
+    <string name="card_cardinfo_et">请输入持卡人姓名</string>
+    <string name="card_card_account">Bank account</string>
+    <string name="card_card_et">请输入本人银行卡账号</string>
+    <string name="card_please_photo">请拍摄本人银行卡正面照片</string>
+    <string name="card_photo_bei">请拍摄本人身份证正面照片</string>
+    <string name="card_photo_beis">请拍摄身份证，银行卡的正面照片</string>
+    <string name="card_tips_success">认证成功</string>
+    <string name="card_success">本人秒到卡认证成功</string>
+    <string name="card_give_account">同意将消费金额结算给此账户</string>
+    <string name="card_myself_bei">请拍摄本人身份证背面照片</string>
+    <string name="card_photo_all">请拍摄本人手持身份证正面，银行卡正面照片</string>
+
+    <!--消息中心-->
+    <string name="message_centre">Message Centre</string>
+    <string name="message_sign_read">Mark as read</string>
+    <string name="message_detail">Message detail</string>
+
+
+    <!-- 自选商圈 -->
+    <string name="zixuanshangquan_title">VIP秒到</string>
+    <string name="fukuanmiaodao">付款秒到</string>
+
+    <string name="oliveapp_step_hint_focus">请正对屏幕</string>
+    <string name="oliveapp_step_hint_mouthopen">请张嘴</string>
+    <string name="oliveapp_step_hint_eyeclose">请眨眼</string>
+    <string name="oliveapp_step_hint_headup">请抬头</string>
+
+    <string name="fun_loan">流水贷款</string>
+
+
+    <!-- 2018/1/15 欢迎使用银联开店Pro -->
+    <string name="text_true_pwd">Confirm password</string>
+    <string name="text_new_pwd">New password</string>
+    <string name="text_verification_code">Verification code</string>
+    <string name="text_choose_device">Select device</string>
+    <string name="text_device">Device</string>
+    <string name="text_import_pwd">Enter password</string>
+    <string name="text_import_cellphone">Enter phone number</string>
+    <string name="text_device_register">Device registration</string>
+    <string name="text_import_again">Please enter new password again</string>
+    <string name="text_twice_same">Password entered not match, please enter again</string>
+
+    <string name="home_qrcode_pay_text">QR Collect</string>
+    <string name="home_swipcard_text">MPOS Collect</string>
+    <string name="home_nav_pay_title">Collect</string>
+    <string name="home_nav_record_title">Transactions</string>
+    <string name="home_nav_personal_title">Information</string>
+
+
+    <!--海外版新增-->
+    <string name="home_year">Year</string>
+    <string name="home_month">Month</string>
+    <string name="home_day">Day</string>
+    <string name="month_day">%1$sth %2$s</string>
+    <string name="home_all_collection">Total payment collection today</string>
+    <string name="qr_collection">QR Collect(%1$s)</string>
+    <string name="swip_collection">MPOS Collect(%1$s)</string>
+    <string name="qr_pay"><font color='#FF999999'>Pay</font><font color='#b0000000'>%1$s</font><font color='#FF999999'>Count</font></string>
+    <string name="home_pay">Pay</string>
+    <string name="home_bi">Count</string>
+    <string name="pay_count">Paid %1$s</string>
+
+
+    <string name="mine_information">My Information</string>
+    <string name="mine_voice">Voice broadcast for money receive</string>
+    <string name="mine_modification_pwd">Change Password</string>
+    <string name="mine_peru_manager">Password management</string>
+    <string name="mine_more_language">Language</string>
+    <string name="mine_another">Others</string>
+    <string name="mine_base_information">Basic information</string>
+    <string name="mine_merchant_number">Merchant No.</string>
+    <string name="mine_merchant_name">Merchant name</string>
+    <string name="mine_currency_information">Settlement information</string>
+    <string name="mine_bank_name">Bank name</string>
+    <string name="mine_account_name">Account name</string>
+    <string name="mine_rate_information">Rate information</string>
+    <string name="mine_swiping_card">Swipe the card</string>
+    <string name="mine_code_scan">QR code-Unionpay scanner</string>
+    <string name="mine_code_purse">QR code-Unionpay wallet</string>
+    <string name="mine_six_login_pwd">Enter the 6-digits Login password</string>
+    <string name="mine_again_login_pwd">Re-enter log in password</string>
+    <string name="mine_download_main_peru">Download master key</string>
+    <string name="mine_sign_in">Log on</string>
+    <string name="mine_app_name">UPI Merchant -Pro</string>
+    <string name="mine_merchant_phone">Merchant hotline</string>
+    <string name="mine_true">Confirm</string>
+
+    <!--语言-->
+    <string name="multi_easy_chinese">简体中文</string>
+    <string name="multi_unsimplified">繁體中文</string>
+    <string name="multi_language_english">English</string>
+    <string name="multi_language">Language</string>
+    <string name="multi_setting">Language</string>
+
+    <!--二维码收款-->
+    <string name="request_fail_try_again">Request failed, please try again</string>
+    <string name="request_code_again">Reload</string>
+    <string name="save_pay_code">Save collection code</string>
+    <string name="main_me_pay">Scan to pay</string>
+    <string name="union_pay_scan_and_support_weixin_pay">Unionpay scanner \n (Support Wechat pay)</string>
+    <string name="union_pay_packet_and_support_union_pay">Unionpay wallet \n (Support Unionpay wallet pay)</string>
+    <string name="accept_permission_hint">Permission denial may affect some features, recommended to allow this permission</string>
+
+    <!-- 网络连接 -->
+    <string name="net_tips">Network prompt message</string>
+    <string name="net_set">Network is not connected, if continue, please set up the network first!</string>
+    <string name="net_not_avaible">Network has problem, please try again later!</string>
+
+    <!--保存图片-->
+    <string name="main_img_success">Image save successfully</string>
+    <string name="main_img_fail">Image save failed</string>
+
+    <string name="chose_county_code">Choose the country code</string>
+    <string name="text_china">China</string>
+    <string name="no_data">No transaction records</string>
+    <string name="home_shaixuan">Filter</string>
+
+    <string name="find_pwd">Retrieve the password</string>
+    <string name="text_know">Got it</string>
+    <string name="text_second">S</string>
+    <string name="get_code_again">Reacquire</string>
+
+    <string name="text_tips">Prompt</string>
+    <string name="dialogutils_relogin">This account has been login on other device, if it\'s not your operation, please contact customer service</string>
+    <string name="matchemail_send_verification">Get SMS</string>
+
+    <string name="text_loadering">Loading...</string>
+    <string name="telephone_number_null">Phone number can not be blank</string>
+    <string name="number_seven_eleven">Please enter phone number</string>
+    <string name="forgot_getmessage_null">You have not yet received the verification code</string>
+    <string name="pwd_number_null">Password can not be blank</string>
+    <string name="login_six_pwd">Please enter the 6-digit password</string>
+    <string name="forgot_reset_pwd_null">Reset password can not be empty</string>
+    <string name="please_six_again_pwd">Please enter a 6-digit reset password</string>
+    <string name="please_six_login_pwd">Enter the 6-digit Login password</string>
+    <string name="pay_twice_inconformity">Password enter not match, please enter again</string>
+    <string name="forgot_message_null">Verification code can not be empty</string>
+    <string name="please_input_six_length_code">Please enter the 6-digit verification code</string>
+
+    <string name="filing_info_commit_notice">In order to guarantee the normal use of collection function, please fill up the information of user</string>
+    <string name="btn_filing_info_commit">Information submittion</string>
+
+    <string name="old_pwd_not_null">The original password can not be blank</string>
+    <string name="please_six_old_pwd">Enter the 6-digit Original password</string>
+    <string name="new_pwd_not_null">New password can not be blank</string>
+    <string name="please_six_new_pwd">Enter the 6-digit Login password</string>
+    <string name="service_exception">Server is abnormal. Please try again later</string>
+
+    <string name="phone_show_code">Mobile phone shows QR code</string>
+    <string name="phone_show_code_to_mpos">MPOS on the screen</string>
+
+    <!--登录-->
+    <string name="please_link_device">Please connect the device</string>
+    <string name="have_no_authorization">Some permission are not authorized. It may affect your use</string>
+    <string name="new_login_fail">Login failed</string>
+
+    <string name="tv_tradeing_title">In transaction</string>
+    <string name="current_no_device_connect_text">No connected device, need to connect?</string>
+    <string name="tv_settlement">Settlement amount:</string>
+
+    <string name="tv_collection">Collection:</string>
+    <string name="tv_number">Count:</string>
+    <string name="tv_tips_undo">Confirm withdraw the transaction?</string>
+    <string name="tv_undo">Withdrawal</string>
+    <string name="tv_revoke_amount">Withdrawal amount</string>
+    <string name="tv_revoke_time">Withdrawal time</string>
+    <string name="tv_trade_info">Transaction information</string>
+
+
+    <string name="tv_trade_type">Transaction Type</string>
+    <string name="tv_trade_cardnum">Card No.</string>
+    <string name="tv_trade_amount">Transaction amount</string>
+    <string name="tv_trade_time">Transaction time</string>
+    <string name="tv_trade_num">Ref. No.</string>
+    <string name="tv_trade_ticket">Transation receipt</string>
+    <string name="tv_trade_open">Click to check</string>
+    <string name="tv_trade_old_num">Original Ref. No.</string>
+    <string name="tv_trade_chukuan_info">Dispatch information</string>
+    <string name="tv_trade_rate">Fee rate</string>
+    <string name="tv_trade_handrate">Fee</string>
+    <string name="tv_trade_jiesuan_amount">Settlement amount</string>
+    <string name="tv_trade_stuta">Settlement status</string>
+    <string name="tv_jiesuan_time">Settlement time</string>
+    <string name="key_manager_content">Connect</string>
+    <string name="has_find_pos">POS has been found</string>
+    <string name="please_wait_amount">Please wait</string>
+    <string name="part_permission_fail">Partial permission request failed, may affect the use of the program. Please set permissions through the interface</string>
+    <string name="no_signature">You have an unsigned receipt. Do you ant to sign?</string>
+    <string name="have_no_message">No news</string>
+    <string name="merchant_info_error_tips">Business information is incorrect, please contact customer service and try again!</string>
+
+    <!--国际化-->
+    <string name="has_cell_phone">Phone number already exists</string>
+    <string name="no_bound_tid">Terminal unbound</string>
+    <string name="no_bound_mid">Merchant ID is not registered</string>
+    <string name="no_bound_phone">Phone number binding failed</string>
+    <string name="login_exceptions">Exceptional</string>
+    <string name="login_error">Login failed</string>
+    <string name="phone_number_wrong">Phone number is incorrect</string>
+    <string name="device_connect_fail">Device connection failed, please try again</string>
+    <string name="device_connect_wrong">Device connection abnormal, please restart the application and try again</string>
+    <string name="device_not_connect">The device is not connected</string>
+    <string name="must_connect_device">Confirm to connect?</string>
+    <string name="get_message_cancel">Cancel transaction when getting credit card information</string>
+    <string name="get_message_fail">Failed to get credit card information</string>
+    <string name="credit_card_successfully">Transaction successful\n</string>
+    <string name="card_type_magnetic">Card Type: Magnetic stripe card</string>
+    <string name="card_type_ic">Card type: IC card</string>
+    <string name="fifty_five_region">\nArea 55:</string>
+    <string name="second_track_information">\nThe equivalent data of the diamagnetic channel:</string>
+    <string name="period_of_validity">\nValidity</string>
+    <string name="sign_append_information">\nAdditional data of signature:</string>
+    <string name="get_pwd_cancel">Obtain password to cancel</string>
+    <string name="get_pwd_timeout">Time-out when getting password</string>
+    <string name="get_pwd_information_timeout">Time-out when getting password information</string>
+    <string name="get_pwd_fail">Failed to get the password</string>
+    <string name="get_pwd_success">Get the password successful \n</string>
+    <string name="credit_cannot_authentication">Credit card is not verified</string>
+    <string name="t_and_one_account">T+1 arrival in account </string>
+    <string name="real_time_account">Arrival in account synchronously</string>
+    <string name="my_card">My card </string>
+    <string name="others_card">Others card</string>
+    <string name="has_open_voice">Has activated voice broadcast</string>
+    <string name="has_close_voice">Voice broadcast closed</string>
+    <string name="consumer_trade">Consumption</string>
+    <string name="change_picture_error">Convert photos abnormal</string>
+    <string name="no_uploading_picture">Your magnetic stripe card has not yet uploaded pictures, in order to ensure the normal settlement, please take a front picture of the magnetic stripe card</string>
+    <string name="verify_import_six_pwd">To guarantee the safty of your account, please enter your 6-digit login password</string>
+    <string name="revoke_result">Withdrawal result</string>
+    <string name="revoke_success">Withdrawal successful</string>
+    <string name="revoke_fail">Withdraw failed</string>
+    <string name="revoke_error_why">Reason:%1$s</string>
+    <string name="mine_result">Settlement</string>
+    <string name="currency_information_eml">Settlement information will sent to the mailbox</string>
+    <string name="login_pwd_error">Password incorrect, please re-enter</string>
+
+    <string name="pos_param_download">POS parametre download</string>
+
+
+    <string name="revoke_trade_ing_text">Withdrawing, pleas wait...</string>
+    <string name="revoke_down_param_success">The terminal parameters are updated successfully</string>
+    <string name="send_ticket_text">Send</string>
+    <string name="send_ticket_title_text">Send receipt</string>
+    <string name="ticket_send_to_email">Receipt will send to mailbox</string>
+    <string name="get_ticket_failed_tips">Failed to get receipt, please re-try</string>
+
+    <string name="email_not_null_tips">E-mail can not be blank</string>
+    <string name="input_right_email_tips">Please enter a valid email address</string>
+
+    <string name="qr_pay_success">Collection successful</string>
+    <string name="end_mobile_text">The end of mobile number:</string>
+
+    <!--整理不确认的是否用到的   文字国际化-->
+    <string name="text_not_net">Network Unavailable</string>
+    <string name="please_error_again">The request failed, please try again later...</string>
+    <string name="have_no_hot_line">Hotline dialing not suppoted</string>
+    <string name="have_no_small_ticket">Don\'t have receipt information</string>
+
+
+    <!--可能用不上的翻译-->
+    <string name="id_card">Identity card</string>
+    <string name="credit_id_card_head">Please authenticate front of ID card</string>
+    <string name="credit_id_card_no_head">Please authenticate back of ID card</string>
+    <string name="id_card_no_head">Front </string>
+    <string name="id_card_head">Back</string>
+    <string name="id_card_name">Name</string>
+    <string name="bank_card">Bank card</string>
+    <string name="bank_card_no_number">Bank card number can not leave blank</string>
+    <string name="choose_bank_city">Select city of registration bank</string>
+    <string name="choose_bank_bank">Select registration bank</string>
+    <string name="face_discern">Face recognition</string>
+    <string name="please_just_screen">Please face the screen</string>
+    <string name="upload_info">Upload data</string>
+    <string name="face_discern_success">Face recognition successful</string>
+    <string name="gather_face_discern">Collect face</string>
+    <string name="error_tips_again">Unknown exception, please try again later</string>
+    <string name="system_error">System error</string>
+    <string name="authentication_success_again_login">Authentication successful, please login again</string>
+    <string name="id_card_head_face">Front of ID card</string>
+    <string name="id_card_national_emblem">Back of ID card</string>
+    <string name="get_picture_error">Failed to get image, please try again</string>
+    <string name="merchant_authentication">Merchant authentication</string>
+    <string name="has_copy_wechat">Copied Wechat ID to clipboard</string>
+    <string name="oneself_second_authentication">本人秒到卡认证</string>
+    <string name="others_second_authentication">他人秒到卡认证</string>
+    <string name="card_authentication_query">秒到卡认证查询</string>
+    <string name="tips_add_card">温馨提示：添加秒到卡只针对磁条卡，芯片卡无需秒到认证</string>
+    <string name="card_id_bank">Please take photo ID,front photo of bank card </string>
+    <string name="submit_success_wait">Submit successfully, please wait for authentication result</string>
+    <string name="please_import_card_number">Please enter the card number</string>
+    <string name="other_card_success">他人秒到卡认证成功</string>
+    <string name="modify_change_information">Modify settlement information</string>
+    <string name="submit_information_success">Information successfully submitted, please wait for the authentication</string>
+    <string name="upload_error_again">Upload failed, please try again later!</string>
+    <string name="bank_card_null">Card number can not leave blank</string>
+    <string name="please_change_bank">Please choose bank for bank card</string>
+    <string name="please_picture_yourself">Please take a photo of your bank card and ID card</string>
+    <string name="please_card_id_yourself">Please take a back photo for your ID card</string>
+    <string name="please_card_id_head_yourself">Please take a photo of holding the front side of your ID and bank card </string>
+    <string name="picture_compress_error">Image compression failed</string>
+    <string name="please_import_yourself_bank_card">Please key in your bank card number</string>
+    <string name="open_city">Registration city</string>
+    <string name="belong_bank">Bank</string>
+    <string name="find_login_pwd">Retrieve the login password</string>
+    <string name="set_login_pwd">Set login password</string>
+    <string name="text_login">Log in</string>
+    <string name="audit_no_pass">Verification failed</string>
+    <string name="audit_doing_pass">Verifying</string>
+    <string name="audit_pass">Verification passed</string>
+    <string name="modify_settle_information">Modify settlement information</string>
+    <string name="retroactively_information">Resubmit payee\'s certification information</string>
+    <string name="unknown">Unknown</string>
+    <string name="unknown_unknown">Unknown,unknown</string>
+    <string name="id_card_number">ID number</string>
+    <string name="payee_information">Payee inormation</string>
+    <string name="bank_card_number">Bank Account</string>
+    <string name="payee_number">Payee number</string>
+    <string name="approve_information">Approval information</string>
+    <string name="approve_status">Verification Status</string>
+    <string name="approve_time">Verification time</string>
+    <string name="remarks">Remark</string>
+    <string name="user_new_pwd">You can use the new password for related operations</string>
+    <string name="account_register">Account registration</string>
+    <string name="referrer">Referrer</string>
+    <string name="have_no_open">Function is not yet open, please do look forward to!</string>
+    <string name="start_time">The start time can not be less than the end time</string>
+    <string name="transcation_query">inquirying of transaction record,\n pls wait</string>
+    <string name="verification_success">Verification successful</string>
+    <string name="please_login_pwd">Please enter your password</string>
+    <string name="text_login_pwd">Login password</string>
+    <string name="account_suface">To ensure account secure, please enter the login password</string>
+    <string name="doing_get_message">Retrieving</string>
+    <string name="surpport_bank">Support the bank</string>
+    <string name="change_device">Switch the device</string>
+    <string name="song_typeface">Song Typeface</string>
+    <string name="choose_device">Please select a device</string>
+    <string name="information_upload_success">Data successfully uploaded </string>
+    <string name="signature_upload_success">Signature successfully uploaded</string>
+    <string name="pay_success">Payment successful</string>
+    <string name="pay_money">Transaction amount:</string>
+    <string name="pay_time">Transaction time:</string>
+    <string name="order_number">Order number:</string>
+    <string name="save_fail">Saving failed</string>
+    <string name="get_merchant_fail">Merchant ID retrieve failed</string>
+    <string name="please_set_picture">Please open the camera permissions in "Settings" - "Application Management" - "Rights Management"</string>
+    <string name="picture_error">Camera error!</string>
+    <string name="photo_picture">Take photo</string>
+    <string name="doing_get_code">Retrieving QR code</string>
+    <string name="upload_over">Load is completed! </string>
+    <string name="china_pay_copyright">Sinopay Copyright©2017️</string>
+    <string name="switch_yourself_name">刷卡头拥有人姓名:</string>
+    <string name="switch_yourself_phone_number">刷卡头拥有人手机号:</string>
+    <string name="switch_yourself_id_number">刷卡头拥有人身份证号:</string>
+    <string name="debit_card">Debit card</string>
+    <string name="credit_card">Credit card</string>
+    <string name="payment_received">Payment received</string>
+    <string name="paragraph_error">Payment failed</string>
+    <string name="paragraph_has_send">Payment send</string>
+    <string name="t_and_one_settle">Settlement T+1</string>
+    <string name="unionpay">Unionpay</string>
+    <string name="audit_not_pass">Verification failed</string>
+    <string name="wait_audit">Waiting for verifying</string>
+    <string name="merchant_no_credit_card">The current merchant don\'t have authentication credit card</string>
+    <string name="doing_query">Querying...</string>
+    <string name="query_success">The query is successful</string>
+    <string name="merchant_isnull">Merchant POS number is empty, temporarily cannot enter</string>
+    <string name="commit_success">Submit successfully, please wait for the authentication results!</string>
+    <string name="request_http_error">Request error</string>
+    <string name="downloading_install_package">Downloading the latest installation package and you can see the progress in the notification bar</string>
+    <string name="manager_success">Successful</string>
+
+    <string name="btn_save_to_gallery">Save to album</string>
+
+
+    <string name="checked_update_tips">Detect to update</string>
+    <string name="press_twice_quit">Press again to exit the application</string>
+    <string name="notifcation_check">Downloading, please check the notification bar!</string>
+    <string name="notifcation_updata">Update immediately</string>
+    <string name="notifcation_nouodata">Not updated yet</string>
+
+    <string name="pos_paramer_setting_text">Parameter setting</string>
+    <string name="ic_paramter_download_text">IC card parameter</string>
+    <string name="ic_paramter_download_aid">Add AID</string>
+    <string name="ic_paramter_download_rid">Add RID</string>
+    <string name="ic_paramter_aid_download_fail">Failed to add AID</string>
+    <string name="ic_paramter_aid_download_success">Successfully added AID</string>
+    <string name="ic_paramter_rid_download_fail">Failed to add RID</string>
+    <string name="ic_paramter_rid_download_success">Successfully added RID</string>
+    <string name="request_service_timeout_text">Request timed out. Please check whether the amount has been deducted and avoid repeated operations.</string>
+    <string name="revoke_service_timeout_text">Reversal request timeout, please refresh the transaction history, inquiry the reversal result</string>
+    <!--2018/03/02后补国际化-->
+    <string name="register_info_downloading_mainkey">Start to download TMK</string>
+
+    <!--2018/04/25新增-->
+    <string name="union_pay_scan_and_support_weixin_pay_extend">Support Wechat Scanner</string>
+    <string name="union_pay_packet_and_support_union_pay_extend">UnionPay QuickPass</string>
+    <string name="please_pressed_text">Click</string>
+    <string name="merchant_simple_name">Shop name</string>
+
+    <string name="xzf_open_notice_text">Turn on system notification to get transaction notification and promotion information</string>
+
+    <!--2018/05/08新增-->
+    <string name="union_pay_scan">UnionPay scanner</string>
+    <string name="home_pay_text">WeChat Official Account Pay</string>
+    <string name="home_pay_tips">Support UnionPay Scan,UnionPay QuickPass,WeChat Official Account Pay</string>
+</resources>

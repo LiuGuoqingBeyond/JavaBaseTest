@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_name_title_text">Transaction signature</string>
+    <string name="sign_name_card">Transaction card number：%1$s</string>
+    <string name="sign_name_card_no">365553********4546</string>
+    <string name="sign_name_money">Amount：</string>
+    <string name="sign_name_money_no">Transaction amount：%1$s</string>
+    <string name="sign_name_info">Cardholder sgnature, the name needs to be clear</string>
+    <string name="sign_name_again">Resign</string>
+    <string name="sign_name_send">Confirm</string>
+    <string name="sign_name_no">05518414</string>
+    <string name="sign_name">Signature</string>
+    <string name="pls_sign_name">Please sign first</string>
+    <string name="not_valid_sign_name">Signature is too simple, please sign again</string>
+    <string name="sign_name_send_fail">Signature uploaded failed</string>
+    <string name="sign_name_send_success">Signature uploaed successful</string>
+</resources>

@@ -25,10 +25,12 @@ import cn.jpush.android.api.JPushInterface;
 public class MApplication extends BaseApplication {
 
     private PreferencesUtil preferencesUtil;
+    private static MApplication instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         MultiDex.install(this);
         HttpEngine.init(BuildConfig.BASEURL);
         Logger.addLogAdapter(new AndroidLogAdapter() {
@@ -58,6 +60,10 @@ public class MApplication extends BaseApplication {
         //初始化bugly
 //        CrashReport.initCrashReport(getApplicationContext(), "2d025c7888", false, strategy);
 
+    }
+
+    public static MApplication getInstance() {
+        return instance;
     }
 
     @Override

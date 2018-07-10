@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- login页字符串 -->
+<string name="pay_money_info">等待用戶輸入金額</string>
+<string name="pay_money_hint">金額:0.01</string>
+
+<string name="wait_user_swip_card">請在設備上刷卡或插卡/貼卡</string>
+<string name="wait_user_swip_card1">請在設備上刷卡或插卡</string>
+<string name="obtain_swip_card_info_fail">獲取刷卡信息失敗,請重新刷卡</string>
+<string name="obtain_swip_card_info_timeout">獲取刷卡信息超時</string>
+<string name="obtain_swip_card_info_communication_timeout">與設備交互超時</string>
+<string name="pls_input_pwd">請在POS輸入密碼</string>
+<string name="obtain_pwd_fail">獲取密碼失敗</string>
+<string name="obtain_mac_fail">獲取mac失敗</string>
+<string name="pls_input_money">請輸入金額</string>
+<string name="trade_success">交易成功</string>
+<string name="server_response_err">服務器返回數據有誤</string>
+<string name="init_device">正在獲取設備\n信息，請稍後...</string>
+</resources>

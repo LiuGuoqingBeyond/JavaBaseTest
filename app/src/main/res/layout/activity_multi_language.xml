@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.MultiLanguageActivity">
+
+    <include layout="@layout/toolbar_primary" />
+
+    <RelativeLayout
+        android:id="@+id/ray_multi_chinese"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@drawable/personal_item_select">
+
+        <TextView
+            style="@style/textStyle_body_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/defaultPadding"
+            android:text="@string/multi_easy_chinese" />
+
+        <ImageView
+            android:id="@+id/iv_multi_chinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padding_20x"
+            android:src="@drawable/icon_check"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ray_multi_unsimplified"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/halfDefaultPadding"
+        android:background="@drawable/personal_item_select">
+
+        <TextView
+            style="@style/textStyle_body_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/defaultPadding"
+            android:text="@string/multi_unsimplified" />
+
+        <ImageView
+            android:id="@+id/iv_multi_unsimplified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padding_20x"
+            android:src="@drawable/icon_check"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ray_multi_english"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/halfDefaultPadding"
+        android:background="@drawable/personal_item_select">
+
+        <TextView
+            style="@style/textStyle_body_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/defaultPadding"
+            android:text="@string/multi_language_english" />
+
+        <ImageView
+            android:id="@+id/iv_multi_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padding_20x"
+            android:src="@drawable/icon_check"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>
