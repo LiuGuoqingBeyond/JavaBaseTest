@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.uppayplugin.unionpay.javabasetest.Interface.CheckedTextViewInterface;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.adapter.MyListViewAdapter;
-import com.uppayplugin.unionpay.javabasetest.entity.ChoseCheckedTextView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,4 +5,5 @@ package com.example.testdemolib.Listener;
  */
 
 public interface TestDemoListener {
+    void getMessage(String message);
 }

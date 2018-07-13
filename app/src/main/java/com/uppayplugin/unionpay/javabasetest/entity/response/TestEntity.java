@@ -1,4 +1,4 @@
-package com.uppayplugin.unionpay.javabasetest.entity;
+package com.uppayplugin.unionpay.javabasetest.entity.response;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.uppayplugin.unionpay.javabasetest.R;
-import com.uppayplugin.unionpay.javabasetest.bean.BankCardInfo;
+import com.uppayplugin.unionpay.javabasetest.entity.response.BankCardInfo;
 import com.uppayplugin.unionpay.javabasetest.utils.PinyinSortUtils;
-import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class PingyinSortActivity extends AppCompatActivity {
 

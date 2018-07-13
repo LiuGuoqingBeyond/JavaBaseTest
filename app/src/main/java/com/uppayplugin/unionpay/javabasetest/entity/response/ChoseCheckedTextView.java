@@ -1,4 +1,4 @@
-package com.uppayplugin.unionpay.javabasetest.entity;
+package com.uppayplugin.unionpay.javabasetest.entity.response;
 
 /**
  * Created by Administrator on 2018/6/25 0025.

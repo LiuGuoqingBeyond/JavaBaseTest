@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.uppayplugin.unionpay.javabasetest.Interface.CheckedTextViewInterface;
 import com.uppayplugin.unionpay.javabasetest.R;
-import com.uppayplugin.unionpay.javabasetest.entity.ChoseCheckedTextView;
 
 import java.util.List;
 

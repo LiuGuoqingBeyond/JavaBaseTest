@@ -24,6 +24,8 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -36,9 +38,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.testdemolib.Impl.TestDemoImpl;
 import com.example.testdemolib.Interface.TestDemoInterface;
+import com.example.testdemolib.Listener.TestDemoListener;
 import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.android.ActivityEvent;
@@ -736,7 +738,7 @@ public class MainActivity extends BaseActivity {
 
         //打jar作sdk调用
         /*testDemoInterface = new TestDemoImpl();
-        testDemoInterface.getMessage(MainActivity.this,"接收到信息了吗？");*/
+        testDemoInterface.getMessage(MainActivity.this,"",testDemoListener);*/
 
         //弹出软件盘为英文键盘
 //        openActivity(AutoKeyActivity.class);
@@ -756,18 +758,13 @@ public class MainActivity extends BaseActivity {
         //图片按比例缩放
         //其实<ImagView 标签添加这个属性即可android:adjustViewBounds="true"
 
-
-
-
-
-
-
-
-
-
+        //ToolBar
+//        openActivity(ToolBarActivity.class);
 
 
     }
+
+    TestDemoListener testDemoListener = message -> ToastUtils.showLong(message);
 
     private void showOpenNoticeDialog() {
         OneOrTwoBtnDialogUtil.getDialogInstance().dialogToShow(mContext, "", getString(R.string.xzf_open_notice_text), getString(R.string.text_cancel), getString(R.string.text_confirm_msg), true, (dialogInterface, i) -> {

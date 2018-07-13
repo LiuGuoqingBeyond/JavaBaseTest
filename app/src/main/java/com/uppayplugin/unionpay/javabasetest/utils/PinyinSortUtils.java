@@ -2,7 +2,7 @@ package com.uppayplugin.unionpay.javabasetest.utils;
 
 import android.content.Context;
 
-import com.uppayplugin.unionpay.javabasetest.bean.BankCardInfo;
+import com.uppayplugin.unionpay.javabasetest.entity.response.BankCardInfo;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.orhanobut.logger.Logger;
-import com.uppayplugin.unionpay.javabasetest.entity.SharedInfo;
+import com.uppayplugin.unionpay.javabasetest.bean.SharedInfo;
 
 import java.util.Map;
 import java.util.Set;
