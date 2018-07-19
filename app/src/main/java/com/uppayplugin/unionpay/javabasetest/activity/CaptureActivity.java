@@ -2,6 +2,7 @@ package com.uppayplugin.unionpay.javabasetest.activity;
 
 import android.app.Instrumentation;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.media.AudioManager;
@@ -21,6 +22,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.testdemolib.Impl.AnalysisImpl;
+import com.example.testdemolib.Interface.AnalysisInterface;
+import com.example.testdemolib.Listener.AnalysisListener;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.camera.CameraManager;
@@ -30,10 +34,17 @@ import com.google.zxing.view.ViewfinderView;
 import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
+import com.uppayplugin.unionpay.javabasetest.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
+import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetest.view.BaseToolbar;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Vector;
 
 import butterknife.BindView;
@@ -75,6 +86,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 
     private PreferencesUtil prefes;
     private String securityKey;
+    private AnalysisInterface analysisInterface;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -192,8 +204,18 @@ public class CaptureActivity extends BaseActivity implements Callback {
         }
 
         //-----------------------这里是扫码   信息返回---------------------------------------------------------------------------------------
-        Toast.makeText(mContext, qrCodeString, Toast.LENGTH_SHORT).show();
-        Logger.e("active scan Result:" + qrCodeString);
+
+        //瑞国调试的webView扫一扫的处理
+        /*Intent intent = new Intent();
+        intent.putExtra("qrCodeString", qrCodeString);
+        setResult(2, intent);
+        finish();
+        Logger.e("active scan Result:" + qrCodeString);*/
+
+        //lib用到的扫一扫的处理
+        //扫到了信息，先调74 查询二维码，最后调04交易----------先这样调试demo演示
+        analysisInterface = new AnalysisImpl();
+        requestPreTradeInfoFromService();
 
         /*if (!TextUtils.isEmpty(qrCodeString)) {
             BankInfoListRepModel cards = PayPwdManagerUtils.getInstance(mContext).getBindedBankCardInfo();
@@ -201,11 +223,11 @@ public class CaptureActivity extends BaseActivity implements Callback {
             if (qrCodeString.startsWith(ConstantUtils.ZHONGFU_CODE)) {  // 中付码二维码
                 Logger.e("ZHONGFU_CODE");
                 *//** 2017/11/11 zhanghuan 中付码扫码处理逻辑
-                 * 1: 先获取本地是否有绑定过中付卡，未绑定过，提示用户到绑卡页面
-                 * 2：判断二维码类型，是固定二维码还是非固定二维码，然后请求解析二维码
-                 * 3：根据返回的区域信息，判断是否有当前国家绑定的银行卡，没有的话，跳转到绑卡提示页面
-                 * 4: 查询用户是否有绑定过当前国家的银行卡(sysareaId),未绑定，提示用户到绑卡提示页面
-                 *//*
+         * 1: 先获取本地是否有绑定过中付卡，未绑定过，提示用户到绑卡页面
+         * 2：判断二维码类型，是固定二维码还是非固定二维码，然后请求解析二维码
+         * 3：根据返回的区域信息，判断是否有当前国家绑定的银行卡，没有的话，跳转到绑卡提示页面
+         * 4: 查询用户是否有绑定过当前国家的银行卡(sysareaId),未绑定，提示用户到绑卡提示页面
+         *//*
                 if (null != cards && null != cards.list && cards.list.size() > 0) {
                     boolean bindZFCard = PayPwdManagerUtils.getInstance(mContext).bindBankCard(0x00, cards);
                     Logger.d("bindZFCard:" + bindZFCard);
@@ -228,9 +250,9 @@ public class CaptureActivity extends BaseActivity implements Callback {
             } else if (qrCodeString.startsWith(ConstantUtils.YINLIAN_CODE)) {  // 银联国际二维码
                 Logger.e("YINLIAN_CODE");
                 *//**
-                 * 1:先查询绑定的银行卡列表里面是否有国际卡,如果没有,跳转到提示绑定银行卡页面
-                 * 2:有银行卡则默认取第一张银行卡去拉取商户信息
-                 *//*
+         * 1:先查询绑定的银行卡列表里面是否有国际卡,如果没有,跳转到提示绑定银行卡页面
+         * 2:有银行卡则默认取第一张银行卡去拉取商户信息
+         *//*
                 if (null != cards && null != cards.list && cards.list.size() > 0) {
                     boolean bindUnionCard = PayPwdManagerUtils.getInstance(mContext).bindBankCard(0x01, cards);
                     Logger.d("bindUnionCard:" + bindUnionCard);
@@ -602,4 +624,36 @@ public class CaptureActivity extends BaseActivity implements Callback {
             mediaPlayer.seekTo(0);//播放完成     seekto方法的参数是毫秒
         }
     };
+
+    //-------------------------------------------------------------------------------------------Demo演示---------------------------------------------------------------------
+    AnalysisListener analysisListener = new AnalysisListener() {
+        @Override
+        public void getString(String message) {
+            try {
+            Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
+            String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
+            String txnCurr = (jsonMap.get("txnCurr") != null ? jsonMap.get("txnCurr") : "").toString();
+            if (status.equals("0")){
+                Bundle bundle = new Bundle();
+                bundle.putString("emvcode", qrCodeString);
+                bundle.putString("txnCurr", txnCurr);
+                openActivity(PayActivity.class,bundle);
+                finish();
+            }
+            ToastUtils.showLong(message);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public void requestPreTradeInfoFromService() {
+        Map<String, String> map = new TreeMap<>();
+        map.put("emvcode", qrCodeString);
+        map.put("countryCode", countryCode);
+        map.put("mobile", mobile);
+        map.put("sessionID", sessionID);
+
+        analysisInterface.getMessage(mContext,map,analysisListener);
+    }
 }

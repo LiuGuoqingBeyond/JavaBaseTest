@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.GotoWebActivity">
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_countryCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="请输入区号"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="86" />
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="请输入手机号"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="17665232288" />
+
+    <Button
+        android:id="@+id/btn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:text="登陆" />
+
+</LinearLayout>

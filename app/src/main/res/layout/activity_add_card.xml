@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/other_bg"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.AddCardActivity">
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_card"
+        style="@style/et_style_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="@string/activity_intobank_number"
+        android:text="6228480609824954372"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_ifomation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+            android:id="@+id/et_mobile"
+            style="@style/et_style_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:layout_marginTop="@dimen/defaultPadding"
+            android:background="@color/white"
+            android:hint="@string/login_hint_account"
+            android:text="17665232288"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:paddingStart="@dimen/defaultPadding" />
+
+        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+            android:id="@+id/et_id"
+            style="@style/et_style_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:layout_marginTop="@dimen/dividingLineHeight"
+            android:background="@color/white"
+            android:hint="@string/activity_certificate_number"
+            android:text="522601199305185418"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:paddingStart="@dimen/defaultPadding" />
+
+        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+            android:id="@+id/et_name"
+            style="@style/et_style_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:layout_marginTop="@dimen/dividingLineHeight"
+            android:background="@color/white"
+            android:hint="@string/activity_bank_name"
+            android:text="刘国卿"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:paddingStart="@dimen/defaultPadding" />
+
+        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+            android:id="@+id/et_cvn"
+            style="@style/et_style_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:layout_marginTop="@dimen/dividingLineHeight"
+            android:background="@color/white"
+            android:hint="cvn"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:paddingStart="@dimen/defaultPadding" />
+
+        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+            android:id="@+id/et_valid"
+            style="@style/et_style_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:layout_marginTop="@dimen/dividingLineHeight"
+            android:background="@color/white"
+            android:hint="@string/activity_valid"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:paddingStart="@dimen/defaultPadding" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        style="@style/btnStyle_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultItemHeight_36dp"
+        android:text="@string/text_next"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/other_bg">
+
+    <TextView
+        android:id="@+id/tvRecordHeaderDate"
+        style="@style/textStyle_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/defaultPadding"
+        tools:text="2017月14日"/>
+
+
+    <TextView
+        android:id="@+id/tvRecordHeaderOrderNum"
+        style="@style/textStyle_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:textColor="@color/textColorHint"
+        tools:text="共17比"/>
+</RelativeLayout>

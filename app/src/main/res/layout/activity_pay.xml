@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.PayActivity">
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_carNumber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/defaultItemHeight"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="请输入扫码枪已绑定过的银行卡号" />
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_money"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="请输入交易金额" />
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="请输入密码" />
+
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:text="点击交易" />
+
+</LinearLayout>

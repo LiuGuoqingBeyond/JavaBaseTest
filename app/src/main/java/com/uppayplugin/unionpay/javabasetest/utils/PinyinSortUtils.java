@@ -2,7 +2,7 @@ package com.uppayplugin.unionpay.javabasetest.utils;
 
 import android.content.Context;
 
-import com.uppayplugin.unionpay.javabasetest.entity.response.BankCardInfo;
+import com.uppayplugin.unionpay.javabasetest.entity.response.BankCardInfos;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
@@ -57,11 +57,11 @@ public class PinyinSortUtils {
      * @param list 排序前的数据源
      * @return list排序后的数据
      */
-    public List<BankCardInfo> listToSortByName(List<BankCardInfo> list){
+    public List<BankCardInfos> listToSortByName(List<BankCardInfos> list){
         if(list==null || list.size()==0){
             return null;
         }
-        Map<String, BankCardInfo> map = new HashMap<String, BankCardInfo>();
+        Map<String, BankCardInfos> map = new HashMap<String, BankCardInfos>();
         String names[] = new String[list.size()];
         for(int i=0;i<list.size();i++){
             String name = list.get(i).getTestName().trim();

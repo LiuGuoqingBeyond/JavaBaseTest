@@ -188,5 +188,5 @@ dependencies {
         }
     }
 //    implementation project(':testdemolib')
-    implementation files('libs/testPluginLib.jar')
+    implementation files('libs/sdk.jar')
 }

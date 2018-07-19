@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/padding_72x"
+    android:paddingLeft="@dimen/defaultPadding"
+    android:paddingRight="@dimen/defaultPadding"
+    android:paddingTop="@dimen/defaultPadding">
+
+
+    <ImageView
+        android:id="@+id/ivConsumptionType"
+        android:layout_width="@dimen/padding_40x"
+        android:layout_height="@dimen/padding_40x"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvInTradeOrderCashier"
+        style="@style/textStyle_sub_text"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/defaultPadding"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:singleLine="true"
+        android:lines="1"
+        android:layout_toEndOf="@+id/ivConsumptionType"
+        android:layout_toRightOf="@+id/ivConsumptionType"
+        android:textColor="#313131"
+        tools:text="商户名称" />
+
+    <TextView
+        android:id="@+id/tvOrderAmount"
+        style="@style/textStyle_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        tools:text="订单金额 HKD 207.4"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/textStyle_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvInTradeOrderCashier"
+        android:layout_marginLeft="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/halfDefaultPadding"
+        android:layout_toRightOf="@+id/ivConsumptionType"
+        tools:text="7月01日 14：23" />
+
+
+    <TextView
+        android:id="@+id/tvPayAmount"
+        style="@style/textStyle_body_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="#313131"
+        tools:text="支付金额 HKD 207.4"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/tvDate"
+        android:layout_marginLeft="@dimen/padding_57x"
+        android:layout_marginTop="@dimen/halfDefaultPadding"
+        android:background="@color/dividingLine" />
+</RelativeLayout>

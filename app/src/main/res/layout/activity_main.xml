@@ -10,39 +10,48 @@
         android:id="@+id/btn_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="点我"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:text="点我进入" />
+
     <ImageView
         android:id="@+id/image_qr"
         android:layout_width="200dp"
         android:layout_height="200dp" />
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
     <com.uppayplugin.unionpay.javabasetest.utils.personal.CircleImageView
         android:id="@+id/iv_head_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/list_icon_head_portrait"/>
+        android:src="@mipmap/list_icon_head_portrait" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/tvText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <FrameLayout
-                android:layout_width="match_parent"
                 android:id="@+id/framelayout"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
             </FrameLayout>

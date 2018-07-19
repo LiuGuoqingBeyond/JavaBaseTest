@@ -100,12 +100,12 @@ public class PayPwdManagerUtils {
      * @param choseCard
      * @return
      *//*
-    public ArrayList<BankCardInfo> replaceBankCardStatus(ArrayList<BankCardInfo> list,BankCardInfo choseCard
+    public ArrayList<BankCardInfos> replaceBankCardStatus(ArrayList<BankCardInfos> list,BankCardInfos choseCard
                                                          ,String cardStatus) {
         if(null == list || null == choseCard) return list;
         try {
             if(!TextUtils.isEmpty(cardStatus) && cardStatus.equals("1")) {
-                for (BankCardInfo bankCardInfo : list) {
+                for (BankCardInfos bankCardInfo : list) {
                     if (bankCardInfo.getCardNum().equals(choseCard.getCardNum())) {
                         bankCardInfo.setCardStatus("1");
                     }
@@ -123,10 +123,10 @@ public class PayPwdManagerUtils {
      * @param list
      * @return
      *//*
-    public ArrayList<BankCardInfo> resetBankCardStatus(ArrayList<BankCardInfo> list) {
+    public ArrayList<BankCardInfos> resetBankCardStatus(ArrayList<BankCardInfos> list) {
         if(null == list) return list;
         try {
-            for (BankCardInfo bankCardInfo : list) {
+            for (BankCardInfos bankCardInfo : list) {
                 bankCardInfo.setCardStatus("0");
             }
         } catch (Exception e) {
@@ -142,12 +142,12 @@ public class PayPwdManagerUtils {
      * @param choseCard
      * @return
      *//*
-    public ArrayList<BankCardInfo> replaceQRPayBankCardStatus(ArrayList<BankCardInfo> list,BankCardInfo choseCard
+    public ArrayList<BankCardInfos> replaceQRPayBankCardStatus(ArrayList<BankCardInfos> list,BankCardInfos choseCard
             ,String cardStatus) {
         if(null == list || null == choseCard) return list;
         try {
             if(!TextUtils.isEmpty(cardStatus) && cardStatus.equals("1")) {
-                for (BankCardInfo bankCardInfo : list) {
+                for (BankCardInfos bankCardInfo : list) {
                     if (bankCardInfo.getCardNum().equals(choseCard.getCardNum())) {
                         bankCardInfo.setQrCardStatus("1");
                     }
@@ -165,10 +165,10 @@ public class PayPwdManagerUtils {
      * @param list
      * @return
      *//*
-    public ArrayList<BankCardInfo> resetQRPayBankCardStatus(ArrayList<BankCardInfo> list) {
+    public ArrayList<BankCardInfos> resetQRPayBankCardStatus(ArrayList<BankCardInfos> list) {
         if(null == list) return list;
         try {
-            for (BankCardInfo bankCardInfo : list) {
+            for (BankCardInfos bankCardInfo : list) {
                 bankCardInfo.setQrCardStatus("0");
             }
         } catch (Exception e) {
@@ -184,19 +184,19 @@ public class PayPwdManagerUtils {
      * @param list
      * @return
      *//*
-    public ArrayList<BankCardInfo> getBankCardList(int type, ArrayList<BankCardInfo> list) {
-        ArrayList<BankCardInfo> bankCardList = new ArrayList<BankCardInfo>();
+    public ArrayList<BankCardInfos> getBankCardList(int type, ArrayList<BankCardInfos> list) {
+        ArrayList<BankCardInfos> bankCardList = new ArrayList<BankCardInfos>();
         if (null != list && list.size() > 0) {
             switch (type) {
                 case 0x00:
-                    for (BankCardInfo bankCardInfo : list) {
+                    for (BankCardInfos bankCardInfo : list) {
                         if (bankCardInfo.getChannelType().contains(ConstantUtils.ZHONGFU_CARDTYPE)) {
                             bankCardList.add(bankCardInfo);
                         }
                     }
                     break;
                 case 0x01:
-                    for (BankCardInfo bankCardInfo : list) {
+                    for (BankCardInfos bankCardInfo : list) {
                         if (bankCardInfo.getChannelType().contains(ConstantUtils.YINLIAN_CARDTYPE)) {
                             bankCardList.add(bankCardInfo);
                         }
@@ -271,20 +271,20 @@ public class PayPwdManagerUtils {
      * @param list
      * @return
      *//*
-    public List<BankCardInfo> getSystemAreaBankList(boolean isInternational, List<BankCardInfo> list) {
-        List<BankCardInfo> bankCardList = null;
+    public List<BankCardInfos> getSystemAreaBankList(boolean isInternational, List<BankCardInfos> list) {
+        List<BankCardInfos> bankCardList = null;
         if(null == list || list.size() == 0) return list;
         try {
-            bankCardList = new ArrayList<BankCardInfo>();
+            bankCardList = new ArrayList<BankCardInfos>();
             if(isInternational) {
-                for (BankCardInfo cardInfo:list) {
+                for (BankCardInfos cardInfo:list) {
                     String up = cardInfo.getOpenCountry().UP;
                     if(!TextUtils.isEmpty(up) && up.equals("0")) {
                         bankCardList.add(cardInfo);
                     }
                 }
             } else {
-                for (BankCardInfo cardInfo:list) {
+                for (BankCardInfos cardInfo:list) {
                     String my = cardInfo.getOpenCountry().MY;
                     String sg= cardInfo.getOpenCountry().SG;
                     String hk = cardInfo.getOpenCountry().HK;
@@ -308,20 +308,20 @@ public class PayPwdManagerUtils {
      * @param list
      * @return
      *//*
-    public ArrayList<BankCardInfo> getSysAreaBankList(boolean isInternational, List<BankCardInfo> list) {
-        ArrayList<BankCardInfo> bankCardList = null;
+    public ArrayList<BankCardInfos> getSysAreaBankList(boolean isInternational, List<BankCardInfos> list) {
+        ArrayList<BankCardInfos> bankCardList = null;
         if(null == list || list.size() == 0) return bankCardList;
         try {
-            bankCardList = new ArrayList<BankCardInfo>();
+            bankCardList = new ArrayList<BankCardInfos>();
             if(isInternational) {
-                for (BankCardInfo cardInfo:list) {
+                for (BankCardInfos cardInfo:list) {
                     String up = cardInfo.getOpenCountry().UP;
                     if(!TextUtils.isEmpty(up) && up.equals("0")) {
                         bankCardList.add(cardInfo);
                     }
                 }
             } else {
-                for (BankCardInfo cardInfo:list) {
+                for (BankCardInfos cardInfo:list) {
                     String my = cardInfo.getOpenCountry().MY;
                     String sg= cardInfo.getOpenCountry().SG;
                     String hk = cardInfo.getOpenCountry().HK;

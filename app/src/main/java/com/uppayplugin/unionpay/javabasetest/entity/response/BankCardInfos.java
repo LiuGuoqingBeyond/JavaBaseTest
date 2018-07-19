@@ -4,12 +4,12 @@ package com.uppayplugin.unionpay.javabasetest.entity.response;
  * Created by Administrator on 2018/7/9 0009.
  */
 
-public class BankCardInfo {
+public class BankCardInfos {
     public String testName;
 
     @Override
     public String toString() {
-        return "BankCardInfo{" +
+        return "BankCardInfos{" +
                 "testName='" + testName + '\'' +
                 '}';
     }
