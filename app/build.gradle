@@ -187,6 +187,6 @@ dependencies {
             dirs 'libs'
         }
     }
-//    implementation project(':testdemolib')
-    implementation files('libs/sdk.jar')
+    implementation project(':testdemolib')
+//    implementation files('libs/sdk.jar')
 }
