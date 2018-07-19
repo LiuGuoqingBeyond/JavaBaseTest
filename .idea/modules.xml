@@ -4,11 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AFrameLib/AFrameLib.iml" filepath="$PROJECT_DIR$/AFrameLib/AFrameLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaBaseTest.iml" filepath="$PROJECT_DIR$/JavaBaseTest.iml" />
-      <module fileurl="file://D:\AndroidEP\JavaBaseTest\JavaBaseTest.iml" filepath="D:\AndroidEP\JavaBaseTest\JavaBaseTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libcommon/libcommon.iml" filepath="$PROJECT_DIR$/libcommon/libcommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/testdemolib/testdemolib.iml" filepath="$PROJECT_DIR$/testdemolib/testdemolib.iml" />
-      <module fileurl="file://D:\AndroidEP\JavaBaseTest\testdemolib\testdemolib.iml" filepath="D:\AndroidEP\JavaBaseTest\testdemolib\testdemolib.iml" />
     </modules>
   </component>
 </project>

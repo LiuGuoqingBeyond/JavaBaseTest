@@ -762,6 +762,11 @@ public class MainActivity extends BaseActivity {
         //图片按比例缩放
         //其实<ImagView 标签添加这个属性即可android:adjustViewBounds="true"
 
+        //跳转传值
+        Intent intent = new Intent(MainActivity.this, StartResultActivity.class);
+        intent.putExtra("a", "哈哈");
+        intent.putExtra("b", "呵呵");// 这种启动方式：startActivity(intent);并不能返回结果
+        startActivityForResult(intent, 1);
         //ToolBar
 //        openActivity(ToolBarActivity.class);
 
@@ -773,6 +778,17 @@ public class MainActivity extends BaseActivity {
 
         //扫码JS交互
 //        openActivity(GotoWebActivity.class);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode  == 2){
+            if (requestCode == 1) {
+                String a = data.getStringExtra("itentdata");
+                Log.d("打印了=",a);
+            }
+        }
     }
 
     TestDemoListener testDemoListener = message -> ToastUtils.showLong(message);
