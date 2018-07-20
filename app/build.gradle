@@ -188,5 +188,4 @@ dependencies {
         }
     }
     implementation project(':testdemolib')
-//    implementation files('libs/sdk.jar')
 }

@@ -11,20 +11,18 @@ import com.example.testdemolib.Interface.GetAppLoginMessageInterface;
 import com.example.testdemolib.Interface.TestDemoInterface;
 import com.example.testdemolib.Listener.GetAppLoginMessageListener;
 import com.example.testdemolib.Listener.TestDemoListener;
+import com.example.testdemolib.entity.respons.GetTemsessionReqModel;
+import com.example.testdemolib.entity.respons.LoginAppReqModel;
 import com.example.testdemolib.utils.RSACoder;
 import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
-import com.uppayplugin.unionpay.javabasetest.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL;
 import com.uppayplugin.unionpay.libcommon.des.DESCoder;
 import com.uppayplugin.unionpay.libcommon.device.PhoneUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -90,19 +88,20 @@ public class UPIScanActivity extends ToolBarActivity {
         return null;
     }
 
-    TestDemoListener testDemoListener = s -> {
-        if (null != s) {
-            try {
-                Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(s));
-                String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-                tempSessionId = (jsonMap.get("sessionID") != null ? jsonMap.get("sessionID") : "").toString();
-                if (status.equals("0")) {
+    TestDemoListener testDemoListener = new TestDemoListener() {
+        @Override
+        public void _onNext(GetTemsessionReqModel getTemsessionReqModel) {
+            if (null != getTemsessionReqModel) {
+                if (getTemsessionReqModel.status.equals("0")) {
                     //去登陆
-                    appLoading(tempSessionId);
+                    appLoading(getTemsessionReqModel.getSessionID());
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 
@@ -132,35 +131,34 @@ public class UPIScanActivity extends ToolBarActivity {
 
     GetAppLoginMessageListener getAppLoginMessageListener = new GetAppLoginMessageListener() {
         @Override
-        public void getMessage(String message) {
-            try {
-                Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-                String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-                String sessionID = (jsonMap.get("sessionID") != null ? jsonMap.get("sessionID") : "").toString();
-                String securityKey = (jsonMap.get("securityKey") != null ? jsonMap.get("securityKey") : "").toString();
-                String randomNo = (jsonMap.get("randomNo") != null ? jsonMap.get("randomNo") : "").toString();
-                String upopTime = (jsonMap.get("upopTime") != null ? jsonMap.get("upopTime") : "").toString();
-                if (status.equals("0")){
-                    prefs.writePrefs(Constant.PREFES_IMEI_CODE, "123456");
-                    prefs.writePrefs(Constant.PREFES_SESSIONID, sessionID);
-                    prefs.writePrefs(Constant.PREFES_KEY, securityKey);
-                    prefs.writePrefs(Constant.PREFES_TEMPSESSIONID, tempSessionId);
-                    prefs.writePrefs(Constant.PREFES_RANDOMKEY, randomKey);
-                    prefs.writePrefs(Constant.PREFES_MOBILE, mobile);
-                    prefs.writePrefs(Constant.PREFES_LATITUDE, "23.3421");
-                    prefs.writePrefs(Constant.PREFES_LONGITUDE, "12.23422");
-                    prefs.writePrefs(Constant.PREFES_IP, PhoneUtils.getPhoneIp());
-                    prefs.writePrefs(Constant.PREFES_BASESTATION, "ww");
-                    prefs.writePrefs(Constant.PREFES_COUNTRYCODE, countryCode);
-
-                    prefs.writePrefs(Constant.PREFES_RANDOMNO, randomNo);//随机数
-                    prefs.writePrefs(Constant.UPOPTIME, upopTime);//系统时间
-                    openActivity(UPIScanMainActivity.class);
-                    ToastUtils.showLong("登陆成功");
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+        public void _onNext(LoginAppReqModel loginAppReqModel) {
+            String status = loginAppReqModel.status;
+            if (status.equals("0")) {
+                String sessionID = loginAppReqModel.getSessionID();
+                String securityKey = loginAppReqModel.getSecurityKey();
+                String randomNo = loginAppReqModel.getRandomNo();
+                String upopTime = loginAppReqModel.getUpopTime();
+                prefs.writePrefs(Constant.PREFES_IMEI_CODE, "123456");
+                prefs.writePrefs(Constant.PREFES_SESSIONID, sessionID);
+                prefs.writePrefs(Constant.PREFES_KEY, securityKey);
+                prefs.writePrefs(Constant.PREFES_TEMPSESSIONID, tempSessionId);
+                prefs.writePrefs(Constant.PREFES_RANDOMKEY, randomKey);
+                prefs.writePrefs(Constant.PREFES_MOBILE, mobile);
+                prefs.writePrefs(Constant.PREFES_LATITUDE, "23.3421");
+                prefs.writePrefs(Constant.PREFES_LONGITUDE, "12.23422");
+                prefs.writePrefs(Constant.PREFES_IP, PhoneUtils.getPhoneIp());
+                prefs.writePrefs(Constant.PREFES_BASESTATION, "ww");
+                prefs.writePrefs(Constant.PREFES_COUNTRYCODE, countryCode);
+                prefs.writePrefs(Constant.PREFES_RANDOMNO, randomNo);//随机数
+                prefs.writePrefs(Constant.UPOPTIME, upopTime);//系统时间
+                openActivity(UPIScanMainActivity.class);
+                ToastUtils.showLong("登陆成功");
             }
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 

@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.example.testdemolib.Impl.BoundCardImpl;
 import com.example.testdemolib.Interface.BoundCardInterface;
 import com.example.testdemolib.Listener.BoundCardListener;
+import com.example.testdemolib.entity.respons.BankCardMobel;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
@@ -120,16 +121,18 @@ public class ImputCodeActivity extends ToolBarActivity {
         return null;
     }
 
-    BoundCardListener boundCardListener = message -> {
-        try {
-            ToastUtils.showLong(message);
-            Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-            String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-            if (status.equals("0")) {
-                finish();
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+    BoundCardListener boundCardListener = new BoundCardListener() {
+        @Override
+        public void _onNext(BankCardMobel bankCardMobel) {
+                ToastUtils.showLong(bankCardMobel.getMsg());
+                if (bankCardMobel.getStatus().equals("0")) {
+                    finish();
+                }
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 

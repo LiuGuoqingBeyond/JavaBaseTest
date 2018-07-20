@@ -35,34 +35,12 @@ public class GetCodeImpl implements GetCodeInterface {
                     @Override
                     protected void _onNext(GetBoundCardMobileRespons responseModel) {
                         Logger.e("获取验证码=" + responseModel.toString());
-                        getCodeListener.getMessage(responseModel.toString());
-//                        status = responseModel.getStatus();
-                        if (responseModel.isOk()) {
-                            // 获取短信验证码成功
-                            /*orderId = responseModel.getOrderId();
-                            btnGetValidateCode.setEnabled(false);
-                            CountDownButtonHelper helper = new CountDownButtonHelper(mContext,
-                                    btnGetValidateCode, btnGetValidateCode.getText().toString(), 60, 1);
-                            helper.setOnFinishListener(() -> {
-                                btnGetValidateCode.setEnabled(true);
-                                btnGetValidateCode.setText(getString(R.string.get_code_again));
-                            });
-                            helper.start();*/
-                        } else if (responseModel.needLogin()) {
-                            /*DialogShowUtils.showReloginDailog(VerificationPhoneActivity.this, responseModel.msg);*/
-                        } else {
-                            /*btnGetValidateCode.setEnabled(true);
-                            btnGetValidateCode.setText(getString(R.string.matchemail_send_verification));
-                            DialogShowUtils.showNoticeDialogWithFinish(mContext, "", responseModel.getMsg(), getString(R.string.text_confirm_msg), false);*/
-                        }
+                        getCodeListener._onNext(responseModel);
                     }
 
                     @Override
                     protected void _onError(String message) {
-                        /*btnGetValidateCode.setEnabled(true);
-                        btnGetValidateCode.setText(getString(R.string.matchemail_send_verification));
-                        Logger.e("_onError-> message:" + message);
-                        DialogShowUtils.showNoticeDialog(mContext,"",message,getString(R.string.text_know),true);*/
+                        getCodeListener._onError(message);
                     }
                 });
     }

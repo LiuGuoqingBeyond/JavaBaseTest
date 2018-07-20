@@ -34,18 +34,12 @@ public class GetCardMessageImpl implements GetCardMessageInterface {
                     @Override
                     protected void _onNext(BankTypeModel bankTypeModel) {
                         Logger.e("银行卡类型返回参数:" + bankTypeModel.toString());
-                        if (bankTypeModel.isOk()) {
-                            getCardMessageListener.getMessage(bankTypeModel.toString());
-                        } else if (bankTypeModel.needLogin()) {
-                            /*DialogShowUtils.showReloginDailog(AddBankCardActivity.this, bankTypeModel.msg);*/
-                        } else {
-                            /*DialogShowUtils.showNoticeDialog(mContext,"",bankTypeModel.getMsg(),getString(R.string.text_know),true);*/
-                        }
+                        getCardMessageListener._onNext(bankTypeModel);
                     }
 
                     @Override
                     protected void _onError(String message) {
-                        /*DialogShowUtils.showNoticeDialog(mContext,"",message,getString(R.string.text_know),true);*/
+                        getCardMessageListener._onError(message);
                     }
                 });
     }

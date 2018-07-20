@@ -34,21 +34,12 @@ public class BoundCardImpl implements BoundCardInterface {
                     @Override
                     protected void _onNext(BankCardMobel bankCardMobel) {
                         Logger.e("绑定银行卡result:" + bankCardMobel.toString());
-                        boundCardListener.getMessage(bankCardMobel.toString());
-                        if (bankCardMobel.getStatus().equals("0")) {
-                            /*ToastUtils.showLong(bankCardMobel.getMsg().toString());
-                            //当绑卡成功以后，再次查询银行卡列表，保存值
-                            queryCardList();*/
-                        } else if ("168".equals(bankCardMobel.getStatus())) {
-                            /*DialogShowUtils.showReloginDailog(mContext, bankCardMobel.getMsg().toString());*/
-                        } else {
-                            /*DialogShowUtils.showNoticeDialog(mContext,"",bankCardMobel.getMsg(),getString(R.string.text_know),true);*/
-                        }
+                        boundCardListener._onNext(bankCardMobel);
                     }
 
                     @Override
                     protected void _onError(String message) {
-                        /*DialogShowUtils.showNoticeDialog(mContext,"",message,getString(R.string.text_know),true);*/
+                        boundCardListener._onError(message);
                     }
                 });
     }

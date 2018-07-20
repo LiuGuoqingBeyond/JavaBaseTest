@@ -10,7 +10,6 @@ import com.example.testdemolib.entity.request.PreTradeInfoReqModel;
 import com.example.testdemolib.entity.respons.TradeInfoRespModel;
 import com.example.testdemolib.mapbean.TransMapToBeanUtils;
 import com.example.testdemolib.utils.PayUtils;
-import com.example.testdemolib.utils.RSACoder;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -21,7 +20,7 @@ import java.util.Map;
  * E-Mail Address：1076790023@qq.com
  */
 
-public class AnalysisImpl implements AnalysisInterface{
+public class AnalysisImpl implements AnalysisInterface {
     @Override
     public void getMessage(Context context, Map<String, String> map, AnalysisListener analysisListener) {
         map.put("txnType", "74");
@@ -36,21 +35,13 @@ public class AnalysisImpl implements AnalysisInterface{
                     @Override
                     protected void _onNext(TradeInfoRespModel responseModel) {
                         Logger.e("后台查询到的预交易信息:" + responseModel.toString());
-                        analysisListener.getString(responseModel.toString());
-                        /*if (responseModel.isOk()) {
-                            Logger.e("交易金额：" + responseModel.getTxnAmt());
-                            toNextPage(true,responseModel,qrCodeString,"","");
-                        } else if (responseModel.needLogin()) {
-                            DialogShowUtils.showReloginDailog(mContext, responseModel.getMsg());
-                        } else {
-                            DialogShowUtils.showCommonDialogWithFinish(mContext, responseModel.getMsg());
-                        }*/
+                        analysisListener._onNext(responseModel);
                     }
 
                     @Override
                     protected void _onError(String message) {
                         Logger.e("message:" + message);
-//                        DialogShowUtils.showCommonDialogWithFinish(mContext, message);
+                        analysisListener._onError(message);
                     }
                 });
     }

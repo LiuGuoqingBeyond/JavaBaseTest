@@ -33,44 +33,12 @@ public class CardListImpl implements CardListInterface {
                     @Override
                     protected void _onNext(QueryCardListResponseModel queryCardListResponseModel) {
                         Logger.e("查询银行卡result:" + queryCardListResponseModel.toString());
-                        cardListListener.getMessage(queryCardListResponseModel);
-                        /*if (queryCardListResponseModel.isOk()) {
-                            if (!TextUtils.isEmpty(queryCardListResponseModel.getTotalCredit()) && queryCardListResponseModel.getTotalCredit().equals("1")){
-                                btnConfirm.setVisibility(View.GONE);
-                            }else {
-                                btnConfirm.setVisibility(View.VISIBLE);
-                            }
-
-                            if (queryCardListResponseModel.getList().size() > 0) {
-                                accountNoBound.setVisibility(View.GONE);
-                                bankcardlist = new Gson().toJson(queryCardListResponseModel);
-                                prefs.writePrefs(Constant.PREFES_CARDCODELIST, bankcardlist);
-                                prefs.writePrefs(Constant.PREFES_CARDCODELISTSIZE, queryCardListResponseModel.getList().size() + "");
-                                bankInteradapter.clear();
-//                                bankInteradapter.appendToList(queryCardListResponseModel.getList());//国际adapter
-//                                queryCardListResponse = queryCardListResponseModel;
-                                // FIXME: 2018/6/14 LGQ 区别信用卡和借记卡
-                                betweenCard(queryCardListResponseModel.getList());
-                            }
-
-                        } else if (queryCardListResponseModel.getStatus().equals("2")) {
-                            prefs.writePrefs(Constant.PREFES_CARDCODELIST, new Gson().toJson(queryCardListResponseModel));
-
-                            prefs.writePrefs(Constant.PREFES_CARDCODELISTSIZE, "0");
-                            bankInteradapter.clear();
-                            accountNoBound.setVisibility(View.VISIBLE);
-                            btnConfirm.setVisibility(View.VISIBLE);
-                        } else if (queryCardListResponseModel.needLogin()) {
-                            *//*DialogShowUtils.showReloginDailog(AccountBankCardActivity.this, queryCardListResponseModel.msg);*//*
-                        } else {
-                            *//*DialogShowUtils.showNoticeDialog(mContext,"",queryCardListResponseModel.getMsg(),getString(R.string.text_know),true);*//*
-                        }*/
+                        cardListListener._onNext(queryCardListResponseModel);
                     }
 
                     @Override
                     protected void _onError(String message) {
-                        Logger.e("message" + message);
-                       /* DialogShowUtils.showNoticeDialog(mContext,"",message,getString(R.string.text_know),false);*/
+                        cardListListener._onError(message);
                     }
                 });
     }

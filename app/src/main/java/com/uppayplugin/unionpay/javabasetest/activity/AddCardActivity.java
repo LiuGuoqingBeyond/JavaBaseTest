@@ -12,6 +12,8 @@ import com.example.testdemolib.Interface.GetCardMessageInterface;
 import com.example.testdemolib.Interface.GetCodeInterface;
 import com.example.testdemolib.Listener.GetCardMessageListener;
 import com.example.testdemolib.Listener.GetCodeListener;
+import com.example.testdemolib.entity.respons.BankTypeModel;
+import com.example.testdemolib.entity.respons.GetBoundCardMobileRespons;
 import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
@@ -230,43 +232,43 @@ public class AddCardActivity extends ToolBarActivity {
     //获取验证码listener
     GetCodeListener getCodeListener = new GetCodeListener() {
         @Override
-        public void getMessage(String message) {
-            try {
-                Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-                String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-                String orderId = (jsonMap.get("orderId") != null ? jsonMap.get("orderId") : "").toString();
-                if (status.equals("0")) {
-                    //跳到下一页去输入验证码
-                    Bundle bundle = new Bundle();
-                    bundle.putString("orderId",orderId);
-                    bundle.putString("cardNum",cardName);
-                    bundle.putString("idCard",etId);
-                    bundle.putString("cvn2",etCvn);
-                    bundle.putString("expired",etValid);
-                    bundle.putString("name",etName);
-                    bundle.putString("bindCountryCode","86");
-                    bundle.putString("idType","01");
-                    bundle.putString("phoneNo",etMobile);
-                    openActivity(ImputCodeActivity.class,bundle,true);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+        public void _onNext(GetBoundCardMobileRespons getBoundCardMobileRespons) {
+            if (getBoundCardMobileRespons.status.equals("0")) {
+                //跳到下一页去输入验证码
+                Bundle bundle = new Bundle();
+                bundle.putString("orderId", getBoundCardMobileRespons.getOrderId());
+                bundle.putString("cardNum", cardName);
+                bundle.putString("idCard", etId);
+                bundle.putString("cvn2", etCvn);
+                bundle.putString("expired", etValid);
+                bundle.putString("name", etName);
+                bundle.putString("bindCountryCode", "86");
+                bundle.putString("idType", "01");
+                bundle.putString("phoneNo", etMobile);
+                openActivity(ImputCodeActivity.class, bundle, true);
             }
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 
     //获取卡详情listener
-    GetCardMessageListener getCardMessageListener = message -> {
-        try {
-            Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-            String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-            if (status.equals("0")) {
-                cardType = (jsonMap.get("cardType") != null ? jsonMap.get("cardType") : "").toString();
+    GetCardMessageListener getCardMessageListener = new GetCardMessageListener() {
+        @Override
+        public void _onNext(BankTypeModel bankTypeModel) {
+            if (bankTypeModel.status.equals("0")) {
+                cardType = bankTypeModel.getCardType();
                 et_card.setVisibility(View.INVISIBLE);
                 ll_ifomation.setVisibility(View.VISIBLE);
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 }

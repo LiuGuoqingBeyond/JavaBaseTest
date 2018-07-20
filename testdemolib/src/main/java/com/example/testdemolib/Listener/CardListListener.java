@@ -8,5 +8,6 @@ import com.example.testdemolib.entity.respons.QueryCardListResponseModel;
  */
 
 public interface CardListListener {
-    void getMessage(QueryCardListResponseModel queryCardListResponseModel);
+    void _onNext(QueryCardListResponseModel queryCardListResponseModel);
+    void _onError(String error);
 }

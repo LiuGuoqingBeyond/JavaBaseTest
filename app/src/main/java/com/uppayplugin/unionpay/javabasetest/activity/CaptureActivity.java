@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.testdemolib.Impl.AnalysisImpl;
 import com.example.testdemolib.Interface.AnalysisInterface;
 import com.example.testdemolib.Listener.AnalysisListener;
+import com.example.testdemolib.entity.respons.TradeInfoRespModel;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.camera.CameraManager;
@@ -628,22 +629,19 @@ public class CaptureActivity extends BaseActivity implements Callback {
     //-------------------------------------------------------------------------------------------Demo演示---------------------------------------------------------------------
     AnalysisListener analysisListener = new AnalysisListener() {
         @Override
-        public void getString(String message) {
-            try {
-            Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-            String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-            String txnCurr = (jsonMap.get("txnCurr") != null ? jsonMap.get("txnCurr") : "").toString();
-            if (status.equals("0")){
+        public void _onNext(TradeInfoRespModel tradeInfoRespModel) {
+            if (tradeInfoRespModel.status.equals("0")) {
                 Bundle bundle = new Bundle();
                 bundle.putString("emvcode", qrCodeString);
-                bundle.putString("txnCurr", txnCurr);
-                openActivity(PayActivity.class,bundle);
+                bundle.putString("txnCurr", tradeInfoRespModel.getTxnCurr());
+                openActivity(PayActivity.class, bundle);
                 finish();
             }
-            ToastUtils.showLong(message);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 
@@ -654,6 +652,6 @@ public class CaptureActivity extends BaseActivity implements Callback {
         map.put("mobile", mobile);
         map.put("sessionID", sessionID);
 
-        analysisInterface.getMessage(mContext,map,analysisListener);
+        analysisInterface.getMessage(mContext, map, analysisListener);
     }
 }

@@ -1,10 +1,13 @@
 package com.uppayplugin.unionpay.javabasetest.activity;
 
+import android.Manifest;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
@@ -26,6 +29,7 @@ public class UPIScanMainActivity extends ToolBarActivity {
     Button settleRecord;
     @BindView(R.id.upi_scan)
     Button upiScan;
+    private RxPermissions rxPermissions;
 
     @Override
     protected void initToolBar() {
@@ -68,8 +72,36 @@ public class UPIScanMainActivity extends ToolBarActivity {
                 break;
             case R.id.upi_scan:
                 //扫一扫
-                openActivity(CaptureActivity.class);
+                //判断权限
+                rxPermissions();
                 break;
         }
+    }
+
+    private void rxPermissions() {
+        rxPermissions = new RxPermissions(this);
+        rxPermissions
+                .requestEach(
+                        Manifest.permission.CAMERA
+//                        Manifest.permission.READ_PHONE_STATE,
+//                        Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+                .subscribe(permission -> {
+                    switch (permission.name) {
+                        case Manifest.permission.CAMERA:
+                            openActivity(CaptureActivity.class);
+                            break;
+                        /*case Manifest.permission.READ_PHONE_STATE:
+                            ToastUtils.showLong("请打开存储权限");
+                            break;*/
+                        /*case Manifest.permission.ACCESS_COARSE_LOCATION:
+                            new Thread(() -> {
+                                //获取地理位置
+                                getLocation();
+                            }).start();
+                            break;*/
+                    }
+                }, error -> {
+                });
     }
 }

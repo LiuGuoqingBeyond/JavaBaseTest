@@ -14,6 +14,7 @@ import com.uppayplugin.unionpay.javabasetest.adapter.BankListAdapter;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
 import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
+import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetest.view.NewLineaGreyrLayoutManager;
 import com.uppayplugin.unionpay.libcommon.des.DESCoder;
 import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
@@ -92,14 +93,14 @@ public class CardListActivity extends ToolBarActivity implements SwipeItemClickL
 
     CardListListener cardListListener = new CardListListener() {
         @Override
-        public void getMessage(QueryCardListResponseModel queryCardListResponseModel) {
-                /*Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-                String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();*/
+        public void _onNext(QueryCardListResponseModel queryCardListResponseModel) {
             ArrayList<BankCardInfo> list = queryCardListResponseModel.getList();
             bankInteradapter.appendToList(list);
-            /*for (int i = 0; i < queryCardListResponseModel.getList().size(); i++) {
-                ToastUtils.showLong(queryCardListResponseModel.getList().get(i).getBankName());
-            }*/
+        }
+
+        @Override
+        public void _onError(String error) {
+            ToastUtils.showLong(error);
         }
     };
 

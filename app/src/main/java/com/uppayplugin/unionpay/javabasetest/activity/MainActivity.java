@@ -763,10 +763,10 @@ public class MainActivity extends BaseActivity {
         //其实<ImagView 标签添加这个属性即可android:adjustViewBounds="true"
 
         //跳转传值
-        Intent intent = new Intent(MainActivity.this, StartResultActivity.class);
+        /*Intent intent = new Intent(MainActivity.this, StartResultActivity.class);
         intent.putExtra("a", "哈哈");
         intent.putExtra("b", "呵呵");// 这种启动方式：startActivity(intent);并不能返回结果
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, 1);*/
         //ToolBar
 //        openActivity(ToolBarActivity.class);
 
@@ -791,7 +791,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    TestDemoListener testDemoListener = message -> ToastUtils.showLong(message);
+//    TestDemoListener testDemoListener = message -> ToastUtils.showLong(message);
 
     private void showOpenNoticeDialog() {
         OneOrTwoBtnDialogUtil.getDialogInstance().dialogToShow(mContext, "", getString(R.string.xzf_open_notice_text), getString(R.string.text_cancel), getString(R.string.text_confirm_msg), true, (dialogInterface, i) -> {

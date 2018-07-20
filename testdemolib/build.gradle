@@ -150,7 +150,6 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    implementation files('libs/commons-io.jar')
     compile project(':AFrameLib')
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
 
