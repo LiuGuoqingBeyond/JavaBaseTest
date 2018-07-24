@@ -7,7 +7,7 @@ import com.example.testdemolib.entity.request.GetBankTypeReqModel;
 import com.example.testdemolib.entity.request.GetBoundCardMobileCodeModel;
 import com.example.testdemolib.entity.respons.GetBoundCardMobileRespons;
 import com.example.testdemolib.entity.respons.GetTemsessionReqModel;
-import com.example.testdemolib.Impl.LoginAppModel;
+import com.example.testdemolib.entity.request.LoginAppModel;
 import com.example.testdemolib.entity.respons.LoginAppReqModel;
 import com.example.testdemolib.entity.request.LoginGetSessionModel;
 import com.example.testdemolib.entity.respons.QueryCardListResponseModel;

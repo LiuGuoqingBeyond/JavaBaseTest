@@ -7,5 +7,6 @@ import com.example.testdemolib.entity.respons.TradeRecordAllRespone;
  */
 
 public interface QuerySellectListener {
-    void getMessage(TradeRecordAllRespone tradeRecordAllRespone);
+    void _onNext(TradeRecordAllRespone tradeRecordAllRespone);
+    void _onError(String error);
 }

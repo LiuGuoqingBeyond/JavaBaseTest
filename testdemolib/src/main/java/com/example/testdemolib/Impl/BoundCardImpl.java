@@ -10,6 +10,7 @@ import com.example.testdemolib.entity.request.BoundCardModel;
 import com.example.testdemolib.entity.respons.BankCardMobel;
 import com.example.testdemolib.mapbean.TransMapToBeanUtils;
 import com.example.testdemolib.utils.PayUtils;
+import com.example.testdemolib.utils.RSACoder;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -25,7 +26,7 @@ public class BoundCardImpl implements BoundCardInterface {
     public void getMessage(Context context, Map<String, String> map, BoundCardListener boundCardListener) {
         map.put("txnType", "10");
         String str = PayUtils.joinMapValue(map, '&');
-        map.put("signature", com.uppayplugin.unionpay.libcommon.rsa.RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
+        map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
         String result = new Gson().toJson(map);
         Logger.e("result" + result);
 

@@ -6,9 +6,11 @@ import com.axl.android.frameworkbase.net.utils.ProgressSubscriber;
 import com.axl.android.frameworkbase.utils.Constant;
 import com.example.testdemolib.Interface.GetAppLoginMessageInterface;
 import com.example.testdemolib.Listener.GetAppLoginMessageListener;
+import com.example.testdemolib.entity.request.LoginAppModel;
 import com.example.testdemolib.entity.respons.LoginAppReqModel;
 import com.example.testdemolib.mapbean.TransMapToBeanUtils;
 import com.example.testdemolib.utils.PayUtils;
+import com.example.testdemolib.utils.RSACoder;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -24,7 +26,7 @@ public class GetAppLoginImpl implements GetAppLoginMessageInterface {
     public void getMessage(Context context, Map<String, String> map, GetAppLoginMessageListener getAppLoginMessageListener) {
         map.put("txnType", "06");
         String str = PayUtils.joinMapValue(map, '&');
-        map.put("signature", com.uppayplugin.unionpay.libcommon.rsa.RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
+        map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
         String result = new Gson().toJson(map);
         Logger.e("result" + result);
 

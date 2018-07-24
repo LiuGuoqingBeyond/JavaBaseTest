@@ -10,6 +10,7 @@ import com.example.testdemolib.entity.respons.TradeRecordAllRespone;
 import com.example.testdemolib.entity.respons.TradeRecordMonthRequest;
 import com.example.testdemolib.mapbean.TransMapToBeanUtils;
 import com.example.testdemolib.utils.PayUtils;
+import com.example.testdemolib.utils.RSACoder;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -25,29 +26,18 @@ public class QuerySellectImpl implements QuerySellectInterface {
     public void getMessage(Context context, Map<String, String> map, QuerySellectListener querySellectListener) {
         map.put("txnType", "12");
         String str = PayUtils.joinMapValue(map, '&');
-        map.put("signature", com.uppayplugin.unionpay.libcommon.rsa.RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
-        String result = new Gson().toJson(map);
-        Logger.e("result" + result);
+        map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
 
         TradeRecordRequest.getTradeRecordAll((TradeRecordMonthRequest) TransMapToBeanUtils.mapToBean(map, TradeRecordMonthRequest.class))
                 .subscribe(new ProgressSubscriber<TradeRecordAllRespone>(context) {
                     @Override
                     protected void _onNext(TradeRecordAllRespone uPlanModelRespones) {
-                        querySellectListener.getMessage(uPlanModelRespones);
-                        /*if (uPlanModelRespones.isOk()) {
-                            // TODU FIXME: 2017/12/29 LGQ
-                            transformData(uPlanModelRespones);
-                        } else if (uPlanModelRespones.needLogin()) {
-                            DialogShowUtils.showReloginDailog(TransactionRecordActivity.this, uPlanModelRespones.msg);
-                        } else {
-                            ToastUtils.showShort(uPlanModelRespones.getMsg());
-                        }*/
+                        querySellectListener._onNext(uPlanModelRespones);
                     }
 
                     @Override
                     protected void _onError(String message) {
-                        /*ToastUtils.showShort(message);
-                        Logger.e("transaction returns: " + message);*/
+                        querySellectListener._onError(message);
                     }
                 });
 

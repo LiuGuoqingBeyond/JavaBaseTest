@@ -3,6 +3,7 @@ package com.example.testdemolib.Impl;
 import com.axl.android.frameworkbase.net.HttpEngine;
 import com.axl.android.frameworkbase.net.utils.RxSchedulersHelper;
 import com.example.testdemolib.Interface.RequestService;
+import com.example.testdemolib.entity.request.LoginAppModel;
 import com.example.testdemolib.entity.respons.LoginAppReqModel;
 
 import io.reactivex.Flowable;

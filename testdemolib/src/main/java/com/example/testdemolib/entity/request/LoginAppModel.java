@@ -1,4 +1,4 @@
-package com.example.testdemolib.Impl;
+package com.example.testdemolib.entity.request;
 
 /**
  * User: LiuGq
