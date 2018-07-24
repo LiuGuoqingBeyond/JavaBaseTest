@@ -7,6 +7,7 @@ import android.widget.Button;
 import com.example.testdemolib.Impl.PayResultImpl;
 import com.example.testdemolib.Interface.PayResultInterface;
 import com.example.testdemolib.Listener.PayResultListener;
+import com.example.testdemolib.entity.respons.QrCodePayInfoResponseModel;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
 import com.uppayplugin.unionpay.javabasetest.config.Constant;
@@ -110,16 +111,14 @@ public class PayActivity extends ToolBarActivity {
 
     PayResultListener payResultListener = new PayResultListener() {
         @Override
-        public void getMessage(String message) {
-            try {
-                Map<String, Object> jsonMap = JSONUtil.jsonToMap(new JSONObject(message));
-                String status = (jsonMap.get("status") != null ? jsonMap.get("status") : "").toString();
-                String msg = (jsonMap.get("msg") != null ? jsonMap.get("msg") : "").toString();
-                ToastUtils.showLong(msg);
-                finish();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        public void _onNext(QrCodePayInfoResponseModel qrCodePayInfoResponseModel) {
+            ToastUtils.showLong(qrCodePayInfoResponseModel.msg);
+            finish();
+        }
+
+        @Override
+        public void _onError(String error) {
+
         }
     };
 

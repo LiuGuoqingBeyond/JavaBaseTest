@@ -108,8 +108,13 @@ public class QuerySellectActivity extends ToolBarActivity {
     }
     QuerySellectListener querySellectListener = new QuerySellectListener() {
         @Override
-        public void getMessage(TradeRecordAllRespone tradeRecordAllRespone) {
+        public void _onNext(TradeRecordAllRespone tradeRecordAllRespone) {
             transformData(tradeRecordAllRespone);
+        }
+
+        @Override
+        public void _onError(String error) {
+
         }
     };
 

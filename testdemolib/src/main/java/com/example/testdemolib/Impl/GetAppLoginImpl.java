@@ -27,8 +27,6 @@ public class GetAppLoginImpl implements GetAppLoginMessageInterface {
         map.put("txnType", "06");
         String str = PayUtils.joinMapValue(map, '&');
         map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
-        String result = new Gson().toJson(map);
-        Logger.e("result" + result);
 
         LoginAppRequest.getLoginAppMessage((LoginAppModel) TransMapToBeanUtils.mapToBean(map, LoginAppModel.class))
                 .subscribe(new ProgressSubscriber<LoginAppReqModel>(context) {
