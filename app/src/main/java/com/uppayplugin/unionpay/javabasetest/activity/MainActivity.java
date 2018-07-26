@@ -9,6 +9,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -62,6 +63,7 @@ import com.uppayplugin.unionpay.javabasetest.utils.personal.CircleImageView;
 import com.uppayplugin.unionpay.javabasetest.utils.personal.FileUtil;
 import com.uppayplugin.unionpay.javabasetest.utils.qrcode.QRCodeUtils;
 import com.uppayplugin.unionpay.libcommon.rsa.RSACoder;
+import com.uppayplugin.unionpay.libcommon.utils.CommonTools;
 
 import org.json.JSONObject;
 
@@ -118,6 +120,8 @@ public class MainActivity extends BaseActivity {
     private int displayWidth = 0;
     @BindView(R.id.image_qr)
     ImageView imageQr;
+    @BindView(R.id.addNewCard)
+    TextView addNewCard;
     private Bitmap bitmap;
     private RxPermissions rxPermissions;
     private LocationManager locationManager;
@@ -774,10 +778,17 @@ public class MainActivity extends BaseActivity {
 //        ToastUtils.showLong(post());
 
         //公司sdk模块需求
-        openActivity(UPIScanActivity.class);
+//        openActivity(UPIScanActivity.class);
 
         //扫码JS交互
 //        openActivity(GotoWebActivity.class);
+
+        //代码设置图片
+        /*Drawable right = getResources().getDrawable(R.mipmap.list_icon_head_portrait);
+        right.setBounds(0, 0, CommonTools.dip2px(mContext, 61), CommonTools.dip2px(mContext, 61));
+        addNewCard.setCompoundDrawables(null, null, right, null);*/
+
+        //
     }
 
     @Override

@@ -35,6 +35,18 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/list_icon_head_portrait" />
 
+    <TextView
+        android:id="@+id/addNewCard"
+        style="@style/textStyle_sub_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:drawablePadding="@dimen/halfDefaultPadding"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/defaultPadding"
+        android:paddingRight="@dimen/defaultPadding"
+        android:text="@string/activity_add_new_card"
+        android:textColor="#313131" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
