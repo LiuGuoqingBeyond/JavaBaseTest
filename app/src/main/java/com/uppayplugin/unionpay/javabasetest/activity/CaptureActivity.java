@@ -207,16 +207,16 @@ public class CaptureActivity extends BaseActivity implements Callback {
         //-----------------------这里是扫码   信息返回---------------------------------------------------------------------------------------
 
         //瑞国调试的webView扫一扫的处理
-        /*Intent intent = new Intent();
+        Intent intent = new Intent();
         intent.putExtra("qrCodeString", qrCodeString);
         setResult(2, intent);
         finish();
-        Logger.e("active scan Result:" + qrCodeString);*/
+        Logger.e("active scan Result:" + qrCodeString);
 
         //lib用到的扫一扫的处理
         //扫到了信息，先调74 查询二维码，最后调04交易----------先这样调试demo演示
-        analysisInterface = new AnalysisImpl();
-        requestPreTradeInfoFromService();
+        /*analysisInterface = new AnalysisImpl();
+        requestPreTradeInfoFromService();*/
 
         /*if (!TextUtils.isEmpty(qrCodeString)) {
             BankInfoListRepModel cards = PayPwdManagerUtils.getInstance(mContext).getBindedBankCardInfo();

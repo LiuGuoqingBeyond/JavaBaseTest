@@ -5,6 +5,8 @@ import android.widget.Button;
 
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
+import com.uppayplugin.unionpay.javabasetest.config.Constant;
+import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
 import com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL;
 
 import butterknife.BindView;
@@ -34,10 +36,13 @@ public class GotoWebActivity extends ToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
+        PreferencesUtil prefer = new PreferencesUtil(mContext);
         btnText.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("countryCode",etCountryCode.getText().toString().trim());
             bundle.putString("mobile",etMobile.getText().toString().trim());
+            prefer.writePrefs(Constant.PREFES_COUNTRY,etCountryCode.getText().toString().trim());
+            prefer.writePrefs(Constant.PREFES_MOBILE,etMobile.getText().toString().trim());
             openActivity(WebViewJSActivity.class,bundle);
         });
     }

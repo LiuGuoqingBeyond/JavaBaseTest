@@ -15,7 +15,9 @@
         android:layout_marginStart="@dimen/defaultPadding"
         android:layout_marginTop="@dimen/defaultPadding"
         android:background="@color/white"
+        android:inputType="number"
         android:hint="请输入区号"
+        android:text="86"
         android:paddingEnd="@dimen/defaultPadding"
         android:paddingStart="@dimen/defaultPadding" />
 
@@ -27,7 +29,9 @@
         android:layout_marginStart="@dimen/defaultPadding"
         android:layout_marginTop="@dimen/defaultPadding"
         android:background="@color/white"
+        android:inputType="number"
         android:hint="请输入手机号"
+        android:text="17665232288"
         android:paddingEnd="@dimen/defaultPadding"
         android:paddingStart="@dimen/defaultPadding" />
 

@@ -6,9 +6,11 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -71,6 +73,7 @@ public class WebViewJSActivity extends ToolBarActivity {
 
         String str3 = PayUtils.joinMapValue(map, '&');//这个str3为拼接的参数
 
+        //生产   https://u.sinopayonline.com/UGateWay/APPCallEntryServlet     测试   http://test13.qtopay.cn/UGateWay/APPCallEntryServlet
         small_ticket_web.postUrl("https://u.sinopayonline.com/UGateWay/APPCallEntryServlet", EncodingUtils.getBytes(str3, "UTF-8"));//webView的post请求
 
 
@@ -80,8 +83,11 @@ public class WebViewJSActivity extends ToolBarActivity {
     }
 
     private void checkSdkVersion() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//  >5.0
             WebView.enableSlowWholeDocumentDraw();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            small_ticket_web.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);//缓存
         }
     }
 
@@ -176,6 +182,7 @@ public class WebViewJSActivity extends ToolBarActivity {
             if (requestCode == 1) {
                 //这个值得回传给js
                 a = data.getStringExtra("qrCodeString");
+                Logger.d("扫码出来的码="+a);
                 small_ticket_web.loadUrl("javascript:showInfoFromJava('" + a + "')");
             }
         }
@@ -203,5 +210,17 @@ public class WebViewJSActivity extends ToolBarActivity {
         sf.append("</script>");
         sf.append("</html>");
         return sf.toString();
+    }
+
+    //使用Webview的时候，返回键没有重写的时候会直接关闭程序，这时候其实我们要其执行的知识回退到上一步的操作
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //这是一个监听用的按键的方法，keyCode 监听用户的动作，如果是按了返回键，同时Webview要返回的话，WebView执行回退操作，因为mWebView.canGoBack()返回的是一个Boolean类型，所以我们把它返回为true
+        if(keyCode==KeyEvent.KEYCODE_BACK&&small_ticket_web.canGoBack()){
+            small_ticket_web.goBack();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }
