@@ -16,7 +16,16 @@ import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
+import com.uppayplugin.unionpay.javabasetest.utils.PayUtils;
 import com.uppayplugin.unionpay.javabasetest.utils.file.CertUtils;
+
+import org.apache.http.util.EncodingUtils;
+import org.apache.http.util.EntityUtils;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import butterknife.BindView;
 
@@ -51,9 +60,22 @@ public class WebViewJSActivity extends ToolBarActivity {
     protected void initViewsAndEvents() {
         //检查版本
         checkSdkVersion();
-//        small_ticket_web.loadUrl("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest");
-        small_ticket_web.loadUrl(String.format("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest?mobile=%1$s&countryCode=%2$s",mobile,countryCode));
-        Logger.e("拼接参数="+String.format("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest?mobile=%1$s&countryCode=%2$s",mobile,countryCode));
+        Map<String, String> map = new TreeMap<String, String>();
+        map.put("agencyCode", "123");
+        map.put("countryCode", countryCode);
+        map.put("phoneNo", mobile);
+        String str = PayUtils.joinMapValue(map, '&');
+        String str2=str+"&"+ PayUtils.sha("4LNZmt4yuvqfUwO");
+        map.put("signature", PayUtils.sha(str2));
+        map.put("signMethod", "SHA");
+
+        String str3 = PayUtils.joinMapValue(map, '&');//这个str3为拼接的参数
+
+        small_ticket_web.postUrl("https://u.sinopayonline.com/UGateWay/APPCallEntryServlet", EncodingUtils.getBytes(str3, "UTF-8"));//webView的post请求
+
+
+//        small_ticket_web.loadUrl(String.format("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest?mobile=%1$s&countryCode=%2$s",mobile,countryCode));
+//        Logger.e("拼接参数="+String.format("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest?mobile=%1$s&countryCode=%2$s",mobile,countryCode));
         requestWebView();
     }
 
@@ -157,5 +179,29 @@ public class WebViewJSActivity extends ToolBarActivity {
                 small_ticket_web.loadUrl("javascript:showInfoFromJava('" + a + "')");
             }
         }
+    }
+    public String createAutoFormHtml(String action, Map<String, String> hiddens,String encoding) {
+        StringBuffer sf = new StringBuffer();
+        sf.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset="+encoding+"\"/></head><body>");
+        sf.append("<form id = \"pay_form\" action=\"" + action
+                + "\" method=\"Post\">");
+        if (null != hiddens && 0 != hiddens.size()) {
+            Set<Map.Entry<String, String>> set = hiddens.entrySet();
+            Iterator<Map.Entry<String, String>> it = set.iterator();
+            while (it.hasNext()) {
+                Map.Entry<String, String> ey = it.next();
+                String key = ey.getKey();
+                String value = ey.getValue();
+                sf.append("<input type=\"hidden\" name=\"" + key + "\" id=\""
+                        + key + "\" value=\"" + value + "\"/>");
+            }
+        }
+        sf.append("</form>");
+        sf.append("</body>");
+        sf.append("<script type=\"text/javascript\">");
+        sf.append("document.all.pay_form.submit();");
+        sf.append("</script>");
+        sf.append("</html>");
+        return sf.toString();
     }
 }

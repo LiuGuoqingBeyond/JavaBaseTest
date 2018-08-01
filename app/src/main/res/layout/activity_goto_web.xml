@@ -17,8 +17,7 @@
         android:background="@color/white"
         android:hint="请输入区号"
         android:paddingEnd="@dimen/defaultPadding"
-        android:paddingStart="@dimen/defaultPadding"
-        android:text="86" />
+        android:paddingStart="@dimen/defaultPadding" />
 
     <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
         android:id="@+id/et_mobile"
@@ -30,8 +29,7 @@
         android:background="@color/white"
         android:hint="请输入手机号"
         android:paddingEnd="@dimen/defaultPadding"
-        android:paddingStart="@dimen/defaultPadding"
-        android:text="17665232288" />
+        android:paddingStart="@dimen/defaultPadding" />
 
     <Button
         android:id="@+id/btn_text"

@@ -188,4 +188,5 @@ dependencies {
         }
     }
     implementation project(':testdemolib')
+    implementation project(':sinopaylib')
 }

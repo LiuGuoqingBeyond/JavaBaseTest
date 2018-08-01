@@ -777,11 +777,14 @@ public class MainActivity extends BaseActivity {
         //HttpUrlConnection
 //        ToastUtils.showLong(post());
 
-        //公司sdk模块需求
+        //公司银联扫码枪sdk模块需求
 //        openActivity(UPIScanActivity.class);
 
+        //公司小微开店sdk模块需求
+//        openActivity(SinoPayActivity.class);
+
         //扫码JS交互
-//        openActivity(GotoWebActivity.class);
+        openActivity(GotoWebActivity.class);
 
         //代码设置图片
         /*Drawable right = getResources().getDrawable(R.mipmap.list_icon_head_portrait);

@@ -16,8 +16,6 @@ public class GotoWebActivity extends ToolBarActivity {
     EditTextWithDEL etMobile;
     @BindView(R.id.btn_text)
     Button btnText;
-    private String countryCode;
-    private String mobile;
 
     @Override
     protected void initToolBar() {
@@ -36,12 +34,10 @@ public class GotoWebActivity extends ToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
-        countryCode = etCountryCode.getText().toString().trim();
-        mobile = etMobile.getText().toString().trim();
         btnText.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("countryCode",countryCode);
-            bundle.putString("mobile",mobile);
+            bundle.putString("countryCode",etCountryCode.getText().toString().trim());
+            bundle.putString("mobile",etMobile.getText().toString().trim());
             openActivity(WebViewJSActivity.class,bundle);
         });
     }

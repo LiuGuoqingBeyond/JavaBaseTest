@@ -1,0 +1,144 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+//        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode = rootProject.ext.versionCode
+        versionName = rootProject.ext.versionName
+        multiDexEnabled true
+
+        /*ndk {
+            abiFilters "armeabi-v7a"
+        }*/
+
+        /*manifestPlaceholders = [
+                JPUSH_PKGNAME: rootProject.ext.applicationId,
+                JPUSH_APPKEY : "67c5ca2dee8fcb4cdadf5251", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]*/
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    dexOptions {
+        maxProcessCount 4
+        preDexLibraries = true
+        javaMaxHeapSize "6g"
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+
+    signingConfigs {
+
+        develop {
+            storeFile file("../sanwing.jks")
+            storePassword "123456"
+            keyAlias "king"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+        release {
+            storeFile file("../sanwing.jks")
+            storePassword "123456"
+            keyAlias "king"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+    }
+
+    /*sourceSets {
+
+        instrumentTest.setRoot('tests')
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }*/
+
+    flavorDimensions "debug", "release"
+
+    productFlavors {
+        flavors_debug {
+            minSdkVersion 17
+            versionCode rootProject.ext.versionCode
+            versionName rootProject.ext.versionName
+            dimension "debug"
+            /*manifestPlaceholders = [file_provider_prefix: "com.zhongfu.upop.develop", str: "develop", package_name: "@string/app_name_develop", icon: "@mipmap/ic_launcher"]
+            buildConfigField "String", "BASEURL", "\"https://utest.sinopayonline.com:8444/\""    https://u.sinopayonline.com*/
+            // http://192.168.1.240:8080/UGateWay/appService
+            manifestPlaceholders = [file_provider_prefix: "com.sinopaylib", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
+        }
+
+        flavors_release {
+            minSdkVersion 17
+            versionCode rootProject.ext.versionCode
+            versionName rootProject.ext.versionName
+            dimension "release"   // https://u.sinopayonline.com/
+            manifestPlaceholders = [file_provider_prefix: "com.sinopaylib", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            debuggable false
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            // shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile "com.trello.rxlifecycle2:rxlifecycle:$rootProject.ext.rxLifecycleVersion"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.ext.rxLifecycleVersion"
+    implementation project(':AFrameLib')
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/default/')
+    into('build/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'xzf_unionlib.jar')
+}

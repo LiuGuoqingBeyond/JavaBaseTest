@@ -141,6 +141,36 @@ public class PayUtils {
 		}
 		return b.toString();
 	}
+	public static String sha(String str) {
+
+		if (str == null) {
+			return null;
+		}
+
+		MessageDigest messageDigest = null;
+
+		try {
+			messageDigest = MessageDigest.getInstance("SHA-256");
+			messageDigest.reset();
+			messageDigest.update(str.getBytes("UTF-8"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		byte[] byteArray = messageDigest.digest();
+
+		StringBuffer strBuff = new StringBuffer();
+
+		for (int i = 0; i < byteArray.length; i++) {
+			if (Integer.toHexString(0xFF & byteArray[i]).length() == 1)
+				strBuff.append("0").append(Integer.toHexString(0xFF & byteArray[i]));
+			else
+				strBuff.append(Integer.toHexString(0xFF & byteArray[i]));
+		}
+
+		return strBuff.toString();
+	}
 
 //	public static String joinMapValueBySpecial(Map<String, String> map,
 //			char connector) {

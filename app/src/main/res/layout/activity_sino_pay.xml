@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.SinoPayActivity">
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_account"
+        style="@style/et_style_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="@string/login_hint_phone"
+        android:inputType="number"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="17665232288" />
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_password"
+        style="@style/et_style_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="@string/login_hint_password"
+        android:inputType="number"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="123456" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/btnStyle_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultItemHeight_36dp"
+        android:text="@string/login_title"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</LinearLayout>
