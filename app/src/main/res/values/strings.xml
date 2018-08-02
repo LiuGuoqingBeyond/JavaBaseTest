@@ -79,6 +79,35 @@
     <string name="trade_products_pay_amount">扣款金额 </string>
     <string name="main_integral">使用记录 </string>
 
+    <!-- 主页Main -->
+    <string name="btn_filing_info_commit">资料提交</string>
+    <string name="filing_info_commit_notice">为保障收款功能正常使用,请完善商户资料后使用</string>
+    <string name="listview_header_hint_normal">下拉刷新</string>
+    <string name="listview_header_last_time">上次更新时间:</string>
+    <string name="listview_header_hint_release">释放立即刷新</string>
+    <string name="listview_loading">正在加载...</string>
+    <string name="nomore_loading">没有更多数据了...</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_done">刷新完成</string>
+    <string name="time_ganggang">刚刚</string>
+    <string name="time_nianqian">年前</string>
+    <string name="time_yueqian">月前</string>
+    <string name="time_tianqian">天前</string>
+    <string name="time_xiaoshiqian">小时前</string>
+    <string name="time_fenzhongqian">分钟前</string>
+    <string name="time_miaoqian">秒前</string>
+    <string name="total_title_text">共</string>
+    <string name="total_count_text">笔</string>
+    <string name="year_text">年</string>
+    <string name="month_text">月</string>
+    <string name="day_text">日</string>
+    <string name="item_amount_text">金额：</string>
+    <string name="item_settle_amount_text">结算:</string>
+    <string name="request_fail_try_again">请求失败,请重试</string>
+    <string name="request_code_again">重新加载</string>
+    <string name="qr_pay_success">收款成功</string>
+    <string name="end_mobile_text">手机尾号:</string>
+
 
     <string name="service_exception">服务器异常,请稍后重试.</string>
 

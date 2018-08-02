@@ -1,5 +1,7 @@
 package com.sinopaylib.utils;
 
+import com.sinopaylib.impl.Constant;
+
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -33,22 +35,14 @@ public class RSACoder extends Coder {
      * @return
      * @throws Exception
      */
-    public static String sign(byte[] data, String privateKey) {
+    public static String sign(byte[] data) {
         try {
-            byte[] keyBytes = decryptBASE64(privateKey);
-
-            // 构造PKCS8EncodedKeySpec对象
-            PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
-
             // KEY_ALGORITHM 指定的加密算法
             KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
 
-            // 取私钥匙对象
-            PrivateKey priKey = keyFactory.generatePrivate(pkcs8KeySpec);
-
             // 用私钥对信息生成数字签名
             signature = Signature.getInstance(SIGNATURE_ALGORITHM);
-            signature.initSign(priKey);
+            signature.initSign(keyFactory.generatePrivate( new PKCS8EncodedKeySpec(decryptBASE64(Constant.privateKey))));
             signature.update(data);
             // 解密由base64编码的私钥
             return encryptBASE64(signature.sign());

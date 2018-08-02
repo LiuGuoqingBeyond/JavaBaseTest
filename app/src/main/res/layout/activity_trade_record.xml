@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/other_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_primary"/>
+
+    <RelativeLayout
+        android:id="@+id/trade_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_pic_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/padding_60x"
+            android:src="@drawable/pic_box"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_pic_box"
+            android:layout_marginTop="@dimen/padding_20x"
+            android:gravity="center_horizontal"
+            android:text="@string/transaction_text"/>
+    </RelativeLayout>
+
+    <com.zhongfu.view.widget.SExpandableListView
+        android:listSelector="@android:color/transparent"
+        android:id="@+id/ep_record_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="@dimen/padding_08x"/>
+
+</LinearLayout>

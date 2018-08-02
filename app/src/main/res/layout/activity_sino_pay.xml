@@ -8,6 +8,20 @@
     tools:context="com.uppayplugin.unionpay.javabasetest.activity.SinoPayActivity">
 
     <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        android:id="@+id/et_countryCode"
+        style="@style/et_style_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="@color/white"
+        android:hint="请输入区号"
+        android:inputType="number"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="86" />
+
+    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
         android:id="@+id/et_account"
         style="@style/et_style_black"
         android:layout_width="match_parent"
@@ -15,7 +29,7 @@
         android:layout_marginStart="@dimen/defaultPadding"
         android:layout_marginTop="@dimen/defaultPadding"
         android:background="@color/white"
-        android:hint="@string/login_hint_phone"
+        android:hint="请输入手机号"
         android:inputType="number"
         android:paddingEnd="@dimen/defaultPadding"
         android:paddingStart="@dimen/defaultPadding"
@@ -29,7 +43,7 @@
         android:layout_marginStart="@dimen/defaultPadding"
         android:layout_marginTop="@dimen/defaultPadding"
         android:background="@color/white"
-        android:hint="@string/login_hint_password"
+        android:hint="请输入密码"
         android:inputType="number"
         android:paddingEnd="@dimen/defaultPadding"
         android:paddingStart="@dimen/defaultPadding"

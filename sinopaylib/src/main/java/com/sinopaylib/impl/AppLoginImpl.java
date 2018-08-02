@@ -24,7 +24,7 @@ public class AppLoginImpl implements AppLoginInterface {
     public void appToLogin(Context context, Map<String, String> map, AppLoginListener appLoginListener) {
         map.put("txnType", "04");
         String str = PayUtils.joinMapValue(map, '&');
-        map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
+        map.put("signature", RSACoder.sign(str.getBytes()).replaceAll("\n\r", ""));
         LoginGetSessionModelRequestModel.getLoginAppMessage((LoginAppModel) TransMapToBeanUtils.mapToBean(map, LoginAppModel.class))
                 .subscribe(new ProgressSubscriber<LoginAppRepModel>(context) {
                     @Override

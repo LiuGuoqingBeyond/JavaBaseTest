@@ -783,7 +783,7 @@ public class MainActivity extends BaseActivity {
         //公司小微开店sdk模块需求
 //        openActivity(SinoPayActivity.class);
 
-        //扫码JS交互
+        //扫码JS交互(与瑞国调试)
         openActivity(GotoWebActivity.class);
 
         //代码设置图片

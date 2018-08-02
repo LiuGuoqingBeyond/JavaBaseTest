@@ -25,7 +25,7 @@ public class GetSessionIdImpl implements SessionIdInterface{
     public void getSessionId(Context context, Map<String, String> map, SessionIdListener sessionIdListener) {
         map.put("txnType", "01");
         String str = PayUtils.joinMapValue(map, '&');
-        map.put("signature", RSACoder.sign(str.getBytes(), Constant.privateKey).replaceAll("\n\r", ""));
+        map.put("signature", RSACoder.sign(str.getBytes()).replaceAll("\n\r", ""));
         LoginGetSessionModelRequestModel.getSessionMessage((LoginGetSessionModel) TransMapToBeanUtils.mapToBean(map, LoginGetSessionModel.class))
                 .subscribe(new ProgressSubscriber<GetTemsessionRepModel>(context) {
                     @Override

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.SinoPayMainActivity">
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="二维码" />
+
+    <Button
+        android:id="@+id/translate_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交易记录" />
+
+    <Button
+        android:id="@+id/merchant_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商户信息" />
+
+</LinearLayout>

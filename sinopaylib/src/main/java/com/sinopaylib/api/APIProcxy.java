@@ -1,6 +1,7 @@
-package com.sinopaylib;
+package com.sinopaylib.api;
 
 import com.sinopaylib.inter.AppLoginInterface;
+import com.sinopaylib.inter.RquestQRCodeInter;
 import com.sinopaylib.inter.SessionIdInterface;
 
 /**
@@ -16,6 +17,15 @@ public class APIProcxy {
     private static SessionIdInterface mSessionIdInterface = null;
     //获取app登陆接口
     private static AppLoginInterface mAppLoginInterface = null;
+    private static RquestQRCodeInter mQRCode = null;
+    private static APIProcxy apiProcxy;
+
+    public static synchronized APIProcxy getInstance(){
+        if (null == apiProcxy){
+            apiProcxy = new APIProcxy();
+        }
+        return apiProcxy;
+    }
 
     /**
      * 加载接口实现类
@@ -25,7 +35,7 @@ public class APIProcxy {
      *
      * @return realize class
      */
-    private static Class<?> loadClass(final String classPath) {
+    private Class<?> loadClass(final String classPath) {
         ClassLoader classLoader = APIProcxy.class.getClassLoader();
         Class<?> myClass1 = null;
         try {
@@ -49,7 +59,7 @@ public class APIProcxy {
      *
      * @return 返回终端操作对象
      */
-    public static SessionIdInterface getmSessionIdInterface() {
+    public SessionIdInterface getmSessionIdInterface() {
         final String STATIC_TRADE_SERVICE_PATH = "com.sinopaylib.impl.GetSessionIdImpl";
         Class<?> myclass = loadClass(STATIC_TRADE_SERVICE_PATH);
         if (myclass == null) {
@@ -73,7 +83,7 @@ public class APIProcxy {
      *
      * @return 返回终端操作对象
      */
-    public static AppLoginInterface getmAppLoginInterface() {
+    public AppLoginInterface getmAppLoginInterface() {
         final String STATIC_APP_LOGIN_PATH = "com.sinopaylib.impl.AppLoginImpl";
         Class<?> myclass = loadClass(STATIC_APP_LOGIN_PATH);
         if (myclass == null) {
@@ -90,6 +100,28 @@ public class APIProcxy {
             }
         }
         return mAppLoginInterface;
+    }
+
+    /**
+     * 获取二维码接口
+     */
+    public RquestQRCodeInter getmQRCode(){
+        final String STATIC_QRCODE_PATH = "com.sinopaylib.impl.QRCodeImpl";
+        Class<?> myclass = loadClass(STATIC_QRCODE_PATH);
+        if (myclass == null) {
+            throw new RuntimeException("QRCodeImpl not implemented.");
+        }
+
+        if (mQRCode == null) {
+            try {
+                mQRCode = (RquestQRCodeInter) myclass.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return mQRCode;
     }
 
 }
