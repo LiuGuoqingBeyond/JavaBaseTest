@@ -29,7 +29,7 @@
             android:text="@string/transaction_text"/>
     </RelativeLayout>
 
-    <com.zhongfu.view.widget.SExpandableListView
+    <com.uppayplugin.unionpay.javabasetest.view.SExpandableListView
         android:listSelector="@android:color/transparent"
         android:id="@+id/ep_record_list"
         android:layout_width="match_parent"

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/padding_08x"
+    android:paddingBottom="@dimen/padding_08x"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center_vertical"
+        android:textColor="#80000000"
+        android:textSize="15sp"
+        tools:text="2017.11.11"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            style="@style/textStyle_black_bold"
+            android:text="@string/total_title_text"/>
+
+        <TextView
+            android:id="@+id/tv_dailyTotals"
+            style="@style/textStyle_black_bold"
+            tools:text="4" />
+
+        <TextView
+            style="@style/textStyle_black_bold"
+            android:text="@string/total_count_text" />
+
+        <TextView
+            android:id="@+id/tv_dailyAccount"
+            style="@style/textStyle_black_bold"
+            android:layout_marginLeft="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_floder_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+</LinearLayout>

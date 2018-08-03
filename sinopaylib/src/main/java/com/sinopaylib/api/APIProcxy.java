@@ -3,6 +3,7 @@ package com.sinopaylib.api;
 import com.sinopaylib.inter.AppLoginInterface;
 import com.sinopaylib.inter.RquestQRCodeInter;
 import com.sinopaylib.inter.SessionIdInterface;
+import com.sinopaylib.inter.TradeRecordInter;
 
 /**
  * 接口代理
@@ -18,6 +19,7 @@ public class APIProcxy {
     //获取app登陆接口
     private static AppLoginInterface mAppLoginInterface = null;
     private static RquestQRCodeInter mQRCode = null;
+    private static TradeRecordInter mRecord = null;
     private static APIProcxy apiProcxy;
 
     public static synchronized APIProcxy getInstance(){
@@ -122,6 +124,28 @@ public class APIProcxy {
             }
         }
         return mQRCode;
+    }
+
+    /**
+     * 获取交易记录
+     */
+    public TradeRecordInter getmRecord(){
+        final String STATIC_TRADE_PATH = "com.sinopaylib.impl.TradeRecordImpl";
+        Class<?> myclass = loadClass(STATIC_TRADE_PATH);
+        if (myclass == null) {
+            throw new RuntimeException("TradeRecordImpl not implemented.");
+        }
+
+        if (mRecord == null) {
+            try {
+                mRecord = (TradeRecordInter) myclass.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return mRecord;
     }
 
 }

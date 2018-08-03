@@ -781,10 +781,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(UPIScanActivity.class);
 
         //公司小微开店sdk模块需求
-//        openActivity(SinoPayActivity.class);
+        openActivity(SinoPayActivity.class);
 
         //扫码JS交互(与瑞国调试)
-        openActivity(GotoWebActivity.class);
+//        openActivity(GotoWebActivity.class);
 
         //代码设置图片
         /*Drawable right = getResources().getDrawable(R.mipmap.list_icon_head_portrait);

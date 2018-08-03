@@ -37,6 +37,7 @@ import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.uppayplugin.unionpay.javabasetest.R;
 import com.uppayplugin.unionpay.javabasetest.base.ToolBarActivity;
+import com.uppayplugin.unionpay.javabasetest.config.Constant;
 import com.uppayplugin.unionpay.javabasetest.utils.PayUtils;
 import com.uppayplugin.unionpay.javabasetest.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetest.utils.file.CertUtils;
@@ -119,7 +120,8 @@ public class WebViewJSActivity extends BaseActivity {
         String str3 = PayUtils.joinMapValue(map, '&');//这个str3为拼接的参数
 
         //生产   https://u.sinopayonline.com/UGateWay/APPCallEntryServlet     测试   http://test13.qtopay.cn/UGateWay/APPCallEntryServlet
-        small_ticket_web.postUrl("http://test13.qtopay.cn/UGateWay/APPCallEntryServlet", EncodingUtils.getBytes(str3, "UTF-8"));//webView的post请求
+//        small_ticket_web.postUrl("http://test13.qtopay.cn/UGateWay/APPCallEntryServlet", EncodingUtils.getBytes(str3, "UTF-8"));//webView的post请求,有问题，在android7.0以下，在网页返回时，报传参为空
+        small_ticket_web.loadUrl(String.format(Constant.SCAN_PATH,countryCode,mobile,PayUtils.sha(str2)));
 
 
 //        small_ticket_web.loadUrl(String.format("http://test13.qtopay.cn/UGateWay/h5unionpayScanTest?mobile=%1$s&countryCode=%2$s",mobile,countryCode));
@@ -146,6 +148,13 @@ public class WebViewJSActivity extends BaseActivity {
 
         small_ticket_web.addJavascriptInterface(new JsInterface(), "AndroidWebView");
         small_ticket_web.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // TODO Auto-generated method stub
+//        		return super.shouldOverrideUrlLoading(view, url);
+                view.loadUrl(url);
+                return true;
+            }
             public void onReceivedSslError(WebView view,
                                            SslErrorHandler handler, SslError error) {
                 if (view.getUrl() != null){
@@ -451,9 +460,12 @@ public class WebViewJSActivity extends BaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //这是一个监听用的按键的方法，keyCode 监听用户的动作，如果是按了返回键，同时Webview要返回的话，WebView执行回退操作，因为mWebView.canGoBack()返回的是一个Boolean类型，所以我们把它返回为true
-        if (keyCode == KeyEvent.KEYCODE_BACK && small_ticket_web.canGoBack()) {
+        if(keyCode==KeyEvent.KEYCODE_BACK&&small_ticket_web.canGoBack()){
             small_ticket_web.goBack();
             return true;
+        }else{
+            small_ticket_web.clearCache(true);
+            onBackPressed();
         }
 
         return super.onKeyDown(keyCode, event);

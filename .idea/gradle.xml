@@ -12,7 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libcommon" />
             <option value="$PROJECT_DIR$/sinopaylib" />
-            <option value="$PROJECT_DIR$/testdemolib" />
+            <option value="$PROJECT_DIR$/upopPaylib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

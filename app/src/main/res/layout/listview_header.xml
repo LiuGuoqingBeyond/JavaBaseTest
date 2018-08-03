@@ -56,7 +56,7 @@
             android:layout_toLeftOf="@id/listview_header_text"
             android:src="@drawable/iconfont_downgrey" />
 
-        <com.zhongfu.view.widget.SimpleViewSwitcher
+        <com.uppayplugin.unionpay.javabasetest.view.SimpleViewSwitcher
             android:id="@+id/listview_header_progressbar"
             android:layout_width="23dp"
             android:layout_height="23dp"

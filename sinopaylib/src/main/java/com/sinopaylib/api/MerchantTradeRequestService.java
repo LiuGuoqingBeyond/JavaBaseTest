@@ -1,6 +1,8 @@
 package com.sinopaylib.api;
 import com.sinopaylib.entity.request.QrCodeReqModel;
+import com.sinopaylib.entity.request.TradeRecordReqModel;
 import com.sinopaylib.entity.respons.QrCodeRepModel;
+import com.sinopaylib.entity.respons.TradeRecordListRepModel;
 import com.sinopaylib.inter.URLConstants;
 
 import io.reactivex.Flowable;
@@ -15,9 +17,9 @@ import retrofit2.http.POST;
 public interface MerchantTradeRequestService {
 
     // 查询当月交易列表信息
-//    @POST(URLConstants.URL_APP_SERVICE_REQUEST)
-//    Flowable<TradeRecordListRepModel> requestTradeRecordByMonth(@Body TradeRecordReqModel tradeRecordReqModel);
-//
+    @POST(URLConstants.URL_APP_SERVICE_REQUEST)
+    Flowable<TradeRecordListRepModel> requestTradeRecordByMonth(@Body TradeRecordReqModel tradeRecordReqModel);
+
 //    // 查询交易详情信息
 //    @POST(URLConstants.URL_APP_SERVICE_REQUEST)
 //    Flowable<TradeRecordDetailRepModel> requestTradeDetailInfo(@Body TradeRecordDetailReqModel tradeRecordDetailReqModel);

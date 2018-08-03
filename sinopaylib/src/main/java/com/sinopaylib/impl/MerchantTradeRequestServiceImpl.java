@@ -4,7 +4,9 @@ import com.axl.android.frameworkbase.net.HttpEngine;
 import com.axl.android.frameworkbase.net.utils.RxSchedulersHelper;
 import com.sinopaylib.api.MerchantTradeRequestService;
 import com.sinopaylib.entity.request.QrCodeReqModel;
+import com.sinopaylib.entity.request.TradeRecordReqModel;
 import com.sinopaylib.entity.respons.QrCodeRepModel;
+import com.sinopaylib.entity.respons.TradeRecordListRepModel;
 
 import io.reactivex.Flowable;
 
@@ -21,16 +23,16 @@ public class MerchantTradeRequestServiceImpl {
      * @param params
      * @return
      */
-//    public static Flowable<TradeRecordListRepModel> requestTradeRecordByMonth(TradeRecordReqModel params) {
-//
-//        return Flowable.just(params)
-//                .concatMap(stringStringMap ->
-//                        HttpEngine.getInstance()
-//                                .createServices(MerchantTradeRequestService.class)
-//                                .requestTradeRecordByMonth(params)
-//                                .compose(RxSchedulersHelper.io_main()));
-//    }
-//
+    public static Flowable<TradeRecordListRepModel> requestTradeRecordByMonth(TradeRecordReqModel params) {
+
+        return Flowable.just(params)
+                .concatMap(stringStringMap ->
+                        HttpEngine.getInstance()
+                                .createServices(MerchantTradeRequestService.class)
+                                .requestTradeRecordByMonth(params)
+                                .compose(RxSchedulersHelper.io_main()));
+    }
+
 //    /**
 //     * 查询交易详情信息
 //     * @param params

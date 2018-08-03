@@ -7,7 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libcommon/libcommon.iml" filepath="$PROJECT_DIR$/libcommon/libcommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/sinopaylib/sinopaylib.iml" filepath="$PROJECT_DIR$/sinopaylib/sinopaylib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testdemolib/testdemolib.iml" filepath="$PROJECT_DIR$/testdemolib/testdemolib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/upopPaylib/upopPaylib.iml" filepath="$PROJECT_DIR$/upopPaylib/upopPaylib.iml" />
     </modules>
   </component>
 </project>
