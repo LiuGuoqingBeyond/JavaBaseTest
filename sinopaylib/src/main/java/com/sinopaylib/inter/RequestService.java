@@ -1,8 +1,10 @@
 package com.sinopaylib.inter;
 import com.sinopaylib.entity.request.LoginAppModel;
 import com.sinopaylib.entity.request.LoginGetSessionModel;
+import com.sinopaylib.entity.request.QueryMerchantReqModel;
 import com.sinopaylib.entity.respons.GetTemsessionRepModel;
 import com.sinopaylib.entity.respons.LoginAppRepModel;
+import com.sinopaylib.entity.respons.QueryMerchantRep;
 
 import io.reactivex.Flowable;
 import retrofit2.http.Body;
@@ -144,10 +146,10 @@ public interface RequestService {
 //    @POST(Constans.BASEURL)
 //    Flowable<BaseRepModel> getRegister(@Body RegisterReqModel params);
 //
-//    //查询商户资料
-//    @POST(Constans.BASEURL)
-//    Flowable<QueryMerchantRep> getMerchantInfomation(@Body QueryMerchantReqModel params);
-//
+    //查询商户资料
+    @POST(Constans.BASEURL)
+    Flowable<QueryMerchantRep> getMerchantInfomation(@Body QueryMerchantReqModel params);
+
 //    //查询商户热线
 //    @POST(Constans.BASEURL)
 //    Flowable<QueryHotLineRepModel> getQueryHotLine(@Body QueryHotLineReqModel params);

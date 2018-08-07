@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/other_bg"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetest.activity.MerChantInfoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@color/other_bg"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/halfDefaultPadding"
+                android:paddingStart="@dimen/defaultPadding"
+                android:text="@string/merchant_payee_information" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_country" />
+
+                <TextView
+                    android:id="@+id/merchantCountry"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_name" />
+
+                <TextView
+                    android:id="@+id/merchantName"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_simple_name" />
+
+                <TextView
+                    android:id="@+id/mer_simpleName"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_number" />
+
+                <TextView
+                    android:id="@+id/merchant_number"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/terminal_number" />
+
+                <TextView
+                    android:id="@+id/terminal_number"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_relation" />
+
+                <TextView
+                    android:id="@+id/merchantRelation"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividingLineHeight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultItemHeight"
+                android:background="@drawable/personal_item_select">
+
+                <TextView
+                    style="@style/textStyle_hint_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_relation_phone" />
+
+                <TextView
+                    android:id="@+id/merchantRelationPhone"
+                    style="@style/textStyle_body_base"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/defaultPadding" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defaultItemHeight"
+                        android:background="@color/other_bg"
+                        android:gravity="bottom"
+                        android:paddingBottom="@dimen/halfDefaultPadding"
+                        android:paddingStart="@dimen/defaultPadding"
+                        android:text="@string/merchant_handing_charge" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defaultItemHeight"
+                        android:background="@drawable/personal_item_select">
+
+                        <TextView
+                            style="@style/textStyle_hint_base"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/defaultPadding"
+                            android:text="@string/union_pay_scan" />
+
+                        <TextView
+                            android:id="@+id/merchantContinueRate"
+                            style="@style/textStyle_body_base"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/defaultPadding" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dividingLineHeight" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defaultItemHeight"
+                        android:background="@drawable/personal_item_select">
+
+                        <TextView
+                            style="@style/textStyle_hint_base"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/defaultPadding"
+                            android:text="@string/union_pay_packet" />
+
+                        <TextView
+                            android:id="@+id/merchantUnionPay"
+                            style="@style/textStyle_body_base"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/defaultPadding" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/defaultItemHeight"
+                    android:background="@color/other_bg"
+                    android:gravity="bottom"
+                    android:paddingBottom="@dimen/halfDefaultPadding"
+                    android:paddingStart="@dimen/defaultPadding"
+                    android:text="@string/merchant_price_information" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/defaultItemHeight"
+                    android:background="@drawable/personal_item_select">
+
+                    <TextView
+                        style="@style/textStyle_hint_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/defaultPadding"
+                        android:text="@string/merchant_beneficiary_name" />
+
+                    <TextView
+                        android:id="@+id/merchantBeneficiaryName"
+                        style="@style/textStyle_body_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/defaultPadding" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dividingLineHeight" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/defaultItemHeight"
+                    android:background="@drawable/personal_item_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/textStyle_hint_base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/defaultPadding"
+                        android:layout_weight="2"
+                        android:text="@string/merchant_bank_name" />
+
+                    <TextView
+                        android:id="@+id/merchantBankName"
+                        style="@style/textStyle_body_base"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/defaultPadding"
+                        android:layout_weight="3"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLines="1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dividingLineHeight" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/defaultItemHeight"
+                    android:background="@drawable/personal_item_select">
+
+                    <TextView
+                        style="@style/textStyle_hint_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/defaultPadding"
+                        android:text="@string/merchant_bank_account" />
+
+                    <EditText
+                        android:id="@+id/merchantBankAccount"
+                        style="@style/textStyle_body_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/defaultPadding"
+                        android:background="@null" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dividingLineHeight" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/defaultItemHeight"
+                    android:background="@drawable/personal_item_select">
+
+                    <TextView
+                        style="@style/textStyle_hint_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/defaultPadding"
+                        android:text="@string/merchant_branch_number" />
+
+                    <TextView
+                        android:id="@+id/merchantBranchNumber"
+                        style="@style/textStyle_body_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/defaultPadding" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

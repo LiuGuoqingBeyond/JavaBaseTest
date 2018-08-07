@@ -55,6 +55,7 @@ public class SinoPayMainActivity extends ToolBarActivity {
                 break;
             case R.id.merchant_info:
                 //商户信息
+                openActivity(MerChantInfoActivity.class);
                 break;
         }
     }

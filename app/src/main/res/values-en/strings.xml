@@ -709,4 +709,6 @@
     <string name="union_pay_scan">UnionPay scanner</string>
     <string name="home_pay_text">WeChat Official Account Pay</string>
     <string name="home_pay_tips">Support UnionPay Scan,UnionPay QuickPass,WeChat Official Account Pay</string>
+
+    <string name="btn_picture">相册</string>
 </resources>

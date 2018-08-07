@@ -92,6 +92,7 @@ public class WebViewJSActivity extends BaseActivity {
     //调用照相机返回图片文件
     private File tempFile;
     private String imagePath;
+    private WebSettings webSettings;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -118,6 +119,7 @@ public class WebViewJSActivity extends BaseActivity {
         map.put("signMethod", "SHA");
 
         String str3 = PayUtils.joinMapValue(map, '&');//这个str3为拼接的参数
+        Logger.d("str3="+str);
 
         //生产   https://u.sinopayonline.com/UGateWay/APPCallEntryServlet     测试   http://test13.qtopay.cn/UGateWay/APPCallEntryServlet
 //        small_ticket_web.postUrl("http://test13.qtopay.cn/UGateWay/APPCallEntryServlet", EncodingUtils.getBytes(str3, "UTF-8"));//webView的post请求,有问题，在android7.0以下，在网页返回时，报传参为空
@@ -139,11 +141,13 @@ public class WebViewJSActivity extends BaseActivity {
     }
 
     private void requestWebView() {
-        small_ticket_web.getSettings().setJavaScriptEnabled(true);
-        small_ticket_web.getSettings().setDefaultTextEncodingName("gb2312");
+        webSettings = small_ticket_web.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDefaultTextEncodingName("gb2312");
         small_ticket_web.setDrawingCacheEnabled(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
-        small_ticket_web.getSettings().setSupportZoom(true); //支持缩放
+        webSettings.setSupportZoom(true); //支持缩放
         small_ticket_web.requestFocusFromTouch();
 
         small_ticket_web.addJavascriptInterface(new JsInterface(), "AndroidWebView");

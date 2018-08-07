@@ -781,7 +781,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(UPIScanActivity.class);
 
         //公司小微开店sdk模块需求
-        openActivity(SinoPayActivity.class);
+//        openActivity(SinoPayActivity.class);
 
         //扫码JS交互(与瑞国调试)
 //        openActivity(GotoWebActivity.class);
@@ -791,7 +791,8 @@ public class MainActivity extends BaseActivity {
         right.setBounds(0, 0, CommonTools.dip2px(mContext, 61), CommonTools.dip2px(mContext, 61));
         addNewCard.setCompoundDrawables(null, null, right, null);*/
 
-        //
+        //扫描图片中的二维码
+        openActivity(ImageScanActivity.class);
     }
 
     @Override

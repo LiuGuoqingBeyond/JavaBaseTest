@@ -180,10 +180,30 @@
             android:name=".activity.TestSdkActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activity.SinoPayMainActivity" />
-        <activity android:name=".activity.QRCodeActivity" />
-        <activity android:name=".activity.TradeRecordActivity"></activity>
-        <activity android:name=".activity.OsasWebActivity"></activity>
+        <activity
+            android:name=".activity.SinoPayMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.QRCodeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.TradeRecordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.OsasWebActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.MerChantInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.ImageScanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.sinopaylib.api;
 
 import com.sinopaylib.inter.AppLoginInterface;
+import com.sinopaylib.inter.MerChantInter;
 import com.sinopaylib.inter.RquestQRCodeInter;
 import com.sinopaylib.inter.SessionIdInterface;
 import com.sinopaylib.inter.TradeRecordInter;
@@ -14,16 +15,19 @@ import com.sinopaylib.inter.TradeRecordInter;
  */
 public class APIProcxy {
 
-    /** SDK初始化和终端通信操作接口 **/
+    /**
+     * SDK初始化和终端通信操作接口
+     **/
     private static SessionIdInterface mSessionIdInterface = null;
     //获取app登陆接口
     private static AppLoginInterface mAppLoginInterface = null;
     private static RquestQRCodeInter mQRCode = null;
     private static TradeRecordInter mRecord = null;
     private static APIProcxy apiProcxy;
+    private static MerChantInter mMerChantInfo = null;
 
-    public static synchronized APIProcxy getInstance(){
-        if (null == apiProcxy){
+    public static synchronized APIProcxy getInstance() {
+        if (null == apiProcxy) {
             apiProcxy = new APIProcxy();
         }
         return apiProcxy;
@@ -34,7 +38,6 @@ public class APIProcxy {
      * load realize class of interface
      *
      * @param classPath
-     *
      * @return realize class
      */
     private Class<?> loadClass(final String classPath) {
@@ -57,9 +60,7 @@ public class APIProcxy {
     }
 
     /**
-     * 获取SDK初始化和终端通讯接口
-     *
-     * @return 返回终端操作对象
+     * 获取temSessionId
      */
     public SessionIdInterface getmSessionIdInterface() {
         final String STATIC_TRADE_SERVICE_PATH = "com.sinopaylib.impl.GetSessionIdImpl";
@@ -81,9 +82,7 @@ public class APIProcxy {
     }
 
     /**
-     * 获取app登陆接口
-     *
-     * @return 返回终端操作对象
+     * app登陆
      */
     public AppLoginInterface getmAppLoginInterface() {
         final String STATIC_APP_LOGIN_PATH = "com.sinopaylib.impl.AppLoginImpl";
@@ -105,9 +104,9 @@ public class APIProcxy {
     }
 
     /**
-     * 获取二维码接口
+     * 获取二维码
      */
-    public RquestQRCodeInter getmQRCode(){
+    public RquestQRCodeInter getmQRCode() {
         final String STATIC_QRCODE_PATH = "com.sinopaylib.impl.QRCodeImpl";
         Class<?> myclass = loadClass(STATIC_QRCODE_PATH);
         if (myclass == null) {
@@ -129,7 +128,7 @@ public class APIProcxy {
     /**
      * 获取交易记录
      */
-    public TradeRecordInter getmRecord(){
+    public TradeRecordInter getmRecord() {
         final String STATIC_TRADE_PATH = "com.sinopaylib.impl.TradeRecordImpl";
         Class<?> myclass = loadClass(STATIC_TRADE_PATH);
         if (myclass == null) {
@@ -148,4 +147,25 @@ public class APIProcxy {
         return mRecord;
     }
 
+    /**
+     * 获取商家信息
+     */
+    public MerChantInter getmMerChantInfo() {
+        final String STATIC_MERCHANTINFO_PATH = "com.sinopaylib.impl.MerChantImpl";
+        Class<?> myclass = loadClass(STATIC_MERCHANTINFO_PATH);
+        if (myclass == null) {
+            throw new RuntimeException("MerChantImpl not implemented.");
+        }
+
+        if (mMerChantInfo == null) {
+            try {
+                mMerChantInfo = (MerChantInter) myclass.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return mMerChantInfo;
+    }
 }

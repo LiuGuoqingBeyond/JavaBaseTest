@@ -1158,5 +1158,25 @@
     <string name="apply_upopay_btn">申请中付银联预付卡</string>
     <string name="dialogutils_relogin">此账号已在其他设备登陆，若非本人操作请及时联系客服</string>
     <string name="xzf_open_notice_text">打开系统通知，获取交易通知、活动信息</string>
+    <!--基本资料-->
+    <string name="main_information">基本资料</string>
+    <string name="main_information_other">其他</string>
+    <string name="merchant_information">商户资料</string>
+    <string name="merchant_payee_information">交易信息</string>
+    <string name="merchant_country">所在国家</string>
+    <string name="merchant_name">商家名称</string>
+    <string name="merchant_relation">联系人</string>
+    <string name="merchant_relation_phone">联系电话</string>
+    <string name="merchant_handing_charge">签约费率</string>
+    <string name="merchant_continue_rate">续约费率</string>
+    <string name="merchant_price_information">结算信息</string>
+    <string name="merchant_beneficiary_name">受益人姓名</string>
+    <string name="merchant_bank_name">银行名称</string>
+    <string name="merchant_bank_account">银行账号</string>
+    <string name="merchant_branch_number">分行号</string>
+    <string name="merchant_number">商户编号</string>
+    <string name="merchant_simple_name">店铺名称</string>
+    <string name="terminal_number">终端编号</string>
+    <string name="union_pay_packet">银联钱包</string>
 
 </resources>

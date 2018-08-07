@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -14,9 +12,9 @@ android {
         versionName = rootProject.ext.versionName
         multiDexEnabled true
 
-        ndk {
+        /*ndk {
             abiFilters "armeabi-v7a"
-        }
+        }*/
 
         /*manifestPlaceholders = [
                 JPUSH_PKGNAME: rootProject.ext.applicationId,
@@ -60,12 +58,12 @@ android {
         }
     }
 
-    sourceSets {
+    /*sourceSets {
 
         instrumentTest.setRoot('tests')
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
-    }
+    }*/
 
     flavorDimensions "debug", "release"
 
@@ -78,7 +76,7 @@ android {
             /*manifestPlaceholders = [file_provider_prefix: "com.zhongfu.upop.develop", str: "develop", package_name: "@string/app_name_develop", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://utest.sinopayonline.com:8444/\""    https://u.sinopayonline.com*/
             // http://192.168.1.240:8080/UGateWay/appService
-            manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            manifestPlaceholders = [file_provider_prefix: "com.sinopaylib", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
         }
 
@@ -87,7 +85,7 @@ android {
             versionCode rootProject.ext.versionCode
             versionName rootProject.ext.versionName
             dimension "release"   // https://u.sinopayonline.com/
-            manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
+            manifestPlaceholders = [file_provider_prefix: "com.sinopaylib", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
         }
     }
@@ -122,64 +120,20 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:27.0.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
     compile "com.trello.rxlifecycle2:rxlifecycle:$rootProject.ext.rxLifecycleVersion"
     compile "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.ext.rxLifecycleVersion"
-    compile "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.ext.rxpermissionsVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rxbindingVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rootProject.ext.rxbindingVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.ext.rxbindingVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.ext.rxbindingVersion"
-    compile "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
-//    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.orhanobut:logger:$rootProject.ext.loggerVersion"
-//    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
-    compile 'com.android.support:multidex:1.0.2'
-//    compile "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
-//    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
-    compile 'com.github.bumptech.glide:glide:4.3.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
-    compile 'com.github.bumptech.glide:okhttp3-integration:4.3.1'
-    compile 'com.squareup.okhttp3:okhttp:3.9.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    compile project(':AFrameLib')
-    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
-
-    //圆形头像
-//    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageview"
-//    compile "com.android.support:design:$rootProject.ext.design"
-
-    //下拉刷新相关框架：https://github.com/scwang90/SmartRefreshLayout
-    /*compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-alpha-9'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-alpha-9'
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'*/
-
-    //https://github.com/emilsjolander/StickyListHeaders
-//    compile 'se.emilsjolander:stickylistheaders:2.7.0'
-
-    //https://github.com/Bigkoo/Android-PickerView
-//    compile 'com.contrarywind:Android-PickerView:3.2.6'
-
-    //recyclerview侧滑
-    /*compile 'com.yanzhenjie:recyclerview-swipe:1.1.3'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'cn.jiguang.sdk:jpush:3.0.9'*/
-
-    // 此处以JPush 3.0.9 版本为例。
-//    compile 'cn.jiguang.sdk:jcore:1.1.7'
-
-    // 此处以JCore 1.1.7 版本为例。
-//    compile "com.tencent.bugly:crashreport:$rootProject.ext.buglyVersion"
-//    implementation project(':libcommon')
+    implementation project(':AFrameLib')
 }
 
 task makeJar(type: Copy) {

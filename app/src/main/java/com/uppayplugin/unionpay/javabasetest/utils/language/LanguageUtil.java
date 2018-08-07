@@ -22,22 +22,22 @@ public class LanguageUtil {
 
         if(locale.getLanguage().equals("en")) {
             MApplication.setEnglishSystem(true);
-            MApplication.setChineseSystem(false);
-            MApplication.setChineseTwSystem(false);
+//            MApplication.setChineseSystem(false);
+//            MApplication.setChineseTwSystem(false);
         } else if(locale.getLanguage().equals("zh"))  {
             if(locale.getCountry().toLowerCase().equals("cn")) {
                 MApplication.setEnglishSystem(false);
-                MApplication.setChineseSystem(true);
-                MApplication.setChineseTwSystem(false);
+//                MApplication.setChineseSystem(true);
+//                MApplication.setChineseTwSystem(false);
             } else {
                 MApplication.setEnglishSystem(false);
-                MApplication.setChineseSystem(false);
-                MApplication.setChineseTwSystem(true);
+//                MApplication.setChineseSystem(false);
+//                MApplication.setChineseTwSystem(true);
             }
         } else {
             MApplication.setEnglishSystem(false);
-            MApplication.setChineseSystem(false);
-            MApplication.setChineseTwSystem(true);
+//            MApplication.setChineseSystem(false);
+//            MApplication.setChineseTwSystem(true);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -70,22 +70,22 @@ public class LanguageUtil {
         }
         if(locale.getLanguage().equals("en")) {
             MApplication.setEnglishSystem(true);
-            MApplication.setChineseSystem(false);
-            MApplication.setChineseTwSystem(false);
+//            MApplication.setChineseSystem(false);
+//            MApplication.setChineseTwSystem(false);
         } else if(locale.getLanguage().equals("zh"))  {
             if(locale.getCountry().toLowerCase().equals("cn")) {
                 MApplication.setEnglishSystem(false);
-                MApplication.setChineseSystem(true);
-                MApplication.setChineseTwSystem(false);
+//                MApplication.setChineseSystem(true);
+//                MApplication.setChineseTwSystem(false);
             } else {
                 MApplication.setEnglishSystem(false);
-                MApplication.setChineseSystem(false);
-                MApplication.setChineseTwSystem(true);
+//                MApplication.setChineseSystem(false);
+//                MApplication.setChineseTwSystem(true);
             }
         } else {
             MApplication.setEnglishSystem(false);
-            MApplication.setChineseSystem(false);
-            MApplication.setChineseTwSystem(true);
+//            MApplication.setChineseSystem(false);
+//            MApplication.setChineseTwSystem(true);
         }
         configuration.setLocale(locale);
         return context.createConfigurationContext(configuration);

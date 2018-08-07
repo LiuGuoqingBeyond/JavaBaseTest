@@ -46,6 +46,8 @@ public class Constant {
 
     // 本地测试环境地址
     public static final String HTTP_PATH = BuildConfig.BASEURL + "UGateWay/appService";
+
+    //瑞国调试的测试环境：http://test13.qtopay.cn/UGateWay/APPCallEntryServlet      生产   https://u.sinopayonline.com/UGateWay/APPCallEntryServlet
     public static final String SCAN_PATH = "http://test13.qtopay.cn/UGateWay/APPCallEntryServlet?agencyCode=123&countryCode=%1$s&language=0&phoneNo=%2$s&signMethod=SHA&signature=%3$s";
 
     public static final String URL_ALL_PAY_CODE = "https://u.sinopayonline.com/UGateWay/scanCode?m=";

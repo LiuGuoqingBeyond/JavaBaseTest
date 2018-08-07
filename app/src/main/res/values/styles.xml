@@ -143,4 +143,9 @@
         <item name="android:textColorHint">@color/textColorHint</item>
     </style>
 
+    <style name="textStyle_hint_base">
+        <item name="android:textSize">@dimen/textSizeBody</item>
+        <item name="android:textColor">@color/textColorHint</item>
+    </style>
+
 </resources>
