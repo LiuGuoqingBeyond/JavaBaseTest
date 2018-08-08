@@ -10,6 +10,7 @@ import com.uppayplugin.unionpay.javabasetest.utils.PreferencesUtil;
 import com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class GotoWebActivity extends ToolBarActivity {
     @BindView(R.id.et_countryCode)
@@ -36,6 +37,7 @@ public class GotoWebActivity extends ToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
+        ButterKnife.bind(this);
         PreferencesUtil prefer = new PreferencesUtil(mContext);
         btnText.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
