@@ -8,10 +8,13 @@ import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
@@ -27,10 +30,16 @@ import com.example.testdemolib.Interface.AnalysisInterface;
 import com.example.testdemolib.Listener.AnalysisListener;
 import com.example.testdemolib.entity.respons.TradeInfoRespModel;
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.ChecksumException;
+import com.google.zxing.DecodeHintType;
+import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
 import com.google.zxing.camera.CameraManager;
+import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.decoding.CaptureActivityHandler;
 import com.google.zxing.decoding.InactivityTimer;
+import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.view.ViewfinderView;
 import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetest.R;
@@ -43,7 +52,9 @@ import com.uppayplugin.unionpay.javabasetest.view.BaseToolbar;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Vector;
@@ -84,6 +95,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 
     // 二维码扫描结果
     private String qrCodeString = "";
+    private static final int REQUEST_CODE = 100;
 
     private PreferencesUtil prefes;
     private String securityKey;
@@ -146,6 +158,67 @@ public class CaptureActivity extends BaseActivity implements Callback {
                 Logger.d("click light" + "2");
             }
         });
+
+        mToolbar.setText(R.string.btn_picture);
+        mToolbar.getRightText().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent innerIntent = new Intent(Intent.ACTION_PICK); // "android.intent.action.GET_CONTENT"
+                innerIntent.setType("image/*");
+                Intent wrapperIntent = Intent.createChooser(innerIntent,
+                        "选择二维码图片");
+                startActivityForResult(wrapperIntent, REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null && requestCode == REQUEST_CODE) {
+            Uri data2 = data.getData();
+            try {
+                Map<DecodeHintType, String> hints = new HashMap<DecodeHintType, String>();
+                hints.put(DecodeHintType.CHARACTER_SET, "utf-8");
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                        this.getContentResolver(), data2);
+
+                RGBLuminanceSource source = new RGBLuminanceSource(bitmap);
+                BinaryBitmap bitmap1 = new BinaryBitmap(new HybridBinarizer(
+                        source));
+                QRCodeReader reader = new QRCodeReader();
+                Result result;
+                result = reader.decode(bitmap1, hints);
+                String string = result.toString();
+                Logger.e("string"+string);
+
+                if (source != null) {
+                    Intent resultIntent = new Intent();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("qrcode_result", string);
+                    resultIntent.putExtras(bundle);
+                    this.setResult(RESULT_OK, resultIntent);
+                    finish();
+                } else {
+                    Toast.makeText(CaptureActivity.this, "识别失败", Toast.LENGTH_SHORT).show();
+                }
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (com.google.zxing.NotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (ChecksumException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (com.google.zxing.FormatException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
     boolean isOpen;

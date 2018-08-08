@@ -15,7 +15,6 @@ public class ImageScanActivity extends ToolBarActivity {
 
     private TextView etCode;
     private final static int REQ_CODE = 1028;
-    private String result = "";
     private RxPermissions rxPermissions;
 
     @Override
@@ -79,9 +78,10 @@ public class ImageScanActivity extends ToolBarActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /*result = data.getStringExtra(CaptureActivity.SCAN_QRCODE_RESULT);
-        if (result != null) {
-            etCode.setText("扫码结果：" + result);
-        }*/
+        if (requestCode == REQ_CODE && data != null) {
+            if (data.getStringExtra("qrcode_result") != null) {
+                etCode.setText("扫码结果：" + data.getStringExtra("qrcode_result"));
+            }
+        }
     }
 }

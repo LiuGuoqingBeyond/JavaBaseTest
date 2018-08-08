@@ -1179,4 +1179,6 @@
     <string name="terminal_number">终端编号</string>
     <string name="union_pay_packet">银联钱包</string>
 
+    <string name="btn_picture">相册</string>
+
 </resources>
