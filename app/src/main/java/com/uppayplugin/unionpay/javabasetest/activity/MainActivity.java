@@ -795,7 +795,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ImageScanActivity.class);
 
         //跳转到应用市场
-        openActivity(TurnMarketActivity.class);
+//        openActivity(TurnMarketActivity.class);
+
+        //Android8.0以上的需要允许外来第三方安装
+        openActivity(AndroidEightSureActivity.class);
 
         //加载小数点动画
 //        openActivity(LoaderMathActivity.class);
