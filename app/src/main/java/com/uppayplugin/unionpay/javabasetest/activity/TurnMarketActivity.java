@@ -37,20 +37,16 @@ public class TurnMarketActivity extends ToolBarActivity {
         return null;
     }
 
-    public void click(View view) {
-        if (isAppInstalled("com.tencent.android.qqdownloader")) {
+    public void click(View view) {//googlePlay   com.android.vending     应用宝   com.tencent.android.qqdownloader
+        if (isAppInstalled("com.android.vending.AssetBrowserActivity")) {
             //跳转到应用市场的该版本的详情页
-            gotoAppInfoPage("com.tencent.android.qqdownloader");
+            gotoAppInfoPage("com.android.vending.AssetBrowserActivity");
         } else {
-            //判断有无浏览器
-            if (new Intent().resolveActivity(getPackageManager()) != null) { //有浏览器
-                //应用未安装,浏览器下载新版本
-                gotoBrowserDownload();
-            } else { //天哪，这还是智能手机吗？
-                Toast.makeText(this, "天啊，您没安装应用市场，连浏览器也没有，您买个手机干啥？", Toast.LENGTH_SHORT).show();
-            }
+            //应用未安装,浏览器下载新版本
+            gotoBrowserDownload();
         }
     }
+
     /**
      * 检测某个应用是否安装
      *
@@ -65,10 +61,11 @@ public class TurnMarketActivity extends ToolBarActivity {
             return false;
         }
     }
+
     private void gotoBrowserDownload() {
         Intent intent = new Intent();
-        intent.setAction("android.intent.action.VIEW");
-        Uri content_url = Uri.parse("http://sj.qq.com/myapp/detail.htm?apkName=" + "com.zhongfu.sinapay");
+        intent.setAction("android.intent.action.VIEW");//应用宝  http://sj.qq.com/myapp/detail.htm?apkName=    google   https://play.google.com/store/apps/details?id=
+        Uri content_url = Uri.parse("https://play.google.com/store/apps/details?id=" + "com.zhongfu.sinapay");
         intent.setData(content_url);
         startActivity(intent);
     }

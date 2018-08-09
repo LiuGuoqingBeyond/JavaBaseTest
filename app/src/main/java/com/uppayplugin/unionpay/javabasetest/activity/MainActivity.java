@@ -796,6 +796,9 @@ public class MainActivity extends BaseActivity {
 
         //跳转到应用市场
         openActivity(TurnMarketActivity.class);
+
+        //加载小数点动画
+//        openActivity(LoaderMathActivity.class);
     }
 
     @Override
