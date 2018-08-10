@@ -1180,5 +1180,6 @@
     <string name="union_pay_packet">银联钱包</string>
 
     <string name="btn_picture">相册</string>
-
+    <string name="notifcation_installation_permission">安装权限</string>
+    <string name="need_open_permission">需要打开允许来自此来源，请去设置中开启此权限</string>
 </resources>

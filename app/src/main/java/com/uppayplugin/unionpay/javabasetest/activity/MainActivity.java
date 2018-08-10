@@ -798,10 +798,14 @@ public class MainActivity extends BaseActivity {
 //        openActivity(TurnMarketActivity.class);
 
         //Android8.0以上的需要允许外来第三方安装
-        openActivity(AndroidEightSureActivity.class);
+//        openActivity(AndroidEightSureActivity.class);
 
         //加载小数点动画
 //        openActivity(LoaderMathActivity.class);
+
+        //获取手机型号
+//        String model = android.os.Build.MODEL; // 手机型号
+//        Logger.e("获取手机型号==" + model);
     }
 
     @Override
