@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/other_bg"
     android:orientation="vertical"
-    tools:context="com.uppayplugin.unionpay.javabasetest.activity.MerChantInfoActivity">
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.MerChantInfoActivity">
 
     <ScrollView
         android:layout_width="match_parent"

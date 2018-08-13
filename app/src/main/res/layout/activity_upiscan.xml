@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/other_bg"
     android:orientation="vertical"
-    tools:context="com.uppayplugin.unionpay.javabasetest.activity.UPIScanActivity">
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.UPIScanActivity">
 
-    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+    <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
         android:id="@+id/tv_country"
         style="@style/et_style_black"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:paddingStart="@dimen/defaultPadding"
         android:text="86" />
 
-    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+    <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
         android:id="@+id/et_account"
         style="@style/et_style_black"
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         android:paddingStart="@dimen/defaultPadding"
         android:text="17665232288" />
 
-    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+    <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
         android:id="@+id/et_password"
         style="@style/et_style_black"
         android:layout_width="match_parent"

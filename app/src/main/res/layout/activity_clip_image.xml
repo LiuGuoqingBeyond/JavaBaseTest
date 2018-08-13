@@ -6,7 +6,7 @@
     android:background="@android:color/black"
     android:orientation="vertical">
 
-    <com.uppayplugin.unionpay.javabasetest.utils.personal.ClipViewLayout
+    <com.uppayplugin.unionpay.javabasetes.utils.personal.ClipViewLayout
         android:id="@+id/clipViewLayout1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -15,7 +15,7 @@
         app:clipType="circle"
         app:mHorizontalPadding="30dp"/>
 
-    <com.uppayplugin.unionpay.javabasetest.utils.personal.ClipViewLayout
+    <com.uppayplugin.unionpay.javabasetes.utils.personal.ClipViewLayout
         android:id="@+id/clipViewLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"

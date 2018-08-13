@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.uppayplugin.unionpay.javabasetest.activity.LoaderMathActivity">
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.LoaderMathActivity">
 
     <TextView
         android:id="@+id/tv_search_device"

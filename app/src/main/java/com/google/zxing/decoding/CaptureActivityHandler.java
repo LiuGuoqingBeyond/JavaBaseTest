@@ -29,8 +29,8 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.camera.CameraManager;
 import com.google.zxing.view.ViewfinderResultPointCallback;
-import com.uppayplugin.unionpay.javabasetest.R;
-import com.uppayplugin.unionpay.javabasetest.activity.CaptureActivity;
+import com.uppayplugin.unionpay.javabasetes.R;
+import com.uppayplugin.unionpay.javabasetes.activity.CaptureActivity;
 
 import java.util.Vector;
 

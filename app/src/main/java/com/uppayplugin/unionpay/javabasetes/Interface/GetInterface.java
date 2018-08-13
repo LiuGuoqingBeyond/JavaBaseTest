@@ -1,0 +1,13 @@
+package com.uppayplugin.unionpay.javabasetes.Interface;
+
+import android.content.Context;
+
+/**
+ * User: LiuGq
+ * Date: 2018/4/24
+ * Time: 8:55
+ */
+
+public interface GetInterface {
+    void getMessage(Context context,String message,TestInter testInter );
+}

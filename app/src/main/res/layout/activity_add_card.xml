@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/other_bg"
     android:orientation="vertical"
-    tools:context="com.uppayplugin.unionpay.javabasetest.activity.AddCardActivity">
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.AddCardActivity">
 
-    <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+    <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
         android:id="@+id/et_card"
         style="@style/et_style_black"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
             android:id="@+id/et_mobile"
             style="@style/et_style_black"
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:paddingEnd="@dimen/defaultPadding"
             android:paddingStart="@dimen/defaultPadding" />
 
-        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
             android:id="@+id/et_id"
             style="@style/et_style_black"
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:paddingEnd="@dimen/defaultPadding"
             android:paddingStart="@dimen/defaultPadding" />
 
-        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
             android:id="@+id/et_name"
             style="@style/et_style_black"
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:paddingEnd="@dimen/defaultPadding"
             android:paddingStart="@dimen/defaultPadding" />
 
-        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
             android:id="@+id/et_cvn"
             style="@style/et_style_black"
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
             android:paddingEnd="@dimen/defaultPadding"
             android:paddingStart="@dimen/defaultPadding" />
 
-        <com.uppayplugin.unionpay.javabasetest.view.EditTextWithDEL
+        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
             android:id="@+id/et_valid"
             style="@style/et_style_black"
             android:layout_width="match_parent"

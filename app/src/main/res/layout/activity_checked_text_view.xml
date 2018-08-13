@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.uppayplugin.unionpay.javabasetest.activity.CheckedTextViewActivity">
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.CheckedTextViewActivity">
 
     <Spinner
         android:id="@+id/spBankList"

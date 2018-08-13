@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uppayplugin.unionpay.javabasetest"
+    package="com.uppayplugin.unionpay.javabasetes"
     android:versionCode="1000"
     android:versionName="1.0.0">
 
@@ -99,7 +99,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.uppayplugin.unionpay.javabasetest.fileprovider"
+            android:authorities="com.uppayplugin.unionpay.javabasetes.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -214,6 +214,14 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.AndroidEightSureActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.KotlinBaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.KotlinSecondActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
     </application>

@@ -80,6 +80,7 @@ android {
             // http://192.168.1.240:8080/UGateWay/appService
             manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
+            buildConfigField "String", "IS_OFFICIAL", "\"true\""
         }
 
         flavors_release {
@@ -89,6 +90,7 @@ android {
             dimension "release"   // https://u.sinopayonline.com/
             manifestPlaceholders = [file_provider_prefix: "com.uppayplugin.unionpay.javabasetest", str: "release", package_name: "@string/app_name", icon: "@mipmap/ic_launcher"]
             buildConfigField "String", "BASEURL", "\"https://u.sinopayonline.com/\""
+            buildConfigField "String", "IS_OFFICIAL", "\"true\""
         }
     }
 
@@ -182,6 +184,9 @@ dependencies {
 
     // 此处以JCore 1.1.7 版本为例。
     compile "com.tencent.bugly:crashreport:$rootProject.ext.buglyVersion"
+
+    //友盟
+    compile "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
     implementation project(':libcommon')
     implementation files('libs/pinyin4j-2.5.0.jar')
     repositories {
