@@ -817,7 +817,29 @@ public class MainActivity extends BaseActivity {
         //RecyclerView
         //RxJava+RxAndroid
         //Kotlin基础
-        openActivity(KotlinBaseActivity.class);
+//        openActivity(KotlinBaseActivity.class);
+
+        //加载Banner  两种方式
+//        openActivity(BannerActivity.class);
+
+        //关于我们CoordinatorLayout、MountainSceneView纸飞机、AppBarLayout、CollapsingToolbarLayout、SmartRefreshLayout、FlyRefreshHeader下拉头部距离、NestedScrollView分割线下边的模块、FloatingActionButton悬浮按钮、FlyView纸飞机
+//        openActivity(AboutUsActivity.class);
+
+        //agentweb webView  用另一种方式调试h5，并js相互调用
+//        openActivity(AgentWebActivity.class);//防wanAndroid，别用
+
+        //新中付统一的webView
+        /*Bundle bundle = new Bundle();
+        bundle.putString("url",String.format("http://test8.qtopay.cn/m/home.html?userType=AGENT&userLoginLocation=app&userName=%1$s&passWord=%2$s","LiuGuoQing","123456"));
+        bundle.putString("title","统一的webView");
+        openActivity(WebViewUnifyActivity.class,bundle);*/
+
+        //标签：com.zhy.view.flowlayout.TagFlowLayout   及ActionBar Menu
+        openActivity(TagFlowActivity.class);
+
+        //
+
+
     }
 
     @Override

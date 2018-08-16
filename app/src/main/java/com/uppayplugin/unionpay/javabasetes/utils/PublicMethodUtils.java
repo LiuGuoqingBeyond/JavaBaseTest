@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -27,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -264,5 +266,19 @@ public class PublicMethodUtils {
             }
         };
         editText.addTextChangedListener(textWatcher);
+    }
+    /**
+     * 获取随机rgb颜色值
+     */
+    public static int randomColor() {
+        Random random = new Random();
+        //0-190, 如果颜色值过大,就越接近白色,就看不清了,所以需要限定范围
+        int red = random.nextInt(150);
+        //0-190
+        int green = random.nextInt(150);
+        //0-190
+        int blue = random.nextInt(150);
+        //使用rgb混合生成一种新的颜色,Color.rgb生成的是一个int数
+        return Color.rgb(red, green, blue);
     }
 }

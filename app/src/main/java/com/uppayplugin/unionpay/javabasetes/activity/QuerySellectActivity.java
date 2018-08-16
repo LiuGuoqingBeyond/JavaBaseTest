@@ -1,6 +1,7 @@
 package com.uppayplugin.unionpay.javabasetes.activity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -13,8 +14,10 @@ import com.example.testdemolib.entity.respons.QrCodePayInfoResponseModel;
 import com.example.testdemolib.entity.respons.TradeRecordAllRespone;
 import com.scwang.smartrefresh.header.WaterDropHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.adapter.TransactionRecordsAdapter;
@@ -195,21 +198,22 @@ public class QuerySellectActivity extends ToolBarActivity {
             }
             refreshlayout.finishRefresh(1500);
         });
-
-        tradeRecordRefreshLayout.setOnLoadmoreListener(refreshlayout -> {
-            isRefresh = false;
-            if (!isNotLoadAll) {
-                beginNum++;
-                RequestAllMonth();
-                refreshlayout.finishLoadmore(1500);
-            } else {
-                beginNum++;
+        tradeRecordRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                isRefresh = false;
+                if (!isNotLoadAll) {
+                    beginNum++;
+                    RequestAllMonth();
+                    refreshLayout.finishLoadMore(1500);
+                } else {
+                    beginNum++;
 //                RequestMonth(time);//先注掉
-                refreshlayout.finishLoadmore(1500);
+                    refreshLayout.finishLoadMore(1500);
+                }
             }
-
         });
-        tradeRecordRefreshLayout.setEnableLoadmore(true);
+        tradeRecordRefreshLayout.setEnableLoadMore(true);
         tradeRecordRefreshLayout.setRefreshHeader(new WaterDropHeader(this));
         tradeRecordRefreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
     }

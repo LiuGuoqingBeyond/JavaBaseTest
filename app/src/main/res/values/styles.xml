@@ -19,6 +19,18 @@
         <!-- 是否浮现在activity之上 -->
         <item name="android:windowIsFloating">true</item>
     </style>
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <!--ToolBar文字 style-->
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="colorControlNormal">@color/alpha_75_black</item>
+    </style>
 
     <!-- 常用按钮的样式 -->
     <style name="btnStyle_normal" parent="@style/Widget.AppCompat.Button.Borderless">

@@ -126,7 +126,9 @@ class KotlinBaseActivity : AppToolBarActivity() {
             })*/
 
             //kotlin写单例模式
-            ToastUtils.showLong(SingletonKotlin.get().getMessage())
+//            ToastUtils.showLong(SingletonKotlin.get().getMessage())
+
+            //各操作符的写法练习
         }
     }
 

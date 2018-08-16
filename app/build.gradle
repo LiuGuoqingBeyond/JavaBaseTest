@@ -23,6 +23,7 @@ android {
                 JPUSH_APPKEY : "67c5ca2dee8fcb4cdadf5251", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
+        vectorDrawables.useSupportLibrary = true
     }
 
     lintOptions {
@@ -160,10 +161,20 @@ dependencies {
     compile "com.android.support:design:$rootProject.ext.design"
 
     //下拉刷新相关框架：https://github.com/scwang90/SmartRefreshLayout
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-alpha-9'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-alpha-9'
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
+
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5'
+
+    //单Activity + 多Fragment切换
+    compile 'me.yokeyword:fragmentation:1.3.5'
+
+    //标签
+    compile'com.hyman:flowlayout-lib:1.1.2'
+
+    //webView
+    compile 'com.just.agentweb:agentweb:4.0.2'
 
     //https://github.com/emilsjolander/StickyListHeaders
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
@@ -184,6 +195,9 @@ dependencies {
 
     // 此处以JCore 1.1.7 版本为例。
     compile "com.tencent.bugly:crashreport:$rootProject.ext.buglyVersion"
+
+    //轮播
+    compile "com.youth.banner:banner:$rootProject.ext.banner"
 
     //友盟
     compile "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
