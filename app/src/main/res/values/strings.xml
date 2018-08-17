@@ -1194,4 +1194,8 @@
     <string name="btn_picture">相册</string>
     <string name="notifcation_installation_permission">安装权限</string>
     <string name="need_open_permission">需要打开允许来自此来源，请去设置中开启此权限</string>
+    <string name="title_activity_main_pager">MainPagerActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

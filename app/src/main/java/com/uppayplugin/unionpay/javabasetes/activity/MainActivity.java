@@ -50,6 +50,7 @@ import com.uppayplugin.unionpay.javabasetes.Interface.TestInter;
 import com.uppayplugin.unionpay.javabasetes.Interface.TestInterface;
 import com.uppayplugin.unionpay.javabasetes.Interface.TextSevenListener;
 import com.uppayplugin.unionpay.javabasetes.R;
+import com.uppayplugin.unionpay.javabasetes.bottomnavigationview.MainPagerActivity;
 import com.uppayplugin.unionpay.javabasetes.config.Constant;
 import com.uppayplugin.unionpay.javabasetes.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.PayUtils;
@@ -835,10 +836,10 @@ public class MainActivity extends BaseActivity {
         openActivity(WebViewUnifyActivity.class,bundle);*/
 
         //标签：com.zhy.view.flowlayout.TagFlowLayout   及ActionBar Menu
-        openActivity(TagFlowActivity.class);
+//        openActivity(TagFlowActivity.class);
 
-        //
-
+        //使用BottomNavigationView书写MainActivity
+        openActivity(MainPagerActivity.class);
 
     }
 
