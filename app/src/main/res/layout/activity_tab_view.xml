@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.uppayplugin.unionpay.javabasetes.activity.TabViewActivity">
+
+    <!--
+    tl_indicator_color设置显示器颜色
+    tl_indicator_style设置显示器为常规(NORMAL)或三角形(TRIANGLE)或背景色块(BLOCK)
+    tl_indicator_width设置显示器固定宽度
+    tl_tab_space_equal设置tab大小等分
+    tl_underline_gravity设置下划线上方(TOP)还是下方(BOTTOM)
+    -->
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_40x"
+        app:tl_indicator_color="@color/app_main_color"
+        app:tl_indicator_style="NORMAL"
+        app:tl_indicator_width="@dimen/padding_30x"
+        app:tl_tab_space_equal="true"
+        app:tl_textSelectColor="@color/app_main_color"
+        app:tl_textUnselectColor="@color/alpha_90_black"
+        app:tl_textsize="@dimen/sp_14"
+        app:tl_underline_gravity="BOTTOM"
+        app:tl_underline_height="3dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/alpha_15_black" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

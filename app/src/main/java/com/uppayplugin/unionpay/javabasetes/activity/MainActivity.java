@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
@@ -22,8 +23,10 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
-import android.telephony.TelephonyManager;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +53,6 @@ import com.uppayplugin.unionpay.javabasetes.Interface.TestInter;
 import com.uppayplugin.unionpay.javabasetes.Interface.TestInterface;
 import com.uppayplugin.unionpay.javabasetes.Interface.TextSevenListener;
 import com.uppayplugin.unionpay.javabasetes.R;
-import com.uppayplugin.unionpay.javabasetes.bottomnavigationview.MainPagerActivity;
 import com.uppayplugin.unionpay.javabasetes.config.Constant;
 import com.uppayplugin.unionpay.javabasetes.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.PayUtils;
@@ -63,6 +65,7 @@ import com.uppayplugin.unionpay.javabasetes.utils.net.NetUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.personal.CircleImageView;
 import com.uppayplugin.unionpay.javabasetes.utils.personal.FileUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.qrcode.QRCodeUtils;
+import com.uppayplugin.unionpay.javabasetes.utils.AutoFitTextView;
 import com.uppayplugin.unionpay.libcommon.rsa.RSACoder;
 
 import org.json.JSONObject;
@@ -122,6 +125,10 @@ public class MainActivity extends BaseActivity {
     ImageView imageQr;
     @BindView(R.id.addNewCard)
     TextView addNewCard;
+    @BindView(R.id.img_view)
+    ImageView imgView2;
+    @BindView(R.id.tv_resize)
+    AutoFitTextView tvResize;
     private Bitmap bitmap;
     private RxPermissions rxPermissions;
     private LocationManager locationManager;
@@ -839,8 +846,58 @@ public class MainActivity extends BaseActivity {
 //        openActivity(TagFlowActivity.class);
 
         //使用BottomNavigationView书写MainActivity
-        openActivity(MainPagerActivity.class);
+//        openActivity(MainPagerActivity.class);
 
+        //TabLayout和viewPager
+//        openActivity(TabViewActivity.class);
+
+        //是否有横竖屏
+        /*if (isLandscape()) {
+            ToastUtils.showLong("竖屏");
+        } else {
+            ToastUtils.showLong("横屏");
+        }*/
+
+        //根据宽度加载图片
+//        PublicMethodUtils.loadIntoUseFitWidth(mContext,"http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg",imgView2);//网络加载
+
+        //自适应宽度设置文字大小
+        /*adjustTvTextSize(tvResize,200,"哈哈哈哈哈哈哈哈哈哈哈哈");//后边这个值是文字显示的长度，与xml里的控件里的长度无关，最好与xml里的保持一致，使用这个时，他是不换行的
+        tvResize.setText("哈哈哈哈哈哈哈哈哈哈哈哈");*/
+
+//        tvResize.setText("哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈");//这个方法只适用于固定   宽和高   ，不能一行显示，一行显示的需要另一方法
+
+        //NestedScrollView
+        openActivity(NestedScrollViewActivity.class);
+
+    }
+    //固定宽度的情况下，自适应文本字体大小
+    public static float adjustTvTextSize(TextView tv, int maxWidth, String text) {
+        int avaiWidth = maxWidth - tv.getPaddingLeft() - tv.getPaddingRight() - 10;
+
+        if (avaiWidth <= 0 || TextUtils.isEmpty(text)) {
+            return tv.getPaint().getTextSize();
+        }
+
+        TextPaint textPaintClone = new TextPaint(tv.getPaint());
+        // note that Paint text size works in px not sp
+        float trySize = textPaintClone.getTextSize();
+
+        while (textPaintClone.measureText(text) > avaiWidth) {
+            trySize--;
+            textPaintClone.setTextSize(trySize);
+        }
+
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, trySize);
+        return trySize;
+    }
+
+
+    /**
+     * 是否竖屏
+     */
+    private boolean isLandscape() {
+        return this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
     }
 
     @Override
