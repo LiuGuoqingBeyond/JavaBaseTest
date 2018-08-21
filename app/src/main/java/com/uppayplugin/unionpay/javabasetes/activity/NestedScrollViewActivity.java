@@ -1,6 +1,7 @@
 package com.uppayplugin.unionpay.javabasetes.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,20 +9,31 @@ import android.view.View;
 import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.adapter.BankCardInfo;
 import com.uppayplugin.unionpay.javabasetes.adapter.NestedScrollViewAdapter;
+import com.uppayplugin.unionpay.javabasetes.config.EventConstant;
+import com.uppayplugin.unionpay.javabasetes.config.MessageEvent;
+import com.uppayplugin.unionpay.javabasetes.presenter.BasePresenter;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
+import com.uppayplugin.unionpay.libcommon.inter.onItemClickListener;
 import com.uppayplugin.unionpay.libcommon.inter.onItemLongClickListener;
 import com.whty.xzfpos.base.AppToolBarActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class NestedScrollViewActivity extends AppToolBarActivity {
     @BindView(R.id.rv_cycView)
     RecyclerView mReView;
+    @BindView(R.id.float_button)
+    FloatingActionButton mFloatingButton;
+
     List<BankCardInfo> integerList;
     private NestedScrollViewAdapter adapter;
+    private BasePresenter presenter;
 
     @Override
     protected void initToolBar() {
@@ -40,6 +52,7 @@ public class NestedScrollViewActivity extends AppToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
+        presenter = new BasePresenter();
         integerList = getBankInfoList();
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -49,9 +62,15 @@ public class NestedScrollViewActivity extends AppToolBarActivity {
         adapter.appendToList(integerList);
         mReView.setAdapter(adapter);
 
-        adapter.setmLongClickListener(new onItemLongClickListener<BankCardInfo>() {
+        /*adapter.setmLongClickListener(new onItemLongClickListener<BankCardInfo>() {
             @Override
             public void onItemLongClick(BankCardInfo bankCardInfo, int position) {
+                ToastUtils.showLong(position+"");
+            }
+        });*/
+        adapter.setmClickListener(new onItemClickListener<BankCardInfo>() {
+            @Override
+            public void onItemClick(BankCardInfo bankCardInfo, int position) {
                 ToastUtils.showLong(position+"");
             }
         });
@@ -126,4 +145,32 @@ public class NestedScrollViewActivity extends AppToolBarActivity {
         list.add(bankCardInfo_fourting);
         return list;
     }
+    @OnClick(R.id.float_button)
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.float_button:
+                presenter.setCurrentPage(0);
+                scrollToTop();
+                break;
+        }
+    }
+
+    private void scrollToTop() {
+        switch (presenter.getCurrentPage()) {
+            case 0:
+                EventBus.getDefault().post(new MessageEvent(EventConstant.MAINSCROLLTOTOP, ""));
+                if (EventConstant.MAINSCROLLTOTOP == 101){
+                    mReView.setNestedScrollingEnabled(true);
+                    mReView.smoothScrollToPosition(0);
+                }
+                break;
+            case 1:
+                EventBus.getDefault().post(new MessageEvent(EventConstant.KNOWLEDGESCROLLTOTOP, ""));
+                break;
+            case 2:
+                EventBus.getDefault().post(new MessageEvent(EventConstant.PROJECTSCROLLTOTOP, ""));
+                break;
+        }
+    }
+
 }

@@ -205,6 +205,9 @@ dependencies {
     //BaseRecyclerViewAdapterHelper
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
 
+    //evenBus
+    compile 'org.greenrobot:eventbus:3.1.1'
+
     //友盟
     compile "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
     implementation project(':libcommon')

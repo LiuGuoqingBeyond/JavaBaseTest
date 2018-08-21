@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uppayplugin.unionpay.javabasetes.R;
+import com.uppayplugin.unionpay.libcommon.inter.onItemClickListener;
 import com.uppayplugin.unionpay.libcommon.inter.onItemLongClickListener;
 
 /**
@@ -17,6 +18,14 @@ import com.uppayplugin.unionpay.libcommon.inter.onItemLongClickListener;
 public class NestedScrollViewAdapter extends BaseRecyclerAdapter<BankCardInfo, NestedScrollViewAdapter.ViewHolder> {
 
     onItemLongClickListener<BankCardInfo> mLongClickListener;
+    onItemClickListener<BankCardInfo> mClickListener;
+
+    public static final int ONE_ITEM = 1;
+    public static final int TWO_ITEM = 2;
+
+    public void setmClickListener(onItemClickListener<BankCardInfo> mClickListener) {
+        this.mClickListener = mClickListener;
+    }
 
     public void setmLongClickListener(onItemLongClickListener<BankCardInfo> mLongClickListener) {
         this.mLongClickListener = mLongClickListener;
@@ -24,6 +33,7 @@ public class NestedScrollViewAdapter extends BaseRecyclerAdapter<BankCardInfo, N
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        RecyclerView.ViewHolder viewHolder;
         return new ViewHolder(View.inflate(parent.getContext(), R.layout.test_string_recycler_layout, null));
     }
 
@@ -40,19 +50,19 @@ public class NestedScrollViewAdapter extends BaseRecyclerAdapter<BankCardInfo, N
             super(itemView);
             mContext = itemView.getContext();
             tvTest = itemView.findViewById(R.id.tv_test);
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {//长按
+            /*itemView.setOnLongClickListener(new View.OnLongClickListener() {//长按
                 @Override
                 public boolean onLongClick(View view) {
                     mLongClickListener.onItemLongClick(getItem(getAdapterPosition()),getAdapterPosition());
                     return true;
                 }
-            });
-            /*itemView.setOnClickListener(new View.OnClickListener() {//点击
+            });*/
+            itemView.setOnClickListener(new View.OnClickListener() {//点击
                 @Override
                 public void onClick(View view) {
-                    mLongClickListener.onItemLongClick(getItem(getAdapterPosition()),getAdapterPosition());
+                    mClickListener.onItemClick(getItem(getAdapterPosition()), getAdapterPosition());
                 }
-            });*/
+            });
         }
 
         public void bindData(BankCardInfo bankCardInfo, int position) {
