@@ -59,6 +59,7 @@ import com.uppayplugin.unionpay.javabasetes.utils.PayUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.PreferencesUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.PublicMethodUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.OneOrTwoBtnDialogUtil;
+import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.net.HTTPSRequestUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.net.NetUtil;
@@ -868,9 +869,26 @@ public class MainActivity extends BaseActivity {
 //        tvResize.setText("哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈");//这个方法只适用于固定   宽和高   ，不能一行显示，一行显示的需要另一方法
 
         //NestedScrollView
-        openActivity(NestedScrollViewActivity.class);
+//        openActivity(NestedScrollViewActivity.class);
+
+        //判断oppo是否是刘海平
+        /*if (hasNotchInOppo(mContext)){
+            ToastUtils.showLong("是");
+        }else {
+            ToastUtils.showLong("不是");
+        }*/
+
+        //TextInputLayout
+//        openActivity(TextInputLayoutActivity.class);
+
+        //todo清单备忘录
+        openActivity(TodoMainActivity.class);
 
     }
+    public static boolean hasNotchInOppo(Context context) {
+        return context.getPackageManager().hasSystemFeature("com.oppo.feature.screen.heteromorphism");
+    }
+
     //固定宽度的情况下，自适应文本字体大小
     public static float adjustTvTextSize(TextView tv, int maxWidth, String text) {
         int avaiWidth = maxWidth - tv.getPaddingLeft() - tv.getPaddingRight() - 10;
