@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/libcommon/libcommon.iml" filepath="$PROJECT_DIR$/libcommon/libcommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/sinopaylib/sinopaylib.iml" filepath="$PROJECT_DIR$/sinopaylib/sinopaylib.iml" />
       <module fileurl="file://$PROJECT_DIR$/upopPaylib/upopPaylib.iml" filepath="$PROJECT_DIR$/upopPaylib/upopPaylib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wj-http/wj-http.iml" filepath="$PROJECT_DIR$/wj-http/wj-http.iml" />
     </modules>
   </component>
 </project>

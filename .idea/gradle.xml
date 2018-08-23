@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/libcommon" />
             <option value="$PROJECT_DIR$/sinopaylib" />
             <option value="$PROJECT_DIR$/upopPaylib" />
+            <option value="$PROJECT_DIR$/wj-http" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

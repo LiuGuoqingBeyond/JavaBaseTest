@@ -7,8 +7,24 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
+import com.axl.android.frameworkbase.net.utils.ProgressSubscriber;
+import com.axl.android.frameworkbase.utils.Constant;
+import com.example.testdemolib.Impl.LoginAppRequest;
+import com.example.testdemolib.entity.request.LoginAppModel;
+import com.example.testdemolib.entity.respons.LoginAppReqModel;
+import com.example.testdemolib.mapbean.TransMapToBeanUtils;
+import com.example.testdemolib.utils.PayUtils;
+import com.example.testdemolib.utils.RSACoder;
+import com.orhanobut.logger.Logger;
+import com.uppayplugin.unionpay.javabasetes.Impl.TodoLoginRequestImpl;
 import com.uppayplugin.unionpay.javabasetes.R;
+import com.uppayplugin.unionpay.javabasetes.entity.request.TodoLoginRequest;
+import com.uppayplugin.unionpay.javabasetes.entity.response.TodoLoginRep;
 import com.whty.xzfpos.base.AppToolBarActivity;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -55,6 +71,21 @@ public class TodoMainActivity extends AppToolBarActivity {
     }
 
     private void login(String account, String password) {
+        Map<String, String> map = new HashMap<>();
+        map.put("username", account);
+        map.put("password", password);
+
+        TodoLoginRequestImpl.loginRequest((TodoLoginRequest) TransMapToBeanUtils.mapToBean(map, TodoLoginRequest.class))
+                .subscribe(new ProgressSubscriber<TodoLoginRep>(mContext) {
+                    @Override
+                    protected void _onNext(TodoLoginRep todoLoginRep) {
+                        Logger.e("app登陆返回=" + todoLoginRep.toString());
+                    }
+
+                    @Override
+                    protected void _onError(String message) {
+                    }
+                });
     }
 
     /**
