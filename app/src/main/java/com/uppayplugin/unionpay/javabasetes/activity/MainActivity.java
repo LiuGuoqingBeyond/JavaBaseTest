@@ -882,7 +882,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(TextInputLayoutActivity.class);
 
         //todo清单备忘录
-        openActivity(TodoMainActivity.class);
+//        openActivity(TodoMainActivity.class);
+
+        //蓝牙搜索及判断蓝牙是否打开
+        openActivity(BlueToothActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {

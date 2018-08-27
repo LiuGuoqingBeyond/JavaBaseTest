@@ -149,7 +149,8 @@ public class NestedScrollViewActivity extends AppToolBarActivity {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.float_button:
-                presenter.setCurrentPage(0);
+                //点了之后好像没效果
+                presenter.setCurrentPage(1);
                 scrollToTop();
                 break;
         }
@@ -158,11 +159,8 @@ public class NestedScrollViewActivity extends AppToolBarActivity {
     private void scrollToTop() {
         switch (presenter.getCurrentPage()) {
             case 0:
-                EventBus.getDefault().post(new MessageEvent(EventConstant.MAINSCROLLTOTOP, ""));
-                if (EventConstant.MAINSCROLLTOTOP == 101){
-                    mReView.setNestedScrollingEnabled(true);
-                    mReView.smoothScrollToPosition(0);
-                }
+//                EventBus.getDefault().post(new MessageEvent(EventConstant.MAINSCROLLTOTOP, ""));
+                mReView.smoothScrollToPosition(0);
                 break;
             case 1:
                 EventBus.getDefault().post(new MessageEvent(EventConstant.KNOWLEDGESCROLLTOTOP, ""));

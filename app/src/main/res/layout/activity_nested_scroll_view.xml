@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.uppayplugin.unionpay.javabasetes.activity.NestedScrollViewActivity">
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <include layout="@layout/common_toolbar" />
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/float_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="@dimen/padding_70x"
-        android:layout_marginEnd="@dimen/padding_12x"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="12dp"
         android:src="@drawable/icon_up_arrow"
-        app:borderWidth="0dp" />
+        app:borderWidth="0dp"
+        app:layout_behavior="@string/bye_burger_float_behavior" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -32,5 +47,17 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:elevation="16dp"
+        app:itemIconTint="@drawable/drawable_bottom_nav_color"
+        app:itemTextColor="@drawable/drawable_bottom_nav_color"
+        app:layout_behavior="@string/bye_burger_bottom_behavior"
+        app:menu="@menu/menu_bottom_navigation" />
 
 </android.support.design.widget.CoordinatorLayout>

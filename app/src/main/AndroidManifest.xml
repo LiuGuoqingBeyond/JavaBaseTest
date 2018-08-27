@@ -27,7 +27,8 @@
     <!-- 允许应用访问手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 允许程序连接到已配对的蓝牙设备 -->
-    <!-- <uses-permission android:name="android.permission.BLUETOOTH" /> -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <!-- 允许一个程序初始化一个电话拨号不需通过拨号用户界面需要用户确认 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 允许访问振动设备 -->
@@ -46,14 +47,6 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <!-- required为true时，则应用只能在支持BLE的Android设备上安装运行 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-
-    <!--
-        <uses-feature
-        android:name="android.hardware.bluetooth_le"
-        android:required="true" />
-    -->
-    <!-- 初始化设备的搜索或改变蓝牙的设置 -->
-    <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> -->
     <!-- 允许应用程序使用SYSTEM_ALERT_TYPE类型在所有其他应用程序之上显示窗口很少有程序用到这个许可 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -256,8 +249,19 @@
             android:name=".activity.NestedScrollViewActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activity.TextInputLayoutActivity" />
-        <activity android:name=".activity.TodoMainActivity"></activity>
+        <activity
+            android:name=".activity.TextInputLayoutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.TodoMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.BlueToothActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.BlueActivity"></activity>
     </application>
 
 </manifest>
