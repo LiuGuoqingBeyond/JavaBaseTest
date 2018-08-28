@@ -62,7 +62,7 @@ public class BlueActivity extends AppToolBarActivity {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         blueList = new ArrayList<>();
         blueAdapter = new BlueAdapter();
-        blueCountRepModel = new BlueCountRepModel();
+
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRcyclerView.setLayoutManager(manager);
@@ -131,15 +131,19 @@ public class BlueActivity extends AppToolBarActivity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 
                 if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
+                    blueCountRepModel = new BlueCountRepModel();
                     //用设备获取蓝牙名字
                     blueCountRepModel.setBlueName(device.getName());
                     blueCountRepModel.setBlueAddress(device.getAddress());
                     blueList.add(blueCountRepModel);
-                    blueAdapter.appendToList(blueList);
+
                 }
                 //如果搜索完毕,会进入这个判断;
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 ToastUtils.showLong("已搜数完成");
+
+            }else if (BluetoothAdapter.ACTION_SCAN_MODE_CHANGED.equals(action)){
+                blueAdapter.appendToList(blueList);
             }
         }
     }

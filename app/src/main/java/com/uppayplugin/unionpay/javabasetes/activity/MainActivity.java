@@ -885,7 +885,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(TodoMainActivity.class);
 
         //蓝牙搜索及判断蓝牙是否打开
-        openActivity(BlueToothActivity.class);
+//        openActivity(BlueToothActivity.class);
+
+        //邱天宫格图
+        openActivity(RadiuButtonActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
