@@ -890,7 +890,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(RecyclerGridActivity.class);
 
         //Fragment
-        openActivity(TestFragmentActivity.class);
+//        openActivity(TestFragmentActivity.class);
+
+        //添加VGA图片
+        openActivity(AddVGAActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
