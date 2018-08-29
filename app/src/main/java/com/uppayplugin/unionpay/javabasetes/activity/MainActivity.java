@@ -59,7 +59,6 @@ import com.uppayplugin.unionpay.javabasetes.utils.PayUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.PreferencesUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.PublicMethodUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.OneOrTwoBtnDialogUtil;
-import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.net.HTTPSRequestUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.net.NetUtil;
@@ -887,8 +886,8 @@ public class MainActivity extends BaseActivity {
         //蓝牙搜索及判断蓝牙是否打开
 //        openActivity(BlueToothActivity.class);
 
-        //邱天宫格图
-        openActivity(RadiuButtonActivity.class);
+        //邱天网格布局
+        openActivity(RecyclerGridActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
