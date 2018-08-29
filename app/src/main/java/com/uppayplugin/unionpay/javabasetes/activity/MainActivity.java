@@ -887,7 +887,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(BlueToothActivity.class);
 
         //邱天网格布局
-        openActivity(RecyclerGridActivity.class);
+//        openActivity(RecyclerGridActivity.class);
+
+        //Fragment
+        openActivity(TestFragmentActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
