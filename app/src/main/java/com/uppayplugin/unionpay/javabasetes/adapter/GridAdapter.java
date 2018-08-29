@@ -9,8 +9,7 @@ import android.widget.TextView;
 
 import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.entity.response.GridRepModel;
-
-import butterknife.ButterKnife;
+import com.uppayplugin.unionpay.libcommon.inter.onItemClickListener;
 
 /**
  * User: LiuGuoqing
@@ -18,6 +17,12 @@ import butterknife.ButterKnife;
  */
 
 public class GridAdapter extends BaseRecyclerAdapter<GridRepModel,GridAdapter.ViewHolder> {
+    onItemClickListener<GridRepModel> mClickListener;
+
+    public void setmClickListener(onItemClickListener<GridRepModel> mClickListener) {
+        this.mClickListener = mClickListener;
+    }
+
     @Override
     public GridAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new GridAdapter.ViewHolder(View.inflate(parent.getContext(), R.layout.grid_view_layout, null));
@@ -42,6 +47,7 @@ public class GridAdapter extends BaseRecyclerAdapter<GridRepModel,GridAdapter.Vi
         public void bindData(GridRepModel gridRepModel, int position) {
             imgView.setImageDrawable(gridRepModel.getImg());
             tvName.setText(gridRepModel.getName());
+            imgView.setOnClickListener(view -> mClickListener.onItemClick(getItem(getAdapterPosition()),getAdapterPosition()));
         }
     }
 }

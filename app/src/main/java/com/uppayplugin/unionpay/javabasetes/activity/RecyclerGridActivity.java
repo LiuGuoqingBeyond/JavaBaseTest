@@ -10,6 +10,9 @@ import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.adapter.GridAdapter;
 import com.uppayplugin.unionpay.javabasetes.entity.response.GridRepModel;
 import com.uppayplugin.unionpay.javabasetes.utils.DividerGridItemDecoration;
+import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
+import com.uppayplugin.unionpay.libcommon.inter.OnRecyclerViewItemClickListener;
+import com.uppayplugin.unionpay.libcommon.inter.onItemClickListener;
 import com.whty.xzfpos.base.AppToolBarActivity;
 
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ import butterknife.BindView;
 public class RecyclerGridActivity extends AppToolBarActivity {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
+
     @Override
     protected void initToolBar() {
 
@@ -38,7 +42,7 @@ public class RecyclerGridActivity extends AppToolBarActivity {
     protected void initViewsAndEvents() {
         ArrayList<GridRepModel> dataList = new ArrayList<>();
         GridAdapter gridAdapter = new GridAdapter();
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext,3);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.addItemDecoration((new DividerGridItemDecoration(mContext)));
         recyclerView.setAdapter(gridAdapter);
@@ -81,6 +85,8 @@ public class RecyclerGridActivity extends AppToolBarActivity {
         dataList.add(gridRepModel9);
 
         gridAdapter.appendToList(dataList);
+
+        gridAdapter.setmClickListener((gridRepModel, position) -> ToastUtils.showLong("" + position));
     }
 
     @Override
