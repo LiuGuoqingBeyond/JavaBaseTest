@@ -849,7 +849,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(MainPagerActivity.class);
 
         //TabLayout和viewPager
-//        openActivity(TabViewActivity.class);
+        openActivity(TabViewActivity.class);
 
         //是否有横竖屏
         /*if (isLandscape()) {
@@ -893,7 +893,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(TestFragmentActivity.class);
 
         //添加VGA图片
-        openActivity(AddVGAActivity.class);
+//        openActivity(AddVGAActivity.class);
+
+        //侧滑栏
+        openActivity(SlidingViewActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
