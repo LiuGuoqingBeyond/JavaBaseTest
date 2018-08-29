@@ -208,6 +208,9 @@ dependencies {
     //evenBus
     compile 'org.greenrobot:eventbus:3.1.1'
 
+    //SlidingMenu
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
+
     //一行代码实现标题栏和底部导航栏的出现与隐藏
     compile 'com.github.githubwing:ByeBurger:1.2.2'
 
