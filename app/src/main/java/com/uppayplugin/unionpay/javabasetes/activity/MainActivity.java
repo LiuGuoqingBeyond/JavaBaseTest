@@ -896,7 +896,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(AddVGAActivity.class);
 
         //侧滑栏
-        openActivity(SlidingViewActivity.class);
+//        openActivity(SlidingViewActivity.class);
+
+        //三级联动
+//        openActivity(CityActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
