@@ -905,7 +905,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(RadioGroupActivity.class);
 
         //checkBox多选
-        openActivity(CheckBoxActivity.class);
+//        openActivity(CheckBoxActivity.class);
+
+        //拍照压缩图片
+        openActivity(CompressImgActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
