@@ -901,6 +901,12 @@ public class MainActivity extends BaseActivity {
         //三级联动
 //        openActivity(CityActivity.class);
 
+        //RadioGroup 单选
+//        openActivity(RadioGroupActivity.class);
+
+        //checkBox多选
+        openActivity(CheckBoxActivity.class);
+
     }
     public static boolean hasNotchInOppo(Context context) {
         return context.getPackageManager().hasSystemFeature("com.oppo.feature.screen.heteromorphism");

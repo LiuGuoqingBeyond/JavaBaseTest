@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.uppayplugin.unionpay.javabasetes.utils.RadioGroup
+        android:id="@+id/main_radio1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button4"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="刷卡"
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button5"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:gravity="center"
+                android:text="快捷支付"
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button6"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:gravity="center"
+                android:text="二维码"
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/goods_attr_unselected_shape"
+                android:button="@null"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/gray_frame"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </com.uppayplugin.unionpay.javabasetes.utils.RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
