@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/defaultItemHeight"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/halfDefaultPadding">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_text"
+            android:iconifiedByDefault="false"
+            android:queryHint="请输入商户号或商户名进行查询" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_right"
+        style="@style/Text.Toolbar.Action"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:paddingEnd="@dimen/defaultPadding"
+        android:paddingLeft="@dimen/defaultPadding"
+        android:paddingRight="@dimen/defaultPadding"
+        android:paddingStart="@dimen/defaultPadding"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/textSizeSubtitle"
+        tools:text="测试" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/dividingLine"
+        android:visibility="gone" />
+</LinearLayout>

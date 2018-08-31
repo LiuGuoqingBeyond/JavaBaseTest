@@ -226,35 +226,60 @@ public class CompressImgActivity extends AppToolBarActivity {
         switch (requestCode) {
             case REQUEST_CAPTURE: //调用系统相机返回
                 if (resultCode == RESULT_OK) {
-                    Uri uri = Uri.fromFile(tempFile);
+                    /*Uri uri = Uri.fromFile(tempFile);
                     if (uri == null) {
                         return;
                     }
 
                     photos = new ArrayList<>();
                     String path = getRealFilePathFromUri(mContext, uri);
-                    photos.add(path);
+                    photos.add(path);*/
 
-                    compressWithRx(photos);
+                    final Uri uri = Uri.fromFile(tempFile);
+                    String path = ImageTool.getImageAbsolutePath(this, uri);
+                    System.out.println(path);
+                    if (list.size() == IMG_COUNT) {
+                        removeItem();
+                        refreshAdapter();
+                        return;
+                    }
+                    removeItem();
+                    list.add(path);
+                    list.add(IMG_ADD_TAG);
+                    refreshAdapter();
+
+//                    compressWithRx(photos);
 
                     // gotoClipActivity(uri);
                 }
                 break;
             case REQUEST_PICK:  //调用系统相册返回
                 if (resultCode == RESULT_OK) {
-                    Uri uri = intent.getData();
+                    /*Uri uri = intent.getData();
                     // gotoClipActivity(uri);
 
                     photos = new ArrayList<>();
                     String path = getRealFilePathFromUri(mContext, uri);
                     photos.add(path);
 
-                    compressWithRx(photos);
+                    compressWithRx(photos);*/
+                    final Uri uri = intent.getData();
+                    String path = ImageTool.getImageAbsolutePath(this, uri);
+                    System.out.println(path);
+                    if (list.size() == IMG_COUNT) {
+                        removeItem();
+                        refreshAdapter();
+                        return;
+                    }
+                    removeItem();
+                    list.add(path);
+                    list.add(IMG_ADD_TAG);
+                    refreshAdapter();
                 }
                 break;
             case REQUEST_CROP_PHOTO:  //剪切图片返回
                 if (resultCode == RESULT_OK) {
-                    final Uri uri = intent.getData();
+                    /*final Uri uri = intent.getData();
                     if (uri == null) {
                         return;
                     }
@@ -264,7 +289,19 @@ public class CompressImgActivity extends AppToolBarActivity {
                     // bitMap = ImageCompressUtils.bitmapImageCompress(bitMap);
                     setImageValue(bitMap);
                     //此处后面可以将bitMap转为二进制上传后台网络
-//                    uploadImageToWeb(bitMap);
+//                    uploadImageToWeb(bitMap);*/
+                    final Uri uri = intent.getData();
+                    String path = ImageTool.getImageAbsolutePath(this, uri);
+                    System.out.println(path);
+                    if (list.size() == IMG_COUNT) {
+                        removeItem();
+                        refreshAdapter();
+                        return;
+                    }
+                    removeItem();
+                    list.add(path);
+                    list.add(IMG_ADD_TAG);
+                    refreshAdapter();
                 }
                 break;
             case REQUEST_BRANCH:
@@ -447,8 +484,9 @@ public class CompressImgActivity extends AppToolBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (list.get(position).equals(IMG_ADD_TAG)) {
                     if (list.size() < IMG_COUNT) {
-                        Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        startActivityForResult(i, 0);
+                        uploadImage(ImageTypeEnum.IDCARDIMAGE);
+                        /*Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        startActivityForResult(i, 0);*/
                     } else
                         ToastUtils.showLong("最多只能选择7张照片！");
                 }
@@ -490,8 +528,8 @@ public class CompressImgActivity extends AppToolBarActivity {
             if (convertView == null) {
                 convertView = LayoutInflater.from(getApplication()).inflate(R.layout.activity_add_photo_gv_items, parent, false);
                 holder = new ViewHolder();
-                holder.imageView = (ImageView) convertView.findViewById(R.id.main_gridView_item_photo);
-                holder.checkBox = (CheckBox) convertView.findViewById(R.id.main_gridView_item_cb);
+                holder.imageView = convertView.findViewById(R.id.main_gridView_item_photo);
+                holder.checkBox = convertView.findViewById(R.id.main_gridView_item_cb);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();

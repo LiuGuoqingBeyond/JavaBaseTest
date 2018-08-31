@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:padding="@dimen/halfDefaultPadding"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radio_button1"
+            android:button="@null"
+            android:background="@drawable/rado_unselected_shape_left"
+            android:padding="@dimen/halfDefaultPadding"
+            android:layout_width="wrap_content"
+            android:text="5454454545"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/radio_button2"
+            android:button="@null"
+            android:text="45454545454"
+            android:padding="@dimen/halfDefaultPadding"
+            android:background="@drawable/rado_unselected_shape_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RadioGroup>
+
+    <Switch
+        android:textSize="35sp"
+        android:text="开"
+        android:switchMinWidth="25dp"
+        android:textOn=""
+        android:textOff=""
+        android:thumb="@drawable/onethump"
+        android:track="@drawable/tracktoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1" />
+
+</LinearLayout>

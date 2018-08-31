@@ -849,7 +849,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(MainPagerActivity.class);
 
         //TabLayout和viewPager
-        openActivity(TabViewActivity.class);
+//        openActivity(TabViewActivity.class);
 
         //是否有横竖屏
         /*if (isLandscape()) {
@@ -908,7 +908,13 @@ public class MainActivity extends BaseActivity {
 //        openActivity(CheckBoxActivity.class);
 
         //拍照压缩图片
-        openActivity(CompressImgActivity.class);
+//        openActivity(CompressImgActivity.class);
+
+        //RadioGroup连在一起的
+//        openActivity(RadioGroupAndActivity.class);
+
+        //公有的搜索头
+        openActivity(SearchViewActivity.class);
 
     }
     public static boolean hasNotchInOppo(Context context) {
