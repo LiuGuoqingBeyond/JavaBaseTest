@@ -914,9 +914,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(RadioGroupAndActivity.class);
 
         //公有的搜索头
-        openActivity(SearchViewActivity.class);
+//        openActivity(SearchViewActivity.class);
 
     }
+
     public static boolean hasNotchInOppo(Context context) {
         return context.getPackageManager().hasSystemFeature("com.oppo.feature.screen.heteromorphism");
     }
