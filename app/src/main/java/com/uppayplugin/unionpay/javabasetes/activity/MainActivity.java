@@ -911,10 +911,13 @@ public class MainActivity extends BaseActivity {
 //        openActivity(CompressImgActivity.class);
 
         //RadioGroup连在一起的
-        openActivity(RadioGroupAndActivity.class);
+//        openActivity(RadioGroupAndActivity.class);
 
         //公有的搜索头
 //        openActivity(SearchViewActivity.class);
+
+        //调试打印机sdk
+        openActivity(ZiJiangSDKActivity.class);
 
     }
 
