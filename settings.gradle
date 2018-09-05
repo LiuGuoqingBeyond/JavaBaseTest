@@ -1,1 +1,1 @@
-include ':app', ':libcommon', ':AFrameLib', ':sinopaylib', ':upopPaylib', ':wj-http'
+include ':app', ':libcommon', ':AFrameLib', ':sinopaylib', ':upopPaylib', ':wj-http', ':picture_library', ':ucrop'

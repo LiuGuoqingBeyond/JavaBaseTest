@@ -353,4 +353,6 @@
     <color name="color_orange">#FF6633</color>
     <color name="half_transparent">#0000</color>
     <color name="forget_pwd">#408cca</color>
+    <color name="bar_grey">#393a3e</color>
+    <color name="color_f6">#f6f6f6</color>
 </resources>

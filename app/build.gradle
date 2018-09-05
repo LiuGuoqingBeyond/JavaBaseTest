@@ -226,4 +226,6 @@ dependencies {
     implementation project(':sinopaylib')
     implementation project(':upopPaylib')
     implementation files('libs/btsdk.jar')
+    implementation project(':picture_library')
+    implementation project(':ucrop')
 }

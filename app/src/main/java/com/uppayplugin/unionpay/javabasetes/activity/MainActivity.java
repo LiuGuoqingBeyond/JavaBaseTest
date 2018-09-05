@@ -917,7 +917,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(SearchViewActivity.class);
 
         //调试打印机sdk
-        openActivity(ZiJiangSDKActivity.class);
+//        openActivity(ZiJiangSDKActivity.class);
+
+        //多选图片
+        openActivity(ChooseSignActivity.class);
 
     }
 
