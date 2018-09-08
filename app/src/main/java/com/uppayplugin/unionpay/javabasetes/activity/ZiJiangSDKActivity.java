@@ -26,6 +26,7 @@ import com.uppayplugin.unionpay.javabasetes.service.BluetoothService;
 import com.uppayplugin.unionpay.javabasetes.utils.printcommand.Command;
 import com.uppayplugin.unionpay.javabasetes.utils.printcommand.PrintPicture;
 import com.uppayplugin.unionpay.javabasetes.utils.printcommand.PrinterCommand;
+import com.uppayplugin.unionpay.javabasetes.utils.qrcode.RxBarCode;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
@@ -44,6 +45,8 @@ public class ZiJiangSDKActivity extends ToolBarActivity {
     ImageView imageViewPicture;
     @BindView(R.id.width_80mm)
     RadioButton width_80;
+    @BindView(R.id.btn_prtsma)
+    Button btn_prtsma;
 
     /******************************************************************************************************/
     // Debugging
@@ -166,6 +169,12 @@ public class ZiJiangSDKActivity extends ToolBarActivity {
             finish();
         }
         mService = new BluetoothService(this, mHandler);
+        btn_prtsma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Print_Ex();
+            }
+        });
     }
 
     @Override
@@ -199,6 +208,7 @@ public class ZiJiangSDKActivity extends ToolBarActivity {
                         Log.i(TAG, "MESSAGE_STATE_CHANGE: " + msg.arg1);
                     switch (msg.arg1) {
                         case BluetoothService.STATE_CONNECTED:
+
                             /*mTitle.setText(R.string.title_connected_to);
                             mTitle.append(mConnectedDeviceName);
                             btnScanButton.setText(getText(R.string.Connecting));
@@ -556,34 +566,67 @@ public class ZiJiangSDKActivity extends ToolBarActivity {
             if (is58mm) {
 
                 try {
-                    byte[] qrcode = PrinterCommand.getBarCommand("热敏打印机!", 0, 3, 6);//
-                    Command.ESC_Align[2] = 0x01;
-                    SendDataByte(Command.ESC_Align);
-                    SendDataByte(qrcode);
+                    Print_BMP();//打印logo图片的方法
 
+                    Command.ESC_Align[2] = 0x01;
                     SendDataByte(Command.ESC_Align);
                     Command.GS_ExclamationMark[2] = 0x11;
                     SendDataByte(Command.GS_ExclamationMark);
-                    SendDataByte("NIKE专卖店\n".getBytes("GBK"));
+                    SendDataByte("银联扫码签购单\n\n".getBytes("GBK"));
+
                     Command.ESC_Align[2] = 0x00;
+                    SendDataByte(Command.ESC_Align);
+                    Command.GS_ExclamationMark[2] = 0x00;
+                    SendDataByte(Command.GS_ExclamationMark);
+                    SendDataByte("商户存根           MERCHANT COPY\n--------------------------------".getBytes("GBK"));
+                    SendDataByte("商户名称(MERCHANT NAME):".getBytes());
+
+                    Command.ESC_Align[2] = 0x01;
+                    SendDataByte(Command.ESC_Align);
+                    Command.GS_ExclamationMark[2] = 0x11;
+                    SendDataByte(PrinterCommand.POS_Set_FontSize(2,2));
+                    SendDataByte("中付电子测试".getBytes());
+
+
+                    /*byte[] qrcode = PrinterCommand.getBarCommand("热敏打印机!", 0, 3, 6);//
+                    Command.ESC_Align[2] = 0x01;
+                    SendDataByte(Command.ESC_Align);
+                    SendDataByte(qrcode);*/
+
+                    /*SendDataByte(Command.ESC_Align);
+                    Command.GS_ExclamationMark[2] = 0x11;
+                    SendDataByte(Command.GS_ExclamationMark);
+                    SendDataByte("NIKE专卖店\n".getBytes("GBK"));*/
+
+
+                    /*Command.ESC_Align[2] = 0x00;
                     SendDataByte(Command.ESC_Align);
                     Command.GS_ExclamationMark[2] = 0x00;
                     SendDataByte(Command.GS_ExclamationMark);
                     SendDataByte("门店号: 888888\n单据  S00003333\n收银员：1001\n单据日期：xxxx-xx-xx\n打印时间：xxxx-xx-xx  xx:xx:xx\n".getBytes("GBK"));
                     SendDataByte("品名       数量    单价    金额\nNIKE跑鞋   10.00   899     8990\nNIKE篮球鞋 10.00   1599    15990\n".getBytes("GBK"));
                     SendDataByte("数量：                20.00\n总计：                16889.00\n付款：                17000.00\n找零：                111.00\n".getBytes("GBK"));
-                    SendDataByte("公司名称：NIKE\n公司网址：www.xxx.xxx\n地址：深圳市xx区xx号\n电话：0755-11111111\n服务专线：400-xxx-xxxx\n================================\n".getBytes("GBK"));
-                    Command.ESC_Align[2] = 0x01;
+                    SendDataByte("公司名称：NIKE\n公司网址：www.xxx.xxx\n地址：深圳市xx区xx号\n电话：0755-11111111\n服务专线：400-xxx-xxxx\n================================\n".getBytes("GBK"));*/
+
+                    byte[] code = PrinterCommand.getCodeBarCommand("180905448323", 67, 3, 68, 0, 2);
+                    SendDataByte(new byte[]{0x1b, 0x61, 0x00});
+                    SendDataByte(code);
+
+
+                    /*Command.ESC_Align[2] = 0x01;
                     SendDataByte(Command.ESC_Align);
                     Command.GS_ExclamationMark[2] = 0x11;
                     SendDataByte(Command.GS_ExclamationMark);
-                    SendDataByte("谢谢惠顾,欢迎再次光临!\n".getBytes("GBK"));
+                    SendDataByte("谢谢惠顾,欢迎再次光临!\n".getBytes("GBK"));*/
+
+
                     Command.ESC_Align[2] = 0x00;
                     SendDataByte(Command.ESC_Align);
                     Command.GS_ExclamationMark[2] = 0x00;
                     SendDataByte(Command.GS_ExclamationMark);
-
                     SendDataByte("(以上信息为测试模板,如有苟同，纯属巧合!)\n".getBytes("GBK"));
+
+
                     Command.ESC_Align[2] = 0x02;
                     SendDataByte(Command.ESC_Align);
                     SendDataString(date);

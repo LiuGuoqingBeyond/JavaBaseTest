@@ -243,10 +243,8 @@
 
     <ImageView
         android:id="@+id/imageViewPictureUSB"
-        android:layout_width="match_parent"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:maxHeight="1920dp"
-        android:maxWidth="1080dp"
-        android:contentDescription="@string/contentdescription" />
+        android:src="@drawable/pic_china_unionpay"/>
 
 </LinearLayout>

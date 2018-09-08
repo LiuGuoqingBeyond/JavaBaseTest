@@ -1,3 +1,4 @@
+
 package com.uppayplugin.unionpay.javabasetes.activity;
 
 import android.app.Activity;
@@ -7,23 +8,23 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.uppayplugin.unionpay.javabasetes.R;
-import com.uppayplugin.unionpay.javabasetes.base.ToolBarActivity;
 
 import java.util.Set;
 
-public class DeviceListActivity extends ToolBarActivity {
+public class DeviceListActivity extends Activity {
     // Debugging
     private static final String TAG = "DeviceListActivity";
     private static final boolean DEBUG = true;
@@ -35,33 +36,23 @@ public class DeviceListActivity extends ToolBarActivity {
     private BluetoothAdapter mBtAdapter;
     private ArrayAdapter<String> mPairedDevicesArrayAdapter;
     private ArrayAdapter<String> mNewDevicesArrayAdapter;
-    @Override
-    protected void initToolBar() {
-
-    }
 
     @Override
-    protected void getBundleExtras(Bundle extras) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    }
-
-    @Override
-    protected int getContentViewLayoutID() {
         // Setup the window
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        return R.layout.activity_device_list;
-    }
+        setContentView(R.layout.device_list);
 
-    @Override
-    protected void initViewsAndEvents() {
-// Set result CANCELED incase the user backs out
+        // Set result CANCELED incase the user backs out
         setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         Button scanButton = (Button) findViewById(R.id.button_scan);
-        scanButton.setOnClickListener(new View.OnClickListener() {
+        scanButton.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
+			public void onClick(View v) {
                 doDiscovery();
                 v.setVisibility(View.GONE);
             }
@@ -109,10 +100,6 @@ public class DeviceListActivity extends ToolBarActivity {
     }
 
     @Override
-    protected View getLoadingTargetView() {
-        return null;
-    }
-    @Override
     protected void onDestroy() {
         super.onDestroy();
 
@@ -144,15 +131,15 @@ public class DeviceListActivity extends ToolBarActivity {
         }
 
         mNewDevicesArrayAdapter.clear();//20160617
-        //  mPairedDevicesArrayAdapter.clear();//20160617
+      //  mPairedDevicesArrayAdapter.clear();//20160617
         // Request discover from BluetoothAdapter
         mBtAdapter.startDiscovery();
     }
 
     // The on-click listener for all devices in the ListViews
-    private AdapterView.OnItemClickListener mDeviceClickListener = new AdapterView.OnItemClickListener() {
+    private OnItemClickListener mDeviceClickListener = new OnItemClickListener() {
         @Override
-        public void onItemClick(AdapterView<?> av, View v, int arg2, long arg3) {
+		public void onItemClick(AdapterView<?> av, View v, int arg2, long arg3) {
             // Cancel discovery because it's costly and we're about to connect
             mBtAdapter.cancelDiscovery();
 
@@ -161,16 +148,16 @@ public class DeviceListActivity extends ToolBarActivity {
             String noDevices = getResources().getText(R.string.none_paired).toString();
             String noNewDevice = getResources().getText(R.string.none_found).toString();
             Log.i("tag", info);
-
+            
             if (! info.equals(noDevices) && ! info.equals(noNewDevice)) {
-                String address = info.substring(info.length() - 17);
-                // Create the result Intent and include the MAC address
-                Intent intent = new Intent();
-                intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
-                // Set result and finish this Activity
-                setResult(Activity.RESULT_OK, intent);
-                finish();
-            }
+				String address = info.substring(info.length() - 17);
+				// Create the result Intent and include the MAC address
+				Intent intent = new Intent();
+				intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
+				// Set result and finish this Activity
+				setResult(Activity.RESULT_OK, intent);
+				finish();
+			}
         }
     };
 
@@ -189,7 +176,7 @@ public class DeviceListActivity extends ToolBarActivity {
                 if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
                     mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
                 }
-                // When discovery is finished, change the Activity title
+            // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 setProgressBarIndeterminateVisibility(false);
                 setTitle(R.string.select_device);
@@ -200,4 +187,5 @@ public class DeviceListActivity extends ToolBarActivity {
             }
         }
     };
+
 }

@@ -4,6 +4,8 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -14,12 +16,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -34,17 +39,33 @@ import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.adapter.GridImageAdapter;
 import com.uppayplugin.unionpay.javabasetes.entity.auth.ImageTypeEnum;
 import com.uppayplugin.unionpay.javabasetes.utils.FullyGridLayoutManager;
+import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
 import com.whty.xzfpos.base.AppToolBarActivity;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
+import top.zibin.luban.Luban;
 
 public class ChooseSignActivity extends AppToolBarActivity {
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
+    @BindView(R.id.img_view)
+    ImageView imgView;
+    @BindView(R.id.btn_update)
+    Button btnUpdate;
     private GridImageAdapter adapter;
     private int themeId;
     private int chooseMode = PictureMimeType.ofImage();
@@ -55,6 +76,8 @@ public class ChooseSignActivity extends AppToolBarActivity {
     private static final int READ_EXTERNAL_STORAGE_REQUEST_CODE = 103;
     //请求写入外部存储
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 104;
+    private List<String> photos;
+
     @Override
     protected void initToolBar() {
 
@@ -104,12 +127,20 @@ public class ChooseSignActivity extends AppToolBarActivity {
                 }
             }
         });
+        photos = new ArrayList<>();
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Logger.e("photos总数"+photos.size());
+            }
+        });
     }
 
     @Override
     protected View getLoadingTargetView() {
         return null;
     }
+
     private GridImageAdapter.onAddPicClickListener onAddPicClickListener = new GridImageAdapter.onAddPicClickListener() {
         @Override
         public void onAddPicClick() {
@@ -199,6 +230,7 @@ public class ChooseSignActivity extends AppToolBarActivity {
         }
 
     };
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -212,8 +244,36 @@ public class ChooseSignActivity extends AppToolBarActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true
                     // 如果裁剪并压缩了，已取压缩路径为准，因为是先裁剪后压缩的
+                    ToastUtils.showLong(selectList.size() + "");
                     for (LocalMedia media : selectList) {
-                        Log.i("图片-----》", media.getPath());
+                        photos.add(media.getCompressPath());
+                        /*Log.i("图片-----》", media.getCompressPath());
+                        File f1 = new File(media.getCompressPath());
+                        File f = new File(media.getPath());
+                        if (f.exists() && f.isFile()) {
+                            FileInputStream fis = null;
+                            try {
+                                fis = new FileInputStream(f);
+                                Logger.e("图片的大小    " + fis.getChannel().size());
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        if (f1.exists() && f1.isFile()) {
+                            FileInputStream fis = null;
+                            try {
+                                fis = new FileInputStream(f1);
+
+                                Logger.e("压缩图片的大小    " + fis.getChannel().size());
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }*/
                     }
                     adapter.setList(selectList);
                     adapter.notifyDataSetChanged();
@@ -221,22 +281,46 @@ public class ChooseSignActivity extends AppToolBarActivity {
             }
         }
     }
+
     /**
      * start to camera、preview、crop
      */
     public void startOpenCamera() {
-        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-            int type = config.mimeType == PictureConfig.TYPE_ALL ? PictureConfig.TYPE_IMAGE : config.mimeType;
-            File cameraFile = PictureFileUtils.createCameraFile(this,
-                    type,
-                    config.outputCameraPath, config.suffixType);
-            cameraPath = cameraFile.getAbsolutePath();
-            Uri imageUri = parUri(cameraFile);
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-            startActivityForResult(cameraIntent, PictureConfig.REQUEST_CAMERA);
-        }
+        // 单独拍照
+        PictureSelector.create(ChooseSignActivity.this)
+                .openCamera(chooseMode)// 单独拍照，也可录像或也可音频 看你传入的类型是图片or视频
+                .theme(themeId)// 主题样式设置 具体参考 values/styles
+                .maxSelectNum(9)// 最大图片选择数量
+                .minSelectNum(1)// 最小选择数量
+                .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选
+                .previewImage(true)// 是否可预览图片
+//                .previewVideo(cb_preview_video.isChecked())// 是否可预览视频
+//                .enablePreviewAudio(cb_preview_audio.isChecked()) // 是否可播放音频
+//                .isCamera(cb_isCamera.isChecked())// 是否显示拍照按钮
+//                .enableCrop(cb_crop.isChecked())// 是否裁剪
+                .compress(true)// 是否压缩
+                .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+//                .withAspectRatio(aspect_ratio_x, aspect_ratio_y)// 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
+//                .hideBottomControls(cb_hide.isChecked() ? false : true)// 是否显示uCrop工具栏，默认不显示
+//                .isGif(cb_isGif.isChecked())// 是否显示gif图片
+//                .freeStyleCropEnabled(cb_styleCrop.isChecked())// 裁剪框是否可拖拽
+//                .circleDimmedLayer(cb_crop_circular.isChecked())// 是否圆形裁剪
+//                .showCropFrame(cb_showCropFrame.isChecked())// 是否显示裁剪矩形边框 圆形裁剪时建议设为false
+//                .showCropGrid(cb_showCropGrid.isChecked())// 是否显示裁剪矩形网格 圆形裁剪时建议设为false
+//                .openClickSound(cb_voice.isChecked())// 是否开启点击声音
+                .selectionMedia(selectList)// 是否传入已选图片
+                .previewEggs(false)//预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
+                //.previewEggs(false)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
+                .cropCompressQuality(60)// 裁剪压缩质量 默认为100
+//                .minimumCompressSize(100)// 小于100kb的图片不压缩
+                //.cropWH()// 裁剪宽高比，设置如果大于图片本身宽高则无效
+                //.rotateEnabled() // 裁剪是否可旋转图片
+                //.scaleEnabled()// 裁剪是否可放大缩小图片
+                //.videoQuality()// 视频录制质量 0 or 1
+                //.videoSecond()////显示多少秒以内的视频or音频也可适用
+                .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
     }
+
     /**
      * 生成uri
      *
@@ -254,6 +338,7 @@ public class ChooseSignActivity extends AppToolBarActivity {
         }
         return imageUri;
     }
+
     /**
      * 上传照片信息
      */
@@ -368,8 +453,8 @@ public class ChooseSignActivity extends AppToolBarActivity {
 //                        .videoMaxSecond(15)
 //                        .videoMinSecond(10)
                 //.previewEggs(false)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
-                .cropCompressQuality(90)// 裁剪压缩质量 默认100
-                .minimumCompressSize(100)// 小于100kb的图片不压缩
+                .cropCompressQuality(20)// 裁剪压缩质量 默认100
+//                .minimumCompressSize(100)// 小于100kb的图片不压缩
                 //.cropWH()// 裁剪宽高比，设置如果大于图片本身宽高则无效
                 //.rotateEnabled(true) // 裁剪是否可旋转图片
                 //.scaleEnabled(true)// 裁剪是否可放大缩小图片
@@ -377,5 +462,59 @@ public class ChooseSignActivity extends AppToolBarActivity {
                 //.videoSecond()//显示多少秒以内的视频or音频也可适用
                 //.recordVideoSecond()//录制视频秒数 默认60s
                 .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
+    }
+
+    /**
+     * 压缩图片
+     *
+     * @param photos
+     */
+    private void compressWithRx(final List<String> photos) {
+        Flowable.just(photos)
+                .observeOn(Schedulers.io())
+                .map(new Function<List<String>, List<File>>() {
+                    @Override
+                    public List<File> apply(@NonNull List<String> list) throws Exception {
+                        return Luban.with(mContext).load(list).get();
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<File>>() {
+                    @Override
+                    public void accept(@NonNull List<File> list) throws Exception {
+                        for (File file : list) {
+                            /*int[] thumbSize = PublicMethodUtils.computeSize(file.getAbsolutePath());
+                            String thumbArg = String.format(Locale.CHINA, "压缩后参数：%d*%d, %dk", thumbSize[0], thumbSize[1], file.length() >> 10);*/
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+
+                            int h = bitmap.getHeight();
+                            int w = bitmap.getWidth();
+                            if (w < 960 && h < 720) {
+                                /*setImageValue(bitmap);
+                                //此处后面可以将bitMap转为二进制上传后台网络
+                                uploadImageToWeb(bitmap);*/
+                            } else {
+                                float hSize = (float) (960.0 / w);
+                                float wSize = (float) (720.0 / h);
+                                float size;
+                                if (hSize < wSize) {
+                                    size = hSize;
+                                } else {
+                                    size = wSize;
+                                }
+                                int height = (int) (bitmap.getHeight() * size);
+                                int width = (int) (bitmap.getWidth() * size);
+
+                                bitmap = Bitmap.createScaledBitmap(
+                                        bitmap, width, height, true);
+
+                                /*setImageValue(bitmap);
+                                //此处后面可以将bitMap转为二进制上传后台网络
+                                uploadImageToWeb(bitmap);*/
+                            }
+                        }
+                    }
+                });
     }
 }
