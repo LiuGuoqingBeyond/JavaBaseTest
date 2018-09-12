@@ -123,7 +123,7 @@ public class CityActivity extends AppToolBarActivity {
                 //返回的分别是三个级别的选中位置
                 String text = options1Items.get(options1).getPickerViewText() +
                         options2Items.get(options1).get(options2) +
-                        options3Items.get(options1).get(options2).get(options3);
+                        options3Items.get(options1).get(options2).get(options3);//这里打印几级城市取决于写多少个
                 mTvAddress.setText(text);
             }
         }).setTitleText("请选择城市")
@@ -132,7 +132,7 @@ public class CityActivity extends AppToolBarActivity {
                 .setContentTextSize(18)
                 .setOutSideCancelable(true)
                 .build();
-        pvOptions.setPicker(options1Items, options2Items, options3Items);//三级选择器
+        pvOptions.setPicker(options1Items, options2Items, options3Items);//三级选择器    显示几级城市取决于写多少个
         pvOptions.show();
     }
 

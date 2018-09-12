@@ -228,4 +228,5 @@ dependencies {
     implementation files('libs/btsdk.jar')
     implementation project(':picture_library')
     implementation project(':ucrop')
+    implementation project(':pickerview')
 }

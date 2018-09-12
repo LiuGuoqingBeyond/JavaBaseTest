@@ -923,7 +923,16 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ChooseSignActivity.class);
 
         //圆角背景底部带阴影
-        openActivity(RadiuShadeActivity.class);
+//        openActivity(RadiuShadeActivity.class);
+
+        //顶部popupWindow
+//        openActivity(TopPopUpWindowActivity.class);
+
+        //时间选择器
+//        openActivity(ChoosePickerActivity.class);
+
+        //Android高仿IOS 滚轮选择控件
+        openActivity(PickerActivity.class);
 
     }
 
