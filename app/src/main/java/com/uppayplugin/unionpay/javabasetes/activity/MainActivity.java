@@ -920,7 +920,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ZiJiangSDKActivity.class);
 
         //多选图片
-        openActivity(ChooseSignActivity.class);
+//        openActivity(ChooseSignActivity.class);
+
+        //圆角背景底部带阴影
+        openActivity(RadiuShadeActivity.class);
 
     }
 
