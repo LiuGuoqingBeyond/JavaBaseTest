@@ -1,6 +1,7 @@
 package com.uppayplugin.unionpay.javabasetes.fragment.tabfragment;
 
 import com.axl.android.frameworkbase.ui.AbsBaseFragment;
+import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetes.R;
 
 /**
@@ -16,7 +17,7 @@ public class LiveInfoFragment extends AbsBaseFragment {
 
     @Override
     protected void initView() {
-
+        Logger.e("打印了2");
     }
 
     @Override
