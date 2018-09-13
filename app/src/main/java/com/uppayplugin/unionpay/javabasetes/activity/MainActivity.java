@@ -911,7 +911,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(CompressImgActivity.class);
 
         //RadioGroup连在一起的
-//        openActivity(RadioGroupAndActivity.class);
+        openActivity(RadioGroupAndActivity.class);
 
         //公有的搜索头
 //        openActivity(SearchViewActivity.class);
@@ -921,18 +921,6 @@ public class MainActivity extends BaseActivity {
 
         //多选图片
 //        openActivity(ChooseSignActivity.class);
-
-        //圆角背景底部带阴影
-//        openActivity(RadiuShadeActivity.class);
-
-        //顶部popupWindow
-//        openActivity(TopPopUpWindowActivity.class);
-
-        //时间选择器
-//        openActivity(ChoosePickerActivity.class);
-
-        //Android高仿IOS 滚轮选择控件
-        openActivity(PickerActivity.class);
 
     }
 
