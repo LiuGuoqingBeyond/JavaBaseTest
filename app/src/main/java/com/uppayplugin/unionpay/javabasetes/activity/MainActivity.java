@@ -914,7 +914,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(RadioGroupAndActivity.class);
 
         //公有的搜索头
-//        openActivity(SearchViewActivity.class);
+        openActivity(SearchViewActivity.class);
 
         //调试打印机sdk
 //        openActivity(ZiJiangSDKActivity.class);

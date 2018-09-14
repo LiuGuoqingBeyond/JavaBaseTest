@@ -68,7 +68,7 @@ public class CityActivity extends AppToolBarActivity {
          *
          * */
         //  获取json数据
-        String JsonData = CityJsonFileReader.getJson(this, "province_data.json");
+        String JsonData = CityJsonFileReader.getJson(this, "provinceData.json");
         ArrayList<CityJsonBean> jsonBean = parseData(JsonData);//用Gson 转成实体
 
         /**

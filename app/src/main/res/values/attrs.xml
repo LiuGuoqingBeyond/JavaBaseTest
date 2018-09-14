@@ -41,4 +41,17 @@
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
 
+    <!-- 搜索框 -->
+    <declare-styleable name="SearchView">
+        <!-- 搜索框的文字 -->
+        <attr name="sv_text" format="string"/>
+        <!-- 提示文字 -->
+        <attr name="sv_hint" format="string"/>
+        <!-- 字体大小 -->
+        <attr name="sv_textSize" format="dimension"/>
+        <!-- 是否隐藏搜索图标 -->
+        <attr name="sv_hideImg" format="boolean"/>
+    </declare-styleable>
+
+
 </resources>

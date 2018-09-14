@@ -86,11 +86,11 @@ public class PickerUtil {
         final PopupWindow popupWindow = new PopupWindow();
 
         View view = LayoutInflater.from(context).inflate(R.layout.layout_bottom_wheel_option, null);
-        TextView tv_confirm = (TextView) view.findViewById(R.id.btnSubmit);
-        final WheelView wv_option = (WheelView) view.findViewById(R.id.wv_option);
+        TextView tv_confirm = view.findViewById(R.id.btnSubmit);
+        final WheelView wv_option = view.findViewById(R.id.wv_option);
         wv_option.setAdapter(new ArrayWheelAdapter(list));
         wv_option.setCyclic(false);
-        wv_option.setTextSize(16);
+        wv_option.setTextSize(20);
         tv_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
