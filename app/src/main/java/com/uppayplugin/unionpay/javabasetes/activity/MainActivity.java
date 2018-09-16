@@ -920,7 +920,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ZiJiangSDKActivity.class);
 
         //多选图片
-//        openActivity(ChooseSignActivity.class);
+        openActivity(ChooseSignActivity.class);
 
         //圆角背景底部带阴影
 //        openActivity(RadiuShadeActivity.class);
@@ -938,8 +938,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(PickerActivity.class);
 
         //新中付 搜索框
-//        openActivity(SearchFilterActivity.class);
-        startActivityForResult(new Intent().setClass(this,SearchFilterActivity.class),105);
+//        startActivityForResult(new Intent().setClass(this,SearchFilterActivity.class),105);
 
     }
 
