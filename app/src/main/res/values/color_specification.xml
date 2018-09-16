@@ -38,5 +38,7 @@
     <color name="btnTextColorPrimaryUnable">#7FFFFFFF</color>
 
     <color name="grayBg">#F5F5F5</color>
+    <color name="app_background">#F6F6F6</color>
+    <color name="half_transparents">#30000000</color>
 
 </resources>

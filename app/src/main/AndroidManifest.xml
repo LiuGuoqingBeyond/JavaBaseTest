@@ -318,10 +318,30 @@
             android:name=".activity.ChooseSignActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activity.RadiuShadeActivity" />
-        <activity android:name=".activity.TopPopUpWindowActivity" />
-        <activity android:name=".activity.ChoosePickerActivity" />
-        <activity android:name=".activity.PickerActivity"></activity>
+        <activity
+            android:name=".activity.RadiuShadeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.TopPopUpWindowActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.ChoosePickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.PickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.AnotherPopActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.SearchFilterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
     </application>
 
 </manifest>

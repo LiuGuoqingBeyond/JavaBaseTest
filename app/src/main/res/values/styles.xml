@@ -177,6 +177,7 @@
         <item name="android:layout_width">55dp</item>
         <item name="android:layout_height">55dp</item>
     </style>
+
     <style name="TopSelectAnimationShow">
         <item name="android:windowEnterAnimation">@anim/top_enter</item>
         <item name="android:windowExitAnimation">@anim/top_exit</item>
@@ -238,6 +239,34 @@
         <item name="picture.crop.title.color">@color/white</item>
         <!--相册文件夹列表选中图标-->
         <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
+    </style>
+
+    <style name="textStyle_sub_colorPrimary">
+        <item name="android:textSize">@dimen/textSizeSubtitle</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textStyle_body_80black">
+        <item name="android:textSize">@dimen/textSizeBody</item>
+        <item name="android:textColor">@color/alpha_80_black</item>
+        <item name="android:textColorHint">@color/alpha_30_black</item>
+    </style>
+
+    <style name="textStyle_sub_80black_two">
+        <item name="android:textSize">@dimen/textSizeSubtitle</item>
+        <item name="android:textColor">@color/alpha_80_black</item>
+    </style>
+
+    <style name="textStyle_white">
+        <item name="android:textSize">@dimen/textSizeBody</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--透明，有任务栏电量时间等-->
+    <style name="NoTitleTranslucentTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/half_transparents</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>

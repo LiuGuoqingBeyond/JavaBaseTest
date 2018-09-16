@@ -914,7 +914,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(RadioGroupAndActivity.class);
 
         //公有的搜索头
-        openActivity(SearchViewActivity.class);
+//        openActivity(SearchViewActivity.class);
 
         //调试打印机sdk
 //        openActivity(ZiJiangSDKActivity.class);
@@ -928,11 +928,18 @@ public class MainActivity extends BaseActivity {
         //顶部popupWindow
 //        openActivity(TopPopUpWindowActivity.class);
 
+        //另外一个popupWindow
+//        openActivity(AnotherPopActivity.class);
+
         //时间选择器
 //        openActivity(ChoosePickerActivity.class);
 
         //Android高仿IOS 滚轮选择控件
 //        openActivity(PickerActivity.class);
+
+        //新中付 搜索框
+//        openActivity(SearchFilterActivity.class);
+        startActivityForResult(new Intent().setClass(this,SearchFilterActivity.class),105);
 
     }
 
@@ -972,11 +979,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 2) {
+        if (resultCode == 2 && data != null) {
             if (requestCode == 1) {
                 String a = data.getStringExtra("itentdata");
                 Log.d("打印了=", a);
             }
+        }else if (resultCode == 105 && data != null){
+            btnText.setText(data.getStringExtra("state"));
         }
     }
 

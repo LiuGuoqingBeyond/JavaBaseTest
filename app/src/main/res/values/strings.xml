@@ -1248,4 +1248,22 @@
     <string name="strLang">cn</string>
     <string name="camer">没有拍摄任何图片</string>
     <string name="msg_error">输入错误,请检查!</string>
+
+    <string name="filter_mid_query">输入商户号或商户名进行查询</string>
+    <string name="filter_net_time">入网时间</string>
+    <string name="filter_turn_to">至</string>
+    <string name="order_audit_status">审核状态</string>
+    <string name="filter_reset">重置</string>
+    <string name="text_true">确定</string>
+    <string name="filter_all">全部</string>
+    <string name="filter_ready_pass">待审核</string>
+    <string name="filter_no_pass">审核不通过</string>
+    <string name="filter_pass">审核通过</string>
+    <string name="filter_pos">传统POS</string>
+    <string name="filter_pos_top">刷卡头</string>
+    <string name="filter_swiping_trade">刷卡交易</string>
+    <string name="filter_wechat_trade">微信交易</string>
+    <string name="filter_alipay_trade">支付宝交易</string>
+    <string name="filter_nocard_fast">无卡快捷</string>
+    <string name="filter_time">起始时间不能小于结束时间</string>
 </resources>

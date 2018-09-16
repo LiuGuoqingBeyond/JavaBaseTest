@@ -77,7 +77,7 @@ public class BottomView {
      * 处理点击事件
      */
     private void dealWithSelect(){
-        //点击了关闭图标（右上角图标）
+        /*//点击了关闭图标（右上角图标）
         popupWindowView.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +104,7 @@ public class BottomView {
             public void onClick(View v) {
                 ToastUtils.showLong("点击了操作3");
             }
-        });
+        });*/
 
     }
 
