@@ -1,5 +1,196 @@
-[
-  {
-    "bankName": [{"bank":"中国工商银行"}, {"bank":"中国工商银行"}]
-  }
-]
+{
+  "data": [
+    {
+      "bankName": "中国工商银行"
+    },
+    {
+      "bankName": "中国农业银行"
+    },
+    {
+      "bankName": "中国银行"
+    },
+    {
+      "bankName": "交通银行"
+    },
+    {
+      "bankName": "招商银行"
+    },
+    {
+      "bankName": "中国民生银行"
+    },
+    {
+      "bankName": "中国建设银行"
+    },
+    {
+      "bankName": "中国邮政储蓄银行"
+    },
+    {
+      "bankName": "中信银行"
+    },
+    {
+      "bankName": "中国信托商业银行"
+    },
+    {
+      "bankName": "中国光大银行"
+    },
+    {
+      "bankName": "中国农业发展银行"
+    },
+    {
+      "bankName": "中信嘉华银行"
+    },
+    {
+      "bankName": "中国进出口银行"
+    },
+    {
+      "bankName": "渤海银行"
+    },
+    {
+      "bankName": "恒丰银行"
+    },
+    {
+      "bankName": "恒生银行"
+    },
+    {
+      "bankName": "城市信用社"
+    },
+    {
+      "bankName": "城市商业银行"
+    },
+    {
+      "bankName": "重庆银行"
+    },
+    {
+      "bankName": "创兴银行"
+    },
+    {
+      "bankName": "大华银行"
+    },
+    {
+      "bankName": "大新银行"
+    },
+    {
+      "bankName": "大众银行"
+    },
+    {
+      "bankName": "第一商业银行"
+    },
+    {
+      "bankName": "东亚银行"
+    },
+    {
+      "bankName": "东方汇理银行"
+    },
+    {
+      "bankName": "广发银行"
+    },
+    {
+      "bankName": "国家开发银行"
+    },
+    {
+      "bankName": "华一银行"
+    },
+    {
+      "bankName": "华侨永享银行"
+    },
+    {
+      "bankName": "华南商业银行"
+    },
+    {
+      "bankName": "华商银行"
+    },
+    {
+      "bankName": "华夏银行"
+    },
+    {
+      "bankName": "华美银行"
+    },
+    {
+      "bankName": "花旗银行"
+    },
+    {
+      "bankName": "徽商银行"
+    },
+    {
+      "bankName": "汇丰银行"
+    },
+    {
+      "bankName": "南洋商业银行"
+    },
+    {
+      "bankName": "农村信用社"
+    },
+    {
+      "bankName": "农村合作银行"
+    },
+    {
+      "bankName": "农村商业银行"
+    },
+    {
+      "bankName": "盘古银行"
+    },
+    {
+      "bankName": "平安银行"
+    },
+    {
+      "bankName": "企业银行"
+    },
+    {
+      "bankName": "上海农村商业银行"
+    },
+    {
+      "bankName": "上海商业银行"
+    },
+    {
+      "bankName": "上海浦东发展银行"
+    },
+    {
+      "bankName": "上海银行"
+    },
+    {
+      "bankName": "厦门国际银行"
+    },
+    {
+      "bankName": "首都银行"
+    },
+    {
+      "bankName": "兴业银行"
+    },
+    {
+      "bankName": "新联商业银行"
+    },
+    {
+      "bankName": "星展银行"
+    },
+    {
+      "bankName": "永丰商业银行"
+    },
+    {
+      "bankName": "永亨银行"
+    },
+    {
+      "bankName": "永隆银行"
+    },
+    {
+      "bankName": "友利银行"
+    },
+    {
+      "bankName": "玉山商业银行"
+    },
+    {
+      "bankName": "兆丰国际商业银行"
+    },
+    {
+      "bankName": "彰化银行"
+    },
+    {
+      "bankName": "渣打银行"
+    },
+    {
+      "bankName": "浙商银行"
+    },
+    {
+      "bankName": "温州银行"
+    }
+  ]
+}

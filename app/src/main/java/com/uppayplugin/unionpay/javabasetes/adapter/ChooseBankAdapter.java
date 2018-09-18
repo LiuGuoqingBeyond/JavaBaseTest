@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uppayplugin.unionpay.javabasetes.R;
+import com.uppayplugin.unionpay.javabasetes.bean.BankBean;
 import com.uppayplugin.unionpay.javabasetes.bean.BankTestBean;
 import com.uppayplugin.unionpay.libcommon.inter.OnRecyclerViewItemClickListener;
 
@@ -18,10 +19,10 @@ import butterknife.ButterKnife;
  * Data: 2018/9/14 0014.
  */
 
-public class ChooseBankAdapter extends BaseRecyclerAdapter<BankTestBean, ChooseBankAdapter.ViewHolder> {
-    private OnRecyclerViewItemClickListener<BankTestBean> mListener;
+public class ChooseBankAdapter extends BaseRecyclerAdapter<BankBean.DataBean, ChooseBankAdapter.ViewHolder> {
+    private OnRecyclerViewItemClickListener<BankBean.DataBean> mListener;
 
-    public void setmListener(OnRecyclerViewItemClickListener<BankTestBean> mListener) {
+    public void setmListener(OnRecyclerViewItemClickListener<BankBean.DataBean> mListener) {
         this.mListener = mListener;
     }
 
@@ -49,8 +50,8 @@ public class ChooseBankAdapter extends BaseRecyclerAdapter<BankTestBean, ChooseB
             });
         }
 
-        public void BindData(BankTestBean bankTestBean) {
-            tvBankName.setText(bankTestBean.bankName);
+        public void BindData(BankBean.DataBean bankTestBean) {
+            tvBankName.setText(bankTestBean.getBankName());
         }
     }
 }
