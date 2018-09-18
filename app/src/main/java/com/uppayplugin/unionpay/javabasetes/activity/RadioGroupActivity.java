@@ -63,7 +63,14 @@ public class RadioGroupActivity extends AppToolBarActivity {
                     setResources(radio_button6, radio_button3, radio_button4, radio_button5);
                     break;
             }
+            RadioButton rb = RadioGroupActivity.this.findViewById(main_radio1.getCheckedRadioButtonId());
+            CharSequence text = rb.getText();
         });
+        selectRadioButton();
+    }
+
+    private void selectRadioButton() {
+
     }
 
     private void setResources(RadioButton radio_button3, RadioButton radio_button4, RadioButton radio_button5, RadioButton radio_button6) {
@@ -81,4 +88,6 @@ public class RadioGroupActivity extends AppToolBarActivity {
     protected View getLoadingTargetView() {
         return null;
     }
+
+
 }

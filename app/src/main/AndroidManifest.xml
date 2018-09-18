@@ -342,6 +342,8 @@
             android:name=".activity.SearchFilterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleTranslucentTheme" />
+        <activity android:name=".activity.BitmapRoundActivity" />
+        <activity android:name=".activity.XmlPullActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,80 @@
+<select>
+    <option
+        value="102">
+        中国工商银行
+    </option>
+    <option value="103">中国农业银行</option>
+    <option value="104">中国银行</option>
+    <option value="301">交通银行</option>
+    <option value="308">招商银行</option>
+    <option value="305">中国民生银行</option>
+    <option value="989">中国建设银行</option>
+    <option value="403">中国邮政储蓄银行</option>
+    <option value="302">中信银行</option>
+    <option value="600">中国信托商业银行</option>
+    <option value="303">中国光大银行</option>
+
+
+    <option value="203">中国农业发展银行</option>
+    <option value="514">中信嘉华银行</option>
+    <option value="202">中国进出口银行</option>
+    <option value="318">渤海银行</option>
+    <option value="315">恒丰银行</option>
+    <option value="504">恒生银行</option>
+    <option value="401">城市信用社</option>
+    <option value="313">城市商业银行</option>
+    <option value="321">重庆银行</option>
+    <option value="507">创兴银行</option>
+
+
+    <option value="622">大华银行</option>
+    <option value="513">大新银行</option>
+    <option value="508">大众银行</option>
+    <option value="525">第一商业银行</option>
+    <option value="502">东亚银行</option>
+    <option value="694">东方汇理银行</option>
+    <option value="306">广发银行</option>
+    <option value="201">国家开发银行</option>
+    <option value="787">华一银行</option>
+    <option value="621">华侨永享银行</option>
+
+
+    <option value="521">华南商业银行</option>
+    <option value="785">华商银行</option>
+    <option value="304">华夏银行</option>
+    <option value="775">华美银行</option>
+    <option value="531">花旗银行</option>
+    <option value="319">徽商银行</option>
+    <option value="501">汇丰银行</option>
+    <option value="503">南洋商业银行</option>
+    <option value="402">农村信用社</option>
+    <option value="317">农村合作银行</option>
+
+
+    <option value="314">农村商业银行</option>
+    <option value="631">盘古银行</option>
+    <option value="307">平安银行</option>
+    <option value="596">企业银行</option>
+    <option value="322">上海农村商业银行</option>
+    <option value="511">上海商业银行</option>
+    <option value="310">上海浦东发展银行</option>
+    <option value="325">上海银行</option>
+    <option value="781">厦门国际银行</option>
+    <option value="616">首都银行</option>
+
+
+    <option value="309">兴业银行</option>
+    <option value="773">新联商业银行</option>
+    <option value="623">星展银行</option>
+    <option value="SIN">永丰商业银行</option>
+    <option value="510">永亨银行</option>
+    <option value="512">永隆银行</option>
+    <option value="593">友利银行</option>
+    <option value="529">玉山商业银行</option>
+    <option value="527">兆丰国际商业银行</option>
+    <option value="522">彰化银行</option>
+
+    <option value="671">渣打银行</option>
+    <option value="316">浙商银行</option>
+    <option value="111">温州银行</option>
+</select>

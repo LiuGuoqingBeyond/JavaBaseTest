@@ -192,7 +192,7 @@
     <style name="picture.QQ.style" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <!--标题栏背景色-->
-        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimary">@color/white</item>
         <!--状态栏背景色-->
         <item name="colorPrimaryDark">@color/blue</item>
         <!--是否改变图片列表界面状态栏字体颜色为黑色-->
@@ -200,11 +200,11 @@
         <!--返回键图标-->
         <item name="picture.leftBack.icon">@drawable/picture_back</item>
         <!--标题下拉箭头-->
-        <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
+        <item name="picture.arrow_down.icon">@drawable/icon_down</item>
         <!--标题上拉箭头-->
         <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
         <!--标题文字颜色-->
-        <item name="picture.title.textColor">@color/white</item>
+        <item name="picture.title.textColor">@color/black</item>
         <!--标题栏右边文字-->
         <item name="picture.right.textColor">@color/white</item>
         <!--图片列表勾选样式-->
@@ -226,11 +226,11 @@
         <!--预览界面已完成文字颜色-->
         <item name="picture.ac_preview.complete.textColor">@color/blue</item>
         <!--预览界面标题栏背景色-->
-        <item name="picture.ac_preview.title.bg">@color/blue</item>
+        <item name="picture.ac_preview.title.bg">#99000000</item>
         <!--预览界面底部背景色-->
         <item name="picture.ac_preview.bottom.bg">#fafafa</item>
         <!--预览界面返回箭头-->
-        <item name="picture.preview.leftBack.icon">@drawable/picture_back</item>
+        <item name="picture.preview.leftBack.icon">@drawable/nav_return_white</item>
         <!--裁剪页面标题背景色-->
         <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
         <!--裁剪页面状态栏颜色-->

@@ -95,7 +95,7 @@ public class ZiJiangSDKActivity extends ToolBarActivity {
             "设置汉字字符下划线", "取消汉字字符下划线", "进入十六进制模式" };
     final String[] itemsen = { "Print Init", "Print and Paper", "Standard ASCII font", "Compressed ASCII font", "Normal size",
             "Double high power wide", "Twice as high power wide", "Three times the high-powered wide", "Off emphasized mode", "Choose bold mode", "Cancel inverted Print", "Invert selection Print", "Cancel black and white reverse display", "Choose black and white reverse display",
-            "Cancel rotated clockwise 90 °", "Select the clockwise rotation of 90 °", "Feed paper Cut", "Beep", "Standard CashBox",
+            "Cancel rotated clockwise 90 °", "Student the clockwise rotation of 90 °", "Feed paper Cut", "Beep", "Standard CashBox",
             "Open CashBox", "Char Mode", "Chinese Mode", "Print SelfTest", "DisEnable Button", "Enable Button" ,
             "Set Underline", "Cancel Underline", "Hex Mode" };
     final byte[][] byteCommands = {

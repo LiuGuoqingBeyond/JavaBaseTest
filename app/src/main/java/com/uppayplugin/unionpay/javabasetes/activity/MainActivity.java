@@ -902,7 +902,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(CityActivity.class);
 
         //RadioGroup 单选
-//        openActivity(RadioGroupActivity.class);
+        openActivity(RadioGroupActivity.class);
 
         //checkBox多选
 //        openActivity(CheckBoxActivity.class);
@@ -920,7 +920,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ZiJiangSDKActivity.class);
 
         //多选图片
-        openActivity(ChooseSignActivity.class);
+//        openActivity(ChooseSignActivity.class);
 
         //圆角背景底部带阴影
 //        openActivity(RadiuShadeActivity.class);
@@ -939,6 +939,12 @@ public class MainActivity extends BaseActivity {
 
         //新中付 搜索框
 //        startActivityForResult(new Intent().setClass(this,SearchFilterActivity.class),105);
+
+        //加载图片圆角和圆形
+//        openActivity(BitmapRoundActivity.class);
+
+        //Xml解析
+//        openActivity(XmlPullActivity.class);
 
     }
 

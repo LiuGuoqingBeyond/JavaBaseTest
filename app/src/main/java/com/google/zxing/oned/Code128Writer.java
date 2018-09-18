@@ -100,7 +100,7 @@ public final class Code128Writer extends OneDimensionalCodeWriter {
     int position = 0; // position in contents
     
     while (position < length) {
-      //Select code to use
+      //Student code to use
       int newCodeSet = chooseCode(contents, position, codeSet);
       
       //Get the pattern index
