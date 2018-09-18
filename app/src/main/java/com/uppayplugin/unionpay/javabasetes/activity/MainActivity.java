@@ -902,7 +902,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(CityActivity.class);
 
         //RadioGroup 单选
-        openActivity(RadioGroupActivity.class);
+//        openActivity(RadioGroupActivity.class);
 
         //checkBox多选
 //        openActivity(CheckBoxActivity.class);
@@ -945,6 +945,9 @@ public class MainActivity extends BaseActivity {
 
         //Xml解析
 //        openActivity(XmlPullActivity.class);
+
+        //分行选择
+        openActivity(BankCardActivity.class);
 
     }
 
