@@ -19,10 +19,10 @@ import butterknife.ButterKnife;
  * Data: 2018/9/14 0014.
  */
 
-public class ChooseBankAdapter extends BaseRecyclerAdapter<BankBean.DataBean, ChooseBankAdapter.ViewHolder> {
-    private OnRecyclerViewItemClickListener<BankBean.DataBean> mListener;
+public class ChooseBankAdapter extends BaseRecyclerAdapter<BankTestBean, ChooseBankAdapter.ViewHolder> {
+    private OnRecyclerViewItemClickListener<BankTestBean> mListener;
 
-    public void setmListener(OnRecyclerViewItemClickListener<BankBean.DataBean> mListener) {
+    public void setmListener(OnRecyclerViewItemClickListener<BankTestBean> mListener) {
         this.mListener = mListener;
     }
 
@@ -50,7 +50,7 @@ public class ChooseBankAdapter extends BaseRecyclerAdapter<BankBean.DataBean, Ch
             });
         }
 
-        public void BindData(BankBean.DataBean bankTestBean) {
+        public void BindData(BankTestBean bankTestBean) {
             tvBankName.setText(bankTestBean.getBankName());
         }
     }
