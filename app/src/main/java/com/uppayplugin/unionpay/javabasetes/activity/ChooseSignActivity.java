@@ -8,16 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.util.Log;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,37 +25,31 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.axl.android.frameworkbase.net.utils.ProgressSubscriber;
+import com.alibaba.fastjson.JSON;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.config.PictureSelectionConfig;
 import com.luck.picture.lib.entity.LocalMedia;
-import com.luck.picture.lib.tools.PictureFileUtils;
 import com.orhanobut.logger.Logger;
 import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.adapter.GridImageAdapter;
-import com.uppayplugin.unionpay.javabasetes.entity.LoginRequestModel;
-import com.uppayplugin.unionpay.javabasetes.entity.auth.ImageTypeEnum;
-import com.uppayplugin.unionpay.javabasetes.entity.request.LoginReqModel;
-import com.uppayplugin.unionpay.javabasetes.entity.response.LoginRepModel;
 import com.uppayplugin.unionpay.javabasetes.utils.FullyGridLayoutManager;
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils;
-import com.uppayplugin.unionpay.javabasetes.utils.mapbean.TransMapToBeanUtils;
 import com.whty.xzfpos.base.AppToolBarActivity;
 
+import org.json.JSONArray;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TreeMap;
 
 import butterknife.BindView;
 import io.reactivex.Flowable;
@@ -91,6 +82,8 @@ public class ChooseSignActivity extends AppToolBarActivity {
     private List<String> photos;
     private Bitmap bitmap;
     private List<String> photoList;
+    private List<String> list;
+    private String imagPath;
 
     @Override
     protected void initToolBar() {
@@ -145,19 +138,19 @@ public class ChooseSignActivity extends AppToolBarActivity {
             @Override
             public void onClick(View view) {
                 for (int i = 0; i < selectList.size(); i++) {
-                    Logger.d("photo数组=="+selectList.get(i).getCompressPath().toString());
+                    Logger.d("photo数组==" + selectList.get(i).getCompressPath().toString());
                     bitmap = BitmapFactory.decodeFile(selectList.get(i).getCompressPath().toString());
 //                    imgView.setImageBitmap(bitmap);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                        Logger.e("图片大小="+bitmap.getRowBytes() * bitmap.getHeight());
+                        Logger.e("图片大小=" + bitmap.getRowBytes() * bitmap.getHeight());
                     }
                 }
                 photoList = new ArrayList<>();
-                for(LocalMedia s:selectList){
+                for (LocalMedia s : selectList) {
                     photoList.add(s.getCompressPath());
                 }
                 for (int i = 0; i < photoList.size(); i++) {
-                    Logger.e("photoList"+photoList.get(i).toString());
+                    Logger.e("photoList" + photoList.get(i).toString());
                 }
                 //保存图片
                 new Thread(new Runnable() {
@@ -272,10 +265,11 @@ public class ChooseSignActivity extends AppToolBarActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true
                     // 如果裁剪并压缩了，已取压缩路径为准，因为是先裁剪后压缩的
-                    ToastUtils.showLong(selectList.size() + "");
+//                    ToastUtils.showLong(selectList.size() + "");
                     for (LocalMedia media : selectList) {
                         photos.add(media.getCompressPath());
                     }
+                    compressWithRx(photos);
                     adapter.setList(selectList);
                     adapter.notifyDataSetChanged();
                     break;
@@ -483,18 +477,18 @@ public class ChooseSignActivity extends AppToolBarActivity {
                 .subscribe(new Consumer<List<File>>() {
                     @Override
                     public void accept(@NonNull List<File> list) throws Exception {
+                        List<String> photoString = new ArrayList<>();
                         for (File file : list) {
-                            /*int[] thumbSize = PublicMethodUtils.computeSize(file.getAbsolutePath());
-                            String thumbArg = String.format(Locale.CHINA, "压缩后参数：%d*%d, %dk", thumbSize[0], thumbSize[1], file.length() >> 10);*/
 
                             Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
 
                             int h = bitmap.getHeight();
                             int w = bitmap.getWidth();
                             if (w < 960 && h < 720) {
-                                /*setImageValue(bitmap);
-                                //此处后面可以将bitMap转为二进制上传后台网络
-                                uploadImageToWeb(bitmap);*/
+//                                setImageValue(bitmap);
+//                                //此处后面可以将bitMap转为二进制上传后台网络
+//                                uploadImageToWeb(bitmap);
+                                photoString.add(getPhotoString(bitmap));
                             } else {
                                 float hSize = (float) (960.0 / w);
                                 float wSize = (float) (720.0 / h);
@@ -510,12 +504,34 @@ public class ChooseSignActivity extends AppToolBarActivity {
                                 bitmap = Bitmap.createScaledBitmap(
                                         bitmap, width, height, true);
 
-                                /*setImageValue(bitmap);
-                                //此处后面可以将bitMap转为二进制上传后台网络
-                                uploadImageToWeb(bitmap);*/
+//                                setImageValue(bitmap);
+//                                //此处后面可以将bitMap转为二进制上传后台网络
+//                                uploadImageToWeb(bitmap);
+
+                                photoString.add(getPhotoString(bitmap));
+
                             }
                         }
+                        String result = JSON.toJSONString(photoString);
+                        Logger.e("加密后的photoString   "+photoString.size()+"==="+result);
                     }
                 });
+    }
+
+    public String getPhotoString(Bitmap bitMap) {
+        try {
+            if (null != bitMap) {
+                list = new ArrayList<>();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream(); // outputStream
+                bitMap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
+                byte[] appicon = baos.toByteArray();// 转为byte数组
+                String imagePath = Base64.encodeToString(appicon, Base64.DEFAULT);
+                imagPath = URLEncoder.encode(imagePath, "utf-8");
+//                list.add(imagePath);
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return imagPath;
     }
 }

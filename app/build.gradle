@@ -217,6 +217,7 @@ dependencies {
     compile "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
     implementation project(':libcommon')
     implementation files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.alibaba:fastjson:1.2.49'
     repositories {
         mavenCentral()
         flatDir {

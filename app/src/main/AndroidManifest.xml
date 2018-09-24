@@ -342,9 +342,22 @@
             android:name=".activity.SearchFilterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleTranslucentTheme" />
-        <activity android:name=".activity.BitmapRoundActivity" />
-        <activity android:name=".activity.XmlPullActivity" />
-        <activity android:name=".activity.BankCardActivity"></activity>
+        <activity
+            android:name=".activity.BitmapRoundActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.XmlPullActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.BankCardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.ReFurbishActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
     </application>
 
 </manifest>

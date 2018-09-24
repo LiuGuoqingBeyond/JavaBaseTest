@@ -920,7 +920,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(ZiJiangSDKActivity.class);
 
         //多选图片
-//        openActivity(ChooseSignActivity.class);
+        openActivity(ChooseSignActivity.class);
 
         //圆角背景底部带阴影
 //        openActivity(RadiuShadeActivity.class);
@@ -947,7 +947,13 @@ public class MainActivity extends BaseActivity {
 //        openActivity(XmlPullActivity.class);
 
         //分行选择
-        openActivity(BankCardActivity.class);
+//        openActivity(BankCardActivity.class);
+
+        //城市选择
+//        openActivity(CityActivity.class);
+
+        //下拉刷新，上拉加载
+//        openActivity(ReFurbishActivity.class);
 
     }
 
