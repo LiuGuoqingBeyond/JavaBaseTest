@@ -503,6 +503,7 @@ public class ChooseSignActivity extends AppToolBarActivity {
 
                                 bitmap = Bitmap.createScaledBitmap(
                                         bitmap, width, height, true);
+                                imgView.setImageBitmap(bitmap);
 
 //                                setImageValue(bitmap);
 //                                //此处后面可以将bitMap转为二进制上传后台网络
@@ -513,7 +514,7 @@ public class ChooseSignActivity extends AppToolBarActivity {
                             }
                         }
                         String result = JSON.toJSONString(photoString);
-                        Logger.e("加密后的photoString   "+photoString.size()+"==="+result);
+                        Logger.e("加密后的photoString   " + photoString.size() + "===" + result);
                     }
                 });
     }
@@ -527,7 +528,6 @@ public class ChooseSignActivity extends AppToolBarActivity {
                 byte[] appicon = baos.toByteArray();// 转为byte数组
                 String imagePath = Base64.encodeToString(appicon, Base64.DEFAULT);
                 imagPath = URLEncoder.encode(imagePath, "utf-8");
-//                list.add(imagePath);
             }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
