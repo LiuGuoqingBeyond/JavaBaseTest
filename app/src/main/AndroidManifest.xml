@@ -358,6 +358,8 @@
             android:name=".activity.ReFurbishActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleTranslucentTheme" />
+        <activity android:name=".activity.ImgViewActivity" />
+        <activity android:name=".activity.JudgeActivity"></activity>
         <activity android:name=".activity.PhotoViewActivity"></activity>
     </application>
 

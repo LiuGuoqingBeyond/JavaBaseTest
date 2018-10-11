@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight">
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:background="@null"
+            android:hint="请输入要验证的身份证号" />
+
+        <Button
+            android:id="@+id/btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="验证身份证" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight">
+
+        <EditText
+            android:id="@+id/et_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:background="@null"
+            android:hint="请输入要验证的银行卡号" />
+
+        <Button
+            android:id="@+id/btn_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="验证银行卡" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight">
+
+        <EditText
+            android:id="@+id/et_str"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/defaultItemHeight"
+            android:background="@null"
+            android:hint="请输入要验证字符" />
+
+        <Button
+            android:id="@+id/btn_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="验证字符中英数" />
+    </RelativeLayout>
+
+</LinearLayout>
