@@ -380,6 +380,12 @@
             android:value="841817f8ff7bd6873996d354fbd368d9" />
 
         <service android:name="com.amap.api.location.APSService" />
+
+        <activity
+            android:name=".activity.SignNameActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

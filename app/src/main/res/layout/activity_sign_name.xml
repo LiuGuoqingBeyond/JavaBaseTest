@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/sign_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/sign_name_card_no"
+        style="@style/textStyle_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginTop="@dimen/halfDefaultPadding"
+        android:text="@string/sign_name_card" />
+
+    <TextView
+        android:id="@+id/sign_name_money_no"
+        style="@style/textStyle_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        android:paddingTop="@dimen/halfDefaultPadding"
+        android:text="@string/sign_name_money_no" />
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip"
+        android:background="#adbbc6" />
+
+    <LinearLayout
+        android:id="@+id/llBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/halfDefaultPadding"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sign_name_again"
+            style="@style/btnStyle_round_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bottom_bg_color_red"
+            android:text="@string/sign_name_again" />
+
+        <Button
+            android:id="@+id/sign_name_send"
+            style="@style/btnStyle_round_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/sign_name_send" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="66dp"
+        android:text="@string/sign_name_info"
+        android:textColor="@color/red"
+        android:textSize="16sp" />
+
+</RelativeLayout>

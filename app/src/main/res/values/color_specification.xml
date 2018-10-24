@@ -31,6 +31,7 @@
     <color name="textColorImportant">#FF7838</color>
     <!--错误字体颜色-->
     <color name="textColorError">#FF402D</color>
+    <color name="textColorErrorDark">#e32f45</color>
 
     <color name="textColorPrimary">@color/colorPrimaryDark</color>
 

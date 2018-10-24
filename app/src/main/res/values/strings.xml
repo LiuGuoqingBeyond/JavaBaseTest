@@ -1268,4 +1268,14 @@
     <string name="filter_time">起始时间不能小于结束时间</string>
     <string name="login_open_location">无法定位，请打开定位服务</string>
 
+    <string name="sign_name_card">卡号：%1$s</string>
+    <string name="sign_name_money_no">交易金额：%1$s元</string>
+    <string name="sign_name_again">重签</string>
+    <string name="pls_sign_name">请先签名</string>
+    <string name="not_valid_sign_name">签名太简单请重签</string>
+    <string name="sign_name_send_fail">签名上送失败</string>
+    <string name="sign_name_send">确认上送</string>
+    <string name="sign_name_info">请持卡本人用正楷签名，姓名需清晰可辨，不清晰，不到账！</string>
+    <string name="sign_name_send_success">签名上送成功</string>
+
 </resources>

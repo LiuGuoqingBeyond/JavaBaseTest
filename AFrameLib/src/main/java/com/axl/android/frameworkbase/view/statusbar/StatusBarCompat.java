@@ -43,20 +43,18 @@ public class StatusBarCompat {
         }
     }
 
-    public static void translucentStatusBar(@NonNull Activity activity) {
-        translucentStatusBar(activity, false);
-    }
-
     /**
      * change to full screen mode
      * @param hideStatusBarBackground hide status bar alpha Background when SDK > 21, true if hide it
+     * @param isWhiteBackground 状态栏颜色是否为白色底，Android6.0以下的魅族和小米修改状态栏字体颜色需要判断
      */
-    public static void translucentStatusBar(@NonNull Activity activity, boolean hideStatusBarBackground) {
+    public static void translucentStatusBar(@NonNull Activity activity, boolean hideStatusBarBackground, boolean isWhiteBackground) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             StatusBarCompatLollipop.translucentStatusBar(activity, hideStatusBarBackground);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             StatusBarCompatKitKat.translucentStatusBar(activity);
         }
+        StatusBarTextColor.StatusBarLightMode(activity,StatusBarTextColor.StatusBarLightMode(activity,isWhiteBackground),isWhiteBackground);
     }
 
     public static void setStatusBarColorForCollapsingToolbar(@NonNull Activity activity, AppBarLayout appBarLayout, CollapsingToolbarLayout collapsingToolbarLayout,

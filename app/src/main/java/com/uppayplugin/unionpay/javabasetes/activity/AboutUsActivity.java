@@ -70,7 +70,7 @@ public class AboutUsActivity extends ToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
-        StatusBarCompat.translucentStatusBar(AboutUsActivity.this,true);
+        StatusBarCompat.translucentStatusBar(AboutUsActivity.this,true,false);
         showAboutContent();
         setSmartRefreshLayout();
         //进入界面时自动刷新

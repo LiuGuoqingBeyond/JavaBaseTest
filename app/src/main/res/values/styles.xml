@@ -280,4 +280,15 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <!-- 常用按钮的样式 -->
+    <style name="btnStyle_round_color">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginStart">@dimen/defaultPadding</item>
+        <item name="android:layout_marginEnd">@dimen/defaultPadding</item>
+        <item name="android:background">@drawable/btn_bottom_bg_color_new_primary</item>
+        <item name="android:textSize">@dimen/btnTextSize</item>
+        <item name="android:textColor">@color/btn_text_color_color_primary</item>
+    </style>
+
 </resources>

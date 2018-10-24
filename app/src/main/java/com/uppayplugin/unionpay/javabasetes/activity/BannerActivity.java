@@ -1,6 +1,5 @@
 package com.uppayplugin.unionpay.javabasetes.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -44,7 +43,7 @@ public class BannerActivity extends ToolBarActivity {
 
     @Override
     protected void initViewsAndEvents() {
-        StatusBarCompat.translucentStatusBar(BannerActivity.this,true);//设置为沉浸式
+        StatusBarCompat.translucentStatusBar(BannerActivity.this,true,false);//设置为沉浸式
         StatusBarCompat.setStatusBarColor(BannerActivity.this,getResources().getColor(R.color.red));//设置状态栏颜色
         //第一种
         urlList = new ArrayList<>();

@@ -41,8 +41,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
-//import com.example.testdemolib.Interface.TestDemoInterface;
-//import com.example.testdemolib.Listener.TestDemoListener;
 import com.example.testdemolib.Interface.TestDemoInterface;
 import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -54,6 +52,7 @@ import com.uppayplugin.unionpay.javabasetes.Interface.TestInterface;
 import com.uppayplugin.unionpay.javabasetes.Interface.TextSevenListener;
 import com.uppayplugin.unionpay.javabasetes.R;
 import com.uppayplugin.unionpay.javabasetes.config.Constant;
+import com.uppayplugin.unionpay.javabasetes.utils.AutoFitTextView;
 import com.uppayplugin.unionpay.javabasetes.utils.JSONUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.PayUtils;
 import com.uppayplugin.unionpay.javabasetes.utils.PreferencesUtil;
@@ -65,7 +64,6 @@ import com.uppayplugin.unionpay.javabasetes.utils.net.NetUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.personal.CircleImageView;
 import com.uppayplugin.unionpay.javabasetes.utils.personal.FileUtil;
 import com.uppayplugin.unionpay.javabasetes.utils.qrcode.QRCodeUtils;
-import com.uppayplugin.unionpay.javabasetes.utils.AutoFitTextView;
 import com.uppayplugin.unionpay.libcommon.rsa.RSACoder;
 
 import org.json.JSONObject;
@@ -88,6 +86,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 import static com.uppayplugin.unionpay.javabasetes.config.Constant.privateKey;
+
+//import com.example.testdemolib.Interface.TestDemoInterface;
+//import com.example.testdemolib.Listener.TestDemoListener;
 
 
 public class MainActivity extends BaseActivity {
@@ -965,7 +966,12 @@ public class MainActivity extends BaseActivity {
 //        openActivity(JudgeActivity.class);
 
         //定位问题
-        openActivity(LocationActivity.class);
+//        openActivity(LocationActivity.class);
+
+        //签名页面
+//        openActivity(SignNameActivity.class);
+        Intent intent = new Intent(MainActivity.this, SignNameActivity.class);
+        startActivityForResult(intent, REQUEST_BRANCH);
 
     }
 
@@ -1011,7 +1017,9 @@ public class MainActivity extends BaseActivity {
                 Log.d("打印了=", a);
             }
         }else if (resultCode == 105 && data != null){
-            btnText.setText(data.getStringExtra("state"));
+//            btnText.setText(data.getStringExtra("state"));
+//            imgView2.setImageBitmap(data.getStringExtra("branchName"));
+            ToastUtils.showLong(data.getStringExtra("branchName"));
         }
     }
 
