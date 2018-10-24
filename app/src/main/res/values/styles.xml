@@ -275,4 +275,9 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
+    <style name="textStyle_mainbody_base">
+        <item name="android:textSize">@dimen/btnTextSize</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>

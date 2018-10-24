@@ -358,9 +358,28 @@
             android:name=".activity.ReFurbishActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleTranslucentTheme" />
-        <activity android:name=".activity.ImgViewActivity" />
-        <activity android:name=".activity.JudgeActivity"></activity>
-        <activity android:name=".activity.PhotoViewActivity"></activity>
+        <activity
+            android:name=".activity.ImgViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.JudgeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.PhotoViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity
+            android:name=".activity.LocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTranslucentTheme" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="841817f8ff7bd6873996d354fbd368d9" />
+
+        <service android:name="com.amap.api.location.APSService" />
     </application>
 
 </manifest>

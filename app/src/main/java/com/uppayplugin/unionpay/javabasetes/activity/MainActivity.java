@@ -959,10 +959,13 @@ public class MainActivity extends BaseActivity {
 //        openActivity(PhotoViewActivity.class);
 
         //图片预览
-        openActivity(ImgViewActivity.class);
+//        openActivity(ImgViewActivity.class);
 
         //判断身份证号和银行卡号是否符合规范
 //        openActivity(JudgeActivity.class);
+
+        //定位问题
+        openActivity(LocationActivity.class);
 
     }
 

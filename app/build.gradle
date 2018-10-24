@@ -225,6 +225,8 @@ dependencies {
             dirs 'libs'
         }
     }
+    //定位
+    compile 'com.amap.api:location:latest.integration'
     implementation project(':sinopaylib')
     implementation project(':upopPaylib')
     implementation files('libs/btsdk.jar')
