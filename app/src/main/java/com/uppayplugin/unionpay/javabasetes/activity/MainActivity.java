@@ -966,12 +966,17 @@ public class MainActivity extends BaseActivity {
 //        openActivity(JudgeActivity.class);
 
         //定位问题
-//        openActivity(LocationActivity.class);
+        openActivity(LocationActivity.class);
+
+        //定位问题2
+//        openActivity(LocationTwoActivity.class);
 
         //签名页面
 //        openActivity(SignNameActivity.class);
-        Intent intent = new Intent(MainActivity.this, SignNameActivity.class);
-        startActivityForResult(intent, REQUEST_BRANCH);
+        /*Intent intent = new Intent(MainActivity.this, SignNameActivity.class);
+        startActivityForResult(intent, REQUEST_BRANCH);*/
+
+        //
 
     }
 

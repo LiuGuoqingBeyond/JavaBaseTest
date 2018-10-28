@@ -4,10 +4,15 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.location.*
+import android.location.LocationManager.GPS_PROVIDER
+import android.location.LocationManager.NETWORK_PROVIDER
+import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.Toast
 import com.orhanobut.logger.Logger
@@ -16,12 +21,14 @@ import com.uppayplugin.unionpay.javabasetes.R
 import com.uppayplugin.unionpay.javabasetes.utils.PreferencesUtil
 import com.uppayplugin.unionpay.javabasetes.utils.dialog.ToastUtils
 import com.uppayplugin.unionpay.javabasetes.utils.location.CountryCodeUtils
-import com.uppayplugin.unionpay.javabasetes.utils.location.LocationUtils
+import com.uppayplugin.unionpay.javabasetes.utils.location.LocationUtil
 import com.whty.xzfpos.base.AppToolBarActivity
 import java.io.IOException
 
 
-class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListener {
+
+
+class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListener {
     override fun location(latitude: Double?, longitude: Double?) {
         ToastUtils.showLong("$latitude+$longitude")
         try {
@@ -67,6 +74,8 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
     private var provider: String? = ""
     var context: Context? = null
     private var prefe: PreferencesUtil? = null
+    private val BAIDU_READ_PHONE_STATE = 100//定位权限请求
+    private val PRIVATE_CODE = 1315//开启GPS权限
     override fun initToolBar() {
     }
 
@@ -80,7 +89,8 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
     override fun initViewsAndEvents() {
         context = this@LocationActivity
         prefe = PreferencesUtil(context)
-        rxPermissions = RxPermissions(this)
+        showGPSContacts()
+        /*rxPermissions = RxPermissions(this)
         rxPermissions!!.requestEach(Manifest.permission.CAMERA,
                 Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.ACCESS_FINE_LOCATION,
@@ -99,18 +109,100 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
                             Thread(mRunnable).start()
                         }
                     }
-                }, { error -> })
+                }, { error -> })*/
+    }
+
+    private fun showGPSContacts() {
+        val locationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val ok = locationManager.isProviderEnabled(GPS_PROVIDER)
+        val okk = locationManager.isProviderEnabled(NETWORK_PROVIDER)
+        if (ok||okk) {//开了定位服务
+            if (SDK_INT >= 23) { //判断是否为android6.0系统版本，如果是，需要动态添加权限
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !== PERMISSION_GRANTED) {// 没有权限，申请权限。
+                    ActivityCompat.requestPermissions(this, LOCATIONGPS,
+                            BAIDU_READ_PHONE_STATE)
+                } else {
+                    getLocation()//getLocation为定位方法
+                }
+            } else {
+                getLocation()//getLocation为定位方法
+            }
+        } else {
+            Toast.makeText(this, "系统检测到未开启GPS定位服务,请开启", Toast.LENGTH_SHORT).show()
+            val intent = Intent()
+            intent.action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
+            startActivityForResult(intent, PRIVATE_CODE)
+        }
     }
 
     private fun getLocat() {
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             //上传经纬度，
-            LocationUtils.getInstance().setOnLocationBackListener(this@LocationActivity)
-            LocationUtils.getInstance().startLocation()
+            LocationUtil.getInstance().setOnLocationBackListener(this@LocationActivity)
+            LocationUtil.getInstance().startLocation()
             Logger.i("Location:开启定位")
         } else {
             Logger.i("Location:关闭定位")
+        }
+    }
+    private fun getLocation() {
+// 获取位置管理服务
+        val locationManager: LocationManager
+        val serviceName = Context.LOCATION_SERVICE
+        locationManager = this.getSystemService(serviceName) as LocationManager
+        // 查找到服务信息
+        val criteria = Criteria()
+        criteria.accuracy = Criteria.ACCURACY_FINE // 高精度
+        criteria.isAltitudeRequired = false
+        criteria.isBearingRequired = false
+        criteria.isCostAllowed = true
+        criteria.powerRequirement = Criteria.POWER_LOW // 低功耗
+        val provider = locationManager.getBestProvider(criteria, true) // 获取GPS信息
+        /**这段代码不需要深究，是locationManager.getLastKnownLocation(provider)自动生成的，不加会出错**/
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PERMISSION_GRANTED) {
+            return
+        }
+        val location = locationManager.getLastKnownLocation(provider) // 通过GPS获取位置
+        updateLocation(location)
+    }
+
+    private fun updateLocation(location: Location?) {
+        if (location != null) {
+            val latitude = location.latitude
+            val longitude = location.longitude
+            Logger.e("维度：$latitude\n经度$longitude")
+        } else {
+            Logger.e("无法获取到位置信息")
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when(requestCode){
+            BAIDU_READ_PHONE_STATE->{
+                //如果用户取消，permissions可能为null.
+                if (grantResults[0] == PERMISSION_GRANTED && grantResults.isNotEmpty()) { //有权限
+                    // 获取到权限，作相应处理
+                    getLocation()
+                } else {
+                    showGPSContacts()
+                }
+            }
+        }
+    }
+
+    /**
+     * 下面是当点击获取GPS定位，跳转到系统开关，ActivityResult回调，我这里做的是必须要开启GPS权限，
+     * 没有开启会一直让用户开启权限，怎么决定，看具体需求
+     */
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            PRIVATE_CODE->{
+//                showContacts()
+                showGPSContacts()
+            }
         }
     }
 
@@ -162,7 +254,7 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
 ////                    Logger.e(e.message)
 //                }
 
-//                LocationUtils.saveLocationInfo(mContext, location, prefe)
+//                LocationUtil.saveLocationInfo(mContext, location, prefe)
             } else {
                 // TODO: 2018/4/10 新增部分机型获取不到定位信息解决方案
                 Logger.e("null--location")
@@ -182,7 +274,7 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
         override fun onLocationChanged(location: Location?) {
             Logger.e("null--login_location")
             if (null != location) {
-//                LocationUtils.saveLocationInfo(mContext, location, prefe)
+//                LocationUtil.saveLocationInfo(mContext, location, prefe)
             }
         }
 
@@ -202,4 +294,6 @@ class LocationActivity : AppToolBarActivity(), LocationUtils.onLocationBackListe
     override fun getLoadingTargetView(): View? {
         return null
     }
+
+    val LOCATIONGPS = arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_PHONE_STATE)
 }

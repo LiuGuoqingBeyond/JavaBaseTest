@@ -14,7 +14,7 @@ import com.uppayplugin.unionpay.javabasetes.MApplication;
  * Time: 上午10:47
  */
 
-public class LocationUtils {
+public class LocationUtil {
 
     private Double latitude;
     private Double longitude;
@@ -29,15 +29,15 @@ public class LocationUtils {
         mOnLocationBackListener = onLocationBackListener;
     }
 
-    public static LocationUtils getInstance() {
+    public static LocationUtil getInstance() {
         return SingletonHolder.INSTANCE;
     }
 
     private static class SingletonHolder {
-        private static final LocationUtils INSTANCE = new LocationUtils();
+        private static final LocationUtil INSTANCE = new LocationUtil();
     }
 
-    private LocationUtils() {
+    private LocationUtil() {
         init();
     }
 
