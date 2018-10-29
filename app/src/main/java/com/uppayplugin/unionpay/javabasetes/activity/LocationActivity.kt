@@ -26,8 +26,6 @@ import com.whty.xzfpos.base.AppToolBarActivity
 import java.io.IOException
 
 
-
-
 class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListener {
     override fun location(latitude: Double?, longitude: Double?) {
         ToastUtils.showLong("$latitude+$longitude")
@@ -89,27 +87,22 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
     override fun initViewsAndEvents() {
         context = this@LocationActivity
         prefe = PreferencesUtil(context)
-        showGPSContacts()
-        /*rxPermissions = RxPermissions(this)
-        rxPermissions!!.requestEach(Manifest.permission.CAMERA,
-                Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-                .subscribe({ permission ->
-                    when (permission.name) {
-                        Manifest.permission.CAMERA -> {
-                        }
-                        Manifest.permission.ACCESS_COARSE_LOCATION -> {
-                            val mRunnable = Runnable {
-                                run {
-                                    getLocations()
-//                                    getLocat()
-                                }
+        rxPermissions = RxPermissions(this)
+        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            rxPermissions!!
+                    .requestEach(Manifest.permission.CAMERA,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION)
+                    .subscribe({ permission ->
+                        when (permission.name) {
+                            Manifest.permission.CAMERA -> {
                             }
-                            Thread(mRunnable).start()
+                            Manifest.permission.ACCESS_COARSE_LOCATION -> getLocation()
                         }
-                    }
-                }, { error -> })*/
+                    }) { error -> }
+        }
     }
 
     private fun showGPSContacts() {
@@ -138,33 +131,77 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
     private fun getLocat() {
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            //上传经纬度，
-            LocationUtil.getInstance().setOnLocationBackListener(this@LocationActivity)
-            LocationUtil.getInstance().startLocation()
+            rxPermissions!!
+                    .requestEach(Manifest.permission.CAMERA,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION)
+                    .subscribe({ permission ->
+                        when (permission.name) {
+                            Manifest.permission.CAMERA -> {
+                            }
+                            Manifest.permission.ACCESS_COARSE_LOCATION -> getLocation()
+                        }
+                    }) { error -> }
             Logger.i("Location:开启定位")
         } else {
-            Logger.i("Location:关闭定位")
+            ToastUtils.showLong("请打开定位")
         }
     }
     private fun getLocation() {
-// 获取位置管理服务
-        val locationManager: LocationManager
-        val serviceName = Context.LOCATION_SERVICE
-        locationManager = this.getSystemService(serviceName) as LocationManager
-        // 查找到服务信息
-        val criteria = Criteria()
-        criteria.accuracy = Criteria.ACCURACY_FINE // 高精度
-        criteria.isAltitudeRequired = false
-        criteria.isBearingRequired = false
-        criteria.isCostAllowed = true
-        criteria.powerRequirement = Criteria.POWER_LOW // 低功耗
-        val provider = locationManager.getBestProvider(criteria, true) // 获取GPS信息
-        /**这段代码不需要深究，是locationManager.getLastKnownLocation(provider)自动生成的，不加会出错**/
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PERMISSION_GRANTED) {
-            return
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (locationManager!!.getProvider(LocationManager.NETWORK_PROVIDER) != null || locationManager!!.getProvider(LocationManager.GPS_PROVIDER) != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return
+            }
+            if (locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER) != null) {
+                //是否为GPS位置控制器
+                provider = LocationManager.GPS_PROVIDER
+            } else if (locationManager!!.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) != null) {
+                //是否为网络位置控制器
+                provider = LocationManager.NETWORK_PROVIDER
+            }
+            val location = locationManager!!.getLastKnownLocation(provider)
+            if (null != location) {
+                val latitude = location.latitude//维度
+                val longitude = location.longitude//经度
+                val latLongInfo = "维度：" + latitude + "精度:" + longitude
+                Logger.e("latLongInfo:=$latLongInfo")
+                try {
+                    val geocoder = Geocoder(context)
+                    var locationList: List<Address>? = null
+                    try {
+                        locationList = geocoder.getFromLocation(location.latitude, location.longitude, 1000)
+                        val address = locationList!![0]//得到Address实例
+                        val province = address.adminArea//省
+                        val city = address.locality//市
+                        val district = address.subLocality//区
+                        val thoroughfare = address.thoroughfare//路
+                        val subThoroughfare = address.subThoroughfare//号
+
+                        Logger.e("详细地址:$province$city$district$thoroughfare$subThoroughfare")
+                        Logger.i("infoaddress =$address")
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                } catch (e: Exception) {
+                    Logger.e(e.message)
+                }
+//
+//                LocationUtil.saveLocationInfo(mContext, location, prefe)
+            } else {
+                // TODO: 2018/4/10 新增部分机型获取不到定位信息解决方案
+                Logger.e("null--location")
+                locationManager!!.requestLocationUpdates(provider, 2000, 1f, locationListener)
+            }
+        } else {
+            //无法定位：1、提示用户打开定位服务；2、跳转到设置界面
+            Toast.makeText(this, getString(R.string.function_open_location), Toast.LENGTH_SHORT).show()
+            val i = Intent()
+            i.action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
+            startActivity(i)
         }
-        val location = locationManager.getLastKnownLocation(provider) // 通过GPS获取位置
-        updateLocation(location)
     }
 
     private fun updateLocation(location: Location?) {
