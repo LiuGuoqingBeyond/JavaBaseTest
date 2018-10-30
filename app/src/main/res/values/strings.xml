@@ -1267,6 +1267,7 @@
     <string name="filter_nocard_fast">无卡快捷</string>
     <string name="filter_time">起始时间不能小于结束时间</string>
     <string name="login_open_location">无法定位，请打开定位服务</string>
+    <string name="text_open_location">请您打开定位权限，否则无法使用此功能</string>
 
     <string name="sign_name_card">卡号：%1$s</string>
     <string name="sign_name_money_no">交易金额：%1$s元</string>

@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.Toast
 import com.orhanobut.logger.Logger
@@ -90,19 +91,39 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
         rxPermissions = RxPermissions(this)
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            rxPermissions!!
-                    .requestEach(Manifest.permission.CAMERA,
-                            Manifest.permission.READ_PHONE_STATE,
-                            Manifest.permission.ACCESS_FINE_LOCATION,
-                            Manifest.permission.ACCESS_COARSE_LOCATION)
-                    .subscribe({ permission ->
-                        when (permission.name) {
-                            Manifest.permission.CAMERA -> {
-                            }
-                            Manifest.permission.ACCESS_COARSE_LOCATION -> getLocation()
-                        }
-                    }) { error -> }
+            locationPermissions()
+        }else{
+            val mDialog = AlertDialog.Builder(this)
+//            mDialog.setTitle(getString(R.string.text_check_update))
+            mDialog.setMessage(getString(R.string.text_open_location))
+            mDialog.setPositiveButton(R.string.text_set, { dialog, _ ->
+                val intent = Intent()
+                intent.action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
+                startActivityForResult(intent, PRIVATE_CODE)
+                dialog.dismiss()
+            })
+            mDialog.setNegativeButton(R.string.text_cancel, { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            })
+            mDialog.setCancelable(false)
+            mDialog.create().show()
         }
+    }
+
+    private fun locationPermissions() {
+        rxPermissions!!.requestEach(Manifest.permission.CAMERA,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+                .subscribe({ permission ->
+                    when (permission.name) {
+                        Manifest.permission.CAMERA -> {
+                        }
+                        Manifest.permission.ACCESS_FINE_LOCATION -> {
+                            getLocation()
+                        }
+                    }
+                }, { error -> })
     }
 
     private fun showGPSContacts() {
@@ -149,59 +170,40 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
         }
     }
     private fun getLocation() {
-        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        if (locationManager!!.getProvider(LocationManager.NETWORK_PROVIDER) != null || locationManager!!.getProvider(LocationManager.GPS_PROVIDER) != null) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                return
-            }
-            if (locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER) != null) {
-                //是否为GPS位置控制器
-                provider = LocationManager.GPS_PROVIDER
-            } else if (locationManager!!.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) != null) {
-                //是否为网络位置控制器
-                provider = LocationManager.NETWORK_PROVIDER
-            }
-            val location = locationManager!!.getLastKnownLocation(provider)
-            if (null != location) {
-                val latitude = location.latitude//维度
-                val longitude = location.longitude//经度
-                val latLongInfo = "维度：" + latitude + "精度:" + longitude
-                Logger.e("latLongInfo:=$latLongInfo")
-                try {
-                    val geocoder = Geocoder(context)
-                    var locationList: List<Address>? = null
-                    try {
-                        locationList = geocoder.getFromLocation(location.latitude, location.longitude, 1000)
-                        val address = locationList!![0]//得到Address实例
-                        val province = address.adminArea//省
-                        val city = address.locality//市
-                        val district = address.subLocality//区
-                        val thoroughfare = address.thoroughfare//路
-                        val subThoroughfare = address.subThoroughfare//号
-
-                        Logger.e("详细地址:$province$city$district$thoroughfare$subThoroughfare")
-                        Logger.i("infoaddress =$address")
-                    } catch (e: IOException) {
-                        e.printStackTrace()
+        val mRunnable = Runnable {
+            run {
+                    locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                    if (locationManager!!.getProvider(LocationManager.NETWORK_PROVIDER) != null || locationManager!!.getProvider(LocationManager.GPS_PROVIDER) != null) {
+                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            return@Runnable
+                        }
+                        if (locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER) != null) {
+                            //是否为GPS位置控制器
+                            provider = LocationManager.GPS_PROVIDER
+                        } else if (locationManager!!.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) != null) {
+                            //是否为网络位置控制器
+                            provider = LocationManager.NETWORK_PROVIDER
+                        }
+                        Logger.e("provider=$provider")
+                        location = locationManager!!.getLastKnownLocation(provider)
+                        if (null != location) {
+                            val latitude = location!!.latitude//维度
+                            val longitude = location!!.longitude//经度
+                            val latLongInfo = "维度：" + latitude + "精度:" + longitude
+                            Logger.e("latLongInfo:=$latLongInfo")
+                            val geocoder = Geocoder(mContext)
+                            var locationList: List<Address>? = null
+                            try {
+                                locationList = geocoder.getFromLocation(latitude, longitude, 1000)
+                                Logger.e("hfdh" + locationList!![0].thoroughfare + locationList[0].subThoroughfare)
+                            } catch (e: IOException) {
+                                e.printStackTrace()
+                            }
+                        }
                     }
-
-                } catch (e: Exception) {
-                    Logger.e(e.message)
-                }
-//
-//                LocationUtil.saveLocationInfo(mContext, location, prefe)
-            } else {
-                // TODO: 2018/4/10 新增部分机型获取不到定位信息解决方案
-                Logger.e("null--location")
-                locationManager!!.requestLocationUpdates(provider, 2000, 1f, locationListener)
             }
-        } else {
-            //无法定位：1、提示用户打开定位服务；2、跳转到设置界面
-            Toast.makeText(this, getString(R.string.function_open_location), Toast.LENGTH_SHORT).show()
-            val i = Intent()
-            i.action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
-            startActivity(i)
         }
+        Thread(mRunnable).start()
     }
 
     private fun updateLocation(location: Location?) {
@@ -238,7 +240,8 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
         when(requestCode){
             PRIVATE_CODE->{
 //                showContacts()
-                showGPSContacts()
+//                showGPSContacts()
+                locationPermissions()
             }
         }
     }
