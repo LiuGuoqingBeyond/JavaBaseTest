@@ -965,11 +965,14 @@ public class MainActivity extends BaseActivity {
         //判断身份证号和银行卡号是否符合规范
 //        openActivity(JudgeActivity.class);
 
-        //定位问题
-        openActivity(LocationActivity.class);
+        //定位问题1
+//        openActivity(LocationActivity.class);
 
         //定位问题2
 //        openActivity(LocationTwoActivity.class);
+
+        //定位问题3
+        openActivity(LocationAActivity.class);
 
         //签名页面
 //        openActivity(SignNameActivity.class);

@@ -386,7 +386,10 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.LocationTwoActivity"></activity>
+        <activity android:name=".activity.LocationTwoActivity" />
+        <activity android:name=".activity.LocationAActivity" />
+        <activity android:name=".activity.LocationBActivity" />
+        <activity android:name=".activity.LocationCActivity"></activity>
     </application>
 
 </manifest>
