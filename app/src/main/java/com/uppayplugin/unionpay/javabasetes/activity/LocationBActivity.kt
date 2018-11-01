@@ -51,19 +51,6 @@ class LocationBActivity : AppToolBarActivity(), View.OnClickListener {
     }
 
     private fun initPermission() {
-        /*rxPermissions = RxPermissions(this)
-        rxPermissions!!
-                .requestEach(Manifest.permission.CAMERA,
-                        Manifest.permission.READ_PHONE_STATE,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION)
-                .subscribe({ permission ->
-                    when (permission.name) {
-                        Manifest.permission.CAMERA -> {
-                        }
-                        Manifest.permission.ACCESS_COARSE_LOCATION -> getLocations()
-                    }
-                }) { error -> }*/
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             turnLogin()
@@ -86,7 +73,19 @@ class LocationBActivity : AppToolBarActivity(), View.OnClickListener {
     }
 
     private fun turnLogin() {
-        getLocations()
+        rxPermissions = RxPermissions(this)
+        rxPermissions!!
+                .requestEach(Manifest.permission.CAMERA,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                .subscribe({ permission ->
+                    when (permission.name) {
+                        Manifest.permission.CAMERA -> {
+                        }
+                        Manifest.permission.ACCESS_COARSE_LOCATION -> getLocations()
+                    }
+                }) { error -> }
     }
 
     /**
@@ -103,10 +102,12 @@ class LocationBActivity : AppToolBarActivity(), View.OnClickListener {
     }
 
     private fun getLocations() {
+        val mRunnable = Runnable {
+            run {
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (locationManager!!.getProvider(LocationManager.NETWORK_PROVIDER) != null || locationManager!!.getProvider(LocationManager.GPS_PROVIDER) != null) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                return
+                return@Runnable
             }
             if (locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER) != null) {
                 //是否为GPS位置控制器
@@ -125,6 +126,9 @@ class LocationBActivity : AppToolBarActivity(), View.OnClickListener {
                 LocationSaveUtil.saveLocationInfo(mContext, location, prefe)
             }
         }
+            }
+        }
+        Thread(mRunnable).start()
     }
 
     override fun getLoadingTargetView(): View? {

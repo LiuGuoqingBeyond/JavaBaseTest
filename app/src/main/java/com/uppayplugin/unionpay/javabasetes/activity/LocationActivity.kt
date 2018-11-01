@@ -119,7 +119,7 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
                     when (permission.name) {
                         Manifest.permission.CAMERA -> {
                         }
-                        Manifest.permission.ACCESS_FINE_LOCATION -> {
+                        Manifest.permission.ACCESS_COARSE_LOCATION -> {
                             getLocation()
                         }
                     }
@@ -204,31 +204,6 @@ class LocationActivity : AppToolBarActivity(), LocationUtil.onLocationBackListen
             }
         }
         Thread(mRunnable).start()
-    }
-
-    private fun updateLocation(location: Location?) {
-        if (location != null) {
-            val latitude = location.latitude
-            val longitude = location.longitude
-            Logger.e("维度：$latitude\n经度$longitude")
-        } else {
-            Logger.e("无法获取到位置信息")
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when(requestCode){
-            BAIDU_READ_PHONE_STATE->{
-                //如果用户取消，permissions可能为null.
-                if (grantResults[0] == PERMISSION_GRANTED && grantResults.isNotEmpty()) { //有权限
-                    // 获取到权限，作相应处理
-                    getLocation()
-                } else {
-                    showGPSContacts()
-                }
-            }
-        }
     }
 
     /**
