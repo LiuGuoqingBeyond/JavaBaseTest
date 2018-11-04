@@ -234,4 +234,5 @@ dependencies {
     implementation project(':picture_library')
     implementation project(':ucrop')
     implementation project(':pickerview')
+    implementation files('libs/gprintersdkv1.jar')
 }

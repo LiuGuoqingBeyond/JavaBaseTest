@@ -26,11 +26,13 @@ public class MApplication extends BaseApplication {
 
     private PreferencesUtil preferencesUtil;
     private static MApplication instance;
+    private static Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
+        mContext = getApplicationContext();
         MultiDex.install(this);
         HttpEngine.init(BuildConfig.BASEURL);
         Logger.addLogAdapter(new AndroidLogAdapter() {
@@ -79,6 +81,10 @@ public class MApplication extends BaseApplication {
         String selectedLanguage = preferencesUtil.readPrefs("language_selected");
         LanguageUtil.attachBaseContext(this, selectedLanguage);
         super.onConfigurationChanged(newConfig);
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 
 }

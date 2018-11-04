@@ -972,14 +972,22 @@ public class MainActivity extends BaseActivity {
 //        openActivity(LocationTwoActivity.class);
 
         //定位问题3
-        openActivity(LocationAActivity.class);
+//        openActivity(LocationAActivity.class);
 
         //签名页面
 //        openActivity(SignNameActivity.class);
         /*Intent intent = new Intent(MainActivity.this, SignNameActivity.class);
         startActivityForResult(intent, REQUEST_BRANCH);*/
 
-        //
+        //蓝牙小票打印机
+//        openActivity(BluePrintActivity.class);
+
+        //加减递增递减
+        openActivity(AddOrReduceActivity.class);
+        double a = 1;
+        double b = 2.00;
+        ToastUtils.showLong(String.valueOf(a+b));
+
 
     }
 
