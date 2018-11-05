@@ -389,7 +389,7 @@
         <activity
             android:name=".activity.LoadingViewActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.LocationTwoActivity"
             android:screenOrientation="portrait"
