@@ -844,7 +844,7 @@ public class MainActivity extends BaseActivity {
         openActivity(WebViewUnifyActivity.class,bundle);*/
 
         //标签：com.zhy.view.flowlayout.TagFlowLayout   及ActionBar Menu
-//        openActivity(TagFlowActivity.class);
+        openActivity(TagFlowActivity.class);
 
         //使用BottomNavigationView书写MainActivity
 //        openActivity(MainPagerActivity.class);
@@ -983,11 +983,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(BluePrintActivity.class);
 
         //加减递增递减
-        openActivity(AddOrReduceActivity.class);
-        double a = 1;
-        double b = 2.00;
-        ToastUtils.showLong(String.valueOf(a+b));
+//        openActivity(AddOrReduceActivity.class);
 
+        //android仿ios菊花转圈
+//        openActivity(LoadingViewActivity.class);
 
     }
 
