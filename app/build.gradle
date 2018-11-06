@@ -62,7 +62,9 @@ android {
     }
 
     sourceSets {
-
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
         instrumentTest.setRoot('tests')
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
@@ -235,4 +237,5 @@ dependencies {
     implementation project(':ucrop')
     implementation project(':pickerview')
     implementation files('libs/gprintersdkv1.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
 }

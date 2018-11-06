@@ -988,6 +988,9 @@ public class MainActivity extends BaseActivity {
         //android仿ios菊花转圈
 //        openActivity(LoadingViewActivity.class);
 
+        //百度地图
+        openActivity(BaiduMapActivity.class);
+
     }
 
     public static boolean hasNotchInOppo(Context context) {
