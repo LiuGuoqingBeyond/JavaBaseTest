@@ -62,6 +62,7 @@ public class LocationUtilss {
 
         mLocationClient.registerLocationListener(mAMapLocationListener);
         mLocationClient.setLocOption(mLocationOption);
+        
 
     }
 
