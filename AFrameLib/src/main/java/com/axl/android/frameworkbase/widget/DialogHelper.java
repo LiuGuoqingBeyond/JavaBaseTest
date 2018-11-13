@@ -24,6 +24,7 @@ public class DialogHelper {
         Dialog dialog = new Dialog(context, R.style.dialog_trans);
         dialog.setContentView(R.layout.progress);
         dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setDimAmount(0f);//去除遮罩
         return dialog;
     }
 
