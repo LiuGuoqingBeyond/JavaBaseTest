@@ -439,7 +439,9 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="jOXG90zCXSvd767Q9dF8iptWS3YpSSpU"></meta-data>
 
-        <activity android:name=".activity.LoadingActivity"></activity>
+        <activity android:name=".activity.LoadingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>
