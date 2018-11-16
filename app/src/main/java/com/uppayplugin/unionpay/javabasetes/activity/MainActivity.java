@@ -992,7 +992,10 @@ public class MainActivity extends BaseActivity {
 //        openActivity(BaiduMapActivity.class);
 
         //把 正在加载/成功/异常/失败 带进来
-        openActivity(LoadingActivity.class);
+//        openActivity(LoadingActivity.class);
+
+        //加载圆角图
+        openActivity(LoadRoundActivity.class);
 
     }
 
