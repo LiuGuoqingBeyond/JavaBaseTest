@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <!--<com.uppayplugin.unionpay.javabasetes.utils.PwdEditText
+        android:id="@+id/et_input"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_toRightOf="@id/iv_exit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:pwdCount="6"
+        app:style="roundRectangle" />-->
+
+    <RelativeLayout
+        android:id="@+id/rv_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defaultItemHeight"
+        android:background="#f7f7f7">
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/cancel"/>
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:background="@null"
+            android:layout_alignParentRight="true"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="4656464"
+            android:layout_toRightOf="@id/btn_cancel"
+            android:layout_toLeftOf="@id/btn_commit"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/halfDefaultPadding"
+            android:id="@+id/et_input"
+            android:layout_margin="@dimen/halfDefaultPadding"
+            android:background="@drawable/keyboard_edit_bg"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rv_edit"
+        android:background="@color/black"/>
+
+    <com.uppayplugin.unionpay.javabasetes.utils.PwdKeyboardView
+        android:id="@+id/key_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:background="#919191"
+        android:keepScreenOn="true"
+        android:keyBackground="@drawable/selector_key_board"
+        android:keyTextColor="@android:color/black"
+        android:keyTextSize="26sp"
+        android:shadowRadius="0" />
+</RelativeLayout>

@@ -995,7 +995,19 @@ public class MainActivity extends BaseActivity {
 //        openActivity(LoadingActivity.class);
 
         //加载圆角图
-        openActivity(LoadRoundActivity.class);
+//        openActivity(LoadRoundActivity.class);
+
+        //自定义键盘
+//        openActivity(KeyBoardActivity.class);
+
+        //自定义键盘2   以上两个自定义键盘在中付掌柜app上已经做好了
+//        openActivity(KeyBoard2Activity.class);
+
+        //密码键盘送检
+        openActivity(PwdKeyboardActivity.class);
+
+        //防止截屏
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
 
     }
 

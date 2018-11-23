@@ -41,4 +41,17 @@
         </attr>
         <attr name="indicator_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="PwdEditText">
+        <attr name="style" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="roundRectangle" value="1" />
+        </attr>
+        <attr name="pwdCount" format="integer" />
+        <attr name="strokeRadius" format="dimension" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="dotColor" format="color" />
+        <attr name="dotRadius" format="dimension" />
+    </declare-styleable>
 </resources>

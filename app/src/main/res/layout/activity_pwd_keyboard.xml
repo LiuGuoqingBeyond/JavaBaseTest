@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lay_view"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flSplashView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="72dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    style="@style/textStyle_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/defaultItemHeight"
+                    android:text="中付支付 版权所有 ©2017️"
+                    android:visibility="visible"/>
+
+            </FrameLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivLoginTopImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="100dip"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="@dimen/defaultPadding"
+                        android:layout_marginTop="@dimen/defaultPadding"
+                        android:background="@null"
+                        android:onClick="newclick_skip"
+                        android:text="设备注册"
+                        android:visibility="visible"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textSizeTitle"/>
+
+                    <View
+                        android:id="@+id/viewLogo"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingEnd="@dimen/defaultPadding"
+                    android:paddingStart="@dimen/defaultPadding">
+
+                    <TextView
+                        android:id="@+id/tvTitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="欢迎使用新中付"
+                        android:textColor="@color/black"
+                        android:textSize="34sp"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlUserNameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defaultItemHeight"
+                        android:layout_below="@+id/tvTitleText"
+                        android:layout_marginTop="@dimen/defaultItemHeight">
+
+                        <TextView
+                            android:id="@+id/tvPhoneTemp"
+                            style="@style/textStyle_base"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="手机号"/>
+
+                        <com.uppayplugin.unionpay.javabasetes.view.EditTextWithDEL
+                            android:id="@+id/new_userlogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:hint="请输入手机号"
+                            android:inputType="phone"
+                            android:maxLength="11"
+                            android:paddingEnd="8dp"
+                            android:paddingStart="64dp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/dividingLine"/>
+                    </RelativeLayout>
+
+                    <ViewSwitcher
+                        android:id="@+id/vsLoginType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlUserNameLayout"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_out_right"
+                        >
+
+                        <RelativeLayout
+                            android:id="@+id/rlPasswordLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/defaultItemHeight"
+
+                            android:layout_marginTop="@dimen/defaultPadding">
+
+                            <TextView
+                                android:id="@+id/tvPasswordTemp"
+                                style="@style/textStyle_base"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="密码"/>
+
+                            <EditText
+                                android:id="@+id/new_useloginpwd"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/transparent"
+                                android:hint="请输入密码"
+                                android:maxLength="20"
+                                android:inputType="textPassword"
+                                android:paddingEnd="8dp"
+                                android:paddingStart="64dp"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/dividingLine"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlDeviceLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/defaultItemHeight"
+
+                            android:layout_marginTop="@dimen/defaultPadding">
+
+                            <TextView
+                                android:id="@+id/tvDeviceNameTemp"
+                                style="@style/textStyle_base"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="设备"/>
+
+                            <TextView
+                                android:id="@+id/tvChoseDevice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:text="选择设备"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/dividingLine"/>
+
+                        </RelativeLayout>
+                    </ViewSwitcher>
+
+                    <Button
+                        android:id="@+id/new_Login"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defaultItemHeight"
+                        android:layout_below="@+id/vsLoginType"
+                        android:layout_marginTop="@dimen/defaultItemHeight"
+                        android:text="登录"/>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tvRegister"
+                        style="@style/textStyle_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/new_Login"
+                        android:layout_marginTop="@dimen/defaultPadding"
+                        android:text="设备登录"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <TextView
+                        style="@style/textStyle_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/new_Login"
+                        android:layout_marginTop="@dimen/defaultPadding"
+                        android:onClick="forget_pwd"
+                        android:visibility="invisible"
+                        android:text="忘记密码？"
+                        android:textColor="@color/textColorHint"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/newcompany_and_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="36dp"
+                    android:gravity="bottom"
+                    tools:text="V2.5.0"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

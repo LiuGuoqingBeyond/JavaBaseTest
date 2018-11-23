@@ -291,4 +291,9 @@
         <item name="android:textColor">@color/btn_text_color_color_primary</item>
     </style>
 
+    <style name="DialogFragmentAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
 </resources>

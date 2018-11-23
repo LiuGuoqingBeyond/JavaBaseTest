@@ -158,6 +158,8 @@ dependencies {
     compile project(':AFrameLib')
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
 
+    compile (name:'library-release',ext:'aar')
+
     //圆形头像
     compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageview"
     compile "com.android.support:design:$rootProject.ext.design"
