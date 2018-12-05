@@ -16,9 +16,6 @@
 
 package com.google.zxing.camera;
 
-import java.io.IOException;
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
@@ -30,6 +27,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * This object wraps the Camera service object and expects to be the only one talking to it. The
@@ -44,7 +44,7 @@ public final class CameraManager {
   private static final int MIN_FRAME_WIDTH = 240;
   private static final int MIN_FRAME_HEIGHT = 240;
   private static final int MAX_FRAME_WIDTH = 9999;
-  private static final int MAX_FRAME_HEIGHT = 9999;
+  private static final int MAX_FRAME_HEIGHT = 480;
 
   private static CameraManager cameraManager;
 
@@ -237,7 +237,7 @@ public final class CameraManager {
         height = MAX_FRAME_HEIGHT;
       }
       int leftOffset = (screenResolution.x - width) / 2;
-      int topOffset = (screenResolution.y - height) / 2;
+      int topOffset = (screenResolution.y - height) / 4;
       framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
       Log.d(TAG, "Calculated framing rect: " + framingRect);
     }

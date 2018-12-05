@@ -801,7 +801,7 @@ public class MainActivity extends BaseActivity {
         addNewCard.setCompoundDrawables(null, null, right, null);*/
 
         //扫描图片中的二维码
-//        openActivity(ImageScanActivity.class);
+        openActivity(ImageScanActivity.class);
 
         //跳转到应用市场
 //        openActivity(TurnMarketActivity.class);
@@ -844,7 +844,7 @@ public class MainActivity extends BaseActivity {
         openActivity(WebViewUnifyActivity.class,bundle);*/
 
         //标签：com.zhy.view.flowlayout.TagFlowLayout   及ActionBar Menu
-        openActivity(TagFlowActivity.class);
+//        openActivity(TagFlowActivity.class);
 
         //使用BottomNavigationView书写MainActivity
 //        openActivity(MainPagerActivity.class);
@@ -1004,7 +1004,7 @@ public class MainActivity extends BaseActivity {
 //        openActivity(KeyBoard2Activity.class);
 
         //密码键盘送检
-        openActivity(PwdKeyboardActivity.class);
+//        openActivity(PwdKeyboardActivity.class);
 
         //防止截屏
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
