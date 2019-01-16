@@ -583,13 +583,13 @@ public class MainActivity extends BaseActivity {
 //        startActivity(intent);
 
         //忆回调
-//        TestTwoListener testTwoListener = new TestTwoListener() {
-//            @Override
-//            public void getMessage(Context context, String message) {
-//                Toast.makeText(context,message,Toast.LENGTH_LONG).show();
-//            }
-//        };
-//        testTwoListener.getMessage(MainActivity.this,"收到了吗");
+        /*TestTwoListener testTwoListener = new TestTwoListener() {
+            @Override
+            public void getMessage(Context context, String message) {
+                Toast.makeText(context,message,Toast.LENGTH_LONG).show();
+            }
+        };
+        testTwoListener.getMessage(MainActivity.this,"收到了吗");*/
 
         //忆单例
 //        SingletonFour.getInstance().getMessage(MainActivity.this,"这个是单例");
@@ -1008,6 +1008,11 @@ public class MainActivity extends BaseActivity {
 
         //防止截屏
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+
+        //测试agentlibrary
+        /*Bundle bundle = new Bundle();
+        bundle.putString("agent_account","chendl");
+        openActivity(MerTypeActivity.class,bundle);*/
 
     }
 

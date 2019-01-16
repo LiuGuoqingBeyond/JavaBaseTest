@@ -157,8 +157,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':AFrameLib')
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
-
-    compile (name:'library-release',ext:'aar')
+    compile(name: 'library-release', ext: 'aar')
 
     //圆形头像
     compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageview"
@@ -237,7 +236,6 @@ dependencies {
     implementation files('libs/btsdk.jar')
     implementation project(':picture_library')
     implementation project(':ucrop')
-    implementation project(':pickerview')
     implementation files('libs/gprintersdkv1.jar')
     implementation files('libs/BaiduLBS_Android.jar')
 }
