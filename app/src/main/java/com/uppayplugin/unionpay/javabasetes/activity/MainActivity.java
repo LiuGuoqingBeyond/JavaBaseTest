@@ -1014,6 +1014,9 @@ public class MainActivity extends BaseActivity {
         bundle.putString("agent_account","chendl");
         openActivity(MerTypeActivity.class,bundle);*/
 
+        //AutoCompleteTextViewDemo
+        openActivity(AutoCompleteTextViewActivity.class);
+
     }
 
     public static boolean hasNotchInOppo(Context context) {
