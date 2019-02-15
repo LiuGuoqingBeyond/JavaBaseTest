@@ -1017,9 +1017,12 @@ public class MainActivity extends BaseActivity {
         //AutoCompleteTextViewDemo
 //        openActivity(AutoCompleteTextViewActivity.class);
 
+        //图片预览
+        openActivity(ImageViewActivity.class);
+
         //获取6位随机数
-        int numcode = (int) ((Math.random() * 9 + 1) * 100000);
-        Logger.e("你本次生成的6位安全验证码为："+numcode);
+        /*int numcode = (int) ((Math.random() * 9 + 1) * 100000);
+        Logger.e("你本次生成的6位安全验证码为："+numcode);*/
 
     }
 
