@@ -45,7 +45,7 @@ public class GotoWebActivity extends ToolBarActivity {
             bundle.putString("mobile",etMobile.getText().toString().trim());
             prefer.writePrefs(Constant.PREFES_COUNTRY,etCountryCode.getText().toString().trim());
             prefer.writePrefs(Constant.PREFES_MOBILE,etMobile.getText().toString().trim());
-            openActivity(WebViewJSActivity.class,bundle);
+//            openActivity(WebViewJSActivity.class,bundle);
         });
     }
 

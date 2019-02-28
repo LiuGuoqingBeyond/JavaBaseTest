@@ -801,7 +801,7 @@ public class MainActivity extends BaseActivity {
         addNewCard.setCompoundDrawables(null, null, right, null);*/
 
         //扫描图片中的二维码
-        openActivity(ImageScanActivity.class);
+//        openActivity(ImageScanActivity.class);
 
         //跳转到应用市场
 //        openActivity(TurnMarketActivity.class);
@@ -1018,12 +1018,14 @@ public class MainActivity extends BaseActivity {
 //        openActivity(AutoCompleteTextViewActivity.class);
 
         //图片预览
-        openActivity(ImageViewActivity.class);
+//        openActivity(ImageViewActivity.class);
 
         //获取6位随机数
         /*int numcode = (int) ((Math.random() * 9 + 1) * 100000);
         Logger.e("你本次生成的6位安全验证码为："+numcode);*/
 
+        //集成新的二维码扫描
+        openActivity(NewScanActivity.class);
     }
 
     public static boolean hasNotchInOppo(Context context) {

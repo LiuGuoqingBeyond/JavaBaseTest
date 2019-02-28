@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/ucrop/ucrop.iml" filepath="$PROJECT_DIR$/ucrop/ucrop.iml" />
       <module fileurl="file://$PROJECT_DIR$/upopPaylib/upopPaylib.iml" filepath="$PROJECT_DIR$/upopPaylib/upopPaylib.iml" />
       <module fileurl="file://$PROJECT_DIR$/wj-http/wj-http.iml" filepath="$PROJECT_DIR$/wj-http/wj-http.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zbarLibrary/zbarLibrary.iml" filepath="$PROJECT_DIR$/zbarLibrary/zbarLibrary.iml" />
     </modules>
   </component>
 </project>

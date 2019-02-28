@@ -151,7 +151,7 @@ public class UPIScanActivity extends ToolBarActivity {
                 prefs.writePrefs(Constant.PREFES_COUNTRYCODE, countryCode);
                 prefs.writePrefs(Constant.PREFES_RANDOMNO, randomNo);//随机数
                 prefs.writePrefs(Constant.UPOPTIME, upopTime);//系统时间
-                openActivity(UPIScanMainActivity.class);
+//                openActivity(UPIScanMainActivity.class);
                 ToastUtils.showLong("登陆成功");
             }
         }

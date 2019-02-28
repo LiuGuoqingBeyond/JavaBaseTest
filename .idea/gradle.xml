@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/ucrop" />
             <option value="$PROJECT_DIR$/upopPaylib" />
             <option value="$PROJECT_DIR$/wj-http" />
+            <option value="$PROJECT_DIR$/zbarLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
