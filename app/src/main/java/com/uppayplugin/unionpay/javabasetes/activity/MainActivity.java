@@ -1025,7 +1025,10 @@ public class MainActivity extends BaseActivity {
         Logger.e("你本次生成的6位安全验证码为："+numcode);*/
 
         //集成新的二维码扫描
-        openActivity(NewScanActivity.class);
+//        openActivity(NewScanActivity.class);
+
+        //FFmpegMediaMetadataRetriever
+        openActivity(FFmpegMediaMetadataRetrieverActivity.class);
     }
 
     public static boolean hasNotchInOppo(Context context) {

@@ -252,4 +252,5 @@ dependencies {
     implementation files('libs/gprintersdkv1.jar')
     implementation files('libs/BaiduLBS_Android.jar')
     implementation project(':zbarLibrary')
+    compile ( name:'all-fmmr', ext:'aar' )
 }
